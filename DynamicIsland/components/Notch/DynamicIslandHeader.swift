@@ -193,12 +193,15 @@ struct DynamicIslandHeader: View {
                     }
                     
                     // Screen Recording Indicator
-                    if Defaults[.enableScreenRecordingDetection] && Defaults[.showRecordingIndicator] {
+                    if Defaults[.enableScreenRecordingDetection] && Defaults[.showRecordingIndicator] && !shouldSuppressStatusIndicators {
                         RecordingIndicator()
                             .frame(width: 30, height: 30) // Same size as other header elements
                     }
 
-                    if Defaults[.enableDoNotDisturbDetection] && Defaults[.showDoNotDisturbIndicator] && doNotDisturbManager.isDoNotDisturbActive {
+                    if Defaults[.enableDoNotDisturbDetection]
+                        && Defaults[.showDoNotDisturbIndicator]
+                        && doNotDisturbManager.isDoNotDisturbActive
+                        && !shouldSuppressStatusIndicators {
                         FocusIndicator()
                             .frame(width: 30, height: 30)
                             .transition(.opacity)
@@ -250,6 +253,16 @@ struct DynamicIslandHeader: View {
                 vm.isTimerPopoverActive = false
             }
         }
+    }
+}
+
+private extension DynamicIslandHeader {
+    var shouldSuppressStatusIndicators: Bool {
+        Defaults[.settingsIconInNotch]
+            && Defaults[.enableClipboardManager]
+            && Defaults[.showClipboardIcon]
+            && Defaults[.enableColorPickerFeature]
+            && Defaults[.enableTimerFeature]
     }
 }
 
