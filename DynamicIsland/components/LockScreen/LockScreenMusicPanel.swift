@@ -429,21 +429,20 @@ struct LockScreenMusicPanel: View {
     }
     
     private var playPauseButton: some View {
-        let frameSize: CGFloat = isExpanded ? 72 : 48
-        let symbolSize: CGFloat = isExpanded ? 30 : 24
+        let frameSize: CGFloat = isExpanded ? 80 : 54
+        let symbolSize: CGFloat = isExpanded ? 34 : 26
+        let iconName = musicManager.isPlaying ? "pause.fill" : "play.fill"
 
-        return Button(action: {
+        return HoverButton(
+            icon: iconName,
+            iconColor: .white,
+            scale: .large,
+            pressEffect: .none
+        ) {
             registerInteraction()
             musicManager.togglePlay()
-        }) {
-            Image(systemName: musicManager.isPlaying ? "pause.fill" : "play.fill")
-                .font(.system(size: symbolSize, weight: .semibold))
-                .foregroundColor(.white)
-                .contentTransition(.symbolEffect(.replace))
-                .frame(width: frameSize, height: frameSize)
-                .contentShape(Rectangle())
         }
-        .buttonStyle(PlainButtonStyle())
+        .frame(width: frameSize, height: frameSize)
     }
     
     private func controlButton(

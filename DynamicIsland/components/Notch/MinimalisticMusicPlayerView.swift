@@ -621,10 +621,10 @@ private struct MinimalisticReminderDetailsView: View {
     private var playPauseButton: some View {
         MinimalisticSquircircleButton(
             icon: musicManager.isPlaying ? "pause.fill" : "play.fill",
-            fontSize: 24,
+            fontSize: 28,
             fontWeight: .semibold,
-            frameSize: CGSize(width: 54, height: 54),
-            cornerRadius: 20,
+            frameSize: CGSize(width: 60, height: 60),
+            cornerRadius: 24,
             foregroundColor: .white,
             pressEffect: .none,
             symbolEffectStyle: .replace,

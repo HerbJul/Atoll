@@ -122,6 +122,7 @@ struct MusicControlsView: View {
     let showShuffleAndRepeat: Bool
     @Default(.musicAuxLeftControl) private var leftAuxControl
     @Default(.musicAuxRightControl) private var rightAuxControl
+    @Default(.musicSkipBehavior) private var musicSkipBehavior
     @Default(.enableLyrics) private var enableLyrics
 
     var body: some View {
@@ -214,20 +215,62 @@ struct MusicControlsView: View {
 
     private var playbackControls: some View {
         let controls = resolvedAuxControls
+        let seekInterval: TimeInterval = 10
+        let skipMagnitude: CGFloat = 6
+
+        let backwardConfig: (icon: String, press: HoverButton.PressEffect?, action: () -> Void)
+        let forwardConfig: (icon: String, press: HoverButton.PressEffect?, action: () -> Void)
+
+        switch musicSkipBehavior {
+        case .track:
+            backwardConfig = (
+                icon: "backward.fill",
+                press: .nudge(-skipMagnitude),
+                action: { musicManager.previousTrack() }
+            )
+            forwardConfig = (
+                icon: "forward.fill",
+                press: .nudge(skipMagnitude),
+                action: { musicManager.nextTrack() }
+            )
+        case .tenSecond:
+            backwardConfig = (
+                icon: "gobackward.10",
+                press: .wiggle(.counterClockwise),
+                action: { musicManager.seek(by: -seekInterval) }
+            )
+            forwardConfig = (
+                icon: "goforward.10",
+                press: .wiggle(.clockwise),
+                action: { musicManager.seek(by: seekInterval) }
+            )
+        }
 
         return HStack(spacing: 8) {
             if showShuffleAndRepeat {
                 auxButton(for: controls.left)
             }
-            HoverButton(icon: "backward.fill", scale: .medium, pressEffect: .nudge(-6)) {
-                MusicManager.shared.previousTrack()
+
+            HoverButton(
+                icon: backwardConfig.icon,
+                scale: .medium,
+                pressEffect: backwardConfig.press
+            ) {
+                backwardConfig.action()
             }
+
             HoverButton(icon: musicManager.isPlaying ? "pause.fill" : "play.fill", scale: .large) {
                 MusicManager.shared.togglePlay()
             }
-            HoverButton(icon: "forward.fill", scale: .medium, pressEffect: .nudge(6)) {
-                MusicManager.shared.nextTrack()
+
+            HoverButton(
+                icon: forwardConfig.icon,
+                scale: .medium,
+                pressEffect: forwardConfig.press
+            ) {
+                forwardConfig.action()
             }
+
             if showShuffleAndRepeat {
                 auxButton(for: controls.right)
             }
