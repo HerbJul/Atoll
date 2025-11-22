@@ -15,7 +15,7 @@ buildServer.json
 *.xctest
 *.xcuserdata
 *.xcodeproj/xcshareddata/WorkspaceSettings.xcsettings
-
+*.xcsettings
 # CocoaPods
 Pods/
 podfile.lock
