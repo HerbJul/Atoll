@@ -855,3 +855,4 @@ final class MediaOutputVolumeViewModel: ObservableObject {
     )
     .environmentObject(DynamicIslandViewModel())
 }
+

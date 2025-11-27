@@ -535,13 +535,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .startDemoTimer) {
+        KeyboardShortcuts.onKeyDown(for: .startDemoTimer) {
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableTimerFeature] else { return }
             TimerManager.shared.startDemoTimer(duration: 300)
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableClipboardManager] else { return }

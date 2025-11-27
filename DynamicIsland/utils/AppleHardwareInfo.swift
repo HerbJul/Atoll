@@ -27,6 +27,8 @@ enum ApplePlatform: String {
     case m4Pro
     case m4Max
     case m4Ultra
+    case m5Pro
+    case m5Max
 }
 
 struct CPUClusterFrequencies {
@@ -100,12 +102,16 @@ final class AppleHardwareInfo {
             if name.contains("pro") { return .m4Pro }
             return .m4
         }
+        if name.contains ("m5") {
+            if name.contains("max") { return .m5Max }
+            if name.contains("pro") { return .m5Pro }
+        }
         return nil
     }
 
     private static func fetchClusterCounts() -> CPUClusterCounts {
         var iterator = io_iterator_t()
-        guard IOServiceGetMatchingServices(kIOMasterPortDefault, IOServiceMatching("AppleARMPE"), &iterator) == KERN_SUCCESS else {
+        guard IOServiceGetMatchingServices(kIOMainPortDefault, IOServiceMatching("AppleARMPE"), &iterator) == KERN_SUCCESS else {
             return CPUClusterCounts(eCores: 0, pCores: 0)
         }
         defer { IOObjectRelease(iterator) }
@@ -135,7 +141,7 @@ final class AppleHardwareInfo {
 
     private static func fetchClusterFrequencies(cpuName: String) -> CPUClusterFrequencies {
         var iterator = io_iterator_t()
-        guard IOServiceGetMatchingServices(kIOMasterPortDefault, IOServiceMatching("AppleARMIODevice"), &iterator) == KERN_SUCCESS else {
+        guard IOServiceGetMatchingServices(kIOMainPortDefault, IOServiceMatching("AppleARMIODevice"), &iterator) == KERN_SUCCESS else {
             return CPUClusterFrequencies(eCoreFrequencies: [], pCoreFrequencies: [])
         }
         defer { IOObjectRelease(iterator) }
