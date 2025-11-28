@@ -565,13 +565,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .colorPickerPanel) {
+        KeyboardShortcuts.onKeyDown(for: .colorPickerPanel) {
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableColorPickerFeature] else { return }
             ColorPickerPanelManager.shared.toggleColorPickerPanel()
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .screenAssistantPanel) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .screenAssistantPanel) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableScreenAssistant] else { return }
