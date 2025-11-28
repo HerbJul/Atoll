@@ -2513,7 +2513,7 @@ struct TimerSettings: View {
     }
     
     private func resetPresets() {
-        _ = withAnimation(.smooth) {
+        withAnimation(.smooth) {
             timerPresets = TimerPreset.defaultPresets
         }
     }

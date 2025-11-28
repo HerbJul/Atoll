@@ -17,7 +17,7 @@ extension URL {
             size,
             nil
         )?.takeRetainedValue() {
-            return NSImage(cgImage: cgImage, size: .zero)
+            return NSImage(cgImage: cgImage, size: size)
         }
         return NSWorkspace.shared.icon(forFile: path)
     }

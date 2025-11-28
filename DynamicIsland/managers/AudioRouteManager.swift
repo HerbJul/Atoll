@@ -181,11 +181,13 @@ final class AudioRouteManager: ObservableObject {
             mElement: kAudioObjectPropertyElementMain
         )
 
-        var name: CFString = "" as CFString
+        var name: CFString? = nil
         var dataSize = UInt32(MemoryLayout<CFString?>.size)
+
         let status = AudioObjectGetPropertyData(deviceID, &address, 0, nil, &dataSize, &name)
-        guard status == noErr else { return nil }
-        return name as String
+        guard status == noErr, let cfName = name else { return nil }
+
+        return cfName as String
     }
 
     private func transportType(for deviceID: AudioDeviceID) -> UInt32 {

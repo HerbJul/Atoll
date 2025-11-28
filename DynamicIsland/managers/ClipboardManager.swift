@@ -14,7 +14,7 @@ import Defaults
 
 // Clipboard item data structure
 struct ClipboardItem: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let type: ClipboardItemType
     let timestamp: Date
     let preview: String
