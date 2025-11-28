@@ -137,6 +137,7 @@ final class LockScreenTimerWidgetPanelManager {
         }
     }
 
+
     func refreshPosition(animated: Bool) {
         guard let window, window.isVisible, let screen = NSScreen.main else { return }
         let frame = targetFrame(on: screen)

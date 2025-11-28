@@ -4,7 +4,7 @@ import SwiftUI
 import SkyLightWindow
 import QuartzCore
 
-struct TimerControlWindowMetrics {
+struct TimerControlWindowMetrics: Equatable {
     let notchHeight: CGFloat
     let notchWidth: CGFloat
     let rightWingWidth: CGFloat
@@ -90,15 +90,23 @@ final class TimerControlWindowManager {
         guard window != nil else {
             return present(using: viewModel, metrics: metrics)
         }
+
+        if let lastMetrics, lastMetrics == metrics {
+            return true
+        }
+
         return present(using: viewModel, metrics: metrics)
     }
 
-    func hide(animated: Bool = true) {
+    func hide(animated: Bool = true, tearDown: Bool = true) {
         guard let window else { return }
 
         guard animated, window.alphaValue > 0.01 else {
             window.orderOut(nil)
             window.alphaValue = 0
+            if tearDown {
+                tearDownWindowResources(using: window)
+            }
             return
         }
 
@@ -110,11 +118,24 @@ final class TimerControlWindowManager {
             context.timingFunction = CAMediaTimingFunction(name: .easeIn)
             window.animator().setFrame(retreatFrame, display: true)
             window.animator().alphaValue = 0
-        } completionHandler: {
+        } completionHandler: { [weak self] in
             window.setFrame(originalFrame, display: false)
             window.orderOut(nil)
             window.alphaValue = 0
+            if tearDown {
+                self?.tearDownWindowResources(using: window)
+            }
         }
+    }
+
+    private func tearDownWindowResources(using window: NSWindow? = nil) {
+        let targetWindow = window ?? self.window
+        targetWindow?.contentView = nil
+        targetWindow?.orderOut(nil)
+        hostingView = nil
+        lastMetrics = nil
+        self.window = nil
+        hasDelegated = false
     }
 
     private func ensureHostingView(with overlay: TimerControlOverlay) -> NSHostingView<TimerControlOverlay> {
