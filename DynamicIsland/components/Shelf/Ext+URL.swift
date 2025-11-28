@@ -5,19 +5,19 @@
 //  Created by 秋星桥 on 2024/7/8.
 //
 
+
 import Cocoa
-import Foundation
 import QuickLook
 
 extension URL {
-    func snapshotPreview() -> NSImage {
-        if let preview = QLThumbnailImageCreate(
+    func snapshotPreview(size: CGSize = CGSize(width: 128, height: 128)) -> NSImage {
+        if let cgImage = QLThumbnailImageCreate(
             kCFAllocatorDefault,
             self as CFURL,
-            CGSize(width: 128, height: 128),
+            size,
             nil
         )?.takeRetainedValue() {
-            return NSImage(cgImage: preview, size: .zero)
+            return NSImage(cgImage: cgImage, size: .zero)
         }
         return NSWorkspace.shared.icon(forFile: path)
     }

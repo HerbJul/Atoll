@@ -230,7 +230,7 @@ struct DynamicIslandHeader: View {
         }
         .foregroundColor(.gray)
         .environmentObject(vm)
-        .onChange(of: coordinator.shouldToggleClipboardPopover) { _ in
+        .onChange(of: coordinator.shouldToggleClipboardPopover) {
             // Only toggle if clipboard is enabled
             if Defaults[.enableClipboardManager] {
                 switch Defaults[.clipboardDisplayMode] {
@@ -271,3 +271,4 @@ private extension DynamicIslandHeader {
         .environmentObject(DynamicIslandViewModel())
         .environmentObject(WebcamManager.shared)
 }
+

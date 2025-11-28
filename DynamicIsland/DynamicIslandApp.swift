@@ -487,7 +487,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self, selector: #selector(onScreenUnlocked(_:)),
             name: NSNotification.Name(rawValue: "com.apple.screenIsUnlocked"), object: nil)
 
-        _ = KeyboardShortcuts.onKeyDown(for: .toggleSneakPeek) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .toggleSneakPeek) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
 
@@ -498,7 +498,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             )
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .toggleNotchOpen) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .toggleNotchOpen) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
 

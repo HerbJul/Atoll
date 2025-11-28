@@ -432,16 +432,18 @@ struct MusicSliderView: View {
                 }
             }
         }
-        .onChange(of: currentDate) { newDate in
+        
+        .onChange(of: currentDate) { _, newDate in
             guard !isLiveStream else { return }
             guard !dragging, timestampDate.timeIntervalSince(lastDragged) > -1 else { return }
             sliderValue = MusicManager.shared.estimatedPlaybackPosition(at: newDate)
         }
-        .onChange(of: isLiveStream) { isLive in
+        .onChange(of: isLiveStream) { _, isLive in
             if isLive {
                 sliderValue = 0
             }
         }
+
     }
 
     private var stackedContent: some View {
