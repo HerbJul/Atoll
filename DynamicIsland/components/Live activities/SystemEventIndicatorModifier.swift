@@ -46,7 +46,7 @@ struct SystemEventIndicatorModifier: View {
                         .frame(width: 20, height: 15)
                         .foregroundStyle(.white)
                 case .backlight:
-                    Image(systemName: "keyboard")
+                    Image(systemName: BacklightSymbol(value))
                         .contentTransition(.symbolEffect)
                         .frame(width: 20, height: 15)
                         .foregroundStyle(.white)
@@ -94,6 +94,10 @@ struct SystemEventIndicatorModifier: View {
             default:
                 return "speaker.wave.2"
         }
+    }
+
+    func BacklightSymbol(_ value: CGFloat) -> String {
+        value >= 0.5 ? "light.max" : "light.min"
     }
 }
 

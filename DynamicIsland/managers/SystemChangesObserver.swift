@@ -1,11 +1,13 @@
 import Foundation
 import CoreGraphics
 import Defaults
+import AppKit
 
 final class SystemChangesObserver: MediaKeyInterceptorDelegate {
     private weak var coordinator: DynamicIslandViewCoordinator?
     private let volumeController = SystemVolumeController.shared
     private let brightnessController = SystemBrightnessController.shared
+    private let keyboardBacklightController = SystemKeyboardBacklightController.shared
     private let mediaKeyInterceptor = MediaKeyInterceptor.shared
 
     private let standardVolumeStep: Float = 1.0 / 16.0
@@ -14,14 +16,16 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
 
     private var volumeEnabled = false
     private var brightnessEnabled = false
+    private var keyboardBacklightEnabled = false
 
     init(coordinator: DynamicIslandViewCoordinator) {
         self.coordinator = coordinator
     }
 
-    func startObserving(volumeEnabled: Bool, brightnessEnabled: Bool) {
+    func startObserving(volumeEnabled: Bool, brightnessEnabled: Bool, keyboardBacklightEnabled: Bool) {
         self.volumeEnabled = volumeEnabled
         self.brightnessEnabled = brightnessEnabled
+        self.keyboardBacklightEnabled = keyboardBacklightEnabled
 
         volumeController.onVolumeChange = { [weak self] volume, muted in
             guard let self, self.volumeEnabled else { return }
@@ -40,6 +44,11 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
         }
         brightnessController.start()
 
+        configureKeyboardBacklightCallback()
+        if keyboardBacklightEnabled {
+            keyboardBacklightController.start()
+        }
+
         mediaKeyInterceptor.delegate = self
         let tapStarted = mediaKeyInterceptor.start()
         if !tapStarted {
@@ -47,16 +56,35 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
         }
         mediaKeyInterceptor.configuration = MediaKeyConfiguration(
             interceptVolume: volumeEnabled,
-            interceptBrightness: brightnessEnabled
+            interceptBrightness: brightnessEnabled,
+            interceptCommandModifiedBrightness: keyboardBacklightEnabled
         )
     }
 
-    func update(volumeEnabled: Bool, brightnessEnabled: Bool) {
+    func update(volumeEnabled: Bool, brightnessEnabled: Bool, keyboardBacklightEnabled: Bool) {
         self.volumeEnabled = volumeEnabled
         self.brightnessEnabled = brightnessEnabled
+        let backlightStateChanged = self.keyboardBacklightEnabled != keyboardBacklightEnabled
+        self.keyboardBacklightEnabled = keyboardBacklightEnabled
+
+        if keyboardBacklightEnabled {
+            configureKeyboardBacklightCallback()
+        } else {
+            keyboardBacklightController.onBacklightChange = nil
+        }
+
+        if backlightStateChanged {
+            if keyboardBacklightEnabled {
+                keyboardBacklightController.start()
+            } else {
+                keyboardBacklightController.stop()
+            }
+        }
+
         mediaKeyInterceptor.configuration = MediaKeyConfiguration(
             interceptVolume: volumeEnabled,
-            interceptBrightness: brightnessEnabled
+            interceptBrightness: brightnessEnabled,
+            interceptCommandModifiedBrightness: keyboardBacklightEnabled
         )
     }
 
@@ -70,6 +98,9 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
 
         brightnessController.stop()
         brightnessController.onBrightnessChange = nil
+
+        keyboardBacklightController.stop()
+        keyboardBacklightController.onBacklightChange = nil
     }
 
     // MARK: - MediaKeyInterceptorDelegate
@@ -78,7 +109,8 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
         _ interceptor: MediaKeyInterceptor,
         didReceiveVolumeCommand direction: MediaKeyDirection,
         step: MediaKeyStep,
-        isRepeat: Bool
+        isRepeat: Bool,
+        modifiers: NSEvent.ModifierFlags
     ) {
         guard volumeEnabled else { return }
         let baseStep = stepSize(for: step, base: standardVolumeStep)
@@ -95,12 +127,16 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
         _ interceptor: MediaKeyInterceptor,
         didReceiveBrightnessCommand direction: MediaKeyDirection,
         step: MediaKeyStep,
-        isRepeat: Bool
+        isRepeat: Bool,
+        modifiers: NSEvent.ModifierFlags
     ) {
-        guard brightnessEnabled else { return }
         let baseStep = stepSize(for: step, base: standardBrightnessStep)
         let delta = direction == .up ? baseStep : -baseStep
-        brightnessController.adjust(by: delta)
+        if modifiers.contains(.command) && keyboardBacklightEnabled {
+            keyboardBacklightController.adjust(by: delta)
+        } else if brightnessEnabled {
+            brightnessController.adjust(by: delta)
+        }
     }
 
     // MARK: - HUD Dispatch
@@ -124,6 +160,26 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
             value: CGFloat(value),
             icon: ""
         )
+    }
+
+    private func sendKeyboardBacklightNotification(value: Float) {
+        coordinator?.toggleSneakPeek(
+            status: true,
+            type: .backlight,
+            value: CGFloat(value),
+            icon: ""
+        )
+    }
+
+    private func configureKeyboardBacklightCallback() {
+        if keyboardBacklightEnabled {
+            keyboardBacklightController.onBacklightChange = { [weak self] value in
+                guard let self, self.keyboardBacklightEnabled else { return }
+                self.sendKeyboardBacklightNotification(value: value)
+            }
+        } else {
+            keyboardBacklightController.onBacklightChange = nil
+        }
     }
 }
 

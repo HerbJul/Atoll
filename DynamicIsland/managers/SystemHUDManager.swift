@@ -44,7 +44,8 @@ class SystemHUDManager {
             }
             self.changesObserver?.update(
                 volumeEnabled: change.newValue,
-                brightnessEnabled: Defaults[.enableBrightnessHUD]
+                brightnessEnabled: Defaults[.enableBrightnessHUD],
+                keyboardBacklightEnabled: Defaults[.enableKeyboardBacklightHUD]
             )
         }.store(in: &cancellables)
         
@@ -54,7 +55,19 @@ class SystemHUDManager {
             }
             self.changesObserver?.update(
                 volumeEnabled: Defaults[.enableVolumeHUD],
-                brightnessEnabled: change.newValue
+                brightnessEnabled: change.newValue,
+                keyboardBacklightEnabled: Defaults[.enableKeyboardBacklightHUD]
+            )
+        }.store(in: &cancellables)
+
+        Defaults.publisher(.enableKeyboardBacklightHUD, options: []).sink { [weak self] change in
+            guard let self = self, self.isSetupComplete, Defaults[.enableSystemHUD] else {
+                return
+            }
+            self.changesObserver?.update(
+                volumeEnabled: Defaults[.enableVolumeHUD],
+                brightnessEnabled: Defaults[.enableBrightnessHUD],
+                keyboardBacklightEnabled: change.newValue
             )
         }.store(in: &cancellables)
     }
@@ -89,7 +102,12 @@ class SystemHUDManager {
         changesObserver = SystemChangesObserver(coordinator: coordinator)
         let volumeEnabled = Defaults[.enableVolumeHUD]
         let brightnessEnabled = Defaults[.enableBrightnessHUD]
-        changesObserver?.startObserving(volumeEnabled: volumeEnabled, brightnessEnabled: brightnessEnabled)
+        let keyboardBacklightEnabled = Defaults[.enableKeyboardBacklightHUD]
+        changesObserver?.startObserving(
+            volumeEnabled: volumeEnabled,
+            brightnessEnabled: brightnessEnabled,
+            keyboardBacklightEnabled: keyboardBacklightEnabled
+        )
         
         print("System HUD replacement started")
         isSystemOperationInProgress = false

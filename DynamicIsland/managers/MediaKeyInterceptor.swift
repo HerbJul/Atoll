@@ -25,13 +25,30 @@ enum MediaKeyStep {
 struct MediaKeyConfiguration {
     var interceptVolume: Bool
     var interceptBrightness: Bool
+    var interceptCommandModifiedBrightness: Bool
 
-    static let disabled = MediaKeyConfiguration(interceptVolume: false, interceptBrightness: false)
+    static let disabled = MediaKeyConfiguration(
+        interceptVolume: false,
+        interceptBrightness: false,
+        interceptCommandModifiedBrightness: false
+    )
 }
 
 protocol MediaKeyInterceptorDelegate: AnyObject {
-    func mediaKeyInterceptor(_ interceptor: MediaKeyInterceptor, didReceiveVolumeCommand direction: MediaKeyDirection, step: MediaKeyStep, isRepeat: Bool)
-    func mediaKeyInterceptor(_ interceptor: MediaKeyInterceptor, didReceiveBrightnessCommand direction: MediaKeyDirection, step: MediaKeyStep, isRepeat: Bool)
+    func mediaKeyInterceptor(
+        _ interceptor: MediaKeyInterceptor,
+        didReceiveVolumeCommand direction: MediaKeyDirection,
+        step: MediaKeyStep,
+        isRepeat: Bool,
+        modifiers: NSEvent.ModifierFlags
+    )
+    func mediaKeyInterceptor(
+        _ interceptor: MediaKeyInterceptor,
+        didReceiveBrightnessCommand direction: MediaKeyDirection,
+        step: MediaKeyStep,
+        isRepeat: Bool,
+        modifiers: NSEvent.ModifierFlags
+    )
     func mediaKeyInterceptorDidToggleMute(_ interceptor: MediaKeyInterceptor)
 }
 
@@ -129,7 +146,7 @@ final class MediaKeyInterceptor {
 
     private func updateTapState() {
         guard let tap = eventTap else { return }
-        let shouldEnable = configuration.interceptVolume || configuration.interceptBrightness
+        let shouldEnable = configuration.interceptVolume || configuration.interceptBrightness || configuration.interceptCommandModifiedBrightness
         if shouldEnable != isTapEnabled {
             CGEvent.tapEnable(tap: tap, enable: shouldEnable)
             isTapEnabled = shouldEnable
@@ -150,10 +167,11 @@ final class MediaKeyInterceptor {
         let keyState = ((keyFlags & 0xFF00) >> 8) == 0xA // 0xA = keyDown, 0xB = keyUp
         let isRepeat = (keyFlags & 0x0001) == 1
         let step = step(for: nsEvent)
+        let modifiers = nsEvent.modifierFlags
 
         guard keyState else {
             // Swallow key-up events only when intercepting, otherwise let them pass through
-            if shouldHandle(keyCode: Int32(keyCode)) {
+            if shouldHandle(keyCode: Int32(keyCode), modifiers: modifiers) {
                 return nil
             }
             return Unmanaged.passUnretained(cgEvent)
@@ -162,38 +180,45 @@ final class MediaKeyInterceptor {
         switch Int32(keyCode) {
         case NX_KEYTYPE_SOUND_UP:
             guard configuration.interceptVolume else { return Unmanaged.passUnretained(cgEvent) }
-            delegate?.mediaKeyInterceptor(self, didReceiveVolumeCommand: .up, step: step, isRepeat: isRepeat)
+            delegate?.mediaKeyInterceptor(self, didReceiveVolumeCommand: .up, step: step, isRepeat: isRepeat, modifiers: modifiers)
             return nil
         case NX_KEYTYPE_SOUND_DOWN:
             guard configuration.interceptVolume else { return Unmanaged.passUnretained(cgEvent) }
-            delegate?.mediaKeyInterceptor(self, didReceiveVolumeCommand: .down, step: step, isRepeat: isRepeat)
+            delegate?.mediaKeyInterceptor(self, didReceiveVolumeCommand: .down, step: step, isRepeat: isRepeat, modifiers: modifiers)
             return nil
         case NX_KEYTYPE_MUTE:
             guard configuration.interceptVolume else { return Unmanaged.passUnretained(cgEvent) }
             delegate?.mediaKeyInterceptorDidToggleMute(self)
             return nil
         case NX_KEYTYPE_BRIGHTNESS_UP:
-            guard configuration.interceptBrightness else { return Unmanaged.passUnretained(cgEvent) }
-            delegate?.mediaKeyInterceptor(self, didReceiveBrightnessCommand: .up, step: step, isRepeat: isRepeat)
+            guard shouldHandleBrightness(modifiers: modifiers) else { return Unmanaged.passUnretained(cgEvent) }
+            delegate?.mediaKeyInterceptor(self, didReceiveBrightnessCommand: .up, step: step, isRepeat: isRepeat, modifiers: modifiers)
             return nil
         case NX_KEYTYPE_BRIGHTNESS_DOWN:
-            guard configuration.interceptBrightness else { return Unmanaged.passUnretained(cgEvent) }
-            delegate?.mediaKeyInterceptor(self, didReceiveBrightnessCommand: .down, step: step, isRepeat: isRepeat)
+            guard shouldHandleBrightness(modifiers: modifiers) else { return Unmanaged.passUnretained(cgEvent) }
+            delegate?.mediaKeyInterceptor(self, didReceiveBrightnessCommand: .down, step: step, isRepeat: isRepeat, modifiers: modifiers)
             return nil
         default:
             return Unmanaged.passUnretained(cgEvent)
         }
     }
 
-    private func shouldHandle(keyCode: Int32) -> Bool {
+    private func shouldHandle(keyCode: Int32, modifiers: NSEvent.ModifierFlags) -> Bool {
         switch keyCode {
         case NX_KEYTYPE_SOUND_UP, NX_KEYTYPE_SOUND_DOWN, NX_KEYTYPE_MUTE:
             return configuration.interceptVolume
         case NX_KEYTYPE_BRIGHTNESS_UP, NX_KEYTYPE_BRIGHTNESS_DOWN:
-            return configuration.interceptBrightness
+            return configuration.interceptBrightness || (configuration.interceptCommandModifiedBrightness && modifiers.contains(.command))
         default:
             return false
         }
+    }
+
+    private func shouldHandleBrightness(modifiers: NSEvent.ModifierFlags) -> Bool {
+        if configuration.interceptBrightness {
+            return true
+        }
+        return configuration.interceptCommandModifiedBrightness && modifiers.contains(.command)
     }
 
     private func step(for event: NSEvent) -> MediaKeyStep {
