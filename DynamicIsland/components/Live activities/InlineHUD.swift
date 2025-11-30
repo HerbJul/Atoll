@@ -109,7 +109,7 @@ struct InlineHUD: View {
                                 .contentTransition(.interpolate)
                                 .frame(width: 20, height: 15, alignment: .center)
                         case .backlight:
-                            Image(systemName: "keyboard")
+                            Image(systemName: BacklightSymbol(value))
                                 .contentTransition(.interpolate)
                                 .frame(width: 20, height: 15, alignment: .center)
                         case .mic:
@@ -352,6 +352,13 @@ struct InlineHUD: View {
             default:
                 return "sun.min"
         }
+    }
+
+    func BacklightSymbol(_ value: CGFloat) -> String {
+        if value >= 0.5 {
+            return "light.max"
+        }
+        return "light.min"
     }
     
     func Type2Name(_ type: SneakContentType) -> String {
