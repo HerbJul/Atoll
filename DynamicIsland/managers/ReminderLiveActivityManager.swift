@@ -211,7 +211,7 @@ final class ReminderLiveActivityManager: ObservableObject {
             settingsUpdateTask = nil
             pendingSettingsAction = nil
             pendingSettingsReason = nil
-            deactivateReminder()
+            pauseReminderActivityForLock()
         } else {
             if pendingEventsSnapshot != nil {
                 schedulePendingEventsSnapshotApplication()
@@ -219,6 +219,12 @@ final class ReminderLiveActivityManager: ObservableObject {
                 recalculateUpcomingEntries(reason: "lock-resume")
             }
         }
+    }
+
+    private func pauseReminderActivityForLock() {
+        tickerTask = nil
+        evaluationTask?.cancel()
+        evaluationTask = nil
     }
 
     private func recalculateUpcomingEntries(referenceDate: Date = Date(), reason: String) {
