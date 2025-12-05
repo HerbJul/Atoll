@@ -123,7 +123,9 @@ final class TimerControlWindowManager {
             window.orderOut(nil)
             window.alphaValue = 0
             if tearDown {
-                self?.tearDownWindowResources(using: window)
+                Task { @MainActor in
+                    self?.tearDownWindowResources(using: window)
+                }
             }
         }
     }
@@ -224,3 +226,4 @@ final class TimerControlWindowManager {
 }
 
 #endif
+
