@@ -194,7 +194,7 @@ struct IdleAnimationsSettingsSection: View {
             Button("Cancel", role: .cancel) { }
             Button("Delete", role: .destructive) {
                 if let animation = selectedForDeletion {
-                    IdleAnimationManager.shared.deleteAnimation(animation)
+                    _ = IdleAnimationManager.shared.deleteAnimation(animation)
                 }
             }
         } message: {

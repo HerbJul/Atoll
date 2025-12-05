@@ -432,10 +432,10 @@ struct MusicSliderView: View {
                 }
             }
         }
-        .onChange(of: currentDate) { newDate in
+        .onChange(of: currentDate) {
             guard !isLiveStream else { return }
             guard !dragging, timestampDate.timeIntervalSince(lastDragged) > -1 else { return }
-            sliderValue = MusicManager.shared.estimatedPlaybackPosition(at: newDate)
+            sliderValue = MusicManager.shared.estimatedPlaybackPosition(at: currentDate)
         }
         .onChange(of: isLiveStream) { isLive in
             if isLive {
@@ -855,3 +855,4 @@ final class MediaOutputVolumeViewModel: ObservableObject {
     )
     .environmentObject(DynamicIslandViewModel())
 }
+

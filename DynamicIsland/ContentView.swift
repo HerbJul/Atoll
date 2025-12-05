@@ -39,7 +39,7 @@ struct ContentView: View {
     
     // Dynamic sizing based on view type and graph count with smooth transitions
     var dynamicNotchSize: CGSize {
-        var baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
+        let baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
         
         guard coordinator.currentView == .stats else {
             return baseSize
@@ -1144,3 +1144,4 @@ struct FullScreenDropDelegate: DropDelegate {
         return true
     }
 }
+
