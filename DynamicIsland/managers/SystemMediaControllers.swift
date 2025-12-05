@@ -397,7 +397,10 @@ final class SystemVolumeController {
             var address = makeAddress(selector: selector, element: element)
             guard propertyExists(deviceID: currentDeviceID, address: &address) else { continue }
             let size = UInt32(MemoryLayout<T>.size)
-            lastStatus = AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, &data)
+            let status: OSStatus = withUnsafeBytes(of: &data) { rawBuffer in
+                AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, rawBuffer.baseAddress!)
+            }
+            lastStatus = status
             if lastStatus == noErr {
                 cache(element: element, for: selector)
                 return lastStatus
@@ -421,7 +424,10 @@ final class SystemVolumeController {
             return kAudioHardwareUnknownPropertyError
         }
         let size = UInt32(MemoryLayout<T>.size)
-        return AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, &data)
+        let status: OSStatus = withUnsafeBytes(of: &data) { rawBuffer in
+            AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, rawBuffer.baseAddress!)
+        }
+        return status
     }
 
     private func volumeElements() -> [AudioObjectPropertyElement] {
