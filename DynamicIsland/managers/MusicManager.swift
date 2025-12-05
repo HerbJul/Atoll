@@ -12,7 +12,7 @@ import SwiftUI
 
 // MARK: - Lyric Data Structures
 struct LyricLine: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let timestamp: TimeInterval
     let text: String
 

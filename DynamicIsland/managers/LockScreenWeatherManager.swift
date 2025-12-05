@@ -655,7 +655,7 @@ private actor LockScreenWeatherProvider {
         let longitude = String(format: "%.4f", location.coordinate.longitude)
 
         let unit = Defaults[.lockScreenWeatherTemperatureUnit]
-        let usesMetric = unit.usesMetricSystem
+        _ = unit.usesMetricSystem
         var weatherComponents = URLComponents(string: "https://api.open-meteo.com/v1/forecast")
         var weatherQueryItems: [URLQueryItem] = [
             URLQueryItem(name: "latitude", value: latitude),
@@ -956,9 +956,9 @@ private enum WeatherSymbolMapper {
             return "cloud.fog.fill"
         case 176, 263, 266, 293, 296, 299, 302, 353, 356, 359:
             return "cloud.rain.fill"
-        case 179, 182, 185, 311, 314, 317, 320, 362, 365:
+        case 179, 182, 185, 311, 314, 362, 365:
             return "cloud.sleet.fill"
-        case 227, 230, 281, 284, 317, 320, 323, 326, 329, 332, 335, 338, 368, 371, 374, 377:
+        case 227, 230, 281, 284, 323, 326, 329, 332, 335, 338, 368, 371, 374, 377:
             return "cloud.snow.fill"
         case 200, 386, 389, 392, 395:
             return "cloud.bolt.rain.fill"
@@ -968,7 +968,6 @@ private enum WeatherSymbolMapper {
     }
 }
 
-@MainActor
 private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManagerDelegate {
     private let manager: CLLocationManager
     private var pendingContinuations: [CheckedContinuation<CLLocation?, Never>] = []
@@ -982,14 +981,22 @@ private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManag
     }
 
     func prepareAuthorization() {
+        #if os(macOS)
+        let status = manager.authorizationStatus
+        #else
         let status = CLLocationManager.authorizationStatus()
+        #endif
         if status == .notDetermined {
             manager.requestWhenInUseAuthorization()
         }
     }
 
     func currentLocation() async -> CLLocation? {
+        #if os(macOS)
+        let status = manager.authorizationStatus
+        #else
         let status = CLLocationManager.authorizationStatus()
+        #endif
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             if let lastLocation, abs(lastLocation.timestamp.timeIntervalSinceNow) < 1800 {
@@ -1004,12 +1011,12 @@ private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManag
         }
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastLocation = locations.last
         flushContinuations(with: lastLocation)
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         flushContinuations(with: nil)
     }
 
@@ -1020,3 +1027,4 @@ private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManag
         continuations.forEach { $0.resume(returning: location) }
     }
 }
+

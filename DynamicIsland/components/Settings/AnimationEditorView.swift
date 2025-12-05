@@ -471,6 +471,15 @@ struct AnimationEditorView: View {
     
     // MARK: - Import Logic
     
+        /// Handles importing a new animation or saving changes to an existing animation with the current transformation settings.
+        ///
+        /// - When editing an existing animation, this method saves the current transform settings (such as scale, offset, crop, opacity, etc.) into the `animationTransformOverrides` in `Defaults` storage under the animation's unique identifier. This allows the animation's appearance to be customized without modifying the source file.
+        ///
+        /// - When importing a new animation, this method uses the `IdleAnimationManager` to create a new `CustomIdleAnimation` from the provided `sourceURL`, assigning it the user-specified name and speed. If successful, the imported animation is assigned to the provided binding; otherwise, it displays an error alert.
+        ///
+        /// The method disables importing or saving if the animation name field is empty, and indicates loading state while the process is ongoing. Errors are surfaced to the user in an alert dialog.
+        ///
+        /// This method also ensures that if the currently selected idle animation is being edited, the UI is refreshed to reflect the changes.
     private func importAnimation() {
         guard !name.isEmpty else { return }
         

@@ -447,7 +447,7 @@ class BluetoothAudioManager: ObservableObject {
             let updatedDevice = device.withBatteryLevel(refreshedLevel)
             updatedDevices.append(updatedDevice)
 
-            if let refreshedLevel {
+            if refreshedLevel != nil {
                 clearMissingBatteryInfo(forName: device.name, address: device.address)
             } else {
                 logMissingBatteryInfo(forName: device.name, address: device.address)

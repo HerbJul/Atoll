@@ -499,7 +499,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self, selector: #selector(onScreenUnlocked(_:)),
             name: NSNotification.Name(rawValue: "com.apple.screenIsUnlocked"), object: nil)
 
-        _ = KeyboardShortcuts.onKeyDown(for: .toggleSneakPeek) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .toggleSneakPeek) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
 
@@ -510,7 +510,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             )
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .toggleNotchOpen) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .toggleNotchOpen) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
 
@@ -547,13 +547,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .startDemoTimer) {
+        KeyboardShortcuts.onKeyDown(for: .startDemoTimer) {
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableTimerFeature] else { return }
             TimerManager.shared.startDemoTimer(duration: 300)
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableClipboardManager] else { return }
@@ -577,13 +577,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .colorPickerPanel) {
+        KeyboardShortcuts.onKeyDown(for: .colorPickerPanel) {
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableColorPickerFeature] else { return }
             ColorPickerPanelManager.shared.toggleColorPickerPanel()
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .screenAssistantPanel) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .screenAssistantPanel) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableScreenAssistant] else { return }
@@ -801,15 +801,3 @@ extension Notification.Name {
     static let automaticallySwitchDisplayChanged = Notification.Name("automaticallySwitchDisplayChanged")
 }
 
-extension CGRect: @retroactive Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(origin.x)
-        hasher.combine(origin.y)
-        hasher.combine(size.width)
-        hasher.combine(size.height)
-    }
-
-    public static func == (lhs: CGRect, rhs: CGRect) -> Bool {
-        return lhs.origin == rhs.origin && lhs.size == rhs.size
-    }
-}

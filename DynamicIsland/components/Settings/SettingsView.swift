@@ -3518,7 +3518,7 @@ struct TimerSettings: View {
     
     private func selectCustomTimerSound() {
         let panel = NSOpenPanel()
-        panel.title = "Select Timer Sound"
+        panel.title = NSLocalizedString("Select Timer Sound", comment: "")
         panel.allowedContentTypes = [.audio]
         panel.allowsMultipleSelection = false
         panel.canChooseDirectories = false

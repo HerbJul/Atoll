@@ -6,19 +6,15 @@
 //
 
 import Defaults
-import MacroVisionKit
 import SwiftUI
 
 class FullscreenMediaDetector: ObservableObject {
     static let shared = FullscreenMediaDetector()
-    private let detector: MacroVisionKit
     @ObservedObject private var musicManager = MusicManager.shared
     @MainActor @Published private(set) var fullscreenStatus: [String: Bool] = [:]
     private var notificationTask: Task<Void, Never>?
 
     private init() {
-        self.detector = MacroVisionKit.shared
-        detector.configuration.includeSystemApps = true
         setupNotificationObservers()
         updateFullScreenStatus()
     }
@@ -63,8 +59,7 @@ class FullscreenMediaDetector: ObservableObject {
             return
         }
         
-
-        let apps = detector.detectFullscreenApps(debug: false)
+        let apps = detectFullscreenApps()
         let names = NSScreen.screens.map { $0.localizedName }
         var newStatus: [String: Bool] = [:]
         for name in names {
@@ -83,5 +78,15 @@ class FullscreenMediaDetector: ObservableObject {
 
     deinit {
         NSWorkspace.shared.notificationCenter.removeObserver(self)
+    }
+    
+    private struct FullscreenAppInfo {
+        let screen: NSScreen
+        let bundleIdentifier: String
+    }
+    
+    private func detectFullscreenApps() -> [FullscreenAppInfo] {
+        // TODO: Implement fullscreen app detection logic here
+        return []
     }
 }

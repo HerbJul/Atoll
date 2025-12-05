@@ -172,3 +172,17 @@ git remote set-url origin https://github.com/Ebullioscopic/Atoll.git
 ```
 
 A heartfelt thanks to [TheBoredTeam](https://github.com/TheBoredTeam) for being supportive and being totally awesome, Atoll would not have been possible without Boring.Notch
+
+---
+
+<p align="center">
+  <img src=".github/assets/iosdevcentre.jpeg" alt="iOS Development Centre exterior" width="420">
+  <br>
+  <sub>Backed by</sub>
+  <br>
+  <strong>iOS Development Centre</strong>
+  <br>
+  Powered by Apple and Infosys
+  <br>
+  SRM Institute of Science and Technology, Chennai, India
+</p>

@@ -33,7 +33,7 @@ final class CPUSensorCollector {
 
     deinit {
         if let subscription {
-            IOReportCreateSamples(subscription, nil, nil) // best-effort flush
+            _ = IOReportCreateSamples(subscription, nil, nil) // best-effort flush
         }
     }
 

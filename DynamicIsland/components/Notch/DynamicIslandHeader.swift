@@ -92,11 +92,11 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showClipboardPopover, arrowEdge: .bottom) {
                             ClipboardPopover()
                         }
-                        .onChange(of: showClipboardPopover) { isActive in
-                            vm.isClipboardPopoverActive = isActive
+                        .onChange(of: showClipboardPopover) { _, newValue in
+                            vm.isClipboardPopoverActive = newValue
                             
                             // If popover was closed, trigger a hover recheck
-                            if !isActive {
+                            if !newValue {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     vm.shouldRecheckHover.toggle()
                                 }
@@ -133,11 +133,11 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showColorPickerPopover, arrowEdge: .bottom) {
                             ColorPickerPopover()
                         }
-                        .onChange(of: showColorPickerPopover) { isActive in
-                            vm.isColorPickerPopoverActive = isActive
+                        .onChange(of: showColorPickerPopover) { _, newValue in
+                            vm.isColorPickerPopoverActive = newValue
                             
                             // If popover was closed, trigger a hover recheck
-                            if !isActive {
+                            if !newValue {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     vm.shouldRecheckHover.toggle()
                                 }
@@ -165,9 +165,9 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showTimerPopover, arrowEdge: .bottom) {
                             TimerPopover()
                         }
-                        .onChange(of: showTimerPopover) { isActive in
-                            vm.isTimerPopoverActive = isActive
-                            if !isActive {
+                        .onChange(of: showTimerPopover) { _, newValue in
+                            vm.isTimerPopoverActive = newValue
+                            if !newValue {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     vm.shouldRecheckHover.toggle()
                                 }
@@ -230,7 +230,7 @@ struct DynamicIslandHeader: View {
         }
         .foregroundColor(.gray)
         .environmentObject(vm)
-        .onChange(of: coordinator.shouldToggleClipboardPopover) { _ in
+        .onChange(of: coordinator.shouldToggleClipboardPopover) { _, _ in
             // Only toggle if clipboard is enabled
             if Defaults[.enableClipboardManager] {
                 switch Defaults[.clipboardDisplayMode] {
@@ -247,7 +247,7 @@ struct DynamicIslandHeader: View {
                 showClipboardPopover.toggle()
             }
         }
-        .onChange(of: enableTimerFeature) { _, newValue in
+        .onChange(of: enableTimerFeature) { oldValue, newValue in
             if !newValue {
                 showTimerPopover = false
                 vm.isTimerPopoverActive = false
@@ -271,3 +271,4 @@ private extension DynamicIslandHeader {
         .environmentObject(DynamicIslandViewModel())
         .environmentObject(WebcamManager.shared)
 }
+

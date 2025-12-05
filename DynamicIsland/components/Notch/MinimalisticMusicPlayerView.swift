@@ -1,4 +1,3 @@
-//
 //  MinimalisticMusicPlayerView.swift
 //  DynamicIsland
 //
@@ -138,7 +137,7 @@ struct MinimalisticMusicPlayerView: View {
             let chars = Array(newText)
 
             animationTask = Task {
-                for (i, c) in chars.enumerated() {
+                for (_, c) in chars.enumerated() {
                     if Task.isCancelled { return }
                     try? await Task.sleep(for: .milliseconds(Int(30 / max(playbackRate, 0.1))))
                     if Task.isCancelled { return }
@@ -755,11 +754,11 @@ private struct MinimalisticReminderDetailsView: View {
         switch control {
         case .shuffle:
             controlButton(icon: "shuffle", isActive: musicManager.isShuffled) {
-                Task { await musicManager.toggleShuffle() }
+                Task { musicManager.toggleShuffle() }
             }
         case .repeatMode:
             controlButton(icon: repeatIcon, isActive: musicManager.repeatMode != .off, symbolEffect: .replace) {
-                Task { await musicManager.toggleRepeat() }
+                Task { musicManager.toggleRepeat() }
             }
         case .mediaOutput:
             MinimalisticMediaOutputButton()
@@ -1054,3 +1053,4 @@ private struct MinimalisticSquircircleButton: View {
         case counterClockwise
     }
 }
+
