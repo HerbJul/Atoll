@@ -1519,11 +1519,12 @@ struct Media: View {
     }
 
     private var mediaControlsGrid: some View {
-        VStack(alignment: .leading, spacing: 20) {
+        VStack(alignment: .leading, spacing: 16) {
             mediaControlsRow(title: "Left button", selection: $musicAuxLeftControl, otherSelection: musicAuxRightControl)
             mediaControlsRow(title: "Right button", selection: $musicAuxRightControl, otherSelection: musicAuxLeftControl)
         }
         .padding(.vertical, 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func mediaControlsRow(title: String, selection: Binding<MusicAuxiliaryControl>, otherSelection: MusicAuxiliaryControl) -> some View {
@@ -1532,7 +1533,7 @@ struct Media: View {
                 .font(.system(size: 13, weight: .semibold))
                 .foregroundStyle(.white)
 
-            HStack(spacing: 16) {
+            HStack(spacing: 12) {
                 ForEach([MusicAuxiliaryControl.mediaOutput, MusicAuxiliaryControl.repeatMode, MusicAuxiliaryControl.lyrics, MusicAuxiliaryControl.shuffle], id: \.self) { control in
                     MediaControlButton(
                         control: control,
@@ -1568,7 +1569,7 @@ struct Media: View {
                         .font(.system(size: 22, weight: .medium))
                         .foregroundStyle(iconColor)
                 }
-                .frame(width: 80, height: 60)
+                .frame(width: 68, height: 52)
                 .onHover { hovering in
                     if !disabled {
                         withAnimation(.easeInOut(duration: 0.2)) {
@@ -1582,7 +1583,7 @@ struct Media: View {
                     .fontWeight(.medium)
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
-                    .frame(width: 100)
+                    .frame(width: 80)
                     .foregroundStyle(disabled ? .secondary : .primary)
             }
             .contentShape(Rectangle())
