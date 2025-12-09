@@ -249,20 +249,49 @@ struct NotchTimerView: View {
     }
 
     private var customTimerComposer: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             DurationInputRow(hours: $customHours, minutes: $customMinutes, seconds: $customSeconds)
 
-            Button {
-                withAnimation(.smooth) {
-                    timerManager.startTimer(duration: customDurationInSeconds, name: "Custom Timer")
-                    coordinator.currentView = .timer
+            HStack(spacing: 10) {
+                Button {
+                    withAnimation(.smooth) {
+                        timerManager.startTimer(duration: customDurationInSeconds, name: "Custom Timer")
+                        coordinator.currentView = .timer
+                    }
+                } label: {
+                    Label("Start", systemImage: "play.fill")
+                        .font(.system(size: 15, weight: .semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .foregroundStyle(Color.white)
                 }
-            } label: {
-                Label("Start Timer", systemImage: "play.fill")
-                    .frame(maxWidth: .infinity)
+                .buttonStyle(.plain)
+                .background(startButtonColor.opacity(isStartDisabled ? 0.5 : 1))
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(Color.white.opacity(0.15), lineWidth: 1)
+                )
+                .opacity(isStartDisabled ? 0.7 : 1)
+                .disabled(isStartDisabled)
+
+                Button {
+                    resetCustomTimerInputs()
+                } label: {
+                    Label("Reset", systemImage: "arrow.counterclockwise")
+                        .font(.system(size: 15, weight: .semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 10)
+                        .foregroundStyle(.white.opacity(0.9))
+                }
+                .buttonStyle(.plain)
+                .background(Color.white.opacity(0.16))
+                .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                )
             }
-            .buttonStyle(.borderedProminent)
-            .disabled(customDurationInSeconds == 0)
         }
         .padding(12)
         .background(Color.white.opacity(0.04))
@@ -387,8 +416,25 @@ struct NotchTimerView: View {
         timerManager.isPaused ? "Resume" : "Pause"
     }
 
+    private var startButtonColor: Color {
+        Color(red: 0.142, green: 0.633, blue: 0.265)
+    }
+
+    private var isStartDisabled: Bool {
+        customDurationInSeconds == 0
+    }
+
     private var customDurationInSeconds: TimeInterval {
         TimeInterval(customHours * 3600 + customMinutes * 60 + customSeconds)
+    }
+
+    private func resetCustomTimerInputs() {
+        withAnimation(.smooth(duration: 0.2)) {
+            customHours = 0
+            customMinutes = 0
+            customSeconds = 0
+        }
+        customTimerDuration = 0
     }
 
     private func syncCustomDuration(with value: Double) {
@@ -421,6 +467,7 @@ private struct TimerControlButton: View {
                 .frame(width: 46, height: 46)
                 .background(background)
                 .clipShape(Circle())
+                .contentTransition(.symbolEffect(.replace))
         }
         .buttonStyle(.plain)
         .help(accessibilityLabel)
