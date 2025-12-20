@@ -178,7 +178,8 @@ final class SystemChangesObserver: MediaKeyInterceptorDelegate {
         // Send to Vertical HUD if enabled
         if Defaults[.enableVerticalHUD] {
             Task { @MainActor in
-                VerticalHUDWindowManager.shared.show(type: .volume, value: CGFloat(value))
+                let icon = BluetoothAudioManager.shared.activeDeviceIconSymbol() ?? ""
+                VerticalHUDWindowManager.shared.show(type: .volume, value: CGFloat(value), icon: icon)
             }
             return
         }

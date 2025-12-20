@@ -23,6 +23,7 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
     case appearance
     case lockScreen
     case media
+    case devices
     case timer
     case calendar
     case hudAndOSD
@@ -45,9 +46,10 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
         case .appearance: return "Appearance"
         case .lockScreen: return "Lock Screen"
         case .media: return "Media"
+        case .devices: return "Devices"
         case .timer: return "Timer"
         case .calendar: return "Calendar"
-        case .hudAndOSD: return "HUDs & OSD"
+        case .hudAndOSD: return "Controls"
         case .battery: return "Battery"
         case .stats: return "Stats"
         case .clipboard: return "Clipboard"
@@ -67,6 +69,7 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
         case .appearance: return "paintpalette"
         case .lockScreen: return "lock.laptopcomputer"
         case .media: return "play.laptopcomputer"
+        case .devices: return "headphones"
         case .timer: return "timer"
         case .calendar: return "calendar"
         case .hudAndOSD: return "dial.medium.fill"
@@ -89,6 +92,7 @@ private enum SettingsTab: String, CaseIterable, Identifiable {
         case .appearance: return .purple
         case .lockScreen: return .orange
         case .media: return .green
+        case .devices: return .cyan
         case .timer: return .red
         case .calendar: return .cyan
         case .hudAndOSD: return .indigo
@@ -377,6 +381,7 @@ struct SettingsView: View {
             .appearance,
             .lockScreen,
             .media,
+            .devices,
             .timer,
             .calendar,
             .hudAndOSD,
@@ -591,11 +596,11 @@ struct SettingsView: View {
             SettingsSearchEntry(tab: .battery, title: "Play low battery alert sound", keywords: ["low battery", "alert", "sound"], highlightID: SettingsTab.battery.highlightID(for: "Play low battery alert sound")),
 
             // HUDs
-            SettingsSearchEntry(tab: .hudAndOSD, title: "Show Bluetooth device connections", keywords: ["bluetooth", "hud"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Show Bluetooth device connections")),
-            SettingsSearchEntry(tab: .hudAndOSD, title: "Use circular battery indicator", keywords: ["battery", "circular"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Use circular battery indicator")),
-            SettingsSearchEntry(tab: .hudAndOSD, title: "Show battery percentage text in HUD", keywords: ["battery text"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Show battery percentage text in HUD")),
-            SettingsSearchEntry(tab: .hudAndOSD, title: "Scroll device name in HUD", keywords: ["marquee", "device name"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Scroll device name in HUD")),
-            SettingsSearchEntry(tab: .hudAndOSD, title: "Color-coded battery display", keywords: ["color", "battery"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Color-coded battery display")),
+            SettingsSearchEntry(tab: .devices, title: "Show Bluetooth device connections", keywords: ["bluetooth", "hud"], highlightID: SettingsTab.devices.highlightID(for: "Show Bluetooth device connections")),
+            SettingsSearchEntry(tab: .devices, title: "Use circular battery indicator", keywords: ["battery", "circular"], highlightID: SettingsTab.devices.highlightID(for: "Use circular battery indicator")),
+            SettingsSearchEntry(tab: .devices, title: "Show battery percentage text in HUD", keywords: ["battery text"], highlightID: SettingsTab.devices.highlightID(for: "Show battery percentage text in HUD")),
+            SettingsSearchEntry(tab: .devices, title: "Scroll device name in HUD", keywords: ["marquee", "device name"], highlightID: SettingsTab.devices.highlightID(for: "Scroll device name in HUD")),
+            SettingsSearchEntry(tab: .devices, title: "Color-coded battery display", keywords: ["color", "battery"], highlightID: SettingsTab.devices.highlightID(for: "Color-coded battery display")),
             SettingsSearchEntry(tab: .hudAndOSD, title: "Color-coded volume display", keywords: ["volume", "color"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Color-coded volume display")),
             SettingsSearchEntry(tab: .hudAndOSD, title: "Smooth color transitions", keywords: ["gradient", "smooth"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Smooth color transitions")),
             SettingsSearchEntry(tab: .hudAndOSD, title: "Show percentages beside progress bars", keywords: ["percentages", "progress"], highlightID: SettingsTab.hudAndOSD.highlightID(for: "Show percentages beside progress bars")),
@@ -746,6 +751,10 @@ struct SettingsView: View {
         case .media:
             SettingsForm(tab: .media) {
                 Media()
+            }
+        case .devices:
+            SettingsForm(tab: .devices) {
+                DevicesSettingsView()
             }
         case .timer:
             SettingsForm(tab: .timer) {
@@ -1572,7 +1581,7 @@ private struct HUDAndOSDSettingsView: View {
                 .padding(.top, 10)
             }
         }
-        .navigationTitle("HUDs & OSD")
+        .navigationTitle("Controls")
     }
 }
 
@@ -1629,6 +1638,63 @@ private struct HUDSelectionCard<Preview: View>: View {
     }
 }
 
+private struct DevicesSettingsView: View {
+    @Default(.progressBarStyle) var progressBarStyle
+
+    private func highlightID(_ title: String) -> String {
+        SettingsTab.devices.highlightID(for: title)
+    }
+
+    private var colorCodingDisabled: Bool {
+        progressBarStyle == .segmented
+    }
+
+    var body: some View {
+        Form {
+            Section {
+                Defaults.Toggle("Show Bluetooth device connections", key: .showBluetoothDeviceConnections)
+                    .settingsHighlight(id: highlightID("Show Bluetooth device connections"))
+                Defaults.Toggle("Use circular battery indicator", key: .useCircularBluetoothBatteryIndicator)
+                    .settingsHighlight(id: highlightID("Use circular battery indicator"))
+                Defaults.Toggle("Show battery percentage text in HUD", key: .showBluetoothBatteryPercentageText)
+                    .settingsHighlight(id: highlightID("Show battery percentage text in HUD"))
+                Defaults.Toggle("Scroll device name in HUD", key: .showBluetoothDeviceNameMarquee)
+                    .settingsHighlight(id: highlightID("Scroll device name in HUD"))
+            } header: {
+                Text("Bluetooth Audio Devices")
+            } footer: {
+                Text("Displays a HUD notification when Bluetooth audio devices (headphones, AirPods, speakers) connect, showing device name and battery level.")
+                    .foregroundStyle(.secondary)
+                    .font(.caption)
+            }
+
+            Section {
+                Defaults.Toggle("Color-coded battery display", key: .useColorCodedBatteryDisplay)
+                    .disabled(colorCodingDisabled)
+                    .settingsHighlight(id: highlightID("Color-coded battery display"))
+            } header: {
+                Text("Battery Indicator Styling")
+            } footer: {
+                if progressBarStyle == .segmented {
+                    Text("Color-coded fills are unavailable in Segmented mode. Switch to Hierarchical or Gradient inside Controls › Dynamic Island to adjust advanced options.")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                } else if Defaults[.useSmoothColorGradient] {
+                    Text("Smooth transitions blend Green (0–60%), Yellow (60–85%), and Red (85–100%) through the entire fill. Adjust gradient behavior from Controls › Dynamic Island.")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                } else {
+                    Text("Discrete transitions snap between Green (0–60%), Yellow (60–85%), and Red (85–100%).")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                }
+            }
+        }
+        .padding(.top, 10)
+        .navigationTitle("Devices")
+    }
+}
+
 struct HUD: View {
     @EnvironmentObject var vm: DynamicIslandViewModel
     @Default(.inlineHUD) var inlineHUD
@@ -1647,6 +1713,10 @@ struct HUD: View {
 
     private var hasAccessibilityPermission: Bool {
         accessibilityPermission.isAuthorized
+    }
+
+    private var colorCodingDisabled: Bool {
+        progressBarStyle == .segmented
     }
     
     var body: some View {
@@ -1678,29 +1748,8 @@ struct HUD: View {
                         .font(.caption)
                 }
             }
-            
+
             Section {
-                Defaults.Toggle("Show Bluetooth device connections", key: .showBluetoothDeviceConnections)
-                    .settingsHighlight(id: highlightID("Show Bluetooth device connections"))
-                Defaults.Toggle("Use circular battery indicator", key: .useCircularBluetoothBatteryIndicator)
-                    .settingsHighlight(id: highlightID("Use circular battery indicator"))
-                Defaults.Toggle("Show battery percentage text in HUD", key: .showBluetoothBatteryPercentageText)
-                    .settingsHighlight(id: highlightID("Show battery percentage text in HUD"))
-                Defaults.Toggle("Scroll device name in HUD", key: .showBluetoothDeviceNameMarquee)
-                    .settingsHighlight(id: highlightID("Scroll device name in HUD"))
-            } header: {
-                Text("Bluetooth Audio Devices")
-            } footer: {
-                Text("Displays a HUD notification when Bluetooth audio devices (headphones, AirPods, speakers) connect, showing device name and battery level.")
-                    .foregroundStyle(.secondary)
-                    .font(.caption)
-            }
-            
-            Section {
-                let colorCodingDisabled = progressBarStyle == .segmented
-                Defaults.Toggle("Color-coded battery display", key: .useColorCodedBatteryDisplay)
-                    .disabled(colorCodingDisabled)
-                    .settingsHighlight(id: highlightID("Color-coded battery display"))
                 Defaults.Toggle("Color-coded volume display", key: .useColorCodedVolumeDisplay)
                     .disabled(colorCodingDisabled)
                     .settingsHighlight(id: highlightID("Color-coded volume display"))
@@ -1713,9 +1762,9 @@ struct HUD: View {
                 Defaults.Toggle("Show percentages beside progress bars", key: .showProgressPercentages)
                     .settingsHighlight(id: highlightID("Show percentages beside progress bars"))
             } header: {
-                Text("Color-Coded Progress Bars")
+                Text("Dynamic Island Progress Bars")
             } footer: {
-                if progressBarStyle == .segmented {
+                if colorCodingDisabled {
                     Text("Color-coded fills and smooth gradients are unavailable in Segmented mode. Switch to Hierarchical or Gradient to adjust these options.")
                         .foregroundStyle(.secondary)
                         .font(.caption)
@@ -1765,7 +1814,7 @@ struct HUD: View {
                 }
             }
         }
-        .navigationTitle("HUDs")
+        .navigationTitle("Controls")
         .onAppear {
             accessibilityPermission.refreshStatus()
         }

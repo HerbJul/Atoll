@@ -42,6 +42,12 @@ final class VerticalHUDWindowManager {
         Defaults.publisher(.verticalHUDWidth, options: []).sink(receiveValue: updateBlock).store(in: &cancellables)
         Defaults.publisher(.verticalHUDPadding, options: []).sink(receiveValue: updateBlock).store(in: &cancellables)
         Defaults.publisher(.verticalHUDInteractive, options: []).sink(receiveValue: updateBlock).store(in: &cancellables)
+
+        Defaults.publisher(.enableVerticalHUD, options: []).sink { [weak self] change in
+            Task { @MainActor [weak self] in
+                self?.handleEnablementChange(change.newValue)
+            }
+        }.store(in: &cancellables)
     }
     
     private func updateWindowLayout() {
@@ -53,7 +59,6 @@ final class VerticalHUDWindowManager {
             let width = Defaults[.verticalHUDWidth]
             let height = Defaults[.verticalHUDHeight]
             let padding = Defaults[.verticalHUDPadding]
-            let interactive = Defaults[.verticalHUDInteractive]
             
             // Add padding for shadow and elastic stretch
             // We use 120px total padding (60px per side) to absolutely guarantee no clipping.
@@ -77,8 +82,40 @@ final class VerticalHUDWindowManager {
             let newFrame = NSRect(x: x, y: y, width: totalWidth, height: totalHeight)
             
             window.nsWindow.setFrame(newFrame, display: true, animate: true)
-            window.nsWindow.ignoresMouseEvents = !interactive
+            applyInteractivity(window)
         }
+    }
+
+    private func handleEnablementChange(_ isEnabled: Bool) {
+        if isEnabled {
+            updateWindowLayout()
+        } else {
+            teardownWindows()
+        }
+    }
+
+    private func applyInteractivity(_ window: OSDWindow, visibleOverride: Bool? = nil) {
+        let isVisible = visibleOverride ?? (window.nsWindow.alphaValue > 0.01)
+        let shouldAllowInteraction = Defaults[.enableVerticalHUD] && Defaults[.verticalHUDInteractive] && isVisible
+        window.nsWindow.ignoresMouseEvents = !shouldAllowInteraction
+    }
+
+    private func updateWindowInteractivity() {
+        for window in windows.values {
+            applyInteractivity(window)
+        }
+    }
+
+    private func teardownWindows() {
+        hideWorkItem?.cancel()
+        hideWorkItem = nil
+
+        for window in windows.values {
+            window.nsWindow.orderOut(nil)
+            window.nsWindow.ignoresMouseEvents = true
+        }
+
+        windows.removeAll()
     }
     
     func show(type: SneakContentType, value: CGFloat, icon: String = "") {
@@ -94,6 +131,7 @@ final class VerticalHUDWindowManager {
             
             // Ensure visible
             windowContext.nsWindow.orderFrontRegardless()
+            applyInteractivity(windowContext, visibleOverride: true)
             
             NSAnimationContext.runAnimationGroup { context in
                 context.duration = animationDuration
@@ -161,8 +199,8 @@ final class VerticalHUDWindowManager {
         win.contentView = hostingView
         win.alphaValue = 0
         
-        // Allow mouse interaction if enabled
-        win.ignoresMouseEvents = !Defaults[.verticalHUDInteractive]
+        // Default to ignoring events until explicitly shown
+        win.ignoresMouseEvents = true
         
         SkyLightOperator.shared.delegateWindow(win)
         
@@ -197,8 +235,8 @@ final class VerticalHUDWindowManager {
             NSAnimationContext.runAnimationGroup { context in
                 context.duration = animationDuration
                 window.nsWindow.animator().alphaValue = 0
-            } completionHandler: {
-                 // Keep window around
+            } completionHandler: { [weak self] in
+                self?.applyInteractivity(window, visibleOverride: false)
             }
         }
     }
