@@ -105,7 +105,7 @@ final class AppleHardwareInfo {
 
     private static func fetchClusterCounts() -> CPUClusterCounts {
         var iterator = io_iterator_t()
-        guard IOServiceGetMatchingServices(kIOMasterPortDefault, IOServiceMatching("AppleARMPE"), &iterator) == KERN_SUCCESS else {
+        guard IOServiceGetMatchingServices(kIOMainPortDefault, IOServiceMatching("AppleARMPE"), &iterator) == KERN_SUCCESS else {
             return CPUClusterCounts(eCores: 0, pCores: 0)
         }
         defer { IOObjectRelease(iterator) }
@@ -135,7 +135,7 @@ final class AppleHardwareInfo {
 
     private static func fetchClusterFrequencies(cpuName: String) -> CPUClusterFrequencies {
         var iterator = io_iterator_t()
-        guard IOServiceGetMatchingServices(kIOMasterPortDefault, IOServiceMatching("AppleARMIODevice"), &iterator) == KERN_SUCCESS else {
+        guard IOServiceGetMatchingServices(kIOMainPortDefault, IOServiceMatching("AppleARMIODevice"), &iterator) == KERN_SUCCESS else {
             return CPUClusterFrequencies(eCoreFrequencies: [], pCoreFrequencies: [])
         }
         defer { IOObjectRelease(iterator) }

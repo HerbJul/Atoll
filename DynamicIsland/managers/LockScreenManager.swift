@@ -80,12 +80,7 @@ class LockScreenManager: ObservableObject {
     // MARK: - Event Handlers
     
     @objc private func screenLocked() {
-        guard !isLocked else {
-            print("[\(timestamp())] LockScreenManager: 🔁 Duplicate LOCK event ignored")
-            return
-        }
         print("[\(timestamp())] LockScreenManager: 🔒 Screen LOCKED event received")
-        Logger.log("LockScreenManager: Screen locked", category: .lifecycle)
         LockSoundPlayer.shared.playLockChime()
         
         // Update state SYNCHRONOUSLY without Task/await to avoid any delay
@@ -112,6 +107,7 @@ class LockScreenManager: ObservableObject {
         LockScreenPanelManager.shared.showPanel()
         LockScreenLiveActivityWindowManager.shared.showLocked()
         LockScreenWeatherManager.shared.showWeatherWidget()
+        LockScreenReminderWidgetManager.shared.showReminderWidget()
         LockScreenTimerWidgetManager.shared.handleLockStateChange(isLocked: true)
         TimerControlWindowManager.shared.hide(animated: false)
         
@@ -127,22 +123,15 @@ class LockScreenManager: ObservableObject {
     }
     
     @objc private func screenUnlocked() {
-        guard isLocked else {
-            print("[\(timestamp())] LockScreenManager: 🔁 Unlock event ignored (already unlocked)")
-            return
-        }
         print("[\(timestamp())] LockScreenManager: 🔓 Screen UNLOCKED event received")
-        Logger.log("LockScreenManager: Screen unlocked", category: .lifecycle)
         LockSoundPlayer.shared.playUnlockChime()
-        lastUpdated = Date()
-        updateIdleState(locked: false)
-        isLocked = false
         
         // Hide panel window immediately and synchronously
         print("[\(timestamp())] LockScreenManager: 🚪 Hiding panel window")
         LockScreenPanelManager.shared.hidePanel()
         LockScreenLiveActivityWindowManager.shared.showUnlockAndScheduleHide()
         LockScreenWeatherManager.shared.hideWeatherWidget()
+        LockScreenReminderWidgetManager.shared.hideReminderWidget()
         LockScreenTimerWidgetManager.shared.handleLockStateChange(isLocked: false)
         
         // Update state immediately
@@ -156,6 +145,10 @@ class LockScreenManager: ObservableObject {
                 }
             }
         }
+        
+        self.lastUpdated = Date()
+    self.updateIdleState(locked: false)
+        self.isLocked = false
         
         print("[\(self.timestamp())] LockScreenManager: ✅ Lock screen deactivated")
     }

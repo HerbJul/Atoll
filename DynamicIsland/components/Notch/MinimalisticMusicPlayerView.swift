@@ -1,4 +1,3 @@
-//
 //  MinimalisticMusicPlayerView.swift
 //  DynamicIsland
 //
@@ -17,9 +16,8 @@ import AppKit
 struct MinimalisticMusicPlayerView: View {
     @EnvironmentObject var vm: DynamicIslandViewModel
     let albumArtNamespace: Namespace.ID
-    @Default(.showShuffleAndRepeat) private var showCustomControls
-    @Default(.musicControlSlots) private var slotConfig
-    @Default(.showMediaOutputControl) private var showMediaOutputControl
+    @Default(.musicAuxLeftControl) private var leftAuxControl
+    @Default(.musicAuxRightControl) private var rightAuxControl
     @Default(.musicSkipBehavior) private var musicSkipBehavior
     @ObservedObject private var reminderManager = ReminderLiveActivityManager.shared
     @ObservedObject private var timerManager = TimerManager.shared
@@ -27,8 +25,6 @@ struct MinimalisticMusicPlayerView: View {
     @Default(.enableReminderLiveActivity) private var enableReminderLiveActivity
     @Default(.enableLyrics) private var enableLyrics
     @Default(.timerPresets) private var timerPresets
-    private let seekInterval: TimeInterval = 10
-    private let skipMagnitude: CGFloat = 8
 
     var body: some View {
         VStack(spacing: 0) {
@@ -141,7 +137,7 @@ struct MinimalisticMusicPlayerView: View {
             let chars = Array(newText)
 
             animationTask = Task {
-                for (i, c) in chars.enumerated() {
+                for (_, c) in chars.enumerated() {
                     if Task.isCancelled { return }
                     try? await Task.sleep(for: .milliseconds(Int(30 / max(playbackRate, 0.1))))
                     if Task.isCancelled { return }
@@ -649,9 +645,67 @@ private struct MinimalisticReminderDetailsView: View {
     // MARK: - Playback Controls (Larger)
     
     private var playbackControls: some View {
-        HStack(spacing: 16) {
-            ForEach(Array(displayedSlots.enumerated()), id: \.offset) { _, slot in
-                slotView(for: slot)
+        let controls = resolvedAuxControls
+        let seekInterval: TimeInterval = 10
+        let skipPressMagnitude: CGFloat = 8
+
+        let backwardConfig: (icon: String, press: MinimalisticSquircircleButton.PressEffect, symbol: MinimalisticSquircircleButton.SymbolEffectStyle, action: () -> Void)
+        let forwardConfig: (icon: String, press: MinimalisticSquircircleButton.PressEffect, symbol: MinimalisticSquircircleButton.SymbolEffectStyle, action: () -> Void)
+
+        switch musicSkipBehavior {
+        case .track:
+            backwardConfig = (
+                icon: "backward.fill",
+                press: .nudge(-skipPressMagnitude),
+                symbol: .replace,
+                action: { musicManager.previousTrack() }
+            )
+            forwardConfig = (
+                icon: "forward.fill",
+                press: .nudge(skipPressMagnitude),
+                symbol: .replace,
+                action: { musicManager.nextTrack() }
+            )
+        case .tenSecond:
+            backwardConfig = (
+                icon: "gobackward.10",
+                press: .wiggle(.counterClockwise),
+                symbol: .wiggle,
+                action: { musicManager.seek(by: -seekInterval) }
+            )
+            forwardConfig = (
+                icon: "goforward.10",
+                press: .wiggle(.clockwise),
+                symbol: .wiggle,
+                action: { musicManager.seek(by: seekInterval) }
+            )
+        }
+
+        return HStack(spacing: 16) {
+            if Defaults[.showShuffleAndRepeat] {
+                auxButton(for: controls.left)
+            }
+
+            controlButton(
+                icon: backwardConfig.icon,
+                size: 18,
+                pressEffect: backwardConfig.press,
+                symbolEffect: backwardConfig.symbol,
+                action: backwardConfig.action
+            )
+
+            playPauseButton
+
+            controlButton(
+                icon: forwardConfig.icon,
+                size: 18,
+                pressEffect: forwardConfig.press,
+                symbolEffect: forwardConfig.symbol,
+                action: forwardConfig.action
+            )
+
+            if Defaults[.showShuffleAndRepeat] {
+                auxButton(for: controls.right)
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
@@ -660,7 +714,7 @@ private struct MinimalisticReminderDetailsView: View {
     
     private var playPauseButton: some View {
         MinimalisticSquircircleButton(
-            icon: musicManager.isPlaying ? (musicManager.isLiveStream ? "stop.fill" : "pause.fill") : "play.fill",
+            icon: musicManager.isPlaying ? "pause.fill" : "play.fill",
             fontSize: 28,
             fontWeight: .semibold,
             frameSize: CGSize(width: 60, height: 60),
@@ -674,19 +728,12 @@ private struct MinimalisticReminderDetailsView: View {
         )
     }
     
-    private struct SkipTrigger {
-        let token: Int
-        let pressEffect: MinimalisticSquircircleButton.PressEffect
-    }
-
     private func controlButton(
         icon: String,
         size: CGFloat = 18,
         isActive: Bool = false,
-        activeColor: Color = .red,
         pressEffect: MinimalisticSquircircleButton.PressEffect = .none,
         symbolEffect: MinimalisticSquircircleButton.SymbolEffectStyle = .none,
-        trigger: SkipTrigger? = nil,
         action: @escaping () -> Void
     ) -> some View {
         MinimalisticSquircircleButton(
@@ -695,79 +742,23 @@ private struct MinimalisticReminderDetailsView: View {
             fontWeight: .medium,
             frameSize: CGSize(width: 40, height: 40),
             cornerRadius: 16,
-            foregroundColor: isActive ? activeColor : .white.opacity(0.85),
+            foregroundColor: isActive ? .red : .white.opacity(0.85),
             pressEffect: pressEffect,
             symbolEffectStyle: symbolEffect,
-            externalTriggerToken: trigger?.token,
-            externalTriggerEffect: trigger?.pressEffect,
             action: action
         )
     }
 
-    private var displayedSlots: [MusicControlButton] {
-        if showCustomControls {
-            let normalized = slotConfig.normalized(allowingMediaOutput: showMediaOutputControl)
-            return normalized.contains(where: { $0 != .none }) ? normalized : MusicControlButton.defaultLayout
-        }
-
-        switch musicSkipBehavior {
-        case .track:
-            return MusicControlButton.minimalLayout
-        case .tenSecond:
-            return [.none, .seekBackward, .playPause, .seekForward, .none]
-        }
-    }
-
     @ViewBuilder
-    private func slotView(for control: MusicControlButton) -> some View {
+    private func auxButton(for control: MusicAuxiliaryControl) -> some View {
         switch control {
-        case .none:
-            Spacer(minLength: 0)
-        case .playPause:
-            playPauseButton
-        case .trackBackward:
-            controlButton(
-                icon: "backward.fill",
-                size: 18,
-                pressEffect: .nudge(-skipMagnitude),
-                symbolEffect: .replace,
-                trigger: skipGestureTrigger(for: .trackBackward),
-                action: { musicManager.previousTrack() }
-            )
-        case .trackForward:
-            controlButton(
-                icon: "forward.fill",
-                size: 18,
-                pressEffect: .nudge(skipMagnitude),
-                symbolEffect: .replace,
-                trigger: skipGestureTrigger(for: .trackForward),
-                action: { musicManager.nextTrack() }
-            )
-        case .seekBackward:
-            controlButton(
-                icon: "gobackward.10",
-                size: 18,
-                pressEffect: .wiggle(.counterClockwise),
-                symbolEffect: .wiggle,
-                trigger: skipGestureTrigger(for: .seekBackward),
-                action: { musicManager.seek(by: -seekInterval) }
-            )
-        case .seekForward:
-            controlButton(
-                icon: "goforward.10",
-                size: 18,
-                pressEffect: .wiggle(.clockwise),
-                symbolEffect: .wiggle,
-                trigger: skipGestureTrigger(for: .seekForward),
-                action: { musicManager.seek(by: seekInterval) }
-            )
         case .shuffle:
             controlButton(icon: "shuffle", isActive: musicManager.isShuffled) {
-                Task { await musicManager.toggleShuffle() }
+                Task { musicManager.toggleShuffle() }
             }
         case .repeatMode:
             controlButton(icon: repeatIcon, isActive: musicManager.repeatMode != .off, symbolEffect: .replace) {
-                Task { await musicManager.toggleRepeat() }
+                Task { musicManager.toggleRepeat() }
             }
         case .mediaOutput:
             MinimalisticMediaOutputButton()
@@ -775,7 +766,6 @@ private struct MinimalisticReminderDetailsView: View {
             controlButton(
                 icon: enableLyrics ? "quote.bubble.fill" : "quote.bubble",
                 isActive: enableLyrics,
-                activeColor: Color(nsColor: musicManager.avgColor),
                 symbolEffect: .replace
             ) {
                 enableLyrics.toggle()
@@ -783,21 +773,11 @@ private struct MinimalisticReminderDetailsView: View {
         }
     }
 
-    private func skipGestureTrigger(for control: MusicControlButton) -> SkipTrigger? {
-        guard let pulse = musicManager.skipGesturePulse else { return nil }
-
-        switch control {
-        case .trackBackward where pulse.behavior == .track && pulse.direction == .backward:
-            return SkipTrigger(token: pulse.token, pressEffect: .nudge(-skipMagnitude))
-        case .trackForward where pulse.behavior == .track && pulse.direction == .forward:
-            return SkipTrigger(token: pulse.token, pressEffect: .nudge(skipMagnitude))
-        case .seekBackward where pulse.behavior == .tenSecond && pulse.direction == .backward:
-            return SkipTrigger(token: pulse.token, pressEffect: .wiggle(.counterClockwise))
-        case .seekForward where pulse.behavior == .tenSecond && pulse.direction == .forward:
-            return SkipTrigger(token: pulse.token, pressEffect: .wiggle(.clockwise))
-        default:
-            return nil
+    private var resolvedAuxControls: (left: MusicAuxiliaryControl, right: MusicAuxiliaryControl) {
+        guard leftAuxControl == rightAuxControl else {
+            return (leftAuxControl, rightAuxControl)
         }
+        return (leftAuxControl, MusicAuxiliaryControl.alternative(excluding: leftAuxControl))
     }
     private struct MinimalisticMediaOutputButton: View {
         @ObservedObject private var routeManager = AudioRouteManager.shared
@@ -911,7 +891,6 @@ struct MinimalisticAlbumArtView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 12))
                 .matchedGeometryEffect(id: "albumArt", in: albumArtNamespace)
                 .albumArtFlip(angle: musicManager.flipAngle)
-                .parallax3D(magnitude: 12)
         }
         .buttonStyle(PlainButtonStyle())
         .opacity(musicManager.isPlaying ? 1 : 0.4)
@@ -930,15 +909,12 @@ private struct MinimalisticSquircircleButton: View {
     let foregroundColor: Color
     let pressEffect: PressEffect
     let symbolEffectStyle: SymbolEffectStyle
-    let externalTriggerToken: Int?
-    let externalTriggerEffect: PressEffect?
     let action: () -> Void
 
     @State private var isHovering = false
     @State private var pressOffset: CGFloat = 0
     @State private var rotationAngle: Double = 0
     @State private var wiggleToken: Int = 0
-    @State private var lastExternalTriggerToken: Int?
 
     init(
         icon: String,
@@ -949,8 +925,6 @@ private struct MinimalisticSquircircleButton: View {
         foregroundColor: Color,
         pressEffect: PressEffect = .none,
         symbolEffectStyle: SymbolEffectStyle = .none,
-        externalTriggerToken: Int? = nil,
-        externalTriggerEffect: PressEffect? = nil,
         action: @escaping () -> Void
     ) {
         self.icon = icon
@@ -961,8 +935,6 @@ private struct MinimalisticSquircircleButton: View {
         self.foregroundColor = foregroundColor
         self.pressEffect = pressEffect
         self.symbolEffectStyle = symbolEffectStyle
-        self.externalTriggerToken = externalTriggerToken
-        self.externalTriggerEffect = externalTriggerEffect
         self.action = action
     }
 
@@ -987,17 +959,10 @@ private struct MinimalisticSquircircleButton: View {
                 isHovering = hovering
             }
         }
-        .onChange(of: externalTriggerToken) { _, newToken in
-            guard let newToken, newToken != lastExternalTriggerToken else { return }
-            lastExternalTriggerToken = newToken
-            triggerPressEffect(override: externalTriggerEffect)
-        }
     }
 
-    private func triggerPressEffect(override: PressEffect? = nil) {
-        let effect = override ?? pressEffect
-
-        switch effect {
+    private func triggerPressEffect() {
+        switch pressEffect {
         case .none:
             return
         case .nudge(let amount):
@@ -1057,7 +1022,7 @@ private struct MinimalisticSquircircleButton: View {
                 image
             }
         case .wiggle:
-            if #available(macOS 15.0, *) {
+            if #available(macOS 14.0, *) {
                 image.symbolEffect(
                     .wiggle.byLayer,
                     options: .nonRepeating,
@@ -1088,3 +1053,4 @@ private struct MinimalisticSquircircleButton: View {
         case counterClockwise
     }
 }
+

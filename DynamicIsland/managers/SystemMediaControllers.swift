@@ -256,7 +256,7 @@ final class SystemVolumeController {
             var value = Float32(0)
             let status = getData(selector: kAudioDevicePropertyVolumeScalar, element: element, data: &value)
             if status == noErr {
-                if element == kAudioObjectPropertyElementMaster {
+                if element == kAudioObjectPropertyElementMain {
                     masterVolume = value
                 }
                 accumulator += value
@@ -475,9 +475,7 @@ final class SystemBrightnessController {
     }
 
     func adjust(by delta: Float) {
-        // Refresh baseline to avoid jumping if auto-brightness changed the level.
-        syncWithSystemBrightnessIfNeeded()
-        setBrightness(lastEmittedBrightness + delta)
+        setBrightness(currentBrightness + delta)
     }
 
     func setBrightness(_ value: Float) {
@@ -506,21 +504,8 @@ final class SystemBrightnessController {
         emitBrightnessChange(value: brightness)
     }
 
-    private func syncWithSystemBrightnessIfNeeded() {
-        // Align our internal baseline with the actual system brightness so that
-        // subsequent adjustments apply deltas from the true value (important when
-        // auto-brightness has changed the level behind our back).
-        let systemLevel = currentBrightness
-        if abs(systemLevel - lastEmittedBrightness) > 0.001 {
-            emitBrightnessChange(value: systemLevel)
-        }
-    }
-
     private func beginBrightnessAnimation(to target: Float) {
         brightnessAnimationTimer?.invalidate()
-
-        // Refresh baseline from system in case auto-brightness adjusted it.
-        syncWithSystemBrightnessIfNeeded()
 
         let start = lastEmittedBrightness
         if abs(start - target) <= 0.0005 {
@@ -606,18 +591,13 @@ final class SystemBrightnessController {
     }
 
     private func setBrightnessViaDisplayServices(_ value: Float) -> Bool {
-        guard let status = DisplayServicesDynamic.shared.setBrightness(displayID: displayID, value: value) else {
-            return false
-        }
+        let status = DisplayServicesSetBrightness(displayID, value)
         if status == kIOReturnSuccess {
             return true
         }
         // Attempt to refresh display ID in case the main display changed
         displayID = CGMainDisplayID()
-        guard let retry = DisplayServicesDynamic.shared.setBrightness(displayID: displayID, value: value) else {
-            NSLog("⚠️ DisplayServicesSetBrightness unavailable after display refresh")
-            return false
-        }
+        let retry = DisplayServicesSetBrightness(displayID, value)
         if retry != kIOReturnSuccess {
             NSLog("⚠️ DisplayServicesSetBrightness failed: \(retry)")
             return false
@@ -626,21 +606,17 @@ final class SystemBrightnessController {
     }
 
     private func getBrightnessViaDisplayServices() -> Float? {
-        guard let result = DisplayServicesDynamic.shared.getBrightness(displayID: displayID) else {
-            return nil
-        }
-        if result.status == kIOReturnSuccess {
-            return result.value
+        var brightness: Float = 0
+        let status = DisplayServicesGetBrightness(displayID, &brightness)
+        if status == kIOReturnSuccess {
+            return brightness
         }
         displayID = CGMainDisplayID()
-        guard let retry = DisplayServicesDynamic.shared.getBrightness(displayID: displayID) else {
-            NSLog("⚠️ DisplayServicesGetBrightness unavailable after display refresh")
-            return nil
+        let retry = DisplayServicesGetBrightness(displayID, &brightness)
+        if retry == kIOReturnSuccess {
+            return brightness
         }
-        if retry.status == kIOReturnSuccess {
-            return retry.value
-        }
-        NSLog("⚠️ DisplayServicesGetBrightness failed: \(retry.status)")
+        NSLog("⚠️ DisplayServicesGetBrightness failed: \(retry)")
         return nil
     }
 
@@ -664,3 +640,9 @@ final class SystemBrightnessController {
         observers.forEach { DistributedNotificationCenter.default().removeObserver($0) }
     }
 }
+
+@_silgen_name("DisplayServicesGetBrightness")
+private func DisplayServicesGetBrightness(_ display: UInt32, _ brightness: UnsafeMutablePointer<Float>) -> Int32
+
+@_silgen_name("DisplayServicesSetBrightness")
+private func DisplayServicesSetBrightness(_ display: UInt32, _ brightness: Float) -> Int32

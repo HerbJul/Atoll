@@ -56,13 +56,6 @@ struct SystemEventIndicatorModifier: View {
                         .contentTransition(.interpolate)
                         .frame(width: 20, height: 15)
                         .foregroundStyle(.white)
-                case .bluetoothAudio:
-                    if !icon.isEmpty {
-                        Image(systemName: icon)
-                            .contentTransition(.interpolate)
-                            .frame(width: 20, height: 15)
-                            .foregroundStyle(.white)
-                    }
                 default:
                     EmptyView()
             }
@@ -79,8 +72,6 @@ struct SystemEventIndicatorModifier: View {
                 ProgressSection(value: $value, showPercentages: showProgressPercentages)
             case .backlight:
                 ProgressSection(value: $value, showPercentages: showProgressPercentages)
-            case .bluetoothAudio:
-                ProgressSection(value: $value, showPercentages: showProgressPercentages, colorMode: .battery)
             default:
                 ProgressSection(value: $value, showPercentages: showProgressPercentages)
             }

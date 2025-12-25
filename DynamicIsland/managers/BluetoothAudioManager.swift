@@ -447,7 +447,7 @@ class BluetoothAudioManager: ObservableObject {
             let updatedDevice = device.withBatteryLevel(refreshedLevel)
             updatedDevices.append(updatedDevice)
 
-            if let refreshedLevel {
+            if refreshedLevel != nil {
                 clearMissingBatteryInfo(forName: device.name, address: device.address)
             } else {
                 logMissingBatteryInfo(forName: device.name, address: device.address)
@@ -1425,15 +1425,13 @@ class BluetoothAudioManager: ObservableObject {
 
         HUDSuppressionCoordinator.shared.suppressVolumeHUD(for: 1.5)
 
-        Task { @MainActor in
-            coordinator.toggleSneakPeek(
-                status: true,
-                type: .bluetoothAudio,
-                duration: 2.5,
-                value: batteryValue,
-                icon: device.deviceType.sfSymbol
-            )
-        }
+        coordinator.toggleSneakPeek(
+            status: true,
+            type: .bluetoothAudio,
+            duration: 2.5,
+            value: batteryValue,
+            icon: device.deviceType.sfSymbol
+        )
     }
     
     // MARK: - Cleanup
@@ -1455,14 +1453,6 @@ class BluetoothAudioManager: ObservableObject {
     @MainActor
     func refreshConnectedDeviceBatteries() {
         refreshBatteryLevelsForConnectedDevices()
-    }
-
-    @MainActor
-    func activeDeviceIconSymbol() -> String? {
-        if let prioritizedDevice = connectedDevices.last ?? lastConnectedDevice {
-            return prioritizedDevice.deviceType.sfSymbol
-        }
-        return nil
     }
 }
 

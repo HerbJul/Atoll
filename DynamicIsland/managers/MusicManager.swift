@@ -12,7 +12,7 @@ import SwiftUI
 
 // MARK: - Lyric Data Structures
 struct LyricLine: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let timestamp: TimeInterval
     let text: String
 
@@ -28,19 +28,6 @@ let defaultImage: NSImage = .init(
 )!
 
 class MusicManager: ObservableObject {
-    enum SkipDirection: Equatable {
-        case backward
-        case forward
-    }
-
-    struct SkipGesturePulse: Equatable {
-        let token: Int
-        let direction: SkipDirection
-        let behavior: MusicSkipBehavior
-    }
-
-    static let skipGestureSeekInterval: TimeInterval = 10
-
     // MARK: - Properties
     static let shared = MusicManager()
     private var cancellables = Set<AnyCancellable>()
@@ -74,7 +61,6 @@ class MusicManager: ObservableObject {
     @Published var isLiveStream: Bool = false
     @ObservedObject var coordinator = DynamicIslandViewCoordinator.shared
     @Published var usingAppIconForArtwork: Bool = false
-    @Published private(set) var skipGesturePulse: SkipGesturePulse?
 
     // MARK: - Lyrics Properties
     @Published var currentLyrics: String = ""
@@ -103,7 +89,6 @@ class MusicManager: ObservableObject {
 
     @Published var isTransitioning: Bool = false
     private var transitionWorkItem: DispatchWorkItem?
-    private var skipGestureToken: Int = 0
 
     // MARK: - Initialization
     init() {
@@ -235,12 +220,12 @@ class MusicManager: ObservableObject {
         if eventIsPlaying != self.isPlaying {
             let animation: Animation? = (expectedState == eventIsPlaying) ? .smooth(duration: 0.18) : .smooth
             applyPlayState(eventIsPlaying, animation: animation)
-
-            if eventIsPlaying && !state.title.isEmpty && !state.artist.isEmpty {
-                self.updateSneakPeek()
-            }
         } else {
             self.updateIdleState(state: eventIsPlaying)
+        }
+
+        if eventIsPlaying && !state.title.isEmpty && !state.artist.isEmpty {
+            self.updateSneakPeek()
         }
 
         // Check for changes in track metadata using last artwork change values
@@ -254,8 +239,6 @@ class MusicManager: ObservableObject {
         let hasContentChange = titleChanged || artistChanged || albumChanged || artworkChanged || bundleChanged
 
         // Handle artwork and visual transitions for changed content
-        let shouldAutoPeekOnTrackChange = Defaults[.showSneakPeekOnTrackChange]
-
         if hasContentChange {
             self.triggerFlipAnimation()
 
@@ -280,7 +263,7 @@ class MusicManager: ObservableObject {
             self.fetchLyrics()
 
             // Only update sneak peek if there's actual content and something changed
-            if shouldAutoPeekOnTrackChange && !state.title.isEmpty && !state.artist.isEmpty && state.isPlaying {
+            if !state.title.isEmpty && !state.artist.isEmpty && state.isPlaying {
                 self.updateSneakPeek()
             }
         }
@@ -387,7 +370,8 @@ class MusicManager: ObservableObject {
                 }
             } else {
                 let shouldClearForKnownDuration =
-                    (duration > 10 && remaining > 5)
+                    !isPlaying
+                    || (duration > 10 && remaining > 5)
                     || (liveStreamCompletionObservationCount == 0
                         && liveStreamEdgeObservationCount == 0
                         && liveStreamCompletionReleaseCount >= 4)
@@ -410,6 +394,9 @@ class MusicManager: ObservableObject {
             liveStreamEdgeObservationCount = 0
             liveStreamCompletionObservationCount = 0
             liveStreamCompletionReleaseCount = 0
+            if !hasKnownDuration && isLiveStream {
+                isLiveStream = false
+            }
         }
     }
 
@@ -569,34 +556,6 @@ class MusicManager: ObservableObject {
 
         let target = min(max(0, current + offset), duration)
         seek(to: target)
-    }
-
-    @MainActor
-    func handleSkipGesture(direction: SkipDirection) {
-        guard Defaults[.enableHorizontalMusicGestures] else { return }
-        guard !isPlayerIdle || bundleIdentifier != nil else { return }
-
-        let behavior = Defaults[.musicGestureBehavior]
-
-        switch behavior {
-        case .track:
-            if direction == .forward {
-                nextTrack()
-            } else {
-                previousTrack()
-            }
-        case .tenSecond:
-            let interval = Self.skipGestureSeekInterval
-            let offset = direction == .forward ? interval : -interval
-            seek(by: offset)
-        }
-
-        skipGestureToken = skipGestureToken &+ 1
-        skipGesturePulse = SkipGesturePulse(
-            token: skipGestureToken,
-            direction: direction,
-            behavior: behavior
-        )
     }
 
     func openMusicApp() {

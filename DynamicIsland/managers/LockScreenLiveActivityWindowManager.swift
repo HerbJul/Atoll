@@ -24,7 +24,6 @@ class LockScreenLiveActivityWindowManager {
     private weak var viewModel: DynamicIslandViewModel?
     private var screenChangeObserver: NSObjectProtocol?
     private var workspaceObservers: [NSObjectProtocol] = []
-    private var currentNotchSize: CGSize?
 
     private init() {
         registerScreenChangeObservers()
@@ -137,8 +136,6 @@ class LockScreenLiveActivityWindowManager {
             hostingView.rootView = LockScreenLiveActivityOverlay(model: overlayModel, animator: overlayAnimator, notchSize: context.notchSize)
         }
 
-        currentNotchSize = context.notchSize
-
         print("[\(timestamp())] LockScreenLiveActivityWindowManager: realigned window due to \(reason)")
     }
 
@@ -178,18 +175,14 @@ class LockScreenLiveActivityWindowManager {
 
         window.orderFrontRegardless()
         window.alphaValue = 1
-
-        currentNotchSize = notchSize
     }
 
     func showLocked() {
         hideTask?.cancel()
         guard let context = lockContext() else { return }
 
-        let collapsedScale = LockScreenLiveActivityOverlay.collapsedScale(for: context.notchSize)
-
         overlayAnimator.update(isLocked: true)
-        overlayModel.scale = collapsedScale
+        overlayModel.scale = 0.6
         overlayModel.opacity = 0
 
         present(notchSize: context.notchSize, on: context.screen)
@@ -236,16 +229,9 @@ class LockScreenLiveActivityWindowManager {
     private func hideWithAnimation() {
         guard let window else { return }
 
-        let targetScale: CGFloat
-        if let notchSize = currentNotchSize {
-            targetScale = LockScreenLiveActivityOverlay.collapsedScale(for: notchSize)
-        } else {
-            targetScale = 0.7
-        }
-
         withAnimation(.smooth(duration: LockScreenAnimationTimings.unlockCollapse)) {
             overlayModel.opacity = 0
-            overlayModel.scale = targetScale
+            overlayModel.scale = 0.7
         }
 
         NSAnimationContext.runAnimationGroup { context in
@@ -256,7 +242,6 @@ class LockScreenLiveActivityWindowManager {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + LockScreenAnimationTimings.unlockCollapse + 0.02) {
             window.orderOut(nil)
-            self.currentNotchSize = nil
         }
 
         print("[\(timestamp())] LockScreenLiveActivityWindowManager: HUD hidden")

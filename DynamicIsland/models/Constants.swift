@@ -105,13 +105,11 @@ enum CalendarSelectionState: Codable, Defaults.Serializable {
 enum ClipboardDisplayMode: String, CaseIterable, Codable, Defaults.Serializable {
     case popover = "popover"     // Traditional popover attached to button
     case panel = "panel"         // Floating panel near notch
-    case separateTab = "separateTab" // Separate tab in Dynamic Island
     
     var displayName: String {
         switch self {
         case .popover: return "Popover"
         case .panel: return "Panel"
-        case .separateTab: return "Separate Tab"
         }
     }
     
@@ -119,7 +117,6 @@ enum ClipboardDisplayMode: String, CaseIterable, Codable, Defaults.Serializable 
         switch self {
         case .popover: return "Shows clipboard as a dropdown attached to the clipboard button"
         case .panel: return "Shows clipboard in a floating panel near the notch"
-        case .separateTab: return "Shows copied items in a separate tab within the Dynamic Island (merges with Notes if enabled)"
         }
     }
 }
@@ -380,92 +377,12 @@ struct AIModel: Codable, Identifiable, Defaults.Serializable {
     }
 }
 
-struct NoteItem: Codable, Identifiable, Defaults.Serializable, Hashable {
-    var id: UUID = UUID()
-    var title: String
-    var content: String
-    var creationDate: Date
-    var colorIndex: Int // 0: Yellow, 1: Blue, 2: Red, 3: Green
-    var isPinned: Bool = false
-    var imageFileName: String? = nil // Store filename instead of raw data
-    
-    // Internal property for migration
-    private enum CodingKeys: String, CodingKey {
-        case id, title, content, creationDate, colorIndex, isPinned, imageFileName, imageData
-    }
-    
-    init(id: UUID = UUID(), title: String, content: String, creationDate: Date, colorIndex: Int, isPinned: Bool = false, imageFileName: String? = nil) {
-        self.id = id
-        self.title = title
-        self.content = content
-        self.creationDate = creationDate
-        self.colorIndex = colorIndex
-        self.isPinned = isPinned
-        self.imageFileName = imageFileName
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(UUID.self, forKey: .id)
-        title = try container.decode(String.self, forKey: .title)
-        content = try container.decode(String.self, forKey: .content)
-        creationDate = try container.decode(Date.self, forKey: .creationDate)
-        colorIndex = try container.decode(Int.self, forKey: .colorIndex)
-        isPinned = try container.decode(Bool.self, forKey: .isPinned)
-        
-        // Migration logic: if imageData exists but imageFileName doesn't, save it to disk
-        if let data = try container.decodeIfPresent(Data.self, forKey: .imageData) {
-            let fileName = "note_image_\(id.uuidString).png"
-            let fileURL = NoteItem.noteImageDataDirectory.appendingPathComponent(fileName)
-            try? data.write(to: fileURL)
-            imageFileName = fileName
-        } else {
-            imageFileName = try container.decodeIfPresent(String.self, forKey: .imageFileName)
-        }
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
-        try container.encode(title, forKey: .title)
-        try container.encode(content, forKey: .content)
-        try container.encode(creationDate, forKey: .creationDate)
-        try container.encode(colorIndex, forKey: .colorIndex)
-        try container.encode(isPinned, forKey: .isPinned)
-        try container.encode(imageFileName, forKey: .imageFileName)
-    }
-    
-    static let colors: [Color] = [.yellow, .blue, .red, .green, .purple, .orange]
-    
-    // Directory for storing note image files
-    static let noteImageDataDirectory: URL = {
-        let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let notesDir = documentsPath.appendingPathComponent("NoteImages")
-        try? FileManager.default.createDirectory(at: notesDir, withIntermediateDirectories: true)
-        return notesDir
-    }()
-    
-    var color: Color {
-        if colorIndex >= 0 && colorIndex < NoteItem.colors.count {
-            return NoteItem.colors[colorIndex]
-        }
-        return .yellow
-    }
-    
-    // Helper to get image data from file
-    func getImageData() -> Data? {
-        guard let fileName = imageFileName else { return nil }
-        let fileURL = NoteItem.noteImageDataDirectory.appendingPathComponent(fileName)
-        return try? Data(contentsOf: fileURL)
-    }
-}
-
 extension Defaults.Keys {
         // MARK: General
     static let menubarIcon = Key<Bool>("menubarIcon", default: true)
     static let showOnAllDisplays = Key<Bool>("showOnAllDisplays", default: false)
     static let automaticallySwitchDisplay = Key<Bool>("automaticallySwitchDisplay", default: true)
-    static let releaseName = Key<String>("releaseName", default: "Maldives")
+    static let releaseName = Key<String>("releaseName", default: "alpha 0.0.1")
     static let hideDynamicIslandFromScreenCapture = Key<Bool>("hideDynamicIslandFromScreenCapture", default: false)
     
         // MARK: Behavior
@@ -518,30 +435,23 @@ extension Defaults.Keys {
     static let enableGestures = Key<Bool>("enableGestures", default: true)
     static let closeGestureEnabled = Key<Bool>("closeGestureEnabled", default: true)
     static let gestureSensitivity = Key<CGFloat>("gestureSensitivity", default: 200.0)
-    static let enableHorizontalMusicGestures = Key<Bool>("enableHorizontalMusicGestures", default: true)
-    static let musicGestureBehavior = Key<MusicSkipBehavior>("musicGestureBehavior", default: .track)
     
         // MARK: Media playback
     static let coloredSpectrogram = Key<Bool>("coloredSpectrogram", default: true)
     static let enableSneakPeek = Key<Bool>("enableSneakPeek", default: false)
     static let sneakPeekStyles = Key<SneakPeekStyle>("sneakPeekStyles", default: .standard)
-    static let showSneakPeekOnTrackChange = Key<Bool>("showSneakPeekOnTrackChange", default: true)
     static let enableFullscreenMediaDetection = Key<Bool>("enableFullscreenMediaDetection", default: true)
-    static let enableParallaxEffect = Key<Bool>("enableParallaxEffect", default: true)
     static let waitInterval = Key<Double>("waitInterval", default: 3)
     static let showShuffleAndRepeat = Key<Bool>("showShuffleAndRepeat", default: true)
     static let showMediaOutputControl = Key<Bool>("showMediaOutputControl", default: false)
     static let musicAuxLeftControl = Key<MusicAuxiliaryControl>("musicAuxLeftControl", default: .shuffle)
     static let musicAuxRightControl = Key<MusicAuxiliaryControl>("musicAuxRightControl", default: .repeatMode)
     static let didMigrateMusicAuxControls = Key<Bool>("didMigrateMusicAuxControls", default: false)
-    static let musicControlSlots = Key<[MusicControlButton]>("musicControlSlots", default: MusicControlButton.defaultLayout)
-    static let didMigrateMusicControlSlots = Key<Bool>("didMigrateMusicControlSlots", default: false)
     static let musicSkipBehavior = Key<MusicSkipBehavior>("musicSkipBehavior", default: .track)
     static let musicControlWindowEnabled = Key<Bool>("musicControlWindowEnabled", default: false)
     // Enable lock screen media widget (shows the standalone panel when screen is locked)
     static let enableLockScreenMediaWidget = Key<Bool>("enableLockScreenMediaWidget", default: true)
     static let enableLockScreenWeatherWidget = Key<Bool>("enableLockScreenWeatherWidget", default: true)
-    static let enableLockScreenFocusWidget = Key<Bool>("enableLockScreenFocusWidget", default: true)
     static let enableLockScreenReminderWidget = Key<Bool>("enableLockScreenReminderWidget", default: true)
     static let enableLockScreenTimerWidget = Key<Bool>("enableLockScreenTimerWidget", default: true)
     static let lockScreenWeatherRefreshInterval = Key<TimeInterval>("lockScreenWeatherRefreshInterval", default: 30 * 60)
@@ -551,7 +461,6 @@ extension Defaults.Keys {
     static let lockScreenWeatherShowsBluetooth = Key<Bool>("lockScreenWeatherShowsBluetooth", default: true)
     static let lockScreenWeatherShowsBatteryGauge = Key<Bool>("lockScreenWeatherShowsBatteryGauge", default: true)
     static let lockScreenWeatherBatteryUsesLaptopSymbol = Key<Bool>("lockScreenWeatherBatteryUsesLaptopSymbol", default: true)
-    static let lockScreenWeatherShowsSunrise = Key<Bool>("lockScreenWeatherShowsSunrise", default: true)
     static let lockScreenWeatherWidgetStyle = Key<LockScreenWeatherWidgetStyle>("lockScreenWeatherWidgetStyle", default: .circular)
     static let lockScreenWeatherTemperatureUnit = Key<LockScreenWeatherTemperatureUnit>("lockScreenWeatherTemperatureUnit", default: .celsius)
     static let lockScreenWeatherShowsAQI = Key<Bool>("lockScreenWeatherShowsAQI", default: true)
@@ -560,7 +469,6 @@ extension Defaults.Keys {
     static let lockScreenWeatherProviderSource = Key<LockScreenWeatherProviderSource>("lockScreenWeatherProviderSource", default: .openMeteo)
     static let lockScreenWeatherVerticalOffset = Key<Double>("lockScreenWeatherVerticalOffset", default: 0)
     static let lockScreenMusicVerticalOffset = Key<Double>("lockScreenMusicVerticalOffset", default: 0)
-    static let lockScreenMusicAlbumParallaxEnabled = Key<Bool>("lockScreenMusicAlbumParallaxEnabled", default: false)
     static let lockScreenTimerVerticalOffset = Key<Double>("lockScreenTimerVerticalOffset", default: 0)
     static let lockScreenGlassStyle = Key<LockScreenGlassStyle>("lockScreenGlassStyle", default: .liquid)
     static let lockScreenShowAppIcon = Key<Bool>("lockScreenShowAppIcon", default: false)
@@ -571,10 +479,9 @@ extension Defaults.Keys {
     
         // MARK: Battery
     static let showPowerStatusNotifications = Key<Bool>("showPowerStatusNotifications", default: true)
-    static let showBatteryIndicator = Key<Bool>("showBatteryIndicator", default: BatteryActivityManager.shared.hasBattery())
+    static let showBatteryIndicator = Key<Bool>("showBatteryIndicator", default: true)
     static let showBatteryPercentage = Key<Bool>("showBatteryPercentage", default: true)
     static let showPowerStatusIcons = Key<Bool>("showPowerStatusIcons", default: true)
-    static let playLowBatteryAlertSound = Key<Bool>("playLowBatteryAlertSound", default: true)
     
         // MARK: Downloads
     static let enableDownloadListener = Key<Bool>("enableDownloadListener", default: true)
@@ -594,10 +501,6 @@ extension Defaults.Keys {
         // MARK: Shelf
     static let dynamicShelf = Key<Bool>("dynamicShelf", default: true)
     static let openShelfByDefault = Key<Bool>("openShelfByDefault", default: true)
-        static let quickShareProvider = Key<String>("quickShareProvider", default: "AirDrop")
-        static let copyOnDrag = Key<Bool>("copyOnDrag", default: false)
-        static let autoRemoveShelfItems = Key<Bool>("autoRemoveShelfItems", default: false)
-        static let expandedDragDetection = Key<Bool>("expandedDragDetection", default: true)
     
         // MARK: Calendar
     static let calendarSelectionState = Key<CalendarSelectionState>("calendarSelectionState", default: .all)
@@ -637,9 +540,7 @@ extension Defaults.Keys {
     
     // MARK: Timer Feature
     static let enableTimerFeature = Key<Bool>("enableTimerFeature", default: true)
-    static let timerDisplayMode = Key<TimerDisplayMode>("timerDisplayMode", default: .tab)
     static let timerPresets = Key<[TimerPreset]>("timerPresets", default: TimerPreset.defaultPresets)
-    static let showTimerPresetsInNotchTab = Key<Bool>("showTimerPresetsInNotchTab", default: true)
     static let timerIconColorMode = Key<TimerIconColorMode>("timerIconColorMode", default: .adaptive)
     static let timerSolidColor = Key<Color>("timerSolidColor", default: .blue)
     static let timerShowsCountdown = Key<Bool>("timerShowsCountdown", default: true)
@@ -691,24 +592,6 @@ extension Defaults.Keys {
     
     // MARK: Custom OSD Window Feature
     static let enableCustomOSD = Key<Bool>("enableCustomOSD", default: false)
-    static let enableVerticalHUD = Key<Bool>("enableVerticalHUD", default: false)
-    static let enableCircularHUD = Key<Bool>("enableCircularHUD", default: false)
-    static let verticalHUDPosition = Key<String>("verticalHUDPosition", default: "right") // "left" or "right"
-    
-    // Vertical HUD Customization
-    static let verticalHUDShowValue = Key<Bool>("verticalHUDShowValue", default: true)
-    static let verticalHUDInteractive = Key<Bool>("verticalHUDInteractive", default: true)
-    static let verticalHUDHeight = Key<CGFloat>("verticalHUDHeight", default: 160)
-    static let verticalHUDWidth = Key<CGFloat>("verticalHUDWidth", default: 36)
-    static let verticalHUDPadding = Key<CGFloat>("verticalHUDPadding", default: 24)
-    static let verticalHUDUseAccentColor = Key<Bool>("verticalHUDUseAccentColor", default: false)
-    
-    // Circular HUD Customization
-    static let circularHUDShowValue = Key<Bool>("circularHUDShowValue", default: true)
-    static let circularHUDSize = Key<CGFloat>("circularHUDSize", default: 65)
-    static let circularHUDStrokeWidth = Key<CGFloat>("circularHUDStrokeWidth", default: 4)
-    static let circularHUDUseAccentColor = Key<Bool>("circularHUDUseAccentColor", default: true)
-    
     static let hasSeenOSDAlphaWarning = Key<Bool>("hasSeenOSDAlphaWarning", default: false)
     static let enableOSDVolume = Key<Bool>("enableOSDVolume", default: true)
     static let enableOSDBrightness = Key<Bool>("enableOSDBrightness", default: true)
@@ -726,7 +609,6 @@ extension Defaults.Keys {
     static let enableDoNotDisturbDetection = Key<Bool>("enableDoNotDisturbDetection", default: true)
     static let showDoNotDisturbIndicator = Key<Bool>("showDoNotDisturbIndicator", default: true)
     static let showDoNotDisturbLabel = Key<Bool>("showDoNotDisturbLabel", default: true)
-    static let focusIndicatorNonPersistent = Key<Bool>("focusIndicatorNonPersistent", default: false)
     
     // MARK: Privacy Indicators (Camera & Microphone Detection)
     static let enableCameraDetection = Key<Bool>("enableCameraDetection", default: true)
@@ -744,15 +626,6 @@ extension Defaults.Keys {
     
     // MARK: Lyrics Feature
     static let enableLyrics = Key<Bool>("enableLyrics", default: true)
-    
-    // MARK: Notes Feature
-    static let enableNotes = Key<Bool>("enableNotes", default: false)
-    static let enableNotePinning = Key<Bool>("enableNotePinning", default: true)
-    static let enableNoteSearch = Key<Bool>("enableNoteSearch", default: false)
-    static let enableNoteColorFiltering = Key<Bool>("enableNoteColorFiltering", default: false)
-    static let enableCreateFromClipboard = Key<Bool>("enableCreateFromClipboard", default: true)
-    static let enableNoteCharCount = Key<Bool>("enableNoteCharCount", default: true)
-    static let savedNotes = Key<[NoteItem]>("savedNotes", default: [])
     
     // Helper to determine the default media controller based on macOS version
     static var defaultMediaController: MediaControllerType {
@@ -784,27 +657,6 @@ extension Defaults.Keys {
         }
 
         normalizeMusicAuxControls()
-    }
-
-    static func migrateMusicControlSlots() {
-        guard Defaults[.didMigrateMusicControlSlots] == false else { return }
-
-        let allowMediaOutput = Defaults[.showMediaOutputControl]
-        let baseLayout: [MusicControlButton]
-
-        if Defaults[.showShuffleAndRepeat] {
-            var slots = MusicControlButton.defaultLayout
-            let left = MusicControlButton(auxiliaryControl: Defaults[.musicAuxLeftControl])
-            let right = MusicControlButton(auxiliaryControl: Defaults[.musicAuxRightControl])
-            slots[0] = left
-            slots[4] = right
-            baseLayout = slots
-        } else {
-            baseLayout = MusicControlButton.minimalLayout
-        }
-
-        Defaults[.musicControlSlots] = baseLayout.normalized(allowingMediaOutput: allowMediaOutput)
-        Defaults[.didMigrateMusicControlSlots] = true
     }
 
     private static func normalizeMusicAuxControls() {

@@ -74,7 +74,7 @@ final class KeyboardBrightnessSensor {
     }
 
     private static func readStandardRawLevel() throws -> Float {
-        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleHIDKeyboardEventDriverV2"))
+        let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("AppleHIDKeyboardEventDriverV2"))
         guard service != 0 else {
             throw SensorError.Keyboard.notStandard
         }
@@ -90,7 +90,7 @@ final class KeyboardBrightnessSensor {
         }
         if CFGetTypeID(property) == CFNumberGetTypeID() {
             var rawValue: Float = 0
-            if CFNumberGetValue(property as! CFNumber, .floatType, &rawValue) {
+            if CFNumberGetValue((property as! CFNumber), .floatType, &rawValue) {
                 return rawValue / maxKeyboardBrightness
             }
         }

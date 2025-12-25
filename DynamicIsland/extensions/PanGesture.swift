@@ -56,13 +56,9 @@ private struct ScrollMonitor: NSViewRepresentable {
         private let threshold: CGFloat
         private let action: (CGFloat, NSEvent.Phase) -> Void
         private var monitor: Any?
-        private var globalMonitor: Any?
         private var accumulated: CGFloat = 0
         private var active = false
         private let noiseThreshold: CGFloat = 0.2
-        private weak var observedView: NSView?
-        private let hoverInset: CGFloat = 14
-        private var lastEventTimestamp: TimeInterval = 0
 
         init(direction: PanDirection, threshold: CGFloat, action: @escaping (CGFloat, NSEvent.Phase) -> Void) {
             self.direction = direction
@@ -72,14 +68,10 @@ private struct ScrollMonitor: NSViewRepresentable {
 
         func installMonitor(on view: NSView) {
             removeMonitor()
-            observedView = view
-            monitor = NSEvent.addLocalMonitorForEvents(matching: [.scrollWheel]) { [weak self] event in
-                guard let self else { return event }
+            monitor = NSEvent.addLocalMonitorForEvents(matching: [.scrollWheel]) { [weak self, weak view] event in
+                guard let self = self, event.window === view?.window else { return event }
                 self.handleScroll(event)
                 return event
-            }
-            globalMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.scrollWheel]) { [weak self] event in
-                self?.handleScroll(event)
             }
         }
 
@@ -88,21 +80,11 @@ private struct ScrollMonitor: NSViewRepresentable {
                 NSEvent.removeMonitor(monitor)
                 self.monitor = nil
             }
-            if let globalMonitor = globalMonitor {
-                NSEvent.removeMonitor(globalMonitor)
-                self.globalMonitor = nil
-            }
             accumulated = 0
             active = false
-            observedView = nil
-            lastEventTimestamp = 0
         }
 
         private func handleScroll(_ event: NSEvent) {
-            guard lastEventTimestamp != event.timestamp else { return }
-            lastEventTimestamp = event.timestamp
-            guard isCursorNearObservedView(using: event) else { return }
-
             if event.phase == .ended || event.momentumPhase == .ended {
                 if active {
                     action(accumulated.magnitude, .ended)
@@ -124,23 +106,6 @@ private struct ScrollMonitor: NSViewRepresentable {
             } else if active {
                 action(accumulated.magnitude, .changed)
             }
-        }
-
-        private func isCursorNearObservedView(using event: NSEvent) -> Bool {
-            guard let view = observedView, let window = view.window else { return false }
-
-            let screenPoint: NSPoint
-            if let eventWindow = event.window {
-                let rect = NSRect(origin: event.locationInWindow, size: .zero)
-                screenPoint = eventWindow.convertToScreen(rect).origin
-            } else {
-                screenPoint = NSEvent.mouseLocation
-            }
-
-            let windowPoint = window.convertPoint(fromScreen: screenPoint)
-            let localPoint = view.convert(windowPoint, from: nil)
-            let hitArea = view.bounds.insetBy(dx: -hoverInset, dy: -hoverInset)
-            return hitArea.contains(localPoint)
         }
     }
 }

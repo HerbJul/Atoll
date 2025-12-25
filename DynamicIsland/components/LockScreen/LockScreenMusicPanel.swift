@@ -9,11 +9,6 @@ import SwiftUI
 import Defaults
 
 struct LockScreenMusicPanel: View {
-    private struct GlassLogSnapshot: Equatable {
-        let style: LockScreenGlassStyle
-        let usesLiquidGlass: Bool
-    }
-
     static let collapsedSize = CGSize(width: 420, height: 180)
     static let expandedSize = CGSize(width: 720, height: 340)
 
@@ -28,17 +23,16 @@ struct LockScreenMusicPanel: View {
     @State private var isExpanded = false
     @State private var isVolumeSliderVisible = false
     @State private var collapseWorkItem: DispatchWorkItem?
-    @State private var lastLoggedGlassSnapshot: GlassLogSnapshot?
     @Default(.lockScreenGlassStyle) var lockScreenGlassStyle
     @Default(.lockScreenShowAppIcon) var showAppIcon
     @Default(.lockScreenPanelShowsBorder) var showPanelBorder
     @Default(.lockScreenPanelUsesBlur) var enableBlur
-    @Default(.showMediaOutputControl) private var showMediaOutputControl
-    @Default(.showShuffleAndRepeat) private var showShuffleAndRepeat
-    @Default(.musicControlSlots) private var slotConfig
+    @Default(.showMediaOutputControl) var showMediaOutputControl
+    @Default(.showShuffleAndRepeat) var showShuffleAndRepeat
+    @Default(.musicAuxLeftControl) private var leftAuxControl
+    @Default(.musicAuxRightControl) private var rightAuxControl
     @Default(.musicSkipBehavior) private var musicSkipBehavior
     @Default(.enableLyrics) private var enableLyrics
-    @Default(.lockScreenMusicAlbumParallaxEnabled) private var lockScreenParallaxEnabled
 
     init(animator: LockScreenPanelAnimator) {
         _animator = ObservedObject(wrappedValue: animator)
@@ -54,10 +48,6 @@ struct LockScreenMusicPanel: View {
     private let expandedSliderExtraHeight: CGFloat = 88
     private let collapsedLyricsExtraHeight: CGFloat = 64
     private let expandedLyricsExtraHeight: CGFloat = 96
-
-    private var shouldUseFrostedBlur: Bool {
-        enableBlur && !usesLiquidGlass
-    }
 
     private var currentSize: CGSize {
         let base = isExpanded ? Self.expandedSize : Self.collapsedSize
@@ -85,61 +75,45 @@ struct LockScreenMusicPanel: View {
     }
     
     private var panelContent: some View {
-        ZStack(alignment: .topLeading) {
-            panelBackgroundLayer
-            panelForeground
-        }
-        .frame(width: currentSize.width, height: currentSize.height, alignment: .topLeading)
-        .clipShape(RoundedRectangle(cornerRadius: panelCornerRadius, style: .continuous))
-        .overlay {
-            if showPanelBorder && !usesLiquidGlass {
-                RoundedRectangle(cornerRadius: panelCornerRadius)
-                    .stroke(Color.white.opacity(0.35), lineWidth: 1.4)
+        panelCore
+            .frame(width: currentSize.width, height: currentSize.height)
+            .animation(.spring(response: 0.48, dampingFraction: 0.82, blendDuration: 0.18), value: isExpanded)
+            .animation(.spring(response: 0.45, dampingFraction: 0.85, blendDuration: 0.18), value: shouldShowVolumeSlider)
+            .onAppear {
+                sliderValue = musicManager.elapsedTime
+                isActive = true
+                logPanelAppearance()
+                updatePanelSize(animated: false)
+                routeManager.refreshDevices()
             }
-        }
-        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
-        .contentShape(RoundedRectangle(cornerRadius: panelCornerRadius, style: .continuous))
-        .animation(.spring(response: 0.48, dampingFraction: 0.82, blendDuration: 0.18), value: isExpanded)
-        .animation(.spring(response: 0.45, dampingFraction: 0.85, blendDuration: 0.18), value: shouldShowVolumeSlider)
-        .onAppear {
-            sliderValue = musicManager.elapsedTime
-            isActive = true
-            logPanelAppearance()
-            updatePanelSize(animated: false)
-            routeManager.refreshDevices()
-            logGlassState(reason: "Panel appeared")
-        }
-        .onDisappear {
-            isActive = false
-            cancelCollapseTimer()
-            isVolumeSliderVisible = false
-        }
-        .onChange(of: isExpanded) { _, expanded in
-            updatePanelSize()
-        }
-        .onChange(of: showMediaOutputControl) { _, enabled in
-            if !enabled {
-                withAnimation(.spring(response: 0.45, dampingFraction: 0.85)) {
-                    isVolumeSliderVisible = false
-                }
+            .onDisappear {
+                isActive = false
+                cancelCollapseTimer()
+                isVolumeSliderVisible = false
             }
-            updatePanelSize()
-        }
-        .onChange(of: enableLyrics) { _, _ in
-            withAnimation(.spring(response: 0.45, dampingFraction: 0.85)) {
+            .onChange(of: isExpanded) { _, expanded in
                 updatePanelSize()
             }
-        }
-        .onChange(of: lockScreenGlassStyle) { _, _ in
-            logGlassState(reason: "Glass style updated")
-        }
-        .scaleEffect(animator.isPresented ? 1 : 0.9, anchor: .center)
-        .opacity(animator.isPresented ? 1 : 0)
-        .animation(.spring(response: 0.52, dampingFraction: 0.8), value: animator.isPresented)
+            .onChange(of: showMediaOutputControl) { _, enabled in
+                if !enabled {
+                    withAnimation(.spring(response: 0.45, dampingFraction: 0.85)) {
+                        isVolumeSliderVisible = false
+                    }
+                }
+                updatePanelSize()
+            }
+            .onChange(of: enableLyrics) { _, _ in
+                withAnimation(.spring(response: 0.45, dampingFraction: 0.85)) {
+                    updatePanelSize()
+                }
+            }
+            .scaleEffect(animator.isPresented ? 1 : 0.9, anchor: .center)
+            .opacity(animator.isPresented ? 1 : 0)
+            .animation(.spring(response: 0.52, dampingFraction: 0.8), value: animator.isPresented)
     }
 
     @ViewBuilder
-    private var panelForeground: some View {
+    private var panelCore: some View {
         Group {
             if isExpanded {
                 expandedLayout
@@ -149,7 +123,17 @@ struct LockScreenMusicPanel: View {
         }
         .padding(.horizontal, isExpanded ? 24 : 20)
         .padding(.vertical, isExpanded ? 22 : 16)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .frame(width: currentSize.width, height: currentSize.height, alignment: .topLeading)
+        .background(panelBackground)
+        .clipShape(RoundedRectangle(cornerRadius: panelCornerRadius, style: .continuous))
+        .overlay {
+            if showPanelBorder {
+                RoundedRectangle(cornerRadius: panelCornerRadius)
+                    .stroke(Color.white.opacity(0.35), lineWidth: 1.4)
+            }
+        }
+        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+        .contentShape(RoundedRectangle(cornerRadius: panelCornerRadius, style: .continuous))
     }
 
     private var collapsedLayout: some View {
@@ -239,7 +223,6 @@ struct LockScreenMusicPanel: View {
                 }
             }
             .albumArtFlip(angle: musicManager.flipAngle)
-            .modifier(ParallaxMotionModifier(magnitude: 12, enableOverride: lockScreenParallaxEnabled))
             .frame(width: size, height: size)
             .background(albumArtBackground(cornerRadius: cornerRadius))
         }
@@ -379,115 +362,72 @@ struct LockScreenMusicPanel: View {
     }
 
     private func controlsRow(alignment: Alignment, spacing: CGFloat) -> some View {
+        let controls = resolvedAuxControls
         let skipNudge: CGFloat = isExpanded ? 14 : 9
+        let seekInterval: TimeInterval = 10
+
+        let backwardConfig: (icon: String, interaction: PanelControlButton.Interaction, symbol: PanelControlButton.SymbolEffectStyle, action: () -> Void)
+        let forwardConfig: (icon: String, interaction: PanelControlButton.Interaction, symbol: PanelControlButton.SymbolEffectStyle, action: () -> Void)
+
+        switch musicSkipBehavior {
+        case .track:
+            backwardConfig = (
+                icon: "backward.fill",
+                interaction: .nudge(-skipNudge),
+                symbol: .replace,
+                action: { musicManager.previousTrack() }
+            )
+            forwardConfig = (
+                icon: "forward.fill",
+                interaction: .nudge(skipNudge),
+                symbol: .replace,
+                action: { musicManager.nextTrack() }
+            )
+        case .tenSecond:
+            backwardConfig = (
+                icon: "gobackward.10",
+                interaction: .wiggle(.counterClockwise),
+                symbol: .wiggle,
+                action: { musicManager.seek(by: -seekInterval) }
+            )
+            forwardConfig = (
+                icon: "goforward.10",
+                interaction: .wiggle(.clockwise),
+                symbol: .wiggle,
+                action: { musicManager.seek(by: seekInterval) }
+            )
+        }
 
         return HStack(spacing: spacing) {
-            ForEach(Array(displayedSlots.enumerated()), id: \.offset) { _, slot in
-                slotView(for: slot, skipNudge: skipNudge)
+            if let leftControl = controls.left {
+                auxButton(for: leftControl)
+            }
+
+            controlButton(
+                icon: backwardConfig.icon,
+                size: 18,
+                interaction: backwardConfig.interaction,
+                symbolEffect: backwardConfig.symbol,
+                action: backwardConfig.action
+            )
+
+            playPauseButton
+
+            controlButton(
+                icon: forwardConfig.icon,
+                size: 18,
+                interaction: forwardConfig.interaction,
+                symbolEffect: forwardConfig.symbol,
+                action: forwardConfig.action
+            )
+
+            if let rightControl = controls.right {
+                auxButton(for: rightControl)
             }
         }
         .frame(maxWidth: .infinity, alignment: alignment)
     }
     
-    private var displayedSlots: [MusicControlButton] {
-        guard showShuffleAndRepeat else {
-            return fallbackSlots
-        }
-
-        let normalized = slotConfig.normalized(allowingMediaOutput: showMediaOutputControl)
-        return normalized.contains(where: { $0 != .none }) ? normalized : MusicControlButton.defaultLayout
-    }
-
-    private var fallbackSlots: [MusicControlButton] {
-        switch musicSkipBehavior {
-        case .track:
-            return MusicControlButton.minimalLayout
-        case .tenSecond:
-            return [.none, .seekBackward, .playPause, .seekForward, .none]
-        }
-    }
-
-    @ViewBuilder
-    private func slotView(for control: MusicControlButton, skipNudge: CGFloat) -> some View {
-        let seekInterval: TimeInterval = 10
-
-        switch control {
-        case .none:
-            Spacer(minLength: 0)
-        case .playPause:
-            playPauseButton
-        case .trackBackward:
-            controlButton(
-                icon: "backward.fill",
-                size: 18,
-                interaction: .nudge(-skipNudge),
-                symbolEffect: .replace
-            ) {
-                musicManager.previousTrack()
-            }
-        case .trackForward:
-            controlButton(
-                icon: "forward.fill",
-                size: 18,
-                interaction: .nudge(skipNudge),
-                symbolEffect: .replace
-            ) {
-                musicManager.nextTrack()
-            }
-        case .seekBackward:
-            controlButton(
-                icon: "gobackward.10",
-                size: 18,
-                interaction: .wiggle(.counterClockwise),
-                symbolEffect: .wiggle
-            ) {
-                musicManager.seek(by: -seekInterval)
-            }
-        case .seekForward:
-            controlButton(
-                icon: "goforward.10",
-                size: 18,
-                interaction: .wiggle(.clockwise),
-                symbolEffect: .wiggle
-            ) {
-                musicManager.seek(by: seekInterval)
-            }
-        case .shuffle:
-            controlButton(
-                icon: "shuffle",
-                size: 18,
-                isActive: musicManager.isShuffled,
-                activeColor: .red
-            ) {
-                musicManager.toggleShuffle()
-            }
-        case .repeatMode:
-            controlButton(
-                icon: repeatIcon,
-                size: 18,
-                isActive: musicManager.repeatMode != .off,
-                activeColor: .red,
-                symbolEffect: .replace
-            ) {
-                musicManager.toggleRepeat()
-            }
-        case .mediaOutput:
-            mediaOutputControlButton
-        case .lyrics:
-            controlButton(
-                icon: enableLyrics ? "quote.bubble.fill" : "quote.bubble",
-                size: 18,
-                isActive: enableLyrics,
-                activeColor: .accentColor,
-                symbolEffect: .replace
-            ) {
-                withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
-                    enableLyrics.toggle()
-                }
-            }
-        }
-    }
-
     private var playPauseButton: some View {
         let frameSize: CGFloat = isExpanded ? 80 : 54
         let iconName = musicManager.isPlaying ? "pause.fill" : "play.fill"
@@ -580,6 +520,62 @@ struct LockScreenMusicPanel: View {
         .animation(.smooth(duration: 0.32), value: line)
     }
 
+    private var availableAuxControls: [MusicAuxiliaryControl] {
+        MusicAuxiliaryControl.allCases.filter { control in
+            control != .mediaOutput || showMediaOutputControl
+        }
+    }
+
+    private var resolvedAuxControls: (left: MusicAuxiliaryControl?, right: MusicAuxiliaryControl?) {
+        guard showShuffleAndRepeat else { return (nil, nil) }
+
+        let options = availableAuxControls
+        guard !options.isEmpty else { return (nil, nil) }
+
+        let left = options.contains(leftAuxControl) ? leftAuxControl : options.first!
+        var rightCandidate = options.contains(rightAuxControl) ? rightAuxControl : options.first!
+
+        if options.count == 1 {
+            return (left, nil)
+        }
+
+        if rightCandidate == left, let alternative = options.first(where: { $0 != left }) {
+            rightCandidate = alternative
+        }
+
+        if rightCandidate == left {
+            return (left, nil)
+        }
+
+        return (left, rightCandidate)
+    }
+
+    @ViewBuilder
+    private func auxButton(for control: MusicAuxiliaryControl) -> some View {
+        switch control {
+        case .shuffle:
+            controlButton(icon: "shuffle", isActive: musicManager.isShuffled) {
+                musicManager.toggleShuffle()
+            }
+        case .repeatMode:
+            controlButton(icon: repeatIcon, isActive: musicManager.repeatMode != .off) {
+                musicManager.toggleRepeat()
+            }
+        case .mediaOutput:
+            mediaOutputControlButton
+        case .lyrics:
+            controlButton(
+                icon: enableLyrics ? "quote.bubble.fill" : "quote.bubble",
+                isActive: enableLyrics,
+                activeColor: .accentColor
+            ) {
+                withAnimation(.spring(response: 0.35, dampingFraction: 0.82)) {
+                    enableLyrics.toggle()
+                }
+            }
+        }
+    }
+
     private var repeatIcon: String {
         switch musicManager.repeatMode {
         case .off: return "repeat"
@@ -619,15 +615,8 @@ struct LockScreenMusicPanel: View {
         .padding(.horizontal, 12)
         .background(
             RoundedRectangle(cornerRadius: isExpanded ? 16 : 12, style: .continuous)
-                .fill(sliderBackgroundFill)
+                .fill(Color.white.opacity(0.08))
         )
-    }
-
-    private var sliderBackgroundFill: Color {
-        if usesLiquidGlass {
-            return Color.white.opacity(0.05)
-        }
-        return Color.white.opacity(0.08)
     }
 
     private var shouldShowVolumeSlider: Bool {
@@ -704,40 +693,35 @@ struct LockScreenMusicPanel: View {
     }
 
     @ViewBuilder
-    private var panelBackgroundLayer: some View {
-        if usesLiquidGlass {
-            liquidPanelBackdrop
-        } else if shouldUseFrostedBlur {
-            frostedPanelBackground
+    private var panelBackground: some View {
+        if enableBlur {
+            if usesLiquidGlass {
+                liquidPanelBackground
+            } else {
+                frostedPanelBackground
+            }
         } else {
-            opaquePanelBackground
+            RoundedRectangle(cornerRadius: panelCornerRadius)
+                .fill(Color.black.opacity(0.45))
         }
     }
 
     @ViewBuilder
-    private var liquidPanelBackdrop: some View {
+    private var liquidPanelBackground: some View {
         if #available(macOS 26.0, *) {
-            GlassTextBackdrop(cornerRadius: panelCornerRadius)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .allowsHitTesting(false)
-                .accessibilityHidden(true)
+            RoundedRectangle(cornerRadius: panelCornerRadius)
+                .glassEffect(
+                    .clear
+                        //.tint(Color.white.opacity(0.12))
+                        .interactive(),
+                    in: .rect(cornerRadius: panelCornerRadius)
+                )
         }
     }
 
     private var frostedPanelBackground: some View {
         RoundedRectangle(cornerRadius: panelCornerRadius)
             .fill(.ultraThinMaterial)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
-    }
-
-    private var opaquePanelBackground: some View {
-        RoundedRectangle(cornerRadius: panelCornerRadius)
-            .fill(Color.black.opacity(0.45))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .allowsHitTesting(false)
-            .accessibilityHidden(true)
     }
 
     private func albumArtImage(size: CGFloat, cornerRadius: CGFloat) -> some View {
@@ -750,13 +734,24 @@ struct LockScreenMusicPanel: View {
 
     @ViewBuilder
     private func albumArtBackground(cornerRadius: CGFloat) -> some View {
-        if usesLiquidGlass {
-            if #available(macOS 26.0, *) {
-                clearLiquidGlassSurface(cornerRadius: cornerRadius)
+        if enableBlur {
+            if usesLiquidGlass {
+                if #available(macOS 26.0, *) {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .glassEffect(
+                            .clear
+                                //.tint(Color.white.opacity(0.16))
+                                .interactive(),
+                            in: .rect(cornerRadius: cornerRadius)
+                        )
+                } else {
+                    RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(.ultraThinMaterial)
+                }
+            } else {
+                RoundedRectangle(cornerRadius: cornerRadius)
+                    .fill(.ultraThinMaterial)
             }
-        } else if shouldUseFrostedBlur {
-            RoundedRectangle(cornerRadius: cornerRadius)
-                .fill(.ultraThinMaterial)
         } else {
             RoundedRectangle(cornerRadius: cornerRadius)
                 .fill(Color.black.opacity(0.35))
@@ -779,50 +774,6 @@ struct LockScreenMusicPanel: View {
 
     private var appIconOffset: CGFloat {
         isExpanded ? 18 : 12
-    }
-
-    @available(macOS 26.0, *)
-    private func clearLiquidGlassSurface(cornerRadius: CGFloat) -> some View {
-        RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-            .fill(.clear)
-            .glassEffect(
-                .clear.interactive(),
-                in: .rect(cornerRadius: cornerRadius)
-            )
-    }
-
-    private func logGlassState(reason: String) {
-        let snapshot = GlassLogSnapshot(style: lockScreenGlassStyle, usesLiquidGlass: usesLiquidGlass)
-        guard snapshot != lastLoggedGlassSnapshot else { return }
-        lastLoggedGlassSnapshot = snapshot
-
-        struct ComponentState {
-            let name: String
-            let isLiquid: Bool
-        }
-
-        let states = [
-            ComponentState(name: "Panel Shell", isLiquid: usesLiquidGlass),
-            ComponentState(name: "Control Capsules", isLiquid: usesLiquidGlass),
-            ComponentState(name: "Volume Slider", isLiquid: usesLiquidGlass),
-            ComponentState(name: "Album Art Plate", isLiquid: usesLiquidGlass)
-        ]
-
-        let componentSummary = states.map { entry -> String in
-            let mode = entry.isLiquid ? "Liquid" : "Frosted"
-            return "\(entry.name)=\(mode)"
-        }.joined(separator: ", ")
-
-        print("[LockScreenMusicPanel] \(reason) – style=\(lockScreenGlassStyle.rawValue), usesLiquidGlass=\(usesLiquidGlass), components[\(componentSummary)], macOS \(currentOSVersionDescription())")
-
-        if lockScreenGlassStyle == .liquid && !usesLiquidGlass {
-            print("[LockScreenMusicPanel] Liquid Glass requested but unavailable on this macOS build. Falling back to frosted visuals.")
-        }
-    }
-
-    private func currentOSVersionDescription() -> String {
-        let version = ProcessInfo.processInfo.operatingSystemVersion
-        return "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"
     }
 
     private func logPanelAppearance(event: String = "✅ View appeared") {
@@ -925,7 +876,7 @@ private struct PanelControlButton: View {
                 base.contentTransition(.symbolEffect(.replace))
             }
         case .wiggle:
-            if #available(macOS 15.0, *) {
+            if #available(macOS 14.0, *) {
                 base
                     .contentTransition(.symbolEffect(.replace))
                     .symbolEffect(.wiggle.byLayer, options: .nonRepeating, value: wiggleToken)
@@ -950,27 +901,5 @@ private struct PanelControlButton: View {
     enum WiggleDirection {
         case clockwise
         case counterClockwise
-    }
-}
-
-@available(macOS 26.0, *)
-private struct GlassTextBackdrop: View {
-    let cornerRadius: CGFloat
-
-    var body: some View {
-        GeometryReader { proxy in
-            let dynamicFontSize = max(min(proxy.size.width, proxy.size.height) / 8, 42)
-
-            Text("Lock Screen Liquid Glass")
-                .font(.system(size: dynamicFontSize, weight: .semibold, design: .rounded))
-                .foregroundStyle(Color.clear)
-                .frame(width: proxy.size.width, height: proxy.size.height)
-                .glassEffect(
-                    .clear.interactive(),
-                    in: .rect(cornerRadius: cornerRadius)
-                )
-        }
-        .allowsHitTesting(false)
-        .accessibilityHidden(true)
     }
 }
