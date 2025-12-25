@@ -9,7 +9,6 @@ import Combine
 import Defaults
 import SwiftUI
 
-@MainActor
 class DynamicIslandViewModel: NSObject, ObservableObject {
     @ObservedObject var coordinator = DynamicIslandViewCoordinator.shared
     @ObservedObject var detector = FullscreenMediaDetector.shared
@@ -36,57 +35,6 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
     @Published var isMediaOutputPopoverActive: Bool = false
     @Published var isTimerPopoverActive: Bool = false
     @Published var shouldRecheckHover: Bool = false
-    @Published var isScrollGestureActive: Bool = false
-    private var scrollGestureSuppressionTokens: Set<UUID> = []
-    @Published private(set) var isAutoCloseSuppressed: Bool = false
-    private var autoCloseSuppressionTokens: Set<UUID> = []
-    private let clipboardFocusWindow: TimeInterval = 10
-
-    func setScrollGestureSuppression(_ active: Bool, token: UUID) {
-        if active {
-            let inserted = scrollGestureSuppressionTokens.insert(token).inserted
-            if inserted {
-                isScrollGestureActive = true
-            }
-        } else {
-            if scrollGestureSuppressionTokens.remove(token) != nil {
-                isScrollGestureActive = !scrollGestureSuppressionTokens.isEmpty
-            }
-        }
-    }
-
-    private func resetScrollGestureSuppression() {
-        scrollGestureSuppressionTokens.removeAll()
-        isScrollGestureActive = false
-    }
-
-    func setAutoCloseSuppression(_ active: Bool, token: UUID) {
-        if active {
-            let inserted = autoCloseSuppressionTokens.insert(token).inserted
-            if inserted {
-                isAutoCloseSuppressed = true
-            }
-        } else if autoCloseSuppressionTokens.remove(token) != nil {
-            isAutoCloseSuppressed = !autoCloseSuppressionTokens.isEmpty
-        }
-    }
-
-    private func resetAutoCloseSuppression() {
-        autoCloseSuppressionTokens.removeAll()
-        isAutoCloseSuppressed = false
-    }
-
-    private func focusClipboardTabIfNeeded() {
-        guard !Defaults[.enableMinimalisticUI] else { return }
-        guard Defaults[.enableClipboardManager] else { return }
-        guard Defaults[.clipboardDisplayMode] == .separateTab else { return }
-        guard let lastCopyDate = ClipboardManager.shared.lastCopiedItemDate else { return }
-        guard Date().timeIntervalSince(lastCopyDate) <= clipboardFocusWindow else { return }
-        guard coordinator.currentView != .notes else { return }
-        withAnimation(.smooth) {
-            coordinator.currentView = .notes
-        }
-    }
     
     let webcamManager = WebcamManager.shared
     @Published var isCameraExpanded: Bool = false
@@ -97,7 +45,6 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
     @Published var notchSize: CGSize = getClosedNotchSize()
     @Published var closedNotchSize: CGSize = getClosedNotchSize()
     
-    @MainActor
     deinit {
         destroy()
     }
@@ -195,27 +142,6 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
                     delegate.ensureWindowSize(
                         addShadowPadding(to: updatedTarget, isMinimalistic: Defaults[.enableMinimalisticUI]),
                         animated: false,
-                        force: false
-                    )
-                }
-            }
-            .store(in: &cancellables)
-
-        coordinator.$notesLayoutState
-            .removeDuplicates()
-            .receive(on: RunLoop.main)
-            .sink { [weak self] _ in
-                guard let self else { return }
-                guard self.notchState == .open else { return }
-                let updatedTarget = self.calculateDynamicNotchSize()
-                guard self.notchSize != updatedTarget else { return }
-                withAnimation(.easeInOut(duration: 0.25)) {
-                    self.notchSize = updatedTarget
-                }
-                if let delegate = AppDelegate.shared {
-                    delegate.ensureWindowSize(
-                        addShadowPadding(to: updatedTarget, isMinimalistic: Defaults[.enableMinimalisticUI]),
-                        animated: true,
                         force: false
                     )
                 }
@@ -336,22 +262,14 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
 
         // Force music information update when notch is opened
         MusicManager.shared.forceUpdate()
-        focusClipboardTabIfNeeded()
     }
     
     private func calculateDynamicNotchSize() -> CGSize {
+        // Use minimalistic size if minimalistic UI is enabled
         let baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
-        var adjustedSize = baseSize
-
-        if coordinator.currentView == .notes || coordinator.currentView == .clipboard {
-            let preferred = coordinator.notesLayoutState.preferredHeight
-            adjustedSize.height = max(adjustedSize.height, preferred)
-            return adjustedSize
-        }
-
         return statsAdjustedNotchSize(
-            from: adjustedSize,
-            isStatsTabActive: coordinator.currentView == .stats,
+            from: baseSize,
+            isStatsTabActive: DynamicIslandViewCoordinator.shared.currentView == .stats,
             secondRowProgress: coordinator.statsSecondRowExpansion
         )
     }
@@ -361,12 +279,10 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
         notchSize = targetSize
         closedNotchSize = targetSize
         notchState = .closed
-        resetScrollGestureSuppression()
-        resetAutoCloseSuppression()
 
         // Set the current view to shelf if it contains files and the user enables openShelfByDefault
         // Otherwise, if the user has not enabled openLastShelfByDefault, set the view to home
-        if !ShelfStateViewModel.shared.isEmpty && Defaults[.openShelfByDefault] && !Defaults[.enableMinimalisticUI] {
+        if !TrayDrop.shared.isEmpty && Defaults[.openShelfByDefault] {
             coordinator.currentView = .shelf
         } else if !coordinator.openLastTabByDefault {
             coordinator.currentView = .home
@@ -379,8 +295,6 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
             notchSize = targetSize
             closedNotchSize = targetSize
             notchState = .closed
-            resetScrollGestureSuppression()
-            resetAutoCloseSuppression()
         }
     }
 

@@ -107,9 +107,6 @@ final class LockScreenWeatherManager: ObservableObject {
             let showsBatteryGauge = Defaults[.lockScreenWeatherShowsBatteryGauge]
             let widgetStyle = Defaults[.lockScreenWeatherWidgetStyle]
             let batteryInfo = showsBatteryGauge ? makeBatteryGaugeInfo(isCharging: chargingInfo != nil, widgetStyle: widgetStyle) : nil
-            let showsSunriseSetting = Defaults[.lockScreenWeatherShowsSunrise]
-            let sunCycle = snapshot?.sunCycle
-            let shouldShowSunrise = showsSunriseSetting && widgetStyle == .inline && sunCycle?.sunrise != nil
             let fallback = LockScreenWeatherSnapshot(
                 temperatureText: snapshot?.temperatureText ?? "--",
                 symbolName: snapshot?.symbolName ?? "cloud.fill",
@@ -123,9 +120,7 @@ final class LockScreenWeatherManager: ObservableObject {
                 widgetStyle: widgetStyle,
                 showsChargingPercentage: Defaults[.lockScreenWeatherShowsChargingPercentage],
                 temperatureInfo: snapshot?.temperatureInfo,
-                usesGaugeTint: Defaults[.lockScreenWeatherUsesGaugeTint],
-                sunCycle: sunCycle,
-                showsSunrise: shouldShowSunrise
+                usesGaugeTint: Defaults[.lockScreenWeatherUsesGaugeTint]
             )
 
             self.snapshot = fallback
@@ -196,8 +191,6 @@ final class LockScreenWeatherManager: ObservableObject {
             Defaults.publisher(.lockScreenWeatherShowsBatteryGauge, options: [])
                 .map { _ in () }.eraseToAnyPublisher(),
             Defaults.publisher(.lockScreenWeatherBatteryUsesLaptopSymbol, options: [])
-                .map { _ in () }.eraseToAnyPublisher(),
-            Defaults.publisher(.lockScreenWeatherShowsSunrise, options: [])
                 .map { _ in () }.eraseToAnyPublisher(),
             Defaults.publisher(.lockScreenWeatherWidgetStyle, options: [])
                 .map { _ in () }.eraseToAnyPublisher(),
@@ -301,8 +294,6 @@ final class LockScreenWeatherManager: ObservableObject {
         let airQualityInfo = (Defaults[.lockScreenWeatherShowsAQI] && providerSource.supportsAirQuality) ? payload.airQuality : nil
         let batteryInfo = Defaults[.lockScreenWeatherShowsBatteryGauge] ? makeBatteryGaugeInfo(isCharging: chargingInfo != nil, widgetStyle: widgetStyle) : nil
         let usesGaugeTint = Defaults[.lockScreenWeatherUsesGaugeTint]
-        let showsSunriseSetting = Defaults[.lockScreenWeatherShowsSunrise]
-        let shouldShowSunrise = showsSunriseSetting && widgetStyle == .inline && payload.sunCycle?.sunrise != nil
 
         return LockScreenWeatherSnapshot(
             temperatureText: payload.temperatureText,
@@ -317,9 +308,7 @@ final class LockScreenWeatherManager: ObservableObject {
             widgetStyle: widgetStyle,
             showsChargingPercentage: showsChargingPercentage,
             temperatureInfo: payload.temperatureInfo,
-            usesGaugeTint: usesGaugeTint,
-            sunCycle: payload.sunCycle,
-            showsSunrise: shouldShowSunrise
+            usesGaugeTint: usesGaugeTint
         )
     }
 
@@ -357,7 +346,7 @@ final class LockScreenWeatherManager: ObservableObject {
 
         guard clampedLevel >= 0 else { return nil }
 
-        let usesLaptopSymbol = Defaults[.lockScreenWeatherBatteryUsesLaptopSymbol]
+        let usesLaptopSymbol = widgetStyle == .circular && Defaults[.lockScreenWeatherBatteryUsesLaptopSymbol]
 
         return LockScreenWeatherSnapshot.BatteryInfo(
             batteryLevel: clampedLevel,
@@ -395,11 +384,6 @@ final class LockScreenWeatherManager: ObservableObject {
 }
 
 struct LockScreenWeatherSnapshot: Equatable {
-    struct SunCycleInfo: Equatable {
-        let sunrise: Date?
-        let sunset: Date?
-    }
-
     struct TemperatureInfo: Equatable {
         let current: Double
         let minimum: Double?
@@ -503,8 +487,6 @@ struct LockScreenWeatherSnapshot: Equatable {
     let showsChargingPercentage: Bool
     let temperatureInfo: TemperatureInfo?
     let usesGaugeTint: Bool
-    let sunCycle: SunCycleInfo?
-    let showsSunrise: Bool
 }
 
 extension LockScreenWeatherSnapshot.AirQualityInfo.Category {
@@ -633,9 +615,7 @@ private actor LockScreenWeatherProvider {
         )
 
         let code = Int(condition.weatherCode) ?? 113
-        let isDaytime = condition.isDaytime ?? true
-        let baseSymbol = WeatherSymbolMapper.symbol(for: code)
-        let symbol = symbolAdjustedForDaylight(baseSymbol, isDaytime: isDaytime)
+        let symbol = WeatherSymbolMapper.symbol(for: code)
         let description = condition.localizedDescription
 
         let nearest = payload.nearestArea.first
@@ -666,9 +646,7 @@ private actor LockScreenWeatherProvider {
             widgetStyle: .inline,
             showsChargingPercentage: true,
             temperatureInfo: temperatureInfo,
-            usesGaugeTint: true,
-            sunCycle: nil,
-            showsSunrise: false
+            usesGaugeTint: true
         )
     }
 
@@ -677,14 +655,14 @@ private actor LockScreenWeatherProvider {
         let longitude = String(format: "%.4f", location.coordinate.longitude)
 
         let unit = Defaults[.lockScreenWeatherTemperatureUnit]
-        let usesMetric = unit.usesMetricSystem
+        _ = unit.usesMetricSystem
         var weatherComponents = URLComponents(string: "https://api.open-meteo.com/v1/forecast")
         var weatherQueryItems: [URLQueryItem] = [
             URLQueryItem(name: "latitude", value: latitude),
             URLQueryItem(name: "longitude", value: longitude),
-            URLQueryItem(name: "current", value: "temperature_2m,weather_code,is_day,pressure_msl"),
-            URLQueryItem(name: "daily", value: "temperature_2m_max,temperature_2m_min,sunrise,sunset"),
-            URLQueryItem(name: "forecast_days", value: "2"),
+            URLQueryItem(name: "current", value: "temperature_2m,weather_code,pressure_msl"),
+            URLQueryItem(name: "daily", value: "temperature_2m_max,temperature_2m_min"),
+            URLQueryItem(name: "forecast_days", value: "1"),
             URLQueryItem(name: "timezone", value: "auto")
         ]
 
@@ -714,21 +692,9 @@ private actor LockScreenWeatherProvider {
         let temperatureText = "\(Int(round(temperatureValue)))°"
         let code = current.weatherCode ?? 0
         let mapping = OpenMeteoSymbolMapper.mapping(for: code)
-        let isDaytime = (current.isDay ?? 1) == 1
-        let symbolName = symbolAdjustedForDaylight(mapping.symbol, isDaytime: isDaytime)
         let unitSymbol = unit.symbol
         let minTempValue = weatherPayload.daily?.temperature2MMin?.first
         let maxTempValue = weatherPayload.daily?.temperature2MMax?.first
-        let timezoneIdentifier = weatherPayload.timezone
-        let utcOffsetSeconds = weatherPayload.utcOffsetSeconds
-        let sunriseDate = nextSunEvent(from: weatherPayload.daily?.sunrise, timezoneIdentifier: timezoneIdentifier, offsetSeconds: utcOffsetSeconds)
-        let sunsetDate = nextSunEvent(from: weatherPayload.daily?.sunset, timezoneIdentifier: timezoneIdentifier, offsetSeconds: utcOffsetSeconds)
-        let sunCycle: LockScreenWeatherSnapshot.SunCycleInfo?
-        if sunriseDate != nil || sunsetDate != nil {
-            sunCycle = LockScreenWeatherSnapshot.SunCycleInfo(sunrise: sunriseDate, sunset: sunsetDate)
-        } else {
-            sunCycle = nil
-        }
 
         let temperatureInfo = LockScreenWeatherSnapshot.TemperatureInfo(
             current: temperatureValue,
@@ -746,7 +712,7 @@ private actor LockScreenWeatherProvider {
 
         return LockScreenWeatherSnapshot(
             temperatureText: temperatureText,
-            symbolName: symbolName,
+            symbolName: mapping.symbol,
             description: mapping.description,
             locationName: nil,
             charging: nil,
@@ -757,9 +723,7 @@ private actor LockScreenWeatherProvider {
             widgetStyle: .inline,
             showsChargingPercentage: true,
             temperatureInfo: temperatureInfo,
-            usesGaugeTint: true,
-            sunCycle: sunCycle,
-            showsSunrise: false
+            usesGaugeTint: true
         )
     }
 
@@ -807,30 +771,6 @@ private actor LockScreenWeatherProvider {
             scale: scale
         )
     }
-
-    private func nextSunEvent(from values: [String]?, timezoneIdentifier: String?, offsetSeconds: Int?) -> Date? {
-        guard let values else { return nil }
-        let now = Date()
-        for value in values {
-            if let date = parseLocalSunTime(value, timezoneIdentifier: timezoneIdentifier, offsetSeconds: offsetSeconds), date >= now {
-                return date
-            }
-        }
-        guard let fallbackValue = values.last else { return nil }
-        return parseLocalSunTime(fallbackValue, timezoneIdentifier: timezoneIdentifier, offsetSeconds: offsetSeconds)
-    }
-
-    private func parseLocalSunTime(_ value: String, timezoneIdentifier: String?, offsetSeconds: Int?) -> Date? {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
-        if let identifier = timezoneIdentifier, let timeZone = TimeZone(identifier: identifier) {
-            formatter.timeZone = timeZone
-        } else if let offset = offsetSeconds, let timeZone = TimeZone(secondsFromGMT: offset) {
-            formatter.timeZone = timeZone
-        }
-        return formatter.date(from: value)
-    }
 }
 
 enum WeatherProviderError: Error {
@@ -859,7 +799,6 @@ private struct WTTRCurrentCondition: Decodable {
         case pressure = "pressure"
         case pressureInches = "pressureInches"
         case airQuality = "air_quality"
-        case isday = "isday"
     }
 
     let tempC: String
@@ -870,7 +809,6 @@ private struct WTTRCurrentCondition: Decodable {
     let pressure: String?
     let pressureInches: String?
     let airQuality: WTTRAirQuality?
-    let isday: String?
 
     var localizedDescription: String {
         if let english = langEn?.first?.value, !english.isEmpty {
@@ -880,12 +818,6 @@ private struct WTTRCurrentCondition: Decodable {
             return desc
         }
         return ""
-    }
-
-    var isDaytime: Bool? {
-        guard let isday else { return nil }
-        let normalized = isday.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        return normalized == "1" || normalized == "yes"
     }
 }
 
@@ -953,19 +885,14 @@ private struct OpenMeteoForecastResponse: Decodable {
         let temperature2M: Double?
         let weatherCode: Int?
         let pressureMsl: Double?
-        let isDay: Int?
     }
 
     let current: Current?
     let daily: Daily?
-    let timezone: String?
-    let utcOffsetSeconds: Int?
 
     struct Daily: Decodable {
         let temperature2MMax: [Double]?
         let temperature2MMin: [Double]?
-        let sunrise: [String]?
-        let sunset: [String]?
     }
 }
 
@@ -1029,7 +956,7 @@ private enum WeatherSymbolMapper {
             return "cloud.fog.fill"
         case 176, 263, 266, 293, 296, 299, 302, 353, 356, 359:
             return "cloud.rain.fill"
-        case 179, 182, 185, 311, 314, 317, 320, 362, 365:
+        case 179, 182, 185, 311, 314, 362, 365:
             return "cloud.sleet.fill"
         case 227, 230, 281, 284, 323, 326, 329, 332, 335, 338, 368, 371, 374, 377:
             return "cloud.snow.fill"
@@ -1041,23 +968,6 @@ private enum WeatherSymbolMapper {
     }
 }
 
-private func symbolAdjustedForDaylight(_ symbol: String, isDaytime: Bool) -> String {
-    guard !isDaytime else { return symbol }
-    switch symbol {
-    case "sun.max.fill":
-        return "moon.stars.fill"
-    case "cloud.sun.fill":
-        return "cloud.moon.fill"
-    case "cloud.sun.rain.fill":
-        return "cloud.moon.rain.fill"
-    case "cloud.sun.bolt.fill":
-        return "cloud.moon.bolt.fill"
-    default:
-        return symbol
-    }
-}
-
-@MainActor
 private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManagerDelegate {
     private let manager: CLLocationManager
     private var pendingContinuations: [CheckedContinuation<CLLocation?, Never>] = []
@@ -1071,14 +981,22 @@ private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManag
     }
 
     func prepareAuthorization() {
+        #if os(macOS)
+        let status = manager.authorizationStatus
+        #else
         let status = CLLocationManager.authorizationStatus()
+        #endif
         if status == .notDetermined {
             manager.requestWhenInUseAuthorization()
         }
     }
 
     func currentLocation() async -> CLLocation? {
+        #if os(macOS)
+        let status = manager.authorizationStatus
+        #else
         let status = CLLocationManager.authorizationStatus()
+        #endif
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             if let lastLocation, abs(lastLocation.timestamp.timeIntervalSinceNow) < 1800 {
@@ -1093,12 +1011,12 @@ private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManag
         }
     }
 
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    nonisolated func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         lastLocation = locations.last
         flushContinuations(with: lastLocation)
     }
 
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    nonisolated func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         flushContinuations(with: nil)
     }
 
@@ -1109,3 +1027,4 @@ private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManag
         continuations.forEach { $0.resume(returning: location) }
     }
 }
+

@@ -30,39 +30,15 @@ class LockScreenPanelManager {
     private(set) var latestFrame: NSRect?
     private let panelAnimator = LockScreenPanelAnimator()
     private var hideTask: Task<Void, Never>?
-    private var screenChangeObserver: NSObjectProtocol?
-    private var workspaceObservers: [NSObjectProtocol] = []
 
     private init() {
         print("[\(timestamp())] LockScreenPanelManager: initialized")
-        registerScreenChangeObservers()
     }
 
     private func timestamp() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss.SSS"
         return formatter.string(from: Date())
-    }
-
-    private func registerScreenChangeObservers() {
-        screenChangeObserver = NotificationCenter.default.addObserver(
-            forName: NSApplication.didChangeScreenParametersNotification,
-            object: nil,
-            queue: .main
-        ) { [weak self] _ in
-            self?.handleScreenGeometryChange(reason: "screen-parameters")
-        }
-
-        let workspaceCenter = NSWorkspace.shared.notificationCenter
-        let wakeObserver = workspaceCenter.addObserver(
-            forName: NSWorkspace.screensDidWakeNotification,
-            object: nil,
-            queue: .main
-        ) { [weak self] _ in
-            self?.handleScreenGeometryChange(reason: "screens-did-wake")
-        }
-
-        workspaceObservers = [wakeObserver]
     }
 
     func showPanel() {
@@ -127,7 +103,6 @@ class LockScreenPanelManager {
             content.wantsLayer = true
             content.layer?.masksToBounds = true
             content.layer?.cornerRadius = collapsedPanelCornerRadius
-            content.layer?.backgroundColor = NSColor.clear.cgColor
         }
 
         if !hasDelegated {
@@ -220,19 +195,6 @@ class LockScreenPanelManager {
                 print("[\(self.timestamp())] LockScreenPanelManager: panel hidden")
             }
         }
-    }
-
-    private func handleScreenGeometryChange(reason: String) {
-        guard let window = panelWindow else { return }
-        guard window.isVisible || panelAnimator.isPresented else { return }
-        guard let screen = NSScreen.main else { return }
-
-        let screenFrame = screen.frame
-        collapsedFrame = collapsedFrame(for: screenFrame)
-        updatePanelSize(expanded: isPanelExpanded, additionalHeight: currentAdditionalHeight, animated: false)
-        LockScreenTimerWidgetManager.shared.notifyMusicPanelFrameChanged(animated: false)
-
-        print("[\(timestamp())] LockScreenPanelManager: realigned window due to \(reason)")
     }
 
     private func collapsedFrame(for screenFrame: NSRect) -> NSRect {

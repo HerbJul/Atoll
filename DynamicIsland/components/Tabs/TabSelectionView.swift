@@ -17,34 +17,20 @@ struct TabModel: Identifiable {
 
 struct TabSelectionView: View {
     @ObservedObject var coordinator = DynamicIslandViewCoordinator.shared
-    @Default(.enableTimerFeature) var enableTimerFeature
     @Default(.enableStatsFeature) var enableStatsFeature
     @Default(.enableColorPickerFeature) var enableColorPickerFeature
-    @Default(.timerDisplayMode) var timerDisplayMode
     @Namespace var animation
     
     private var tabs: [TabModel] {
         var tabsArray: [TabModel] = []
         
         tabsArray.append(TabModel(label: "Home", icon: "house.fill", view: .home))
-
-        if Defaults[.dynamicShelf] {
-            tabsArray.append(TabModel(label: "Shelf", icon: "tray.fill", view: .shelf))
-        }
         
-        if enableTimerFeature && timerDisplayMode == .tab {
-            tabsArray.append(TabModel(label: "Timer", icon: "timer", view: .timer))
-        }
-
+        tabsArray.append(TabModel(label: "Shelf", icon: "tray.fill", view: .shelf))
+        
         // Stats tab only shown when stats feature is enabled
         if Defaults[.enableStatsFeature] {
             tabsArray.append(TabModel(label: "Stats", icon: "chart.xyaxis.line", view: .stats))
-        }
-
-        if Defaults[.enableNotes] || (Defaults[.enableClipboardManager] && Defaults[.clipboardDisplayMode] == .separateTab) {
-            let label = Defaults[.enableNotes] ? "Notes" : "Clipboard"
-            let icon = Defaults[.enableNotes] ? "note.text" : "doc.on.clipboard"
-            tabsArray.append(TabModel(label: label, icon: icon, view: .notes))
         }
         
         return tabsArray

@@ -173,8 +173,6 @@ struct CalendarView: View {
     @EnvironmentObject var vm: DynamicIslandViewModel
     @ObservedObject private var calendarManager = CalendarManager.shared
     @State private var selectedDate = Date()
-    @Default(.hideAllDayEvents) private var hideAllDayEvents
-    @Default(.hideCompletedReminders) private var hideCompletedReminders
 
     var body: some View {
         VStack(spacing: 0) {
@@ -207,9 +205,7 @@ struct CalendarView: View {
             }
 
             let filteredEvents = EventListView.filteredEvents(
-                events: calendarManager.events,
-                hideCompletedReminders: hideCompletedReminders,
-                hideAllDayEvents: hideAllDayEvents
+                events: calendarManager.events
             )
             if filteredEvents.isEmpty {
                 EmptyEventsView(selectedDate: selectedDate)
@@ -264,21 +260,15 @@ struct EventListView: View {
     let events: [EventModel]
     @Default(.autoScrollToNextEvent) private var autoScrollToNextEvent
     @Default(.showFullEventTitles) private var showFullEventTitles
-    @Default(.hideCompletedReminders) private var hideCompletedReminders
-    @Default(.hideAllDayEvents) private var hideAllDayEvents
 
-    static func filteredEvents(
-        events: [EventModel],
-        hideCompletedReminders: Bool,
-        hideAllDayEvents: Bool
-    ) -> [EventModel] {
+    static func filteredEvents(events: [EventModel]) -> [EventModel] {
         events.filter { event in
             if event.type.isReminder {
                 if case .reminder(let completed) = event.type {
-                    return !completed || !hideCompletedReminders
+                    return !completed || !Defaults[.hideCompletedReminders]
                 }
             }
-            if event.isAllDay && hideAllDayEvents {
+            if event.isAllDay && Defaults[.hideAllDayEvents] {
                 return false
             }
             return true
@@ -286,11 +276,7 @@ struct EventListView: View {
     }
 
     private var filteredEvents: [EventModel] {
-        Self.filteredEvents(
-            events: events,
-            hideCompletedReminders: hideCompletedReminders,
-            hideAllDayEvents: hideAllDayEvents
-        )
+        Self.filteredEvents(events: events)
     }
 
     private func scrollToRelevantEvent(proxy: ScrollViewProxy) {
@@ -310,41 +296,27 @@ struct EventListView: View {
 
     var body: some View {
         ScrollViewReader { proxy in
-            ZStack {
-                List {
-                    ForEach(filteredEvents) { event in
-                        Button(action: {
-                            if let url = event.calendarAppURL() {
-                                openURL(url)
-                            }
-                        }) {
-                            eventRow(event)
+            List {
+                ForEach(filteredEvents) { event in
+                    Button(action: {
+                        if let url = event.calendarAppURL() {
+                            openURL(url)
                         }
-                        .id(event.id)
-                        .padding(.leading, -5)
-                        .buttonStyle(PlainButtonStyle())
-                        .listRowSeparator(.automatic)
-                        .listRowSeparatorTint(.gray.opacity(0.2))
-                        .listRowBackground(Color.clear)
+                    }) {
+                        eventRow(event)
                     }
+                    .id(event.id)
+                    .padding(.leading, -5)
+                    .buttonStyle(PlainButtonStyle())
+                    .listRowSeparator(.automatic)
+                    .listRowSeparatorTint(.gray.opacity(0.2))
+                    .listRowBackground(Color.clear)
                 }
-                .listStyle(.plain)
-                .scrollIndicators(.never)
-                .scrollContentBackground(.hidden)
-                .background(Color.clear)
-
-                LinearGradient(colors: [Color.black.opacity(0.65), .clear], startPoint: .top, endPoint: .bottom)
-                    .frame(height: 16)
-                    .allowsHitTesting(false)
-                    .alignmentGuide(.top) { d in d[.top] }
-                    .frame(maxHeight: .infinity, alignment: .top)
-
-                LinearGradient(colors: [.clear, Color.black.opacity(0.65)], startPoint: .top, endPoint: .bottom)
-                    .frame(height: 16)
-                    .allowsHitTesting(false)
-                    .alignmentGuide(.bottom) { d in d[.bottom] }
-                    .frame(maxHeight: .infinity, alignment: .bottom)
             }
+            .listStyle(.plain)
+            .scrollIndicators(.never)
+            .scrollContentBackground(.hidden)
+            .background(Color.clear)
             .onAppear {
                 scrollToRelevantEvent(proxy: proxy)
             }

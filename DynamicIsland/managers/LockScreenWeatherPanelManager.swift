@@ -13,12 +13,8 @@ final class LockScreenWeatherPanelManager {
     private(set) var latestFrame: NSRect?
     private var lastSnapshot: LockScreenWeatherSnapshot?
     private var lastContentSize: CGSize?
-    private var screenChangeObserver: NSObjectProtocol?
-    private var workspaceObservers: [NSObjectProtocol] = []
 
-    private init() {
-        registerScreenChangeObservers()
-    }
+    private init() {}
 
     func show(with snapshot: LockScreenWeatherSnapshot) {
         render(snapshot: snapshot, makeVisible: true)
@@ -125,32 +121,5 @@ final class LockScreenWeatherPanelManager {
         } else {
             window.setFrame(targetFrame, display: true)
         }
-    }
-
-    private func registerScreenChangeObservers() {
-        screenChangeObserver = NotificationCenter.default.addObserver(
-            forName: NSApplication.didChangeScreenParametersNotification,
-            object: nil,
-            queue: .main
-        ) { [weak self] _ in
-            self?.handleScreenGeometryChange(reason: "screen-parameters")
-        }
-
-        let workspaceCenter = NSWorkspace.shared.notificationCenter
-        let wakeObserver = workspaceCenter.addObserver(
-            forName: NSWorkspace.screensDidWakeNotification,
-            object: nil,
-            queue: .main
-        ) { [weak self] _ in
-            self?.handleScreenGeometryChange(reason: "screens-did-wake")
-        }
-
-        workspaceObservers = [wakeObserver]
-    }
-
-    private func handleScreenGeometryChange(reason: String) {
-        guard window?.isVisible == true else { return }
-        refreshPositionForOffsets(animated: false)
-        print("LockScreenWeatherPanelManager: realigned window due to \(reason)")
     }
 }

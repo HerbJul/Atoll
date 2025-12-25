@@ -14,24 +14,22 @@ struct DynamicIslandHeader: View {
     @ObservedObject var batteryModel = BatteryStatusViewModel.shared
     @ObservedObject var coordinator = DynamicIslandViewCoordinator.shared
     @ObservedObject var clipboardManager = ClipboardManager.shared
-    @ObservedObject var shelfState = ShelfStateViewModel.shared
+    @ObservedObject var tvm = TrayDrop.shared
     @ObservedObject var timerManager = TimerManager.shared
     @ObservedObject var doNotDisturbManager = DoNotDisturbManager.shared
     @State private var showClipboardPopover = false
     @State private var showColorPickerPopover = false
     @State private var showTimerPopover = false
     @Default(.enableTimerFeature) var enableTimerFeature
-    @Default(.timerDisplayMode) var timerDisplayMode
-    @Default(.showClipboardIcon) var showClipboardIcon
-    @Default(.clipboardDisplayMode) var clipboardDisplayMode
     
     var body: some View {
         HStack(spacing: 0) {
             if !Defaults[.enableMinimalisticUI] {
                 HStack {
-                    let shouldShowTabs = coordinator.alwaysShowTabs || vm.notchState == .open || !shelfState.items.isEmpty
-                    if shouldShowTabs {
+                    if (!tvm.isEmpty || coordinator.alwaysShowTabs) && Defaults[.dynamicShelf] {
                         TabSelectionView()
+                    } else if vm.notchState == .open {
+                        EmptyView()
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -70,18 +68,14 @@ struct DynamicIslandHeader: View {
                         .buttonStyle(PlainButtonStyle())
                     }
                     
-                    if Defaults[.enableClipboardManager]
-                        && showClipboardIcon
-                        && clipboardDisplayMode != .separateTab {
+                    if Defaults[.enableClipboardManager] && Defaults[.showClipboardIcon] {
                         Button(action: {
                             // Switch behavior based on display mode
-                            switch clipboardDisplayMode {
+                            switch Defaults[.clipboardDisplayMode] {
                             case .panel:
                                 ClipboardPanelManager.shared.toggleClipboardPanel()
                             case .popover:
                                 showClipboardPopover.toggle()
-                            case .separateTab:
-                                coordinator.currentView = .notes
                             }
                         }) {
                             Capsule()
@@ -98,11 +92,11 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showClipboardPopover, arrowEdge: .bottom) {
                             ClipboardPopover()
                         }
-                        .onChange(of: showClipboardPopover) { isActive in
-                            vm.isClipboardPopoverActive = isActive
+                        .onChange(of: showClipboardPopover) { _, newValue in
+                            vm.isClipboardPopoverActive = newValue
                             
                             // If popover was closed, trigger a hover recheck
-                            if !isActive {
+                            if !newValue {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     vm.shouldRecheckHover.toggle()
                                 }
@@ -139,11 +133,11 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showColorPickerPopover, arrowEdge: .bottom) {
                             ColorPickerPopover()
                         }
-                        .onChange(of: showColorPickerPopover) { isActive in
-                            vm.isColorPickerPopoverActive = isActive
+                        .onChange(of: showColorPickerPopover) { _, newValue in
+                            vm.isColorPickerPopoverActive = newValue
                             
                             // If popover was closed, trigger a hover recheck
-                            if !isActive {
+                            if !newValue {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     vm.shouldRecheckHover.toggle()
                                 }
@@ -151,7 +145,7 @@ struct DynamicIslandHeader: View {
                         }
                     }
                     
-                    if Defaults[.enableTimerFeature] && timerDisplayMode == .popover {
+                    if Defaults[.enableTimerFeature] {
                         Button(action: {
                             withAnimation(.smooth) {
                                 showTimerPopover.toggle()
@@ -171,9 +165,9 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showTimerPopover, arrowEdge: .bottom) {
                             TimerPopover()
                         }
-                        .onChange(of: showTimerPopover) { isActive in
-                            vm.isTimerPopoverActive = isActive
-                            if !isActive {
+                        .onChange(of: showTimerPopover) { _, newValue in
+                            vm.isTimerPopoverActive = newValue
+                            if !newValue {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                                     vm.shouldRecheckHover.toggle()
                                 }
@@ -213,8 +207,6 @@ struct DynamicIslandHeader: View {
                             .transition(.opacity)
                     }
                     
-
-
                     if Defaults[.showBatteryIndicator] {
                         DynamicIslandBatteryView(
                             batteryWidth: 30,
@@ -238,37 +230,25 @@ struct DynamicIslandHeader: View {
         }
         .foregroundColor(.gray)
         .environmentObject(vm)
-        .onChange(of: coordinator.shouldToggleClipboardPopover) { _ in
+        .onChange(of: coordinator.shouldToggleClipboardPopover) { _, _ in
             // Only toggle if clipboard is enabled
             if Defaults[.enableClipboardManager] {
-                switch clipboardDisplayMode {
+                switch Defaults[.clipboardDisplayMode] {
                 case .panel:
                     ClipboardPanelManager.shared.toggleClipboardPanel()
                 case .popover:
                     showClipboardPopover.toggle()
-                case .separateTab:
-                    if coordinator.currentView == .notes {
-                        coordinator.currentView = .home
-                    } else {
-                        coordinator.currentView = .notes
-                    }
                 }
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("ToggleClipboardPopover"))) { _ in
             // Handle keyboard shortcut for popover mode
-            if Defaults[.enableClipboardManager] && clipboardDisplayMode == .popover {
+            if Defaults[.enableClipboardManager] && Defaults[.clipboardDisplayMode] == .popover {
                 showClipboardPopover.toggle()
             }
         }
-        .onChange(of: enableTimerFeature) { _, newValue in
+        .onChange(of: enableTimerFeature) { oldValue, newValue in
             if !newValue {
-                showTimerPopover = false
-                vm.isTimerPopoverActive = false
-            }
-        }
-        .onChange(of: timerDisplayMode) { _, mode in
-            if mode == .tab {
                 showTimerPopover = false
                 vm.isTimerPopoverActive = false
             }
@@ -291,3 +271,4 @@ private extension DynamicIslandHeader {
         .environmentObject(DynamicIslandViewModel())
         .environmentObject(WebcamManager.shared)
 }
+

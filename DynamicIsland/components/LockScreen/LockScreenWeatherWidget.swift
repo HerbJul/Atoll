@@ -1,24 +1,12 @@
 import SwiftUI
-import Defaults
 
 
 struct LockScreenWeatherWidget: View {
 	let snapshot: LockScreenWeatherSnapshot
-	@ObservedObject private var focusManager = DoNotDisturbManager.shared
-	@Default(.enableDoNotDisturbDetection) private var focusDetectionEnabled
-	@Default(.showDoNotDisturbIndicator) private var focusIndicatorEnabled
-	@Default(.enableLockScreenFocusWidget) private var lockScreenFocusWidgetEnabled
 
 	private let inlinePrimaryFont = Font.system(size: 22, weight: .semibold, design: .rounded)
 	private let inlineSecondaryFont = Font.system(size: 13, weight: .medium, design: .rounded)
 	private let secondaryLabelColor = Color.white.opacity(0.7)
-	private static let sunriseFormatter: DateFormatter = {
-		let formatter = DateFormatter()
-		formatter.dateStyle = .none
-		formatter.timeStyle = .short
-		formatter.locale = .current
-		return formatter
-	}()
 
 	private var isInline: Bool { snapshot.widgetStyle == .inline }
 	private var stackAlignment: VerticalAlignment { isInline ? .firstTextBaseline : .top }
@@ -32,30 +20,12 @@ struct LockScreenWeatherWidget: View {
 	}
 
 	var body: some View {
-		VStack(alignment: .leading, spacing: focusWidgetSpacing) {
-			if shouldShowFocusWidget {
-				focusWidget
-			}
-			mainWidgetRow
-		}
-		.frame(maxWidth: .infinity, alignment: .leading)
-		.foregroundStyle(Color.white.opacity(0.65))
-		.padding(.horizontal, 10)
-		.padding(.top, topPadding)
-		.padding(.bottom, bottomPadding)
-		.background(Color.clear)
-		.shadow(color: .black.opacity(0.35), radius: 8, x: 0, y: 3)
-		.accessibilityElement(children: .ignore)
-		.accessibilityLabel(accessibilityLabel)
-	}
-
-	private var mainWidgetRow: some View {
 		HStack(alignment: stackAlignment, spacing: stackSpacing) {
 			if let charging = snapshot.charging {
 				chargingSegment(for: charging)
 			}
 
-			if let battery = snapshot.battery {
+			if !isInline, let battery = snapshot.battery {
 				batterySegment(for: battery)
 			}
 
@@ -69,19 +39,19 @@ struct LockScreenWeatherWidget: View {
 
 			weatherSegment
 
-			if snapshot.showsSunrise, let sunriseText = sunriseTimeText {
-				sunriseSegment(text: sunriseText)
-			}
-
 			if shouldShowLocation {
 				locationSegment
 			}
 		}
-	}
-
-	private var sunriseTimeText: String? {
-		guard let sunrise = snapshot.sunCycle?.sunrise else { return nil }
-		return Self.sunriseFormatter.string(from: sunrise)
+		.frame(maxWidth: .infinity, alignment: .leading)
+		.foregroundStyle(Color.white.opacity(0.65))
+		.padding(.horizontal, 10)
+		.padding(.top, topPadding)
+		.padding(.bottom, bottomPadding)
+		.background(Color.clear)
+		.shadow(color: .black.opacity(0.35), radius: 8, x: 0, y: 3)
+		.accessibilityElement(children: .ignore)
+		.accessibilityLabel(accessibilityLabel)
 	}
 
 	@ViewBuilder
@@ -131,7 +101,7 @@ struct LockScreenWeatherWidget: View {
 	private func batterySegment(for info: LockScreenWeatherSnapshot.BatteryInfo) -> some View {
 		switch snapshot.widgetStyle {
 		case .inline:
-            inlineBatterySegment(for: info)
+			EmptyView()
 		case .circular:
 			circularBatterySegment(for: info)
 		}
@@ -235,24 +205,6 @@ struct LockScreenWeatherWidget: View {
 		}
 		.layoutPriority(1)
 	}
-    
-    private func inlineBatterySegment(for info: LockScreenWeatherSnapshot.BatteryInfo) -> some View {
-        let level = clampedBatteryLevel(info.batteryLevel)
-
-        return HStack(alignment: .firstTextBaseline, spacing: 6) {
-            // Optional icon (laptop vs battery glyph)
-            Image(systemName: info.usesLaptopSymbol ? "laptopcomputer" : batteryIconName(for: level))
-                .font(.system(size: 20, weight: .semibold))
-                .symbolRenderingMode(.hierarchical)
-
-            // ✅ The actual percentage text you want in inline style
-            Text("\(level)%")
-                .font(inlinePrimaryFont)
-                .lineLimit(1)
-                .minimumScaleFactor(0.85)
-        }
-        .layoutPriority(1)
-    }
 
 	private func circularBluetoothSegment(for info: LockScreenWeatherSnapshot.BluetoothInfo) -> some View {
 		let clamped = clampedBatteryLevel(info.batteryLevel)
@@ -362,77 +314,8 @@ struct LockScreenWeatherWidget: View {
 			.layoutPriority(0.7)
 	}
 
-	private func sunriseSegment(text: String) -> some View {
-		HStack(alignment: .firstTextBaseline, spacing: 4) {
-			Image(systemName: "sunrise.fill")
-				.font(.system(size: 20, weight: .semibold))
-				.symbolRenderingMode(.hierarchical)
-			Text(text)
-				.font(inlinePrimaryFont)
-				.lineLimit(1)
-				.minimumScaleFactor(0.85)
-		}
-		.layoutPriority(0.8)
-		.accessibilityLabel("Sunrise at \(text)")
-	}
-
 	private var shouldShowLocation: Bool {
 		snapshot.showsLocation && (snapshot.locationName?.isEmpty == false)
-	}
-
-	private var focusWidgetSpacing: CGFloat {
-		guard shouldShowFocusWidget else { return 0 }
-		return isInline ? 14 : 20
-	}
-
-	private var shouldShowFocusWidget: Bool {
-		lockScreenFocusWidgetEnabled &&
-		focusDetectionEnabled &&
-		focusIndicatorEnabled &&
-		focusManager.isDoNotDisturbActive &&
-		!focusDisplayName.isEmpty
-	}
-
-	private var focusDisplayName: String {
-		let trimmed = focusManager.currentFocusModeName.trimmingCharacters(in: .whitespacesAndNewlines)
-		if !trimmed.isEmpty {
-			return trimmed
-		}
-		if focusMode == .doNotDisturb {
-			return "Do Not Disturb"
-		}
-		let fallback = focusMode.displayName
-		return fallback.isEmpty ? "Focus" : fallback
-	}
-
-	private var focusMode: FocusModeType {
-		FocusModeType.resolve(
-			identifier: focusManager.currentFocusModeIdentifier,
-			name: focusManager.currentFocusModeName
-		)
-	}
-
-	private var focusIcon: Image {
-		focusMode
-			.resolvedActiveIcon(usePrivateSymbol: true)
-			.renderingMode(.template)
-	}
-
-	private var focusWidget: some View {
-		HStack(alignment: .center, spacing: 8) {
-			focusIcon
-				.font(.system(size: 20, weight: .semibold))
-				.frame(width: 26, height: 26)
-
-			Text(focusDisplayName)
-				.font(inlinePrimaryFont)
-				.lineLimit(1)
-				.minimumScaleFactor(0.85)
-		}
-		.frame(maxWidth: .infinity, alignment: .center)
-		.multilineTextAlignment(.center)
-		.padding(.horizontal, 2)
-		.accessibilityLabel("Focus active: \(focusDisplayName)")
 	}
 
 	private func chargingIconName(for info: LockScreenWeatherSnapshot.ChargingInfo) -> String? {
@@ -646,10 +529,6 @@ struct LockScreenWeatherWidget: View {
 
 		if let battery = snapshot.battery, !isInline {
 			components.append(accessibilityBatteryText(for: battery))
-		}
-
-		if shouldShowFocusWidget {
-			components.append("Focus active: \(focusDisplayName)")
 		}
 
 		return components.joined(separator: ". ")

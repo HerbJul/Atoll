@@ -80,7 +80,7 @@ class IdleAnimationManager {
         print("📦 [IdleAnimationManager] Loading bundled animations...")
         
         // The JSON files are added as individual resources, not in a folder
-        let bundledFiles = ["Dog waiting", "Moody Dog", "Orange Cat Peeping", "Reindeer"]
+        let bundledFiles = ["Dog waiting", "Moody Dog", "Orange Cat Peeping"]
         var animations: [CustomIdleAnimation] = []
         
         for filename in bundledFiles {

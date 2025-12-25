@@ -28,7 +28,6 @@ struct ContentView: View {
     @ObservedObject var privacyManager = PrivacyIndicatorManager.shared
     @ObservedObject var doNotDisturbManager = DoNotDisturbManager.shared
     @ObservedObject var lockScreenManager = LockScreenManager.shared
-    @State private var downloadManager = DownloadManager.shared
     
     @Default(.enableStatsFeature) var enableStatsFeature
     @Default(.showCpuGraph) var showCpuGraph
@@ -37,23 +36,10 @@ struct ContentView: View {
     @Default(.showNetworkGraph) var showNetworkGraph
     @Default(.showDiskGraph) var showDiskGraph
     @Default(.enableReminderLiveActivity) var enableReminderLiveActivity
-    @Default(.enableTimerFeature) var enableTimerFeature
-    @Default(.timerDisplayMode) var timerDisplayMode
-    @Default(.enableHorizontalMusicGestures) var enableHorizontalMusicGestures
     
     // Dynamic sizing based on view type and graph count with smooth transitions
     var dynamicNotchSize: CGSize {
-        var baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
-        
-        if coordinator.currentView == .timer {
-            return CGSize(width: baseSize.width, height: 250) // Extra height for timer presets
-        }
-        
-        if coordinator.currentView == .notes || coordinator.currentView == .clipboard {
-            let preferredHeight = coordinator.notesLayoutState.preferredHeight
-            let resolvedHeight = max(baseSize.height, preferredHeight)
-            return CGSize(width: baseSize.width, height: resolvedHeight)
-        }
+        let baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
         
         guard coordinator.currentView == .stats else {
             return baseSize
@@ -75,7 +61,6 @@ struct ContentView: View {
     @State private var lastHapticTime: Date = Date()
 
     @State private var gestureProgress: CGFloat = .zero
-    @State private var skipGestureActiveDirection: MusicManager.SkipDirection?
     @State private var isMusicControlWindowVisible = false
     @State private var pendingMusicControlTask: Task<Void, Never>?
     @State private var musicControlHideTask: Task<Void, Never>?
@@ -224,12 +209,6 @@ struct ContentView: View {
                                 .panGesture(direction: .down) { translation, phase in
                                     handleDownGesture(translation: translation, phase: phase)
                                 }
-                                .panGesture(direction: .left) { translation, phase in
-                                    handleSkipGesture(direction: .forward, translation: translation, phase: phase)
-                                }
-                                .panGesture(direction: .right) { translation, phase in
-                                    handleSkipGesture(direction: .backward, translation: translation, phase: phase)
-                                }
                         }
                 }
                 .conditionalModifier(Defaults[.closeGestureEnabled] && Defaults[.enableGestures] && interactionsEnabled) { view in
@@ -266,14 +245,14 @@ struct ContentView: View {
                 }
                 .onChange(of: vm.isBatteryPopoverActive) { _, newPopoverState in
                     runAfter(0.1) {
-                        if !newPopoverState && !isHovering && vm.notchState == .open && !shouldPreventAutoClose() {
+                        if !newPopoverState && !isHovering && vm.notchState == .open && !vm.isStatsPopoverActive && !vm.isMediaOutputPopoverActive && !vm.isReminderPopoverActive {
                             vm.close()
                         }
                     }
                 }
                 .onChange(of: vm.isStatsPopoverActive) { _, newPopoverState in
                     runAfter(0.1) {
-                        if !newPopoverState && !isHovering && vm.notchState == .open && !shouldPreventAutoClose() {
+                        if !newPopoverState && !isHovering && vm.notchState == .open && !vm.isBatteryPopoverActive && !vm.isClipboardPopoverActive && !vm.isColorPickerPopoverActive && !vm.isMediaOutputPopoverActive && !vm.isReminderPopoverActive {
                             vm.close()
                         }
                     }
@@ -281,14 +260,7 @@ struct ContentView: View {
                 .onChange(of: vm.shouldRecheckHover) { _, _ in
                     // Recheck hover state when popovers are closed
                     runAfter(0.1) {
-                        if vm.notchState == .open && !shouldPreventAutoClose() && !isHovering {
-                            vm.close()
-                        }
-                    }
-                }
-                .onReceive(NotificationCenter.default.publisher(for: .sharingDidFinish)) { _ in
-                    runAfter(0.1) {
-                        if vm.notchState == .open && !isHovering && !shouldPreventAutoClose() {
+                        if vm.notchState == .open && !vm.isBatteryPopoverActive && !vm.isClipboardPopoverActive && !vm.isColorPickerPopoverActive && !vm.isStatsPopoverActive && !vm.isMediaOutputPopoverActive && !vm.isReminderPopoverActive && !isHovering {
                             vm.close()
                         }
                     }
@@ -493,10 +465,7 @@ struct ContentView: View {
                           ReminderLiveActivity()
                       } else if (!coordinator.expandingView.show || coordinator.expandingView.type == .recording) && vm.notchState == .closed && (recordingManager.isRecording || !recordingManager.isRecorderIdle) && Defaults[.enableScreenRecordingDetection] && !vm.hideOnClosed {
                           RecordingLiveActivity()
-                      } else if (!coordinator.expandingView.show || coordinator.expandingView.type == .download) && vm.notchState == .closed && downloadManager.isDownloading && Defaults[.enableDownloadListener] && !vm.hideOnClosed {
-                          DownloadLiveActivity()
-                              .transition(.blurReplace.animation(.interactiveSpring(dampingFraction: 1.2)))
-                      } else if (!coordinator.expandingView.show || coordinator.expandingView.type == .doNotDisturb) && vm.notchState == .closed && Defaults[.enableDoNotDisturbDetection] && Defaults[.showDoNotDisturbIndicator] && (doNotDisturbManager.isDoNotDisturbActive || Defaults[.focusIndicatorNonPersistent]) && !vm.hideOnClosed && !lockScreenManager.isLocked {
+                      } else if (!coordinator.expandingView.show || coordinator.expandingView.type == .doNotDisturb) && vm.notchState == .closed && doNotDisturbManager.isDoNotDisturbActive && Defaults[.enableDoNotDisturbDetection] && Defaults[.showDoNotDisturbIndicator] && !vm.hideOnClosed && !lockScreenManager.isLocked {
                           DoNotDisturbLiveActivity()
                       } else if (!coordinator.expandingView.show || coordinator.expandingView.type == .lockScreen) && vm.notchState == .closed && (lockScreenManager.isLocked || !lockScreenManager.isLockIdle) && Defaults[.enableLockScreenLiveActivity] && !vm.hideOnClosed {
                           LockScreenLiveActivity()
@@ -590,10 +559,6 @@ struct ContentView: View {
                                   NotchStatsView()
                               case .colorPicker:
                                   NotchColorPickerView()
-                            case .notes:
-                                NotchNotesView()
-                            case .clipboard:
-                                NotchNotesView()
                           }
                       }
                       .transition(.asymmetric(
@@ -766,9 +731,7 @@ struct ContentView: View {
                         }
 
                         vm.dropEvent = false
-                        if !shouldPreventAutoClose() {
-                            vm.close()
-                        }
+                        vm.close()
                     }
                 }
         } else {
@@ -798,11 +761,9 @@ struct ContentView: View {
                 triggerHapticIfAllowed()
             }
 
-            let shouldFocusTimerTab = enableTimerFeature && timerDisplayMode == .tab && timerManager.isTimerActive && !enableMinimalisticUI
-
             guard vm.notchState == .closed,
-                !coordinator.sneakPeek.show,
-                (Defaults[.openNotchOnHover] || shouldFocusTimerTab) else { return }
+                  !coordinator.sneakPeek.show,
+                  Defaults[.openNotchOnHover] else { return }
 
             hoverTask = Task {
                 try? await Task.sleep(for: .seconds(Defaults[.minimumHoverDuration]))
@@ -813,11 +774,6 @@ struct ContentView: View {
                           self.isHovering,
                           !self.coordinator.sneakPeek.show else { return }
 
-                    if shouldFocusTimerTab {
-                        withAnimation(.smooth) {
-                            self.coordinator.currentView = .timer
-                        }
-                    }
                     self.openNotch()
                 }
             }
@@ -831,7 +787,7 @@ struct ContentView: View {
                         self.isHovering = false
                     }
 
-                    if self.vm.notchState == .open && !self.shouldPreventAutoClose() {
+                    if self.vm.notchState == .open && !self.hasAnyActivePopovers() {
                         self.vm.close()
                     }
                 }
@@ -848,10 +804,6 @@ struct ContentView: View {
          vm.isTimerPopoverActive ||
          vm.isMediaOutputPopoverActive ||
          vm.isReminderPopoverActive
-    }
-
-    private func shouldPreventAutoClose() -> Bool {
-        hasAnyActivePopovers() || vm.isAutoCloseSuppressed || SharingStateManager.shared.preventNotchClose
     }
     
     // Helper to prevent rapid haptic feedback
@@ -907,7 +859,7 @@ struct ContentView: View {
     }
     
     private func handleUpGesture(translation: CGFloat, phase: NSEvent.Phase) {
-        if vm.notchState == .open && !vm.isHoveringCalendar && !vm.isScrollGestureActive {
+        if vm.notchState == .open && !vm.isHoveringCalendar {
             withAnimation(.smooth) {
                 gestureProgress = (translation / Defaults[.gestureSensitivity]) * -20
             }
@@ -930,37 +882,6 @@ struct ContentView: View {
                 }
             }
         }
-    }
-
-    private func handleSkipGesture(direction: MusicManager.SkipDirection, translation: CGFloat, phase: NSEvent.Phase) {
-        if phase == .ended {
-            skipGestureActiveDirection = nil
-            return
-        }
-
-        guard canPerformSkipGesture() else {
-            skipGestureActiveDirection = nil
-            return
-        }
-
-        if skipGestureActiveDirection == nil && translation > Defaults[.gestureSensitivity] {
-            skipGestureActiveDirection = direction
-
-            if Defaults[.enableHaptics] {
-                triggerHapticIfAllowed()
-            }
-
-            musicManager.handleSkipGesture(direction: direction)
-        }
-    }
-
-    private func canPerformSkipGesture() -> Bool {
-        enableHorizontalMusicGestures
-            && vm.notchState == .open
-            && coordinator.currentView == .home
-            && (!musicManager.isPlayerIdle || musicManager.bundleIdentifier != nil)
-            && !lockScreenManager.isLocked
-            && !hasAnyActivePopovers()
     }
 
     private func handleMusicControlPlaybackChange(isPlaying: Bool) {
@@ -1223,3 +1144,4 @@ struct FullScreenDropDelegate: DropDelegate {
         return true
     }
 }
+

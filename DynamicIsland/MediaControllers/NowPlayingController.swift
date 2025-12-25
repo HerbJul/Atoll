@@ -135,12 +135,7 @@ final class NowPlayingController: ObservableObject, MediaControllerProtocol {
         let process = Process()
         guard
             let scriptURL = Bundle.main.url(forResource: "mediaremote-adapter", withExtension: "pl"),
-            //let frameworkPath = Bundle.main.privateFrameworksPath?.appending("/MediaRemoteAdapter.framework")
-            let frameworkPath =
-                Bundle.main.resourceURL?
-                    .appendingPathComponent("MediaRemoteAdapter.framework")
-                    .path
-
+            let frameworkPath = Bundle.main.privateFrameworksPath?.appending("/MediaRemoteAdapter.framework")
         else {
             assertionFailure("Could not find mediaremote-adapter.pl script or framework path")
             return

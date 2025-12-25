@@ -29,12 +29,6 @@ class CalendarManager: ObservableObject {
     private var lastEventsFetchDate: Date?
     private let reloadRefreshInterval: TimeInterval = 15
     private var eventStoreChangedObserver: NSObjectProtocol?
-    private var pendingEventStoreRefreshTask: Task<Void, Never>?
-    private var nextAllowedEventStoreRefresh: Date = .distantPast
-    private var ignoreEventStoreChangesUntil: Date = .distantPast
-    private let eventStoreChangeThrottle: TimeInterval = 20
-    private let selfInducedChangeSuppression: TimeInterval = 6
-    private let eventFetchLimiter = EventFetchLimiter()
 
     var hasCalendarAccess: Bool { isAuthorized(calendarAuthorizationStatus) }
     var hasReminderAccess: Bool { isAuthorized(reminderAuthorizationStatus) }
@@ -51,7 +45,6 @@ class CalendarManager: ObservableObject {
         if let observer = eventStoreChangedObserver {
             NotificationCenter.default.removeObserver(observer)
         }
-        pendingEventStoreRefreshTask?.cancel()
     }
 
     private func setupEventStoreChangedObserver() {
@@ -60,44 +53,12 @@ class CalendarManager: ObservableObject {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.handleEventStoreChanged()
-        }
-    }
-
-    private func handleEventStoreChanged() {
-        Logger.log("CalendarManager: Event store changed notification received", category: .lifecycle)
-        let now = Date()
-        guard now >= ignoreEventStoreChangesUntil else { return }
-
-        if now < nextAllowedEventStoreRefresh {
-            let delay = max(nextAllowedEventStoreRefresh.timeIntervalSince(now), 0.05)
-            scheduleEventStoreRefresh(after: delay)
-            return
-        }
-
-        nextAllowedEventStoreRefresh = now.addingTimeInterval(eventStoreChangeThrottle)
-        scheduleEventStoreRefresh(after: 0)
-    }
-
-    private func scheduleEventStoreRefresh(after delay: TimeInterval) {
-        pendingEventStoreRefreshTask?.cancel()
-        pendingEventStoreRefreshTask = Task { [weak self] in
-            guard let self else { return }
-            if delay > 0 {
-                let nanoseconds = UInt64(delay * 1_000_000_000)
-                try? await Task.sleep(nanoseconds: nanoseconds)
+            Task {
+                guard let self else { return }
+                await self.reloadCalendarAndReminderLists()
+                await self.maybeRefreshEventsAfterReload()
             }
-            await self.performEventStoreRefresh()
         }
-    }
-
-    @MainActor
-    private func performEventStoreRefresh() async {
-        pendingEventStoreRefreshTask = nil
-        await reloadCalendarAndReminderLists()
-        await maybeRefreshEventsAfterReload()
-        nextAllowedEventStoreRefresh = Date().addingTimeInterval(eventStoreChangeThrottle)
-        ignoreEventStoreChangesUntil = Date().addingTimeInterval(selfInducedChangeSuppression)
     }
 
     @MainActor
@@ -138,13 +99,13 @@ class CalendarManager: ObservableObject {
             calendarAuthorizationStatus = granted ? .fullAccess : .denied
             if granted {
                 await reloadCalendarAndReminderLists()
-                await updateEvents(force: true)
+                await updateEvents()
             }
         case .restricted, .denied:
             NSLog("Calendar access denied or restricted")
         case .authorized, .fullAccess:
             await reloadCalendarAndReminderLists()
-            await updateEvents(force: true)
+            await updateEvents()
         case .writeOnly:
             NSLog("Calendar write only")
         @unknown default:
@@ -214,7 +175,7 @@ class CalendarManager: ObservableObject {
 
         Defaults[.calendarSelectionState] = selectionState
         updateSelectedCalendars()
-        await updateEvents(force: true)
+        await updateEvents()
     }
 
     static func startOfDay(_ date: Date) -> Date {
@@ -223,70 +184,22 @@ class CalendarManager: ObservableObject {
 
     func updateCurrentDate(_ date: Date) async {
         currentWeekStartDate = Calendar.current.startOfDay(for: date)
-        await updateEvents(force: true)
+        await updateEvents()
     }
 
-    private func updateEvents(force: Bool = false) async {
-        let now = Date()
-        if !force, let lastFetch = lastEventsFetchDate, now.timeIntervalSince(lastFetch) < reloadRefreshInterval {
-            return
-        }
-        
-        Logger.log("CalendarManager: Updating events (force: \(force))", category: .lifecycle)
-
+    private func updateEvents() async {
         let calendarIDs = selectedCalendars.map { $0.id }
-        let startDate = currentWeekStartDate
-        guard let endDate = Calendar.current.date(byAdding: .day, value: 1, to: currentWeekStartDate) else { return }
-        let service = calendarService
-
-        let events = await eventFetchLimiter.run {
-            await service.events(
-                from: startDate,
-                to: endDate,
-                calendars: calendarIDs
-            )
-        }
-
+        let events = await calendarService.events(
+            from: currentWeekStartDate,
+            to: Calendar.current.date(byAdding: .day, value: 1, to: currentWeekStartDate)!,
+            calendars: calendarIDs
+        )
         self.events = events
         lastEventsFetchDate = Date()
     }
 
     func setReminderCompleted(reminderID: String, completed: Bool) async {
         await calendarService.setReminderCompleted(reminderID: reminderID, completed: completed)
-        await updateEvents(force: true)
-    }
-}
-
-// MARK: - Event Fetch Limiter
-
-private actor EventFetchLimiter {
-    private var waiters: [CheckedContinuation<Void, Never>] = []
-    private var isRunning = false
-
-    func run<T>(_ operation: @escaping @Sendable () async -> T) async -> T {
-        await waitTurn()
-        defer { resumeNext() }
-        return await operation()
-    }
-
-    private func waitTurn() async {
-        if !isRunning {
-            isRunning = true
-            return
-        }
-
-        await withCheckedContinuation { continuation in
-            waiters.append(continuation)
-        }
-    }
-
-    private func resumeNext() {
-        if waiters.isEmpty {
-            isRunning = false
-            return
-        }
-
-        let continuation = waiters.removeFirst()
-        continuation.resume()
+        await updateEvents()
     }
 }

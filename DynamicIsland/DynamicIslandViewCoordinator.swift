@@ -47,14 +47,9 @@ struct ExpandedItem {
 
 class DynamicIslandViewCoordinator: ObservableObject {
     static let shared = DynamicIslandViewCoordinator()
-    private var cancellables = Set<AnyCancellable>()
     
     @Published var currentView: NotchViews = .home {
         didSet {
-            if Defaults[.enableMinimalisticUI] && currentView != .home {
-                currentView = .home
-                return
-            }
             handleStatsTabTransition(from: oldValue, to: currentView)
         }
     }
@@ -63,16 +58,12 @@ class DynamicIslandViewCoordinator: ObservableObject {
     private var statsSecondRowWorkItem: DispatchWorkItem?
     private let statsSecondRowRevealDelay: TimeInterval = 0.5
     private let statsSecondRowAnimationDuration: TimeInterval = 0.3
-    @Published var notesLayoutState: NotesLayoutState = .list
     
     
     @AppStorage("firstLaunch") var firstLaunch: Bool = true
     @AppStorage("showWhatsNew") var showWhatsNew: Bool = true
     @AppStorage("musicLiveActivityEnabled") var musicLiveActivityEnabled: Bool = true
     @AppStorage("timerLiveActivityEnabled") var timerLiveActivityEnabled: Bool = true
-
-    @Default(.enableTimerFeature) private var enableTimerFeature
-    @Default(.timerDisplayMode) private var timerDisplayMode
     
     @AppStorage("alwaysShowTabs") var alwaysShowTabs: Bool = true {
         didSet {
@@ -108,26 +99,6 @@ class DynamicIslandViewCoordinator: ObservableObject {
     
     private init() {
         selectedScreen = preferredScreen
-        Defaults.publisher(.timerDisplayMode)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] change in
-                self?.handleTimerDisplayModeChange(change.newValue)
-            }
-            .store(in: &cancellables)
-
-        Defaults.publisher(.enableTimerFeature)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] change in
-                self?.handleTimerFeatureToggle(change.newValue)
-            }
-            .store(in: &cancellables)
-
-        Defaults.publisher(.enableMinimalisticUI)
-            .receive(on: DispatchQueue.main)
-            .sink { [weak self] change in
-                self?.handleMinimalisticModeChange(change.newValue)
-            }
-            .store(in: &cancellables)
     }
 
     private func handleStatsTabTransition(from oldValue: NotchViews, to newValue: NotchViews) {
@@ -150,29 +121,6 @@ class DynamicIslandViewCoordinator: ObservableObject {
             }
         }
     }
-
-    private func handleTimerDisplayModeChange(_ mode: TimerDisplayMode) {
-        guard mode == .popover, currentView == .timer else { return }
-        withAnimation(.smooth) {
-            currentView = .home
-        }
-    }
-
-    private func handleTimerFeatureToggle(_ isEnabled: Bool) {
-        guard !isEnabled, currentView == .timer else { return }
-        withAnimation(.smooth) {
-            currentView = .home
-        }
-    }
-
-    private func handleMinimalisticModeChange(_ isEnabled: Bool) {
-        guard isEnabled else { return }
-        if currentView != .home {
-            withAnimation(.smooth) {
-                currentView = .home
-            }
-        }
-    }
     
     func toggleSneakPeek(status: Bool, type: SneakContentType, duration: TimeInterval = 1.5, value: CGFloat = 0, icon: String = "") {
         let resolvedDuration: TimeInterval
@@ -185,9 +133,11 @@ class DynamicIslandViewCoordinator: ObservableObject {
             resolvedDuration = duration
         }
         sneakPeekDuration = resolvedDuration
-        let bypassedTypes: [SneakContentType] = [.music, .timer, .reminder, .bluetoothAudio]
-        if !bypassedTypes.contains(type) && !Defaults[.enableSystemHUD] {
-            return
+        if type != .music && type != .timer && type != .reminder {
+            // close()
+            if !Defaults[.enableSystemHUD] {
+                return
+            }
         }
         DispatchQueue.main.async {
             withAnimation(.smooth) {
@@ -251,14 +201,11 @@ class DynamicIslandViewCoordinator: ObservableObject {
         didSet {
             if expandingView.show {
                 expandingViewTask?.cancel()
-                // Only auto-hide for battery, not for downloads (DownloadManager handles that)
-                if expandingView.type != .download {
-                    let duration: TimeInterval = 3
-                    expandingViewTask = Task { [weak self] in
-                        try? await Task.sleep(for: .seconds(duration))
-                        guard let self = self, !Task.isCancelled else { return }
-                        self.toggleExpandingView(status: false, type: .battery)
-                    }
+                let duration: TimeInterval = (expandingView.type == .download ? 2 : 3)
+                expandingViewTask = Task { [weak self] in
+                    try? await Task.sleep(for: .seconds(duration))
+                    guard let self = self, !Task.isCancelled else { return }
+                    self.toggleExpandingView(status: false, type: .battery)
                 }
             } else {
                 expandingViewTask?.cancel()

@@ -99,7 +99,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let dndManager = DoNotDisturbManager.shared  // NEW: DND detection
     let bluetoothAudioManager = BluetoothAudioManager.shared  // NEW: Bluetooth audio detection
     let idleAnimationManager = IdleAnimationManager.shared  // NEW: Custom idle animations
-    let downloadManager = DownloadManager.shared  // NEW: Chromium downloads detection
     let lockScreenPanelManager = LockScreenPanelManager.shared  // NEW: Lock screen music panel
     let systemTimerBridge = SystemTimerBridge.shared
     var closeNotchWorkItem: DispatchWorkItem?
@@ -277,17 +276,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return CGSize(width: inlineSneakPeekWidth, height: vm.effectiveClosedNotchHeight)
         }
         
-        // Use minimalistic or normal size based on settings
-        var baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
-        
-        // Use a consistent height for different view types
-        if coordinator.currentView == .timer {
-            baseSize.height = 250 // Extra space for timer presets
-        } else if coordinator.currentView == .notes || coordinator.currentView == .clipboard {
-            let preferredHeight = coordinator.notesLayoutState.preferredHeight
-            baseSize.height = max(baseSize.height, preferredHeight)
-        }
-        
+        // Use minimalistic or normal size based on settings, then adjust for stats layout
+        let baseSize = Defaults[.enableMinimalisticUI] ? minimalisticOpenNotchSize : openNotchSize
         let adjustedContentSize = statsAdjustedNotchSize(
             from: baseSize,
             isStatsTabActive: coordinator.currentView == .stats,
@@ -354,7 +344,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Migrate legacy progress bar settings
         Defaults.Keys.migrateProgressBarStyle()
         Defaults.Keys.migrateMusicAuxControls()
-        Defaults.Keys.migrateMusicControlSlots()
         
         // Initialize idle animations (load bundled + built-in face)
         idleAnimationManager.initializeDefaultAnimations()
@@ -375,17 +364,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Setup Privacy Indicator Manager (camera and microphone monitoring)
         PrivacyIndicatorManager.shared.startMonitoring()
         
-        // Observe tab changes - use immediate updates to prevent clipping
+        // Observe tab changes - use debounced updates
         coordinator.$currentView.sink { [weak self] newView in
-            self?.updateWindowSizeIfNeeded()
+            self?.debouncedUpdateWindowSize()
         }.store(in: &cancellables)
-
-        coordinator.$notesLayoutState
-            .removeDuplicates()
-            .sink { [weak self] _ in
-                self?.updateWindowSizeIfNeeded()
-            }
-            .store(in: &cancellables)
         
         // Observe stats settings changes - use debounced updates
         Defaults.publisher(.enableStatsFeature, options: []).sink { [weak self] _ in
@@ -415,8 +397,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Defaults.publisher(.openNotchWidth, options: []).sink { [weak self] _ in
             self?.debouncedUpdateWindowSize()
         }.store(in: &cancellables)
-
-        MemoryUsageMonitor.shared.startMonitoring()
 
         ReminderLiveActivityManager.shared.$activeWindowReminders
             .receive(on: RunLoop.main)
@@ -519,7 +499,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self, selector: #selector(onScreenUnlocked(_:)),
             name: NSNotification.Name(rawValue: "com.apple.screenIsUnlocked"), object: nil)
 
-        _ = KeyboardShortcuts.onKeyDown(for: .toggleSneakPeek) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .toggleSneakPeek) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
 
@@ -530,7 +510,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             )
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .toggleNotchOpen) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .toggleNotchOpen) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
 
@@ -567,13 +547,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .startDemoTimer) {
+        KeyboardShortcuts.onKeyDown(for: .startDemoTimer) {
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableTimerFeature] else { return }
             TimerManager.shared.startDemoTimer(duration: 300)
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .clipboardHistoryPanel) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableClipboardManager] else { return }
@@ -594,27 +574,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 } else {
                     NotificationCenter.default.post(name: NSNotification.Name("ToggleClipboardPopover"), object: nil)
                 }
-            case .separateTab:
-                if self.vm.notchState == .closed {
-                    self.vm.open()
-                    self.coordinator.currentView = .notes
-                } else {
-                    if self.coordinator.currentView == .notes {
-                        self.vm.close()
-                    } else {
-                        self.coordinator.currentView = .notes
-                    }
-                }
             }
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .colorPickerPanel) {
+        KeyboardShortcuts.onKeyDown(for: .colorPickerPanel) {
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableColorPickerFeature] else { return }
             ColorPickerPanelManager.shared.toggleColorPickerPanel()
         }
 
-        _ = KeyboardShortcuts.onKeyDown(for: .screenAssistantPanel) { [weak self] in
+        KeyboardShortcuts.onKeyDown(for: .screenAssistantPanel) { [weak self] in
             guard let self = self else { return }
             guard Defaults[.enableShortcuts] else { return }
             guard Defaults[.enableScreenAssistant] else { return }
@@ -666,9 +635,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // changes immediately instead of waiting for the first lock event.
         let timerWidgetManager = LockScreenTimerWidgetManager.shared
         timerWidgetManager.handleLockStateChange(isLocked: LockScreenManager.shared.currentLockStatus)
-
-        // Ensure the reminder widget mirrors live activity snapshots as soon as they exist.
-        _ = LockScreenReminderWidgetManager.shared
     }
     
     func playWelcomeSound() {
@@ -835,15 +801,3 @@ extension Notification.Name {
     static let automaticallySwitchDisplayChanged = Notification.Name("automaticallySwitchDisplayChanged")
 }
 
-extension CGRect: @retroactive Hashable {
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(origin.x)
-        hasher.combine(origin.y)
-        hasher.combine(size.width)
-        hasher.combine(size.height)
-    }
-
-    public static func == (lhs: CGRect, rhs: CGRect) -> Bool {
-        return lhs.origin == rhs.origin && lhs.size == rhs.size
-    }
-}

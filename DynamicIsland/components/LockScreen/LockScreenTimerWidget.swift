@@ -20,33 +20,10 @@ struct LockScreenTimerWidget: View {
         }
     }
 
+    private var countdownFont: Font { displayFont(size: 56) }
+
     private func displayFont(size: CGFloat) -> Font {
         .custom("SF Pro Display", size: size)
-    }
-
-    private var hasHoursComponent: Bool {
-        abs(timerManager.remainingTime) >= 3600
-    }
-
-    private var hasDoubleDigitHours: Bool {
-        abs(timerManager.remainingTime) >= 36_000 // 10 hours or more
-    }
-
-    private var titleFrameWidth: CGFloat {
-        if hasDoubleDigitHours { return 78 }
-        if hasHoursComponent { return 90 }
-        return 130
-    }
-
-    private var countdownFrameWidth: CGFloat {
-        if hasDoubleDigitHours { return 248 }
-        if hasHoursComponent { return 235 }
-        return 205
-    }
-
-    private var countdownFont: Font {
-        let baseSize: CGFloat = hasDoubleDigitHours ? 52 : 56
-        return displayFont(size: baseSize)
     }
 
     private var timerLabel: String {
@@ -125,17 +102,9 @@ struct LockScreenTimerWidget: View {
         timerManager.isPaused ? "Resume" : "Pause"
     }
 
-    private var secondaryIcon: String {
-        timerManager.isOvertime ? "stop.fill" : "xmark"
-    }
-
-    private var secondaryLabel: String {
-        timerManager.isOvertime ? "Stop" : "Cancel"
-    }
-
     var body: some View {
         VStack(spacing: 16) {
-            HStack(alignment: .center, spacing: 8) {
+            HStack(alignment: .center, spacing: 18) {
                 controlButtons
 
                 titleSection
@@ -144,7 +113,7 @@ struct LockScreenTimerWidget: View {
                 countdownSection
             }
         }
-        .padding(.horizontal, 12)
+        .padding(.horizontal, 24)
         .padding(.vertical, 18)
         .frame(width: Self.preferredSize.width, height: Self.preferredSize.height)
         .background(widgetBackground)
@@ -164,24 +133,22 @@ struct LockScreenTimerWidget: View {
 
     private var controlButtons: some View {
         HStack(spacing: 10) {
-            if !timerManager.isOvertime {
-                CircleButton(
-                    icon: pauseIcon,
-                    foreground: Color.white.opacity(0.95),
-                    background: accentColor.opacity(0.32),
-                    action: togglePause,
-                    isEnabled: timerManager.allowsManualInteraction,
-                    helpText: pauseLabel
-                )
-            }
+            CircleButton(
+                icon: pauseIcon,
+                foreground: Color.white.opacity(0.95),
+                background: accentColor.opacity(0.32),
+                action: togglePause,
+                isEnabled: timerManager.allowsManualInteraction,
+                helpText: pauseLabel
+            )
 
             CircleButton(
-                icon: secondaryIcon,
+                icon: "xmark",
                 foreground: Color.white.opacity(0.95),
                 background: Color.black.opacity(0.35),
                 action: stopTimer,
                 isEnabled: timerManager.allowsManualInteraction,
-                helpText: secondaryLabel
+                helpText: "Stop"
             )
         }
     }
@@ -194,13 +161,10 @@ struct LockScreenTimerWidget: View {
                 .foregroundStyle(timerManager.isOvertime ? Color.red : accentColor)
                 .contentTransition(.numericText())
                 .animation(.smooth(duration: 0.25), value: timerManager.remainingTime)
-                .lineLimit(1)
-                .minimumScaleFactor(0.68)
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        .frame(width: countdownFrameWidth, alignment: .center)
+        .frame(width: 220, alignment: .center)
         .padding(.trailing, 2)
-        .layoutPriority(2)
     }
 
     private var titleSection: some View {
@@ -210,13 +174,12 @@ struct LockScreenTimerWidget: View {
                 font: displayFont(size: 18),
                 nsFont: .title3,
                 textColor: accentColor,
-                minDuration: 0.16,
-                frameWidth: titleFrameWidth
+                minDuration: 0.18,
+                frameWidth: Self.preferredSize.width * 0.35
             )
-            .frame(maxWidth: titleFrameWidth)
+            .frame(maxWidth: .infinity)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-        .layoutPriority(0)
     }
 
     private var accentRibbon: some View {
@@ -265,28 +228,20 @@ struct LockScreenTimerWidget: View {
         let isEnabled: Bool
         let helpText: String
 
-        @State private var isHovering = false
-
-        private var effectiveBackground: Color {
-            background.opacity(isHovering ? 0.9 : 0.7)
-        }
-
         var body: some View {
             Button(action: action) {
                 Image(systemName: icon)
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(foreground)
                     .frame(width: 48, height: 48)
-                    .background(effectiveBackground.opacity(isEnabled ? 1 : 0.25))
+                    .background(background.opacity(isEnabled ? 1 : 0.25))
                     .clipShape(Circle())
                     .contentTransition(.symbolEffect(.replace))
             }
             .buttonStyle(.plain)
-            .contentShape(Circle())
             .help(helpText)
             .disabled(!isEnabled)
             .opacity(isEnabled ? 1 : 0.4)
-            .onHover { hovering in isHovering = hovering }
         }
     }
 }
