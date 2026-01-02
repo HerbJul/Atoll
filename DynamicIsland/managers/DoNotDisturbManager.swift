@@ -466,7 +466,7 @@ extension FocusModeType {
     
     func getCustomAccentColorFromFile() -> Color {
         return FocusMetadataReader.shared
-            .getColor(for: DoNotDisturbManager.shared.currentFocusModeName)
+            .getAccentColor(for: DoNotDisturbManager.shared.currentFocusModeName)
     }
 }
 
@@ -987,8 +987,6 @@ private final class FocusMetadataReader {
     static let shared = FocusMetadataReader()
     
     private func getModeConfig(for focusName: String) -> DNDMode? {
-        print(">>> Debug: Reading from \(pathToDatabase.path)")
-        
         do {
             let data = try Data(contentsOf: pathToDatabase)
             let root = try JSONDecoder().decode(DNDConfigRoot.self, from: data)
@@ -996,25 +994,29 @@ private final class FocusMetadataReader {
             for entry in root.data {
                 for wrapper in entry.modeConfigurations.values {
                     if wrapper.mode.name
-                        .localizedCaseInsensitiveContains(focusName){
+                        .localizedCaseInsensitiveCompare(focusName) == .orderedSame {
                         return wrapper.mode
                     }
                 }
             }
         } catch {
-            print(">>> JSON Error: \(error)")
+            print("JSON Error: \(error)")
         }
         return nil
     }
     
+    /// Fetch the icon for the current focus from disk. If the focus is not found return the placeholder `app.badge`
+    /// - Returns A string representing the sfSymbol of the current focus
     func getIcon(for focus: String) -> String {
         guard let mode = getModeConfig(for: focus) else { return "app.badge" }
         return mode.symbolImageName ?? "app.badge"
     }
     
-    func getColor(for focus: String) -> Color {
+    /// Fetch the accent color for the current focus from disk. If the focus is not found return the placeholder `Color.indigo`
+    /// - Returns A Color representing the accent color for the current focus
+    func getAccentColor(for focus: String) -> Color {
         guard let mode = getModeConfig(for: focus),
-              let colorName = mode.tintColorName else { return .gray }
+              let colorName = mode.tintColorName else { return .indigo }
         
         return Color.stringToColor(for: colorName)
     }
