@@ -45,9 +45,22 @@
 		F54406E72CD4987A00C7AFD9 /* Atoll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Atoll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6CF2BBD12F17EE1A00A52442 /* Exceptions for "DynamicIsland" folder in "DynamicIsland" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F54406E62CD4987A00C7AFD9 /* DynamicIsland */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		F54406E92CD4987A00C7AFD9 /* DynamicIsland */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6CF2BBD12F17EE1A00A52442 /* Exceptions for "DynamicIsland" folder in "DynamicIsland" target */,
+			);
 			path = DynamicIsland;
 			sourceTree = "<group>";
 		};
@@ -186,6 +199,7 @@
 				hi,
 				ta,
 				gu,
+				de,
 			);
 			mainGroup = F54406DE2CD4987A00C7AFD9;
 			minimizedProjectReferenceProxies = 1;
