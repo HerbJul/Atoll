@@ -256,7 +256,7 @@ final class SystemVolumeController {
             var value = Float32(0)
             let status = getData(selector: kAudioDevicePropertyVolumeScalar, element: element, data: &value)
             if status == noErr {
-                if element == kAudioObjectPropertyElementMaster {
+                if element == kAudioObjectPropertyElementMain {
                     masterVolume = value
                 }
                 accumulator += value
