@@ -10,7 +10,7 @@ import Foundation
 import Defaults
 
 struct PickedColor: Identifiable, Codable, Hashable, Defaults.Serializable {
-    let id = UUID()
+    var id = UUID()
     let red: Double
     let green: Double
     let blue: Double
