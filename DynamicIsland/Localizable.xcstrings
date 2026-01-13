@@ -15938,6 +15938,7 @@
       }
     },
     "Bottom Pad:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -39615,6 +39616,9 @@
         }
       }
     },
+    "Gesture skip behavior" : {
+
+    },
     "Get started" : {
       "localizations" : {
         "ar" : {
@@ -40384,6 +40388,7 @@
       }
     },
     "Grant Accessibility permission in System Settings to control macOS HUD replacements from here." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -40520,6 +40525,7 @@
       }
     },
     "Grant Accessibility permission in System Settings to customize the on-screen display replacements here." : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -41403,6 +41409,7 @@
     },
     "Hide from Notch" : {
       "comment" : "A button label that hides the Clock timer from the Notch app.",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -42819,6 +42826,7 @@
     },
     "HUDs are disabled because Custom OSD is enabled. Disable Custom OSD in the Custom OSD tab to use HUDs." : {
       "comment" : "A message displayed below the toggle to disable HUDs, explaining that it's disabled because Custom OSD is enabled.",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -59450,6 +59458,7 @@
       }
     },
     "Opacity:" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -59989,6 +59998,7 @@
     },
     "Open Settings" : {
       "comment" : "A button that opens system settings when pressed.",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -61433,6 +61443,7 @@
       }
     },
     "Paused" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -75192,6 +75203,7 @@
     },
     "Show media output control in other layouts" : {
       "comment" : "A toggle that lets the user enable or disable the media output control in layouts other than the home screen.",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -75610,6 +75622,12 @@
         }
       }
     },
+    "Show Percentage" : {
+
+    },
+    "Show preset list in timer tab" : {
+
+    },
     "Show progress" : {
       "localizations" : {
         "ar" : {
@@ -75898,6 +75916,12 @@
           }
         }
       }
+    },
+    "Show sneak peek on playback changes" : {
+
+    },
+    "Show the active Focus name inside the indicator." : {
+
     },
     "Show timer name" : {
       "localizations" : {
@@ -79200,6 +79224,9 @@
           }
         }
       }
+    },
+    "Start typing..." : {
+
     },
     "Starts a 5-minute demo timer to test the timer live activity feature. Only works when timer feature is enabled." : {
       "localizations" : {
@@ -86427,6 +86454,82 @@
         }
       }
     },
+    "Use clored gauges" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie farbige Messgeräte"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez des jauges colorées."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj kolorowych wskaźników"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd färgade mätare"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте кольорові датчики"
+          }
+        }
+      }
+    },
+    "Use MacBook icon when on battery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie das MacBook-Symbol, wenn Sie im Akkubetrieb arbeiten."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä MacBook-kuvaketta, kun laite toimii akkuvirralla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser l'icône MacBook lorsque l'ordinateur fonctionne sur batterie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj ikony MacBooka, gdy urządzenie jest zasilane z baterii."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd MacBook-ikonen när du använder batteriet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте піктограму MacBook, коли працюєте від акумулятора"
+          }
+        }
+      }
+    },
     "Use music visualizer spectrogram" : {
       "localizations" : {
         "ar" : {
@@ -89165,6 +89268,9 @@
         }
       }
     },
+    "When enabled, Focus appears briefly (on/off) and then collapses instead of staying visible." : {
+
+    },
     "When enabled, stats monitoring stops a few seconds after the notch closes." : {
       "localizations" : {
         "ar" : {
@@ -89296,6 +89402,7 @@
       }
     },
     "When enabled, the Atoll will expand horizontally to match the animation size" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
