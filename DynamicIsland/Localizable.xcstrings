@@ -404,6 +404,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -524,6 +530,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -628,9 +640,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    ":" : {
-
     },
     "'Now Playing' was the only option on previous versions and works with all media apps." : {
       "localizations" : {
@@ -1685,6 +1694,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1800,6 +1815,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -2054,6 +2075,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -2283,9 +2310,6 @@
           }
         }
       }
-    },
-    "%lld chars" : {
-
     },
     "%lld colors" : {
       "localizations" : {
@@ -2676,6 +2700,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -3045,6 +3075,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -4291,6 +4327,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -4741,6 +4783,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -4846,9 +4894,6 @@
       },
       "shouldTranslate" : false
     },
-    "00" : {
-
-    },
     "00:05:00" : {
       "comment" : "A time displayed in the timer panel on a lock screen.",
       "localizations" : {
@@ -4859,6 +4904,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -4970,7 +5021,6 @@
       "shouldTranslate" : false
     },
     "1x" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -5963,7 +6013,6 @@
       }
     },
     "20" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -5972,6 +6021,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -6221,6 +6276,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -6341,6 +6402,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -6455,6 +6522,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -7243,7 +7316,6 @@
     },
     "Accessibility permission required" : {
       "comment" : "A label explaining that accessibility permissions are required.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -9444,12 +9516,6 @@
         }
       }
     },
-    "Adds a notch HUD when Caps Lock is enabled, with optional label and tint controls." : {
-
-    },
-    "Adds the AirPlay/route picker button back to the customizable controls palette." : {
-
-    },
     "Adjust settings above to see changes in real-time. The actual OSD appears at the bottom center of your screen." : {
       "comment" : "A footer in the \"Preview\" section of the Custom OSD settings, explaining how to use the live preview feature.",
       "localizations" : {
@@ -10971,9 +11037,6 @@
         }
       }
     },
-    "All" : {
-
-    },
     "All-day" : {
       "localizations" : {
         "ar" : {
@@ -11103,9 +11166,6 @@
           }
         }
       }
-    },
-    "All-Day Events" : {
-
     },
     "Allow Access" : {
       "localizations" : {
@@ -11258,6 +11318,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -11365,7 +11431,6 @@
     },
     "Alpha Feature Warning" : {
       "comment" : "The title of an alert that warns users about an alpha feature.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -12577,9 +12642,6 @@
           }
         }
       }
-    },
-    "Applies the notch-style parallax effect to the lock screen media widget album art." : {
-
     },
     "AQI" : {
       "extractionState" : "manual",
@@ -14820,9 +14882,6 @@
         }
       }
     },
-    "Battery Indicator Styling" : {
-
-    },
     "Battery Information" : {
       "localizations" : {
         "ar" : {
@@ -15095,9 +15154,6 @@
         }
       }
     },
-    "Battery settings and informations are only available on MacBooks" : {
-
-    },
     "Battery Status" : {
       "localizations" : {
         "ar" : {
@@ -15234,17 +15290,7 @@
         }
       }
     },
-    "Battery Widget" : {
-
-    },
-    "Behavior & Style" : {
-
-    },
-    "BETA" : {
-
-    },
     "Blue dashed box shows actual size in Atoll" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -15373,9 +15419,6 @@
           }
         }
       }
-    },
-    "Blue outline matches the notch canvas" : {
-
     },
     "Bluetooth Audio Devices" : {
       "comment" : "A section header that lists Bluetooth audio devices.",
@@ -15776,7 +15819,6 @@
       }
     },
     "Both" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -15901,7 +15943,7 @@
       }
     },
     "Bottom Pad:" : {
-      "extractionState" : "manual",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -18149,17 +18191,7 @@
         }
       }
     },
-    "Caps Lock" : {
-
-    },
-    "Caps Lock color" : {
-
-    },
-    "Caps Lock Indicator" : {
-
-    },
     "Center" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -19463,9 +19495,6 @@
         }
       }
     },
-    "Choose directly on which side of the screen the vertical bar appears." : {
-
-    },
     "Choose File" : {
       "localizations" : {
         "ar" : {
@@ -19589,9 +19618,6 @@
           }
         }
       }
-    },
-    "Choose which service to use when sharing files from the shelf. Drag files onto the shelf or click the shelf button to pick files." : {
-
     },
     "Choose which system controls should display custom OSD windows." : {
       "comment" : "A footer description for the \"Controls\" section of the Custom OSD settings view.",
@@ -20926,9 +20952,6 @@
           }
         }
       }
-    },
-    "Clear Clipboard History?" : {
-
     },
     "Clear Color History" : {
       "localizations" : {
@@ -24047,12 +24070,8 @@
         }
       }
     },
-    "Color-coded fills are unavailable in Segmented mode. Switch to Hierarchical or Gradient inside Controls › Dynamic Island to adjust advanced options." : {
-
-    },
     "Color-Coded Progress Bars" : {
       "comment" : "A section header that lists the options for color-coded progress bars.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -24970,9 +24989,6 @@
         }
       }
     },
-    "Configure presets in Settings to see them here." : {
-
-    },
     "Connected" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -25250,9 +25266,6 @@
           }
         }
       }
-    },
-    "Control Palette" : {
-
     },
     "Control timer availability, live activity behaviour, and whether the app mirrors timers started from the macOS Clock app." : {
       "localizations" : {
@@ -26072,9 +26085,6 @@
         }
       }
     },
-    "Copy items on drag" : {
-
-    },
     "Copy Latest Crash Report" : {
       "localizations" : {
         "ar" : {
@@ -26446,9 +26456,6 @@
           }
         }
       }
-    },
-    "Copy text to see it here" : {
-
     },
     "Core %lld" : {
       "comment" : "A label showing the ID of a CPU core. The argument is the ID of the CPU core.",
@@ -26846,9 +26853,6 @@
           }
         }
       }
-    },
-    "Create from Clipboard" : {
-
     },
     "Current custom timer:" : {
       "extractionState" : "manual",
@@ -27348,9 +27352,6 @@
         }
       }
     },
-    "Current Transform" : {
-
-    },
     "Currently active" : {
       "comment" : "A text indicating whether the camera is \"Currently active\" or \"Not active\".",
       "localizations" : {
@@ -27476,11 +27477,7 @@
         }
       }
     },
-    "Currently selected: %@" : {
-
-    },
     "Custom" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -28382,7 +28379,6 @@
       }
     },
     "Custom OSD is an experimental alpha feature and may contain bugs or unexpected behavior.\n\nThis feature requires macOS 15 or later and is still under active development. It's recommended to keep it disabled unless you want to help test it." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -29301,9 +29297,6 @@
         }
       }
     },
-    "Customize how you organize and create notes. Enabling color filtering and search helps manage large lists." : {
-
-    },
     "Customize in Settings" : {
       "localizations" : {
         "ar" : {
@@ -29433,9 +29426,6 @@
           }
         }
       }
-    },
-    "Dash outline equals the exact notch bounds." : {
-
     },
     "Default" : {
       "localizations" : {
@@ -29939,9 +29929,6 @@
           }
         }
       }
-    },
-    "Delete All Notes?" : {
-
     },
     "Delete Animation" : {
       "comment" : "The title of an alert that appears when trying to delete a custom animation.",
@@ -30470,9 +30457,6 @@
           }
         }
       }
-    },
-    "Devices" : {
-
     },
     "Diagnostics" : {
       "comment" : "A section header in the Lock Screen Settings view, describing diagnostics-related functionality.",
@@ -31265,7 +31249,6 @@
     },
     "Display custom macOS-style OSD windows at the bottom center of the screen when adjusting volume, brightness, or keyboard backlight." : {
       "comment" : "A description of the functionality of the Custom OSD feature.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -31941,9 +31924,6 @@
         }
       }
     },
-    "Displays the current Focus state above the weather capsule whenever Focus detection is enabled." : {
-
-    },
     "Do Not Disturb" : {
       "localizations" : {
         "ar" : {
@@ -32067,9 +32047,6 @@
           }
         }
       }
-    },
-    "Done" : {
-
     },
     "Download" : {
       "localizations" : {
@@ -32201,11 +32178,7 @@
         }
       }
     },
-    "Download Detection" : {
-
-    },
     "Download icon style" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -32731,12 +32704,6 @@
         }
       }
     },
-    "Drag a control onto a slot or tap to place it in the first empty slot." : {
-
-    },
-    "Drag items between slots or drop from the palette to remap controls." : {
-
-    },
     "Drag the previews to adjust vertical placement. Positive values lift the panel; negative values lower it. Changes apply instantly while the widgets are visible." : {
       "localizations" : {
         "ar" : {
@@ -33003,9 +32970,6 @@
         }
       }
     },
-    "Dynamic Island Progress Bars" : {
-
-    },
     "dynamic.island" : {
       "localizations" : {
         "ar" : {
@@ -33015,6 +32979,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -34770,7 +34740,6 @@
     },
     "Enable Custom OSD" : {
       "comment" : "A toggle that enables or disables the custom OSD feature.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -34893,9 +34862,6 @@
           }
         }
       }
-    },
-    "Enable customizable controls" : {
-
     },
     "Enable dynamic mirror" : {
       "extractionState" : "manual",
@@ -36262,12 +36228,6 @@
         }
       }
     },
-    "Enable the battery capsule and configure its layout." : {
-
-    },
-    "Enable the timer feature in Settings to access this tab." : {
-
-    },
     "Enable the weather capsule and configure its layout, provider, units, and optional battery/AQI indicators." : {
       "comment" : "A footer for the \"Weather Widget\" section in the Lock Screen Settings view, describing its purpose.",
       "localizations" : {
@@ -36553,7 +36513,6 @@
       }
     },
     "Enable timer feature in Settings to use this tab" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -36800,9 +36759,6 @@
           }
         }
       }
-    },
-    "Enable when scaling beyond 30x20px so the Atoll opens gracefully." : {
-
     },
     "Enable window shadow" : {
       "extractionState" : "manual",
@@ -37846,11 +37802,7 @@
         }
       }
     },
-    "Expand notch to follow animation width" : {
-
-    },
     "Expand Notch with Animation" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -37973,9 +37925,6 @@
           }
         }
       }
-    },
-    "Expanded drag detection area" : {
-
     },
     "Expanded notch width" : {
       "comment" : "A label describing the expanded notch width setting.",
@@ -38422,9 +38371,6 @@
         }
       }
     },
-    "Files dropped on the shelf will be shared via this service" : {
-
-    },
     "Fill Notch" : {
       "localizations" : {
         "ar" : {
@@ -38803,12 +38749,6 @@
         }
       }
     },
-    "Floating window panel skip behaviour" : {
-
-    },
-    "Focus active: %@" : {
-
-    },
     "Focus Status" : {
       "localizations" : {
         "ar" : {
@@ -38932,9 +38872,6 @@
           }
         }
       }
-    },
-    "Focus Widget" : {
-
     },
     "Free · %@" : {
       "comment" : "A label displaying the amount of free storage on a disk device. The argument is the number of free bytes on the disk.",
@@ -40472,7 +40409,7 @@
       }
     },
     "Grant Accessibility permission in System Settings to control macOS HUD replacements from here." : {
-      "extractionState" : "manual",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -40609,7 +40546,7 @@
       }
     },
     "Grant Accessibility permission in System Settings to customize the on-screen display replacements here." : {
-      "extractionState" : "manual",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -86580,6 +86517,82 @@
     },
     "Use Accent Color" : {
 
+    },
+    "Use clored gauges" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie farbige Messgeräte"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez des jauges colorées."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj kolorowych wskaźników"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd färgade mätare"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте кольорові датчики"
+          }
+        }
+      }
+    },
+    "Use MacBook icon when on battery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie das MacBook-Symbol, wenn Sie im Akkubetrieb arbeiten."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä MacBook-kuvaketta, kun laite toimii akkuvirralla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser l'icône MacBook lorsque l'ordinateur fonctionne sur batterie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj ikony MacBooka, gdy urządzenie jest zasilane z baterii."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd MacBook-ikonen när du använder batteriet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте піктограму MacBook, коли працюєте від акумулятора"
+          }
+        }
+      }
     },
     "Use clored gauges" : {
       "extractionState" : "manual",
