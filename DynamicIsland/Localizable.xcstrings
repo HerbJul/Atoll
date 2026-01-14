@@ -404,6 +404,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -524,6 +530,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -628,9 +640,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    ":" : {
-
     },
     "'Now Playing' was the only option on previous versions and works with all media apps." : {
       "localizations" : {
@@ -1685,6 +1694,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -1800,6 +1815,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -2054,6 +2075,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -2283,9 +2310,6 @@
           }
         }
       }
-    },
-    "%lld chars" : {
-
     },
     "%lld colors" : {
       "localizations" : {
@@ -2676,6 +2700,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -3045,6 +3075,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -4291,6 +4327,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -4741,6 +4783,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -4846,9 +4894,6 @@
       },
       "shouldTranslate" : false
     },
-    "00" : {
-
-    },
     "00:05:00" : {
       "comment" : "A time displayed in the timer panel on a lock screen.",
       "localizations" : {
@@ -4859,6 +4904,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -4970,7 +5021,6 @@
       "shouldTranslate" : false
     },
     "1x" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -5963,7 +6013,6 @@
       }
     },
     "20" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -5972,6 +6021,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -6206,126 +6261,6 @@
         }
       }
     },
-    "30" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "30"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "30"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "100" : {
       "comment" : "The text displayed below a 100% battery level in the lock screen.",
       "localizations" : {
@@ -6336,6 +6271,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -6455,6 +6396,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -7243,7 +7190,6 @@
     },
     "Accessibility permission required" : {
       "comment" : "A label explaining that accessibility permissions are required.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -7457,399 +7403,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "פעולות"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Activate" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktiviert"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Activate"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הפעל"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Activate your license" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivieren Sie Ihre Lizenz"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Activate your license"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer votre license"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הפעל את הרישיון שלך"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Activation" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivierung "
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Activation"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activation"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הפעלה"
           }
         },
         "hu" : {
@@ -9444,12 +8997,6 @@
         }
       }
     },
-    "Adds a notch HUD when Caps Lock is enabled, with optional label and tint controls." : {
-
-    },
-    "Adds the AirPlay/route picker button back to the customizable controls palette." : {
-
-    },
     "Adjust settings above to see changes in real-time. The actual OSD appears at the bottom center of your screen." : {
       "comment" : "A footer in the \"Preview\" section of the Custom OSD settings, explaining how to use the live preview feature.",
       "localizations" : {
@@ -10971,9 +10518,6 @@
         }
       }
     },
-    "All" : {
-
-    },
     "All-day" : {
       "localizations" : {
         "ar" : {
@@ -11103,9 +10647,6 @@
           }
         }
       }
-    },
-    "All-Day Events" : {
-
     },
     "Allow Access" : {
       "localizations" : {
@@ -11258,6 +10799,12 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "needs_review",
@@ -11365,7 +10912,6 @@
     },
     "Alpha Feature Warning" : {
       "comment" : "The title of an alert that warns users about an alpha feature.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -11763,137 +11309,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "总是显示标签页"
-          }
-        }
-      }
-    },
-    "Animation" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animation"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Animation"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animation"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אנימציה"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         }
       }
@@ -12577,9 +11992,6 @@
           }
         }
       }
-    },
-    "Applies the notch-style parallax effect to the lock screen media widget album art." : {
-
     },
     "AQI" : {
       "extractionState" : "manual",
@@ -14820,9 +14232,6 @@
         }
       }
     },
-    "Battery Indicator Styling" : {
-
-    },
     "Battery Information" : {
       "localizations" : {
         "ar" : {
@@ -15095,9 +14504,6 @@
         }
       }
     },
-    "Battery settings and informations are only available on MacBooks" : {
-
-    },
     "Battery Status" : {
       "localizations" : {
         "ar" : {
@@ -15234,17 +14640,7 @@
         }
       }
     },
-    "Battery Widget" : {
-
-    },
-    "Behavior & Style" : {
-
-    },
-    "BETA" : {
-
-    },
     "Blue dashed box shows actual size in Atoll" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -15373,9 +14769,6 @@
           }
         }
       }
-    },
-    "Blue outline matches the notch canvas" : {
-
     },
     "Bluetooth Audio Devices" : {
       "comment" : "A section header that lists Bluetooth audio devices.",
@@ -15776,7 +15169,6 @@
       }
     },
     "Both" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -15824,131 +15216,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les deux"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Bottom Pad:" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unteres Pad:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Bottom Pad:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Almohadilla inferior:"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Coussin inférieur :"
           }
         },
         "gu" : {
@@ -18149,17 +17416,7 @@
         }
       }
     },
-    "Caps Lock" : {
-
-    },
-    "Caps Lock color" : {
-
-    },
-    "Caps Lock Indicator" : {
-
-    },
     "Center" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -19463,9 +18720,6 @@
         }
       }
     },
-    "Choose directly on which side of the screen the vertical bar appears." : {
-
-    },
     "Choose File" : {
       "localizations" : {
         "ar" : {
@@ -19589,9 +18843,6 @@
           }
         }
       }
-    },
-    "Choose which service to use when sharing files from the shelf. Drag files onto the shelf or click the shelf button to pick files." : {
-
     },
     "Choose which system controls should display custom OSD windows." : {
       "comment" : "A footer description for the \"Controls\" section of the Custom OSD settings view.",
@@ -20926,9 +20177,6 @@
           }
         }
       }
-    },
-    "Clear Clipboard History?" : {
-
     },
     "Clear Color History" : {
       "localizations" : {
@@ -24047,12 +23295,8 @@
         }
       }
     },
-    "Color-coded fills are unavailable in Segmented mode. Switch to Hierarchical or Gradient inside Controls › Dynamic Island to adjust advanced options." : {
-
-    },
     "Color-Coded Progress Bars" : {
       "comment" : "A section header that lists the options for color-coded progress bars.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -24970,9 +24214,6 @@
         }
       }
     },
-    "Configure presets in Settings to see them here." : {
-
-    },
     "Connected" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -25250,9 +24491,6 @@
           }
         }
       }
-    },
-    "Control Palette" : {
-
     },
     "Control timer availability, live activity behaviour, and whether the app mirrors timers started from the macOS Clock app." : {
       "localizations" : {
@@ -26072,9 +25310,6 @@
         }
       }
     },
-    "Copy items on drag" : {
-
-    },
     "Copy Latest Crash Report" : {
       "localizations" : {
         "ar" : {
@@ -26446,9 +25681,6 @@
           }
         }
       }
-    },
-    "Copy text to see it here" : {
-
     },
     "Core %lld" : {
       "comment" : "A label showing the ID of a CPU core. The argument is the ID of the CPU core.",
@@ -26846,9 +26078,6 @@
           }
         }
       }
-    },
-    "Create from Clipboard" : {
-
     },
     "Current custom timer:" : {
       "extractionState" : "manual",
@@ -27348,9 +26577,6 @@
         }
       }
     },
-    "Current Transform" : {
-
-    },
     "Currently active" : {
       "comment" : "A text indicating whether the camera is \"Currently active\" or \"Not active\".",
       "localizations" : {
@@ -27476,11 +26702,7 @@
         }
       }
     },
-    "Currently selected: %@" : {
-
-    },
     "Custom" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -28382,7 +27604,6 @@
       }
     },
     "Custom OSD is an experimental alpha feature and may contain bugs or unexpected behavior.\n\nThis feature requires macOS 15 or later and is still under active development. It's recommended to keep it disabled unless you want to help test it." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -28520,150 +27741,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Özel OSD deneysel bir alfa özelliğidir ve hatalar veya beklenmedik davranışlar içerebilir. Bu özellik macOS 15 veya daha yenisini gerektirir ve hala etkin bir geliştirme aşamasındadır. Test etmeye yardımcı olmak istemediğiniz sürece devre dışı bırakmanız önerilir."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Custom OSD is disabled because HUDs are enabled. Disable HUDs in the HUDs tab to use Custom OSD." : {
-      "comment" : "A message displayed below the toggle to inform the user that they cannot enable Custom OSD if HUDs are enabled.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تم تعطيل OSD المخصص لأن HUDs ممكّن. قم بتعطيل HUDs في علامة التبويب HUDs لاستخدام OSD المخصص."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Наладжвальны OSD адключаны, таму што ўключаны HUD-ы. Адключыце HUD-ы на ўкладцы «HUD-ы», каб выкарыстоўваць наладжвальны OSD."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vlastní OSD je zakázáno, protože jsou povoleny HUD. Chcete-li použít vlastní OSD, zakážte HUD na kartě HUD."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Benutzerdefiniertes OSD ist deaktiviert, da HUDs aktiviert sind. Deaktivieren Sie HUDs auf der Registerkarte HUDs, um benutzerdefiniertes OSD zu verwenden."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom OSD is disabled because HUDs are enabled. Disable HUDs in the HUDs tab to use Custom OSD."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El OSD personalizado está deshabilitado porque los HUD están habilitados. Deshable HUDs en la pestaña HUDs para usar OSD personalizado."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El OSD personalizado está desactivado porque los HUD están activados. Desactive los HUD en la pestaña HUD para utilizar el OSD personalizado."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mukautettu OSD on pois käytöstä, koska HUD-näytöt ovat käytössä. Poista HUD-näytöt käytöstä HUD-välilehdessä, jotta voit käyttää mukautettua OSD-näyttöä."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L'OSD personnalisé est désactivé car les HUD sont activés. Désactiver les HUD dans l'onglet HUDs pour utiliser l'OSD personnalisé."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "कस्टम OSD अक्षम है क्योंकि HUD सक्षम हैं। कस्टम OSD का उपयोग करने के लिए HUD टैब में HUD को अक्षम करें।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Az egyéni OSD le van tiltva, mert a HUD-ok engedélyezve vannak. A HUD-ok lapon tiltsa le a HUD-okat, hogy használhassa az egyéni OSD-t."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD가 활성화되어 있어 사용자 지정 OSD가 비활성화되었습니다. 사용자 지정 OSD를 사용하려면 HUD 탭에서 HUD를 비활성화하십시오."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tilpasset OSD er deaktivert fordi HUD-er er aktivert. Deaktiver HUD-er i HUD-fanen for å bruke tilpasset OSD."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anpassad OSD är inaktiverad eftersom HUD är aktiverad. Inaktivera HUD på fliken HUD för att använda anpassad OSD."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD-கள் இயக்கப்பட்டிருப்பதால், தனிப்பயன் OSD முடக்கப்பட்டுள்ளது. தனிப்பயன் OSD-ஐப் பயன்படுத்த, HUD-கள் தாவலில் HUD-களை முடக்கவும்."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD'ler etkinleştirildiği için Özel OSD devre dışı bırakıldı. Özel OSD'yi kullanmak için HUD'ler sekmesindeki HUD'leri devre dışı bırakın."
           }
         },
         "uk" : {
@@ -29301,9 +28378,6 @@
         }
       }
     },
-    "Customize how you organize and create notes. Enabling color filtering and search helps manage large lists." : {
-
-    },
     "Customize in Settings" : {
       "localizations" : {
         "ar" : {
@@ -29433,9 +28507,6 @@
           }
         }
       }
-    },
-    "Dash outline equals the exact notch bounds." : {
-
     },
     "Default" : {
       "localizations" : {
@@ -29939,9 +29010,6 @@
           }
         }
       }
-    },
-    "Delete All Notes?" : {
-
     },
     "Delete Animation" : {
       "comment" : "The title of an alert that appears when trying to delete a custom animation.",
@@ -30470,9 +29538,6 @@
           }
         }
       }
-    },
-    "Devices" : {
-
     },
     "Diagnostics" : {
       "comment" : "A section header in the Lock Screen Settings view, describing diagnostics-related functionality.",
@@ -31265,7 +30330,6 @@
     },
     "Display custom macOS-style OSD windows at the bottom center of the screen when adjusting volume, brightness, or keyboard backlight." : {
       "comment" : "A description of the functionality of the Custom OSD feature.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -31461,131 +30525,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mode d’affichage"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Display Options" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anzeigeoptionen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Display Options"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Options d’affichage"
           }
         },
         "gu" : {
@@ -31941,9 +30880,6 @@
         }
       }
     },
-    "Displays the current Focus state above the weather capsule whenever Focus detection is enabled." : {
-
-    },
     "Do Not Disturb" : {
       "localizations" : {
         "ar" : {
@@ -32067,9 +31003,6 @@
           }
         }
       }
-    },
-    "Done" : {
-
     },
     "Download" : {
       "localizations" : {
@@ -32201,11 +31134,7 @@
         }
       }
     },
-    "Download Detection" : {
-
-    },
     "Download icon style" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -32453,131 +31382,6 @@
         }
       }
     },
-    "Download indicators" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Indikatoren herunterladen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Download indicators"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Télécharger les indicateurs"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "downloads" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -32730,12 +31534,6 @@
           }
         }
       }
-    },
-    "Drag a control onto a slot or tap to place it in the first empty slot." : {
-
-    },
-    "Drag items between slots or drop from the palette to remap controls." : {
-
     },
     "Drag the previews to adjust vertical placement. Positive values lift the panel; negative values lower it. Changes apply instantly while the widgets are visible." : {
       "localizations" : {
@@ -33003,9 +31801,6 @@
         }
       }
     },
-    "Dynamic Island Progress Bars" : {
-
-    },
     "dynamic.island" : {
       "localizations" : {
         "ar" : {
@@ -33015,6 +31810,12 @@
           }
         },
         "cs" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : ""
+          }
+        },
+        "de" : {
           "stringUnit" : {
             "state" : "new",
             "value" : ""
@@ -33674,131 +32475,6 @@
         }
       }
     },
-    "Email address" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "E-Mail-Adresse"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Email address"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adresse e-mail"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Enable \"Show cool face animation while inactivity\" to customize animations" : {
       "comment" : "A message displayed below the section header in the IdleAnimationsSettingsSection, explaining that users can customize animations by enabling this feature.",
       "localizations" : {
@@ -34063,132 +32739,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ekran kilitliyken sistem saatinin üzerinde görünen medya denetimlerini etkinleştirin ve şekillendirin."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Enable Anyway" : {
-      "comment" : "A button that enables the Custom OSD feature despite the warning.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trotzdem aktivieren"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enable Anyway"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer quand même"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         },
         "uk" : {
@@ -34770,7 +33320,6 @@
     },
     "Enable Custom OSD" : {
       "comment" : "A toggle that enables or disables the custom OSD feature.",
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -34893,9 +33442,6 @@
           }
         }
       }
-    },
-    "Enable customizable controls" : {
-
     },
     "Enable dynamic mirror" : {
       "extractionState" : "manual",
@@ -35468,132 +34014,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "启用 HUD 替换"
-          }
-        }
-      }
-    },
-    "Enable HUDs" : {
-      "comment" : "A toggle that enables or disables the use of HUDs.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs aktivieren"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enable HUDs"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer les HUD"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         }
       }
@@ -36262,12 +34682,6 @@
         }
       }
     },
-    "Enable the battery capsule and configure its layout." : {
-
-    },
-    "Enable the timer feature in Settings to access this tab." : {
-
-    },
     "Enable the weather capsule and configure its layout, provider, units, and optional battery/AQI indicators." : {
       "comment" : "A footer for the \"Weather Widget\" section in the Lock Screen Settings view, describing its purpose.",
       "localizations" : {
@@ -36553,7 +34967,6 @@
       }
     },
     "Enable timer feature in Settings to use this tab" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -36800,9 +35213,6 @@
           }
         }
       }
-    },
-    "Enable when scaling beyond 30x20px so the Atoll opens gracefully." : {
-
     },
     "Enable window shadow" : {
       "extractionState" : "manual",
@@ -37591,131 +36001,6 @@
         }
       }
     },
-    "Exclude apps" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apps ausschließen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exclude apps"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Exclure des applications"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Exit" : {
       "localizations" : {
         "ar" : {
@@ -37846,11 +36131,7 @@
         }
       }
     },
-    "Expand notch to follow animation width" : {
-
-    },
     "Expand Notch with Animation" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -37973,9 +36254,6 @@
           }
         }
       }
-    },
-    "Expanded drag detection area" : {
-
     },
     "Expanded notch width" : {
       "comment" : "A label describing the expanded notch width setting.",
@@ -38422,9 +36700,6 @@
         }
       }
     },
-    "Files dropped on the shelf will be shared via this service" : {
-
-    },
     "Fill Notch" : {
       "localizations" : {
         "ar" : {
@@ -38803,12 +37078,6 @@
         }
       }
     },
-    "Floating window panel skip behaviour" : {
-
-    },
-    "Focus active: %@" : {
-
-    },
     "Focus Status" : {
       "localizations" : {
         "ar" : {
@@ -38932,9 +37201,6 @@
           }
         }
       }
-    },
-    "Focus Widget" : {
-
     },
     "Free · %@" : {
       "comment" : "A label displaying the amount of free storage on a disk device. The argument is the number of free bytes on the disk.",
@@ -40471,280 +38737,6 @@
         }
       }
     },
-    "Grant Accessibility permission in System Settings to control macOS HUD replacements from here." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "منح إذن إمكانية الوصول في إعدادات النظام للتحكم في استبدال macOS HUD من هنا."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дазвольце доступ у наладах сістэмы, каб адсюль кіраваць заменамі HUD у macOS."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gewähren Sie die Berechtigung zur Bedienungshilfen in den Systemeinstellungen, um den macOS HUD-Austausch von hier aus zu steuern."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Grant Accessibility permission in System Settings to control macOS HUD replacements from here."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Concede permiso de accesibilidad en Ajustes del sistema para controlar los reemplazos de macOS HUD desde aquí."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Accorder l'autorisation d'accessibilité dans les paramètres système pour contrôler les remplacements de macOS HUD à partir d'ici."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "सिस्टम सेटिंग्स में एक्सेसिबिलिटी की अनुमति दें ताकि यहां से macOS HUD प्रतिस्थापनों को नियंत्रित किया जा सके।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Concedi l'autorizzazione all'accessibilità in Impostazioni di sistema per controllare le sostituzioni di macOS HUD da qui."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gi tilgangstillatelse i systeminnstillingene for å kontrollere macOS HUD-erstatninger herfra."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ge åtkomstbehörighet i systeminställningarna för att styra macOS HUD-ersättningar härifrån."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS HUD மாற்றுகளை இங்கிருந்து கட்டுப்படுத்த, அமைப்பு அமைப்புகளில் அணுகல்தன்மை அனுமதியை வழங்கவும்."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS HUD değişimlerini buradan kontrol etmek için Sistem Ayarları'nda Erişilebilirlik izni verin."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Grant Accessibility permission in System Settings to customize the on-screen display replacements here." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Дазвольце доступ у наладах сістэмы, каб тут наладзіць замены на экране."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "V nastavení systému udělejte oprávnění pro přístupnost, abyste mohli přizpůsobit náhrady zobrazení na obrazovce."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gewähren Sie hier die Berechtigung zur Bedienungshilfen in den Systemeinstellungen, um die Display-Ersetzungen auf dem Bildschirm anzupassen."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Grant Accessibility permission in System Settings to customize the on-screen display replacements here."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Concede permiso de accesibilidad en Configuración del sistema para personalizar los reemplazos de la pantalla aquí."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Accorder l'autorisation d'accessibilité dans les paramètres système pour personnaliser les remplacements d'affichage à l'écran ici."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "यहाँ ऑन-स्क्रीन डिस्प्ले प्रतिस्थापनों को अनुकूलित करने के लिए सिस्टम सेटिंग्स में पहुँच क्षमता अनुमति दें।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Concedi l'autorizzazione di accessibilità in Impostazioni di sistema per personalizzare le sostituzioni dello schermo qui."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gi tilgangstillatelse i systeminnstillingene for å tilpasse erstatningene for skjermvisningen her."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ge behörighet för tillgänglighet i systeminställningarna för att anpassa ersättningarna för skärmvisningen här."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekrandaki ekran değiştirmelerini burada özelleştirmek için Sistem Ayarları'nda Erişilebilirlik izni verin."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Graph Visibility" : {
       "localizations" : {
         "ar" : {
@@ -40793,131 +38785,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Visibilité du graphique"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Height:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Höhe:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Height:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hauteur :"
           }
         },
         "gu" : {
@@ -42272,131 +40139,6 @@
         }
       }
     },
-    "Horizontal:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Horizontal:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Horizontal:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Horizontal :"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "https://example.com/animation.json" : {
       "comment" : "A placeholder text for a Lottie JSON URL input field.",
       "localizations" : {
@@ -42776,137 +40518,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "HUD 样式"
-          }
-        }
-      }
-    },
-    "HUDs" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDy"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ATH"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD-ok"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD들"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Interfejsy HUD"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD'lar"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUDs"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HUD"
           }
         }
       }
@@ -45603,131 +43214,6 @@
     "Left" : {
 
     },
-    "License key" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lizenzschlüssel"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "License key"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clé de license"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Licensnyckel"
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Line Width: %lldpx" : {
 
     },
@@ -47866,131 +45352,6 @@
         }
       }
     },
-    "Loop Mode:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schleifenmodus:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Loop Mode:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mode marche :"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Lottie JSON URL" : {
       "localizations" : {
         "ar" : {
@@ -48890,137 +46251,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "அமைப்புகள் → தனியுரிமை என்பதிலிருந்து குறிகாட்டி விருப்பங்களை நிர்வகிக்கவும். கைமுறை மைக்ரோஃபோன் சுவிட்ச் தேவையில்லை."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Manage the Clock timer from the Clock app." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spravujte časovač hodin z aplikace Hodiny."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwalten Sie den Clock-Timer in der Clock-App."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Manage the Clock timer from the Clock app."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gérez le minuteur de l'horloge à partir de l'application Horloge."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "क्लॉक ऐप से क्लॉक टाइमर प्रबंधित करें।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gestisci il timer dell'orologio dall'app dell'orologio."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "시계 앱에서 시계 타이머를 관리하세요."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         },
         "tr" : {
@@ -50065,138 +47295,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "媒体"
-          }
-        }
-      }
-    },
-    "Media change with horizontal gestures" : {
-      "comment" : "A toggle that lets the user enable or disable the feature of changing the currently playing media using horizontal gestures.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تغيير الوسائط بإيماءات أفقية"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Změna médií pomocí horizontálních gest"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Medium Änderung mit Horizontalen Gesten"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Media change with horizontal gestures"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Media change with horizontal gestures"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambio de medio con gestos horizontales"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Changement de média avec les gestuelles horizontales"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Média váltás vízszintes mozdulatokkal"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cambia media con gesti orizzontali"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "가로 방향 제스처로 미디어 변경"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Medieendring med horisontale bevegelser"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zmiana multimediów z poziomymi gestami"
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mudança de mídia com gestos horizontais"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Смена медиа с помощью горизонтальных жестов"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mediebyte med horisontella gester"
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yatay hareketlerle medya değiştirme"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Зміна медіа за допомогою горизонтальних жестів"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "横向手势改变媒体"
           }
         }
       }
@@ -52377,131 +49475,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mikrofonstatus"
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "min" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Minute"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "min"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "min"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         },
         "ta" : {
@@ -56640,131 +53613,6 @@
         }
       }
     },
-    "No excluded apps" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine ausgeschlossenen Apps"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "No excluded apps"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucune application exclue"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "No excludes" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -59326,261 +56174,11 @@
         }
       }
     },
-    "Only app icon" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nur App-Symbol"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Only app icon"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icône de l'application uniquement"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Only applies when Material is set to Frosted Glass." : {
 
     },
     "Only available when Material is set to Frosted Glass." : {
 
-    },
-    "Only download icon" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nur Download-Symbol"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Only download icon"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Icône de téléchargement uniquement"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
     },
     "Opacity:" : {
       "extractionState" : "manual",
@@ -61041,143 +57639,6 @@
     "Panel mode shows clipboard in a floating window near the notch." : {
 
     },
-    "Panel mode shows clipboard in a floating window near the notch. Popover mode shows clipboard as a dropdown attached to the clipboard button." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يظهر وضع اللوحة الحافظة في نافذة عائمة بالقرب من الشق. يظهر الوضع المنبثق الحافظة كقامة منسدلة متصلة بزر الحافظة."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Панэльны рэжым паказвае буфер абмену ў плаваючым акне каля выемкі. Выскочны рэжым паказвае буфер абмену ў выглядзе выпадальнага спіса, прывязанага да кнопкі буфера абмену."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Režim panelu zobrazuje schránku v plovoucím okně poblíž zářezu. Režim vyskakovacího okna zobrazuje schránku jako rozevírací nabídku připojenou k tlačítku schránky."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Bedienfeldmodus zeigt die Zwischenablage in einem schwebenden Fenster in der Nähe der Kerbe an. Der Popover-Modus zeigt die Zwischenablage als Dropdown-Liste an, die an der Zwischenablage-Schaltfläche angehängt ist."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Panel mode shows clipboard in a floating window near the notch. Popover mode shows clipboard as a dropdown attached to the clipboard button."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le mode panneau affiche le presse-papiers dans une fenêtre flottante près de l'encoche. Le mode popover affiche le presse-papiers comme une liste déroulante attachée au bouton du presse-papiers."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "पैनल मोड क्लिपबोर्ड को नॉच के पास एक फ्लोटिंग विंडो में दिखाता है। पॉपओवर मोड क्लिपबोर्ड को क्लिपबोर्ड बटन से जुड़े एक ड्रॉपडाउन के रूप में दिखाता है।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La modalità pannello mostra gli appunti in una finestra mobile vicino alla tacca. La modalità popover mostra gli appunti come un menu a discesa collegato al pulsante degli appunti."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Panellmodus viser utklippstavlen i et flytende vindu nær hakket. Popover-modus viser utklippstavlen som en rullegardinmeny knyttet til utklippstavleknappen."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tryb panelowy wyświetla schowek w pływającym oknie w pobliżu wycięcia. Tryb wyskakującego okienka wyświetla schowek jako rozwijane menu przypisane do przycisku schowka."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Panelläge visar urklipp i ett flytande fönster nära skåran. Popup-läge visar urklipp som en rullgardinsmeny kopplad till urklippsknappen."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Panel modu, çentiğin yanındaki yüzen bir pencerede panoyu gösterir. Açılır pencere modu, pano düğmesine bağlı bir açılır menü olarak panoyu gösterir."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "У режимі панелі буфер обміну відображається у спливаючому вікні біля вирізу. У режимі спливаючого вікна буфер обміну відображається у вигляді випадаючого меню, прикріпленого до кнопки буфера обміну."
-          }
-        }
-      }
-    },
     "Panel mode shows color picker in a floating window. Popover mode shows color picker as a dropdown attached to the color picker button." : {
       "localizations" : {
         "ar" : {
@@ -61623,131 +58084,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En pause"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Percentage" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prozentsatz"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Percentage"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pourcentage"
           }
         },
         "gu" : {
@@ -63232,143 +59568,6 @@
     "Popover mode shows clipboard as a dropdown attached to the clipboard button." : {
 
     },
-    "Popover mode shows clipboard as a dropdown attached to the clipboard button. Panel mode shows clipboard in a floating window near the notch." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يظهر الوضع المنبثق الحافظة كقامة منسدلة متصلة بزر الحافظة. يظهر وضع اللوحة الحافظة في نافذة عائمة بالقرب من الشق."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popover mode shows clipboard as a dropdown attached to the clipboard button. Panel mode shows clipboard in a floating window near the notch."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Režim vyskakovacího okna zobrazuje schránku jako rozevírací nabídku připojenou k tlačítku schránky. Režim panelu zobrazuje schránku v plovoucím okně poblíž zářezu."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Der Popover-Modus zeigt die Zwischenablage als Dropdown-Liste an, die an der Zwischenablage-Schaltfläche angehängt ist. Der Bedienfeldmodus zeigt die Zwischenablage in einem schwebenden Fenster in der Nähe der Kerbe an."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Popover mode shows clipboard as a dropdown attached to the clipboard button. Panel mode shows clipboard in a floating window near the notch."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popover mode shows clipboard as a dropdown attached to the clipboard button. Panel mode shows clipboard in a floating window near the notch."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Le mode popover affiche le presse-papiers comme une liste déroulante attachée au bouton du presse-papiers. Le mode panneau affiche le presse-papiers dans une fenêtre flottante près de l'encoche."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "पॉपओवर मोड क्लिपबोर्ड को क्लिपबोर्ड बटन से जुड़े ड्रॉपडाउन के रूप में दिखाता है। पैनल मोड क्लिपबोर्ड को नॉच के पास एक फ्लोटिंग विंडो में दिखाता है।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popover-modus viser utklippstavlen som en rullegardinmeny knyttet til utklippstavleknappen. Panelmodus viser utklippstavlen i et flytende vindu nær hakket."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tryb wyskakujący pokazuje schowek jako rozwijane menu przycisku schowka. Tryb panelowy pokazuje schowek w pływającym oknie w pobliżu wycięcia."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Popover-läget visar urklipp som en rullgardinsmeny kopplad till urklippsknappen. Panelläget visar urklipp i ett flytande fönster nära skåran."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "பாப்ஓவர் பயன்முறை, கிளிப் போர்டை கிளிப் போர்டு பொத்தானுடன் இணைக்கப்பட்ட ஒரு கீழ்விரிவாகக் காட்டுகிறது. பேனல் பயன்முறை, கிளிப் போர்டை நாட்சுக்கு அருகிலுள்ள ஒரு மிதக்கும் சாளரத்தில் காட்டுகிறது."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Açılır pencere modu, pano düğmesine bağlı bir açılır menü olarak panoyu gösterir. Panel modu, çentiğin yanındaki yüzen bir pencerede panoyu gösterir."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "У режимі спливаючого вікна буфер обміну відображається у вигляді випадаючого меню, прикріпленого до кнопки буфера обміну. У режимі панелі буфер обміну відображається у спливаючому вікні біля виїмки."
-          }
-        }
-      }
-    },
     "Popover mode shows color picker as a dropdown attached to the color picker button. Panel mode shows color picker in a floating window." : {
       "localizations" : {
         "ar" : {
@@ -64404,131 +60603,6 @@
     "Preview Zoom" : {
 
     },
-    "Preview Zoom:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorschau-Zoom:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Preview Zoom:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aperçu Zoom :"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Privacy Indicators" : {
       "comment" : "A heading for the section that lists privacy indicators.",
       "localizations" : {
@@ -64703,131 +60777,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Politique de confidentialité"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Progress bar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fortschrittsbalken"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Progress bar"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Barre de progression"
           }
         },
         "gu" : {
@@ -65282,262 +61231,11 @@
         }
       }
     },
-    "Quick Presets" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schnelle Voreinstellungen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Quick Presets"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Préréglages rapides"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Quick Share" : {
 
     },
     "Quick Share Service" : {
 
-    },
-    "Quick Start" : {
-      "comment" : "A label displayed above the quick start options in the timer tab.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schnellstart"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Quick Start"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Démarrage rapide"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
     },
     "Quit" : {
       "localizations" : {
@@ -67306,144 +63004,6 @@
     "Remove from shelf after dragging" : {
 
     },
-    "Replaces macOS system HUD with Dynamic Island displays for volume, brightness, and keyboard backlight." : {
-      "comment" : "A footer description of the HUDs feature.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يستبدل نظام macOS HUD بشاشات Dynamic Island لمستوى الصوت والسطوع والإضاءة الخلفية للوحة المفاتيح."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Замяняе сістэмны HUD macOS на дынамічныя востравы для рэгулявання гучнасці, яркасці і падсветкі клавіятуры."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nahrazuje systémové HUD macOS displeji Dynamic Island pro ovládání hlasitosti, jasu a podsvícení klávesnice."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ersetzt das macOS-System-HUD durch Dynamic Island-Displays für Lautstärke, Helligkeit und Tastatur-Hintergrundbeleuchtung."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Replaces macOS system HUD with Dynamic Island displays for volume, brightness, and keyboard backlight."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reemplaza el HUD del sistema macOS con pantallas Dynamic Island para el volumen, el brillo y la retroiluminación del teclado."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remplace le HUD du système macOS par des écrans Dynamic Island pour le volume, la luminosité et le rétroéclairage du clavier."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "यह वॉल्यूम, ब्राइटनेस और कीबोर्ड बैकलाइट के लिए macOS सिस्टम HUD को डायनामिक आइलैंड डिस्प्ले से बदलता है।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sostituisce l'HUD del sistema macOS con i display Dynamic Island per volume, luminosità e retroilluminazione della tastiera."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstatt macOS-systemets HUD med Dynamic Island-skjermer for volum, lysstyrke og tastaturbelysning."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zastępuje system HUD macOS wyświetlaczami Dynamic Island służącymi do regulacji głośności, jasności i podświetlenia klawiatury."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ersätter macOS-systemets HUD med Dynamic Island-displayer för volym, ljusstyrka och tangentbordets bakgrundsbelysning."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ஒலி அளவு, பிரகாசம் மற்றும் விசைப்பலகை பின்னொளி ஆகியவற்றிற்கான macOS சிஸ்டம் HUD-ஐ டைனமிக் ஐலேண்ட் காட்சிகளுடன் மாற்றுகிறது."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ses seviyesi, parlaklık ve klavye arka aydınlatması için macOS sistem HUD'sini Dynamic Island ekranlarıyla değiştirir."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Замінює системний HUD macOS на дисплеї Dynamic Island для регулювання гучності, яскравості та підсвічування клавіатури."
-          }
-        }
-      }
-    },
     "Request Access" : {
       "localizations" : {
         "ar" : {
@@ -68924,131 +64484,6 @@
     "Right" : {
 
     },
-    "Rotation:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drehen:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Rotation:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rotation:"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Running" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -69854,131 +65289,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Doubler l’échelle"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Scale:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Maßstab:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Scale:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Échelle :"
           }
         },
         "gu" : {
@@ -72394,49 +67704,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "选择您想要使用的音乐源。您可以稍后在应用设置中更改此项。"
-          }
-        }
-      }
-    },
-    "Select Timer Sound" : {
-      "comment" : "Title of a panel that allows the user to select a custom timer sound file.",
-      "extractionState" : "stale",
-      "isCommentAutoGenerated" : true,
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select Timer Sound"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Valitse ajastimen ääni"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sélectionner le son du minuteur"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wybierz dźwięk timera"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Välj timerljud"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вибрати звук таймера"
           }
         }
       }
@@ -75962,137 +71229,6 @@
         }
       }
     },
-    "Show shuffle and repeat buttons" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "إظهار أزرار التبديل والتكرار"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zobrazit tlačítka pro náhodné přehrávání a opakování"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeige Zufallswiedergabe und Wiederholung Tasten"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show shuffle and repeat buttons"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show shuffle and repeat buttons"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrar botones de reproducción aleatoria y repetición"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Afficher les boutons \"aléatoire\" et \"répéter\""
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Minden kijelzőn megjelenítés"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostra pulsanti casuale e ripeti"
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "랜덤과 반복 버튼 표시"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pokaż przyciski \"pomieszaj\" i \"powtórz\""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrar botões de reprodução aleatória e repetição"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показать кнопки перемешивания и повтора"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Karıştır ve tekrarla düğmelerini göster"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Показати кнопки перетасування та повторення"
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "显示随机播放和重复按钮"
-          }
-        }
-      }
-    },
     "Show sneak peek on playback changes" : {
 
     },
@@ -76630,259 +71766,8 @@
         }
       }
     },
-    "Size & Scale" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Größe & Maßstab"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Size & Scale"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Taille et échelle"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Size: %lldpx" : {
 
-    },
-    "Skip behaviour" : {
-      "comment" : "A section header that describes the skip behaviour settings.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verhalten überspringen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Skip behaviour"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sauter le comportement"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
     },
     "Skip buttons" : {
       "comment" : "A section header that lists the skip behaviour options.",
@@ -78157,131 +73042,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "速度"
-          }
-        }
-      }
-    },
-    "Speed:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geschwindigkeit:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Speed:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vitesse:"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         }
       }
@@ -82044,132 +76804,6 @@
         }
       }
     },
-    "The MacBook icon is available only in the circular layout." : {
-      "comment" : "A message displayed below a toggle that lets the user choose whether to show a MacBook icon in the battery gauge of the weather widget. The message explains that the MacBook icon is only available when the weather widget is in a",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "تتوفر أيقونة MacBook فقط في التخطيط الدائري."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ikona MacBooku je k dispozici pouze v kruhovém rozložení."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das MacBook-Symbol ist nur im kreisförmigen Layout verfügbar."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "The MacBook icon is available only in the circular layout."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El icono del MacBook solo está disponible en el diseño circular."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L'icône MacBook n'est disponible que dans la disposition circulaire."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L'icona del MacBook è disponibile solo nel layout circolare."
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MacBook-ikonet er kun tilgjengelig i det sirkulære oppsettet."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ikona MacBooka jest dostępna tylko w układzie okrągłym."
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "MacBook-ikonen finns endast i den cirkulära layouten."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Піктограма MacBook доступна тільки в круглому макеті."
-          }
-        }
-      }
-    },
     "TheDynamicIsland" : {
       "localizations" : {
         "ar" : {
@@ -84582,262 +79216,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : ""
-          }
-        }
-      }
-    },
-    "Transform" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Umwandeln"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Transform"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Transform"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Transformez"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
-    "Transform your notch truly yours" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "حول شقك حقا لك"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwandeln Sie Ihre Notch wirklich zu Ihrer"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Transform your notch truly yours"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Transform your notch truly yours"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reprenez le contrôle sur votre encoche"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "अपने नॉच को सचमुच अपना बनाएं"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Перетворіть свій виріз на справді свій"
           }
         }
       }
@@ -87712,131 +82090,6 @@
         }
       }
     },
-    "Vertical:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertikal:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Vertical:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vertical :"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "View on GitHub: th-ch/youtube-music" : {
       "localizations" : {
         "ar" : {
@@ -89833,131 +84086,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Регулювання ширини застосовується тільки до стандартного розташування виїмок. Вимкніть мінімалістичний інтерфейс, щоб редагувати це значення."
-          }
-        }
-      }
-    },
-    "Width:" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Breite:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Width:"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Largueur :"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         }
       }
