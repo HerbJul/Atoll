@@ -52337,7 +52337,7 @@
       }
     },
     "min" : {
-      "extractionState" : "manual",
+      "extractionState" : "stale",
       "localizations" : {
         "ar" : {
           "stringUnit" : {
@@ -86524,6 +86524,82 @@
     },
     "Use Accent Color" : {
 
+    },
+    "Use clored gauges" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie farbige Messgeräte"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez des jauges colorées."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj kolorowych wskaźników"
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd färgade mätare"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте кольорові датчики"
+          }
+        }
+      }
+    },
+    "Use MacBook icon when on battery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie das MacBook-Symbol, wenn Sie im Akkubetrieb arbeiten."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Käytä MacBook-kuvaketta, kun laite toimii akkuvirralla"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser l'icône MacBook lorsque l'ordinateur fonctionne sur batterie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Użyj ikony MacBooka, gdy urządzenie jest zasilane z baterii."
+          }
+        },
+        "sv" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Använd MacBook-ikonen när du använder batteriet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте піктограму MacBook, коли працюєте від акумулятора"
+          }
+        }
+      }
     },
     "Use clored gauges" : {
       "extractionState" : "manual",
