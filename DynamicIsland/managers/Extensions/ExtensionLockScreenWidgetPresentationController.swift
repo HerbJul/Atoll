@@ -244,7 +244,7 @@ private final class ExtensionLockScreenWidgetWindowPool {
 
     private func frame(for descriptor: AtollLockScreenWidgetDescriptor, on screen: NSScreen) -> NSRect {
         let size = descriptor.size
-        let safeInsets = NSEdgeInsets(top: 140, left: 48, bottom: 100, right: 48)
+        let safeInsets = safeInsets(for: descriptor.position.clampMode)
         let screenFrame = screen.frame
 
         let minX = screenFrame.minX + safeInsets.left
@@ -269,6 +269,17 @@ private final class ExtensionLockScreenWidgetWindowPool {
         originY = clamp(originY, lower: min(minY, maxY), upper: max(minY, maxY))
 
         return NSRect(x: originX, y: originY, width: size.width, height: size.height)
+    }
+
+    private func safeInsets(for clampMode: AtollWidgetPosition.ClampMode) -> NSEdgeInsets {
+        switch clampMode {
+        case .safeRegion:
+            return NSEdgeInsets(top: 140, left: 48, bottom: 100, right: 48)
+        case .relaxed:
+            return NSEdgeInsets(top: 96, left: 24, bottom: 72, right: 24)
+        case .unconstrained:
+            return NSEdgeInsets(top: 16, left: 0, bottom: 32, right: 0)
+        }
     }
 
     private func clamp(_ value: CGFloat, lower: CGFloat, upper: CGFloat) -> CGFloat {

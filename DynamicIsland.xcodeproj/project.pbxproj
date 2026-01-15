@@ -79,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E07AFF12F181892003A8B1B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				7EF1D4B82FFFCE3C008D2C32 /* ExtensionEventBridge.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		7E81303F2E3FB40500E08F3F /* mediaremote-adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +129,7 @@
 				7E81303F2E3FB40500E08F3F /* mediaremote-adapter */,
 				F54406E92CD4987A00C7AFD9 /* DynamicIsland */,
 				F54406E82CD4987A00C7AFD9 /* Products */,
+				7E07AFF12F181892003A8B1B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,26 +1,27 @@
 import SwiftUI
 import Defaults
 import AtollExtensionKit
+import WebKit
+import AppKit
 
 struct ExtensionLockScreenWidgetView: View {
     let payload: ExtensionLockScreenWidgetPayload
 
     private var descriptor: AtollLockScreenWidgetDescriptor { payload.descriptor }
     private var accentColor: Color { descriptor.accentColor.swiftUIColor }
+    private var appearance: AtollWidgetAppearanceOptions? { descriptor.appearance }
 
     var body: some View {
+        let shape = RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous)
         ZStack {
-            backgroundView
+            backgroundLayer(shape: shape)
             contentView
-                .padding(.horizontal, descriptor.layoutStyle == .circular ? 10 : 16)
-                .padding(.vertical, descriptor.layoutStyle == .circular ? 10 : 12)
+                .padding(resolvedContentInsets)
         }
         .frame(width: descriptor.size.width, height: descriptor.size.height)
-        .clipShape(RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous)
-                .stroke(Color.white.opacity(0.04), lineWidth: 1)
-        )
+        .clipShape(shape)
+        .overlay(borderOverlay(shape: shape))
+        .shadow(color: shadowColor, radius: shadowRadius, x: shadowOffset.width, y: shadowOffset.height)
         .onAppear {
             logWidgetDiagnostics("Rendering extension lock screen widget \(payload.descriptor.id) for \(payload.bundleIdentifier)")
         }
@@ -92,6 +93,11 @@ struct ExtensionLockScreenWidgetView: View {
             Rectangle()
                 .fill(color.swiftUIColor.opacity(0.4))
                 .frame(height: thickness)
+        case let .webView(webDescriptor):
+            ExtensionWebContentView(descriptor: webDescriptor)
+                .frame(height: webDescriptor.preferredHeight)
+                .frame(maxWidth: webDescriptor.maximumContentWidth ?? .infinity)
+                .allowsHitTesting(false)
         }
     }
 
@@ -104,30 +110,219 @@ struct ExtensionLockScreenWidgetView: View {
         }
     }
 
+    private var resolvedContentInsets: EdgeInsets {
+        if let custom = appearance?.contentInsets {
+            return EdgeInsets(top: custom.top, leading: custom.leading, bottom: custom.bottom, trailing: custom.trailing)
+        }
+        switch descriptor.layoutStyle {
+        case .circular:
+            return EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+        default:
+            return EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16)
+        }
+    }
+
     @ViewBuilder
-    private var backgroundView: some View {
+    private func backgroundLayer(shape: RoundedRectangle) -> some View {
+        if shouldUseGlassBackdrop {
+            if #available(macOS 26.0, *) {
+                ZStack {
+                    shape
+                        .fill(Color.clear)
+                        .glassEffect(
+                            .clear.interactive(),
+                            in: .rect(cornerRadius: descriptor.cornerRadius)
+                        )
+                        .allowsHitTesting(false)
+                        .accessibilityHidden(true)
+                    tintOverlay(shape: shape)
+                }
+            } else {
+                ZStack {
+                    shape.fill(AnyShapeStyle(.regularMaterial))
+                    tintOverlay(shape: shape)
+                }
+            }
+        } else {
+            ZStack {
+                shape.fill(baseMaterialStyle)
+                tintOverlay(shape: shape)
+            }
+        }
+    }
+
+    private var baseMaterialStyle: AnyShapeStyle {
         switch descriptor.material {
         case .frosted:
-            RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous)
-                .fill(.ultraThinMaterial)
+            return AnyShapeStyle(.ultraThinMaterial)
         case .liquid:
-            RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous)
-                .fill(.regularMaterial)
+            return AnyShapeStyle(.regularMaterial)
         case .solid:
-            RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous)
-                .fill(accentColor.opacity(0.9))
+            return AnyShapeStyle(resolvedSolidFillColor.opacity(0.95))
         case .semiTransparent:
-            RoundedRectangle(cornerRadius: descriptor.cornerRadius, style: .continuous)
-                .fill(accentColor.opacity(0.35))
+            return AnyShapeStyle(resolvedSolidFillColor.opacity(0.35))
         case .clear:
-            Color.clear
+            return AnyShapeStyle(Color.clear)
         }
+    }
+
+    private var resolvedSolidFillColor: Color {
+        if let tint = appearance?.tintColor?.swiftUIColor {
+            return tint
+        }
+        return accentColor
+    }
+
+    @ViewBuilder
+    private func tintOverlay(shape: RoundedRectangle) -> some View {
+        Group {
+            if shouldApplyTintOverlay, let overlay = tintedOverlayColor {
+                shape
+                    .fill(overlay)
+                    .allowsHitTesting(false)
+            }
+        }
+    }
+
+    private var tintedOverlayColor: Color? {
+        guard let descriptor = appearance, let tint = descriptor.tintColor, descriptor.tintOpacity > 0 else {
+            return nil
+        }
+        return tint.swiftUIColor.opacity(descriptor.tintOpacity)
+    }
+
+    private var shouldApplyTintOverlay: Bool {
+        guard appearance?.tintColor != nil else { return false }
+        switch descriptor.material {
+        case .solid, .semiTransparent:
+            return false
+        default:
+            return true
+        }
+    }
+
+    private var shouldUseGlassBackdrop: Bool {
+        descriptor.material == .liquid || (appearance?.enableGlassHighlight ?? false)
+    }
+
+    @ViewBuilder
+    private func borderOverlay(shape: RoundedRectangle) -> some View {
+        if let border = appearance?.border {
+            shape
+                .stroke(border.color.swiftUIColor.opacity(border.opacity), lineWidth: border.width)
+        } else {
+            shape
+                .stroke(Color.white.opacity(0.04), lineWidth: 1)
+        }
+    }
+
+    private var shadowColor: Color {
+        guard let shadow = appearance?.shadow else { return .clear }
+        return shadow.color.swiftUIColor.opacity(shadow.opacity)
+    }
+
+    private var shadowRadius: CGFloat {
+        appearance?.shadow?.radius ?? 0
+    }
+
+    private var shadowOffset: CGSize {
+        appearance?.shadow?.offset ?? .zero
     }
 }
 
 private func logWidgetDiagnostics(_ message: String) {
     guard Defaults[.extensionDiagnosticsLoggingEnabled] else { return }
     Logger.log(message, category: .extensions)
+}
+
+private struct ExtensionWebContentView: NSViewRepresentable {
+    let descriptor: AtollWidgetWebContentDescriptor
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator(descriptor: descriptor)
+    }
+
+    func makeNSView(context: Context) -> WKWebView {
+        let configuration = WKWebViewConfiguration()
+        configuration.suppressesIncrementalRendering = false
+        configuration.preferences.javaScriptCanOpenWindowsAutomatically = false
+        let webView = NonInteractiveWKWebView(frame: .zero, configuration: configuration)
+        webView.navigationDelegate = context.coordinator
+        webView.wantsLayer = true
+        applyConfiguration(descriptor, to: webView)
+        context.coordinator.lastHTML = descriptor.html
+        webView.loadHTMLString(descriptor.html, baseURL: nil)
+        return webView
+    }
+
+    func updateNSView(_ webView: WKWebView, context: Context) {
+        context.coordinator.descriptor = descriptor
+        webView.navigationDelegate = context.coordinator
+        applyConfiguration(descriptor, to: webView)
+        if context.coordinator.lastHTML != descriptor.html {
+            webView.loadHTMLString(descriptor.html, baseURL: nil)
+            context.coordinator.lastHTML = descriptor.html
+        }
+    }
+
+    private func applyConfiguration(_ descriptor: AtollWidgetWebContentDescriptor, to webView: WKWebView) {
+        webView.allowsBackForwardNavigationGestures = false
+        webView.allowsLinkPreview = false
+        if descriptor.isTransparent {
+            webView.setValue(false, forKey: "drawsBackground")
+            webView.layer?.backgroundColor = NSColor.clear.cgColor
+        } else {
+            let fallbackColor = descriptor.backgroundColor?.nsColor ?? NSColor.windowBackgroundColor
+            webView.layer?.backgroundColor = fallbackColor.cgColor
+        }
+    }
+
+    private final class NonInteractiveWKWebView: WKWebView {
+        override func hitTest(_ point: NSPoint) -> NSView? {
+            nil
+        }
+
+        override var acceptsFirstResponder: Bool {
+            false
+        }
+    }
+
+    final class Coordinator: NSObject, WKNavigationDelegate {
+        var descriptor: AtollWidgetWebContentDescriptor
+        var lastHTML: String?
+
+        init(descriptor: AtollWidgetWebContentDescriptor) {
+            self.descriptor = descriptor
+        }
+
+        func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            guard let url = navigationAction.request.url else {
+                decisionHandler(.cancel)
+                return
+            }
+            if isAllowed(url: url) {
+                decisionHandler(.allow)
+            } else {
+                logWidgetDiagnostics("Blocked external navigation to \(url.absoluteString)")
+                decisionHandler(.cancel)
+            }
+        }
+
+        private func isAllowed(url: URL) -> Bool {
+            guard let scheme = url.scheme?.lowercased() else { return false }
+            if scheme == "about" || scheme == "data" {
+                return true
+            }
+            if (scheme == "http" || scheme == "https") {
+                guard descriptor.allowLocalhostRequests else {
+                    return false
+                }
+                let host = url.host?.lowercased()
+                return host == "localhost" || host == "127.0.0.1"
+            }
+            return false
+        }
+    }
 }
 
 private struct ExtensionGraphView: View {
