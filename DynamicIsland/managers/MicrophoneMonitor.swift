@@ -57,7 +57,7 @@ class MicrophoneMonitor: ObservableObject {
             var address = AudioObjectPropertyAddress(
                 mSelector: kAudioDevicePropertyDeviceIsRunningSomewhere,
                 mScope: kAudioObjectPropertyScopeGlobal,
-                mElement: kAudioObjectPropertyElementMaster
+                mElement: kAudioObjectPropertyElementMain
             )
             
             let context = Unmanaged.passUnretained(self).toOpaque()
@@ -150,7 +150,7 @@ class MicrophoneMonitor: ObservableObject {
         var address = AudioObjectPropertyAddress(
             mSelector: kAudioHardwarePropertyDefaultInputDevice,
             mScope: kAudioObjectPropertyScopeGlobal,
-            mElement: kAudioObjectPropertyElementMaster
+            mElement: kAudioObjectPropertyElementMain
         )
         
         let status = AudioObjectGetPropertyData(

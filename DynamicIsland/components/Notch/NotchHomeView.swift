@@ -465,7 +465,7 @@ struct MusicSliderView: View {
                 }
             }
         }
-        .onChange(of: currentDate) { _, newDate in
+        .onChange(of: currentDate) { oldDate, newDate in
             guard !isLiveStream else { return }
             guard !dragging, timestampDate.timeIntervalSince(lastDragged) > -1 else { return }
             sliderValue = MusicManager.shared.estimatedPlaybackPosition(at: newDate)
