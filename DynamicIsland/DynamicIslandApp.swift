@@ -509,9 +509,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NotificationCenter.default.addObserver(
             forName: Notification.Name.automaticallySwitchDisplayChanged, object: nil, queue: nil
         ) { [weak self] _ in
-            guard let self = self, let window = self.window else { return }
-            window.alphaValue =
-                self.coordinator.selectedScreen == self.coordinator.preferredScreen ? 1 : 0
+            guard let self = self else { return }
+            Task { @MainActor [weak self] in
+                guard let self = self, let window = self.window else { return }
+                window.alphaValue = self.coordinator.selectedScreen == self.coordinator.preferredScreen ? 1 : 0
+            }
         }
 
         NotificationCenter.default.addObserver(
@@ -886,3 +888,4 @@ extension CGRect: @retroactive Hashable {
         return lhs.origin == rhs.origin && lhs.size == rhs.size
     }
 }
+
