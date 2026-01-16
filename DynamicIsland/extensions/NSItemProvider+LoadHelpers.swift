@@ -37,7 +37,7 @@ extension NSItemProvider {
                         cont.resume(returning: nil)
                         return
                     }
-                    self.suggestedName = self.suggestedName ?? url.lastPathComponent
+                    // Cannot safely set suggestedName here due to Sendable restrictions
                     let fileManager = FileManager.default
                     let folderURL = url.deletingLastPathComponent()
                     do {
@@ -172,3 +172,4 @@ extension NSItemProvider {
         }
     }
 }
+
