@@ -397,7 +397,9 @@ final class SystemVolumeController {
             var address = makeAddress(selector: selector, element: element)
             guard propertyExists(deviceID: currentDeviceID, address: &address) else { continue }
             let size = UInt32(MemoryLayout<T>.size)
-            lastStatus = AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, &data)
+            lastStatus = withUnsafePointer(to: &data) { ptr in
+                AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, ptr)
+            }
             if lastStatus == noErr {
                 cache(element: element, for: selector)
                 return lastStatus
@@ -421,7 +423,9 @@ final class SystemVolumeController {
             return kAudioHardwareUnknownPropertyError
         }
         let size = UInt32(MemoryLayout<T>.size)
-        return AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, &data)
+        return withUnsafePointer(to: &data) { ptr in
+            AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, ptr)
+        }
     }
 
     private func volumeElements() -> [AudioObjectPropertyElement] {
@@ -664,3 +668,4 @@ final class SystemBrightnessController {
         observers.forEach { DistributedNotificationCenter.default().removeObserver($0) }
     }
 }
+
