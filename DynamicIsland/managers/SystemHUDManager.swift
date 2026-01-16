@@ -254,8 +254,6 @@ class SystemHUDManager {
     
     deinit {
         cancellables.removeAll()
-        Task { @MainActor in
-            await stopSystemObserver()
-        }
+        // Async cleanup of system observer is unsafe in deinit (Swift 6)
     }
 }
