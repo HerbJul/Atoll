@@ -57,7 +57,7 @@ class IdleAnimationManager {
             print("✅ [IdleAnimationManager] First launch: Initialized with \(animations.count) animations")
         } else {
             // Subsequent launch - ensure all bundled animations are present
-            let existingIDs = Set(existing.map { $0.id })
+            _ = Set(existing.map { $0.id })
             let existingNames = Set(existing.filter { $0.isBuiltIn }.map { $0.name })
             
             // Add any missing bundled animations

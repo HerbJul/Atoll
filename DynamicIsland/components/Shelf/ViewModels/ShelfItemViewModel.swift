@@ -699,7 +699,7 @@ final class ShelfItemViewModel: ObservableObject {
                     self.chooserDelegate = chooserDelegate
                     self.panel = panel
                 }
-                @objc func changed(_ sender: Any?) {
+                @MainActor @objc func changed(_ sender: Any?) {
                     if popup?.indexOfSelectedItem == 1 {
                         chooserDelegate?.mode = .all
                     } else {

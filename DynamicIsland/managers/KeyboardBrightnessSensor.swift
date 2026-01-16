@@ -90,7 +90,7 @@ final class KeyboardBrightnessSensor {
         }
         if CFGetTypeID(property) == CFNumberGetTypeID() {
             var rawValue: Float = 0
-            if CFNumberGetValue(property as! CFNumber, .floatType, &rawValue) {
+            if CFNumberGetValue((property as! CFNumber), .floatType, &rawValue) {
                 return rawValue / maxKeyboardBrightness
             }
         }

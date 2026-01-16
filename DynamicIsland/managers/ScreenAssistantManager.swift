@@ -12,7 +12,7 @@ import Foundation
 
 // Chat message model
 struct ChatMessage: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let content: String
     let isFromUser: Bool
     let timestamp: Date
@@ -28,7 +28,7 @@ struct ChatMessage: Identifiable, Codable {
 
 // Screen Assistant item data structure
 struct ScreenAssistantFile: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let name: String
     let type: FileType
     let timestamp: Date
