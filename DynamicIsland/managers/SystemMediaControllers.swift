@@ -382,7 +382,12 @@ final class SystemVolumeController {
             var address = makeAddress(selector: selector, element: element)
             guard propertyExists(deviceID: currentDeviceID, address: &address) else { continue }
             var size = UInt32(MemoryLayout<T>.size)
-            lastStatus = AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, &data)
+            lastStatus = withUnsafeMutableBytes(of: &data) { rawBuffer in
+                guard let ptr = rawBuffer.baseAddress else {
+                    return kAudioHardwareUnspecifiedError
+                }
+                return AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, ptr)
+            }
             if lastStatus == noErr {
                 cache(element: element, for: selector)
                 return lastStatus
