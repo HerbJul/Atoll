@@ -642,7 +642,14 @@
       "shouldTranslate" : false
     },
     ":" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ":"
+          }
+        }
+      }
     },
     "'Now Playing' was the only option on previous versions and works with all media apps." : {
       "localizations" : {
@@ -2315,7 +2322,14 @@
       }
     },
     "%lld chars" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld chars"
+          }
+        }
+      }
     },
     "%lld colors" : {
       "localizations" : {
@@ -4901,7 +4915,14 @@
       "shouldTranslate" : false
     },
     "00" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "00"
+          }
+        }
+      }
     },
     "00:05:00" : {
       "comment" : "A time displayed in the timer panel on a lock screen.",
@@ -5028,131 +5049,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "1x" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1x"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "1x"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1x"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
     },
     "3 items" : {
       "localizations" : {
@@ -6022,132 +5918,6 @@
         }
       }
     },
-    "20" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "20"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "20"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      },
-      "shouldTranslate" : false
-    },
     "20 colors" : {
       "localizations" : {
         "ar" : {
@@ -6224,8 +5994,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "20 farger"
           }
         },
         "pl" : {
@@ -7195,162 +6965,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : ""
-          }
-        }
-      }
-    },
-    "Accessibility permission required" : {
-      "comment" : "A label explaining that accessibility permissions are required.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "يلزم الحصول على إذن الوصول"
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zugriffsberechtigung erforderlich"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Accessibility permission required"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se requiere permiso de accesibilidad"
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Autorisation d'accessibilité requise"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "પહોંચની મંજૂરી જરૂરી છે"
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "נדרשת הרשאת נגישות"
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "पहुँच की अनुमति आवश्यक है"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "접근 권한이 필요합니다"
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Toegangsrechten vereist"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tillgänglighetstillstånd krävs"
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erişilebilirlik izni gerekli"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "zh-Hans" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "需要访问权限"
           }
         }
       }
@@ -9010,10 +8624,36 @@
       }
     },
     "Adds a notch HUD when Caps Lock is enabled, with optional label and tint controls." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügt bei aktivierter Feststelltaste ein Notch-HUD hinzu, mit optionalen Steuerelementen für Beschriftung und Farbton."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legger til et hakk-HUD når Caps Lock er aktivert, med valgfrie kontroller for etikett og fargetone."
+          }
+        }
+      }
     },
     "Adds the AirPlay/route picker button back to the customizable controls palette." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügt die AirPlay-/Routenauswahl-Schaltfläche wieder zur anpassbaren Steuerungsleiste hinzu."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legger AirPlay/rutevelgerknappen tilbake til den tilpassbare kontrollpaletten."
+          }
+        }
+      }
     },
     "Adjust settings above to see changes in real-time. The actual OSD appears at the bottom center of your screen." : {
       "comment" : "A footer in the \"Preview\" section of the Custom OSD settings, explaining how to use the live preview feature.",
@@ -9766,8 +9406,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "AI-drevet assistent som kan analysere filer, bilder og gi hjelp i samtaler. Bruk Cmd+Shift+A for å få rask tilgang til assistenten."
           }
         },
         "nl" : {
@@ -10537,7 +10177,14 @@
       }
     },
     "All" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alles"
+          }
+        }
+      }
     },
     "All-day" : {
       "localizations" : {
@@ -10670,7 +10317,14 @@
       }
     },
     "All-Day Events" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ganztägige Termine"
+          }
+        }
+      }
     },
     "Allow Access" : {
       "localizations" : {
@@ -10933,138 +10587,6 @@
         }
       },
       "shouldTranslate" : false
-    },
-    "Alpha Feature Warning" : {
-      "comment" : "The title of an alert that warns users about an alpha feature.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alpha-Funktionswarnung"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Alpha Feature Warning"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Avertissement concernant la fonctionnalité Alpha"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "אזהרת תכונה אלפא"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
     },
     "Always hide in fullscreen" : {
       "localizations" : {
@@ -12019,7 +11541,20 @@
       }
     },
     "Applies the notch-style parallax effect to the lock screen media widget album art." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wendet den Notch-Parallax-Effekt auf das Albumcover des Medien-Widgets auf dem Sperrbildschirm an."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bruker parallakseffekten i hakkestil på albumomslaget til mediewidgeten på låseskjermen."
+          }
+        }
+      }
     },
     "AQI" : {
       "extractionState" : "manual",
@@ -12632,6 +12167,12 @@
             "value" : "एटोल को स्क्रीनशॉट आपके डेस्कटॉप पर सहेजने के लिए एक्सेस की आवश्यकता है।"
           }
         },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atoll trenger tilgang for å lagre skjermbilder på skrivebordet ditt."
+          }
+        },
         "sv" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12677,6 +12218,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "एटोल को यह पता लगाने के लिए ब्लूटूथ एक्सेस की आवश्यकता है कि ऑडियो डिवाइस कब कनेक्ट होते हैं और HUD में उनकी बैटरी स्थिति प्रदर्शित करने के लिए।"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atoll trenger Bluetooth-tilgang for å oppdage når lydenheter kobles til og vise batteristatusen deres i HUD."
           }
         },
         "nl" : {
@@ -14261,7 +13808,14 @@
       }
     },
     "Battery Indicator Styling" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batterieanzeige-Design"
+          }
+        }
+      }
     },
     "Battery Information" : {
       "localizations" : {
@@ -14536,7 +14090,14 @@
       }
     },
     "Battery settings and informations are only available on MacBooks" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Batterieeinstellungen und -informationen sind nur auf MacBooks verfügbar."
+          }
+        }
+      }
     },
     "Battery Status" : {
       "localizations" : {
@@ -14675,147 +14236,44 @@
       }
     },
     "Battery Widget" : {
-
-    },
-    "Behavior & Style" : {
-
-    },
-    "BETA" : {
-
-    },
-    "Blue dashed box shows actual size in Atoll" : {
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Blau gestriffelte Box zeigt die tatsächliche Größe im Atoll an"
+            "value" : "Batterie-Widget"
           }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Blue dashed box shows actual size in Atoll"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
+        }
+      }
+    },
+    "Behavior & Style" : {
+      "localizations" : {
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La caja de puntos azul muestra el tamaño real en Atoll"
+            "value" : "Verhalten & Stil"
           }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
+        }
+      }
+    },
+    "BETA" : {
+      "localizations" : {
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La boîte bleue en pointillés affiche la taille actuelle dans la Atoll"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "नीला धराशायी बॉक्स एटोल में वास्तविक आकार दिखाता है।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "value" : "BETA"
           }
         }
       }
     },
     "Blue outline matches the notch canvas" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der blaue Umriss passt zur Kerbe auf der Leinwand."
+          }
+        }
+      }
     },
     "Bluetooth Audio Devices" : {
       "comment" : "A section header that lists Bluetooth audio devices.",
@@ -15211,131 +14669,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "使用剪贴板管理器提升你的效率"
-          }
-        }
-      }
-    },
-    "Both" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beide"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Both"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Les deux"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
           }
         }
       }
@@ -16196,8 +15529,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Innebygd systemovervåking registrerer endringer i volum, lysstyrke og tastaturbelysning direkte uten behov for eksterne apper."
           }
         },
         "pl" : {
@@ -16266,14 +15599,14 @@
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Kauf uns einen Kaffee"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buy us a "
+            "value" : "Buy us a coffee"
           }
         },
         "en-GB" : {
@@ -16605,8 +15938,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Kalendertilgang er nektet. Vennligst aktiver den i Systeminnstillinger."
           }
         },
         "pl" : {
@@ -16748,8 +16081,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Tilgang til kalender eller påminnelser er nektet. Aktiver den i systeminnstillingene."
           }
         },
         "pl" : {
@@ -17465,135 +16798,31 @@
       }
     },
     "Caps Lock" : {
-
-    },
-    "Caps Lock color" : {
-
-    },
-    "Caps Lock Indicator" : {
-
-    },
-    "Center" : {
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mitte"
+            "value" : "Feststelltaste"
           }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Center"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
+        }
+      }
+    },
+    "Caps Lock color" : {
+      "localizations" : {
+        "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Centrer"
+            "value" : "Farbe der Feststelltaste"
           }
-        },
-        "gu" : {
+        }
+      }
+    },
+    "Caps Lock Indicator" : {
+      "localizations" : {
+        "de" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Feststelltaste-Anzeige"
           }
         }
       }
@@ -18779,7 +18008,14 @@
       }
     },
     "Choose directly on which side of the screen the vertical bar appears." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie direkt aus, auf welcher Seite des Bildschirms die vertikale Leiste angezeigt werden soll."
+          }
+        }
+      }
     },
     "Choose File" : {
       "localizations" : {
@@ -18906,7 +18142,20 @@
       }
     },
     "Choose which service to use when sharing files from the shelf. Drag files onto the shelf or click the shelf button to pick files." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie aus, welchen Dienst Sie beim Teilen von Dateien aus dem Regal verwenden möchten. Ziehen Sie Dateien auf das Regal oder klicken Sie auf die Regal-Schaltfläche, um Dateien auszuwählen."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Velg hvilken tjeneste du vil bruke når du deler filer fra hyllen. Dra filer til hyllen eller klikk på hylleknappen for å velge filer."
+          }
+        }
+      }
     },
     "Choose which system controls should display custom OSD windows." : {
       "comment" : "A footer description for the \"Controls\" section of the Custom OSD settings view.",
@@ -20243,7 +19492,14 @@
       }
     },
     "Clear Clipboard History?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwischenablage-Verlauf löschen?"
+          }
+        }
+      }
     },
     "Clear Color History" : {
       "localizations" : {
@@ -20630,7 +19886,14 @@
       }
     },
     "Clear History" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verlauf löschen"
+          }
+        }
+      }
     },
     "Clear Pinned Items" : {
       "localizations" : {
@@ -20882,7 +20145,14 @@
       }
     },
     "Clear slot" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freier Steckplatz"
+          }
+        }
+      }
     },
     "Click 'Pick Color' or use Cmd+Shift+P to start picking colors" : {
       "localizations" : {
@@ -23363,136 +22633,17 @@
       }
     },
     "Color-coded fills are unavailable in Segmented mode. Switch to Hierarchical or Gradient inside Controls › Dynamic Island to adjust advanced options." : {
-
-    },
-    "Color-Coded Progress Bars" : {
-      "comment" : "A section header that lists the options for color-coded progress bars.",
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Farbcodierte Fortschrittsbalken"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Color-Coded Progress Bars"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Barres de progression avec code couleur"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "रंग-कोडित प्रगति बार"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "value" : "Farbcodierte Füllungen sind im segmentierten Modus nicht verfügbar. Wechseln Sie in „Steuerelemente“ › „Dynamic Island“ zu „Hierarchisch“ oder „Farbverlauf“, um erweiterte Optionen anzupassen."
           }
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Fargekodede fyllinger er ikke tilgjengelige i segmentert modus. Bytt til hierarkisk eller gradient i Kontroller › Dynamic Island for å justere avanserte alternativer."
           }
         }
       }
@@ -24286,7 +23437,14 @@
       }
     },
     "Configure presets in Settings to see them here." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Konfigurieren Sie Voreinstellungen in den Einstellungen, um sie hier anzuzeigen."
+          }
+        }
+      }
     },
     "Connected" : {
       "extractionState" : "manual",
@@ -24567,7 +23725,14 @@
       }
     },
     "Control Palette" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Steuerungs-Palette"
+          }
+        }
+      }
     },
     "Control timer availability, live activity behaviour, and whether the app mirrors timers started from the macOS Clock app." : {
       "localizations" : {
@@ -25388,7 +24553,14 @@
       }
     },
     "Copy items on drag" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elemente beim Ziehen kopieren"
+          }
+        }
+      }
     },
     "Copy Latest Crash Report" : {
       "localizations" : {
@@ -25763,7 +24935,14 @@
       }
     },
     "Copy text to see it here" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieren Sie den Text, um ihn hier anzuzeigen."
+          }
+        }
+      }
     },
     "Core %lld" : {
       "comment" : "A label showing the ID of a CPU core. The argument is the ID of the CPU core.",
@@ -26163,7 +25342,14 @@
       }
     },
     "Create from Clipboard" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aus Zwischenablage erstellen"
+          }
+        }
+      }
     },
     "Current custom timer:" : {
       "extractionState" : "manual",
@@ -26664,7 +25850,14 @@
       }
     },
     "Current Transform" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stromwandler"
+          }
+        }
+      }
     },
     "Currently active" : {
       "comment" : "A text indicating whether the camera is \"Currently active\" or \"Not active\".",
@@ -26792,129 +25985,11 @@
       }
     },
     "Currently selected: %@" : {
-
-    },
-    "Custom" : {
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Angepasst"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Personnalisé"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "value" : "Derzeit ausgewählt: %@"
           }
         }
       }
@@ -27696,155 +26771,6 @@
         }
       }
     },
-    "Custom OSD is an experimental alpha feature and may contain bugs or unexpected behavior.\n\nThis feature requires macOS 15 or later and is still under active development. It's recommended to keep it disabled unless you want to help test it." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OSD المخصص هو ميزة تجريبية في مرحلة ألفا وقد تحتوي على أخطاء أو سلوك غير متوقع.\n\nتتطلب هذه الميزة نظام macOS 15 أو أحدث وهي لا تزال قيد التطوير. يوصى بإبقائها معطلة ما لم تكن ترغب في المساعدة في اختبارها."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Наладжвальны OSD — гэта эксперыментальная альфа-функцыя, якая можа ўтрымліваць памылкі або дэманстраваць нечаканае паводзіны.\n\nГэтая функцыя патрабуе macOS 15 або больш позняй версіі і ўсё яшчэ знаходзіцца ў актыўнай распрацоўцы. Рэкамендуецца пакінуць яе адключанай, калі вы не хочаце дапамагчы з тэсціраваннем."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vlastní OSD je experimentální funkce v alfa verzi a může obsahovat chyby nebo neočekávané chování.\n\nTato funkce vyžaduje macOS 15 nebo novější a je stále ve vývoji. Doporučujeme ji ponechat vypnutou, pokud nechcete pomáhat s jejím testováním."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Benutzerdefinierte OSD ist eine experimentelle Alpha-Funktion und kann Fehler oder unerwartetes Verhalten enthalten. Diese Funktion erfordert macOS 15 oder höher und befindet sich noch in der aktiven Entwicklung. Es wird empfohlen, es deaktiviert zu lassen, es sei denn, Sie möchten beim Testen helfen."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Custom OSD is an experimental alpha feature and may contain bugs or unexpected behavior.\n\nThis feature requires macOS 15 or later and is still under active development. It's recommended to keep it disabled unless you want to help test it."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El OSD personalizado es una característica alfa experimental y puede contener errores o comportamientos inesperados. Esta función requiere macOS 15 o posterior y todavía está en desarrollo activo. Se recomienda mantenerlo desactivado a menos que quieras ayudar a probarlo."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El OSD personalizado es una función alfa experimental y puede contener errores o comportarse de forma inesperada.\n\nEsta función requiere macOS 15 o posterior y aún se encuentra en fase de desarrollo activo. Se recomienda mantenerla desactivada a menos que desee ayudar a probarla."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mukautettu OSD on kokeellinen alfa-ominaisuus, joka saattaa sisältää virheitä tai toimia odottamattomasti.\n\nTämä ominaisuus vaatii macOS 15:n tai uudemman version ja on vielä aktiivisen kehityksen alla. On suositeltavaa pitää se pois käytöstä, ellet halua auttaa sen testaamisessa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "L'OSD personnalisé est une fonctionnalité alpha expérimentale et peut contenir des bogues ou un comportement inattendu. Cette fonctionnalité nécessite macOS 15 ou une version ultérieure et est toujours en cours de développement actif. Il est recommandé de le garder désactivé à moins que vous ne vouliez aider à le tester."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OSD מותאם אישית הוא תכונה אלפא ניסיונית ועשויה להכיל באגים או התנהגות בלתי צפויה.\n\nתכונה זו דורשת macOS 15 או גרסה מאוחרת יותר, והיא עדיין נמצאת בפיתוח פעיל. מומלץ להשאיר אותה מושבתת, אלא אם ברצונך לסייע בבדיקתה."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "कस्टम OSD एक प्रयोगात्मक अल्फा फ़ीचर है और इसमें बग या अप्रत्याशित व्यवहार हो सकते हैं।\n\nइस फ़ीचर के लिए macOS 15 या बाद के संस्करण की आवश्यकता है और यह अभी भी सक्रिय विकास के अधीन है। जब तक आप इसका परीक्षण करने में मदद नहीं करना चाहते, तब तक इसे अक्षम रखना अनुशंसित है।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Az egyéni OSD egy kísérleti alfa funkció, amely hibákat vagy váratlan viselkedést tartalmazhat.\n\nEz a funkció macOS 15 vagy újabb verziót igényel, és még aktív fejlesztés alatt áll. Javasoljuk, hogy hagyja kikapcsolva, hacsak nem szeretne segíteni a tesztelésében."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "사용자 지정 OSD는 실험적인 알파 기능으로 버그나 예상치 못한 동작이 발생할 수 있습니다.\n\n이 기능은 macOS 15 이상이 필요하며 아직 개발 중입니다. 테스트에 참여하지 않는 한 비활성화 상태로 유지하는 것이 좋습니다."
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tilpasset OSD er en eksperimentell alfa-funksjon og kan inneholde feil eller uventet oppførsel.\n\nDenne funksjonen krever macOS 15 eller nyere og er fortsatt under aktiv utvikling. Det anbefales å holde den deaktivert med mindre du ønsker å hjelpe til med å teste den."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anpassad OSD är en experimentell alfa-funktion och kan innehålla buggar eller oväntat beteende.\n\nDenna funktion kräver macOS 15 eller senare och är fortfarande under aktiv utveckling. Vi rekommenderar att du håller den inaktiverad om du inte vill hjälpa till att testa den."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "தனிப்பயன் OSD என்பது ஒரு சோதனை ஆல்ஃபா அம்சமாகும், மேலும் இதில் பிழைகள் அல்லது எதிர்பாராத நடத்தைகள் இருக்கலாம்.\n\nஇந்த அம்சத்திற்கு macOS 15 அல்லது அதற்குப் பிந்தைய பதிப்பு தேவைப்படுகிறது, மேலும் இது இன்னும் தீவிர மேம்பாட்டில் உள்ளது. இதைச் சோதிக்க நீங்கள் உதவ விரும்பினால் தவிர, இதை முடக்கியே வைத்திருக்கப் பரிந்துரைக்கப்படுகிறது."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Özel OSD deneysel bir alfa özelliğidir ve hatalar veya beklenmedik davranışlar içerebilir. Bu özellik macOS 15 veya daha yenisini gerektirir ve hala etkin bir geliştirme aşamasındadır. Test etmeye yardımcı olmak istemediğiniz sürece devre dışı bırakmanız önerilir."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Custom Timer" : {
       "localizations" : {
         "ar" : {
@@ -28473,7 +27399,20 @@
       }
     },
     "Customize how you organize and create notes. Enabling color filtering and search helps manage large lists." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passen Sie die Organisation und Erstellung von Notizen an Ihre Bedürfnisse an. Durch Aktivieren der Farbfilterung und Suchfunktion lassen sich umfangreiche Listen besser verwalten."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tilpass hvordan du organiserer og oppretter notater. Aktivering av fargefiltrering og søk gjør det enklere å administrere store lister."
+          }
+        }
+      }
     },
     "Customize in Settings" : {
       "localizations" : {
@@ -28606,7 +27545,14 @@
       }
     },
     "Dash outline equals the exact notch bounds." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Umrisse des Strichs entsprechen genau den Kerbgrenzen."
+          }
+        }
+      }
     },
     "Default" : {
       "localizations" : {
@@ -29112,7 +28058,14 @@
       }
     },
     "Delete All Notes?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Notizen löschen?"
+          }
+        }
+      }
     },
     "Delete Animation" : {
       "comment" : "The title of an alert that appears when trying to delete a custom animation.",
@@ -29643,7 +28596,14 @@
       }
     },
     "Devices" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geräte"
+          }
+        }
+      }
     },
     "Diagnostics" : {
       "comment" : "A section header in the Lock Screen Settings view, describing diagnostics-related functionality.",
@@ -29770,11 +28730,15 @@
         }
       }
     },
-    "Diese App benötigt Zugriff auf Bluetooth, um Geräte zu verbinden" : {
-      "extractionState" : "manual"
-    },
     "Dimensions" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abmessungen"
+          }
+        }
+      }
     },
     "Disable" : {
       "extractionState" : "manual",
@@ -30434,156 +29398,6 @@
         }
       }
     },
-    "Display custom macOS-style OSD windows at the bottom center of the screen when adjusting volume, brightness, or keyboard backlight." : {
-      "comment" : "A description of the functionality of the Custom OSD feature.",
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "اعرض نوافذ OSD مخصصة على غرار macOS في الجزء السفلي الأوسط من الشاشة عند ضبط مستوى الصوت أو السطوع أو الإضاءة الخلفية للوحة المفاتيح."
-          }
-        },
-        "be" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Падчас рэгулявання гучнасці, яркасці або падсветкі клавіятуры адлюстроўваць на ніжнім цэнтры экрана карыстальніцкія OSD-вокны ў стылі macOS."
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Při nastavování hlasitosti, jasu nebo podsvícení klávesnice zobrazte v dolní střední části obrazovky vlastní okna OSD ve stylu macOS."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeigen Sie benutzerdefinierte OSD-Fenster im macOS-Stil in der unteren Mitte des Bildschirms an, wenn Sie die Lautstärke, Helligkeit oder Tastaturhintergrundbeleuchtung anpassen."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Display custom macOS-style OSD windows at the bottom center of the screen when adjusting volume, brightness, or keyboard backlight."
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Muestra ventanas OSD personalizadas de estilo macOS en la parte inferior central de la pantalla al ajustar el volumen, el brillo o la retroiluminación del teclado."
-          }
-        },
-        "es-419" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Muestra ventanas OSD personalizadas al estilo macOS en la parte inferior central de la pantalla al ajustar el volumen, el brillo o la retroiluminación del teclado."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Näytä mukautetut macOS-tyyliset OSD-ikkunat näytön alareunassa keskellä, kun säädät äänenvoimakkuutta, kirkkautta tai näppäimistön taustavaloa."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Affichez des fenêtres OSD personnalisées de style macOS en bas au centre de l'écran lors du réglage du volume, de la luminosité ou du rétroéclairage du clavier."
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "he" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "הצג חלונות OSD מותאמים אישית בסגנון macOS במרכז התחתון של המסך בעת כוונון עוצמת הקול, הבהירות או התאורה האחורית של המקלדת."
-          }
-        },
-        "hi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "वॉल्यूम, ब्राइटनेस या कीबोर्ड बैकलाइट समायोजित करते समय स्क्रीन के निचले केंद्र में कस्टम macOS-शैली की OSD विंडो दिखाएँ।"
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A hangerő, a fényerő vagy a billentyűzet háttérvilágításának beállításakor a képernyő alsó közepén egyedi, macOS stílusú OSD ablakok jelennek meg."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vis tilpassede OSD-vinduer i macOS-stil nederst i midten av skjermen når du justerer volum, lysstyrke eller bakgrunnsbelysning på tastaturet."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Visa anpassade OSD-fönster i macOS-stil längst ned i mitten av skärmen när du justerar volym, ljusstyrka eller tangentbordets bakgrundsbelysning."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ஒலி, பிரகாசம் அல்லது விசைப்பலகை பின்னொளியைச் சரிசெய்யும்போது, திரையின் கீழ்ப்பகுதி மையத்தில் தனிப்பயன் macOS பாணி OSD சாளரங்களைக் காட்டவும்."
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ses düzeyini, parlaklığı veya klavye arka aydınlatmasını ayarlarken ekranın alt ortasında özel macOS tarzı OSD pencereleri görüntüleyin."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Відображення спеціальних вікон OSD у стилі macOS у нижній центральній частині екрана під час регулювання гучності, яскравості або підсвічування клавіатури."
-          }
-        }
-      }
-    },
     "Display Mode" : {
       "localizations" : {
         "ar" : {
@@ -30988,7 +29802,14 @@
       }
     },
     "Displays the current Focus state above the weather capsule whenever Focus detection is enabled." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeigt den aktuellen Fokusstatus über der Wetterkapsel an, wenn die Fokuserkennung aktiviert ist."
+          }
+        }
+      }
     },
     "Do Not Disturb" : {
       "localizations" : {
@@ -31115,7 +29936,14 @@
       }
     },
     "Done" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fertig"
+          }
+        }
+      }
     },
     "Download" : {
       "localizations" : {
@@ -31248,129 +30076,11 @@
       }
     },
     "Download Detection" : {
-
-    },
-    "Download icon style" : {
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Symbolstil herunterladen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download icon style"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Télécharger le style d’icône"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "value" : "Download-Erkennung"
           }
         }
       }
@@ -31653,10 +30363,36 @@
       }
     },
     "Drag a control onto a slot or tap to place it in the first empty slot." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehen Sie ein Steuerelement auf einen Steckplatz oder tippen Sie darauf, um es im ersten leeren Steckplatz zu platzieren."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dra en kontroll til en plass eller trykk for å plassere den i den første tomme plassen."
+          }
+        }
+      }
     },
     "Drag items between slots or drop from the palette to remap controls." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziehen Sie Elemente zwischen den Slots oder legen Sie sie aus der Palette ab, um die Steuerelemente neu zuzuordnen."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dra elementer mellom sporene eller slipp dem fra paletten for å omorganisere kontrollene."
+          }
+        }
+      }
     },
     "Drag the previews to adjust vertical placement. Positive values lift the panel; negative values lower it. Changes apply instantly while the widgets are visible." : {
       "localizations" : {
@@ -31746,8 +30482,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Dra forhåndsvisningene for å justere vertikal plassering. Positive verdier løfter panelet, negative verdier senker det. Endringene trer i kraft umiddelbart mens widgetene er synlige."
           }
         },
         "pl" : {
@@ -31925,7 +30661,14 @@
       }
     },
     "Dynamic Island Progress Bars" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dynamische Insel-Fortschrittsbalken"
+          }
+        }
+      }
     },
     "dynamic.island" : {
       "localizations" : {
@@ -32140,8 +30883,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Hver graf kan aktiveres eller deaktiveres individuelt. Nettverksaktivitet viser nedlastings-/opplastingshastigheter, og disk-I/O viser lese-/skrivehastigheter."
           }
         },
         "pl" : {
@@ -32293,8 +31036,8 @@
         },
         "nb" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Kopier, lagre og administrer enkelt det innholdet du bruker mest. Oppgrader nå for å få avanserte funksjoner som lagring av flere elementer og rask tilgang!"
           }
         },
         "pl" : {
@@ -33444,134 +32187,15 @@
         }
       }
     },
-    "Enable Custom OSD" : {
-      "comment" : "A toggle that enables or disables the custom OSD feature.",
-      "extractionState" : "stale",
+    "Enable customizable controls" : {
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Benutzerdefiniertes OSD aktivieren"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enable Custom OSD"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer l'OSD personnalisé"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "value" : "Anpassbare Steuerelemente aktivieren"
           }
         }
       }
-    },
-    "Enable customizable controls" : {
-
     },
     "Enable dynamic mirror" : {
       "extractionState" : "manual",
@@ -34813,10 +33437,24 @@
       }
     },
     "Enable the battery capsule and configure its layout." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren Sie die Batteriekapsel und konfigurieren Sie deren Layout."
+          }
+        }
+      }
     },
     "Enable the timer feature in Settings to access this tab." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren Sie die Timer-Funktion in den Einstellungen, um auf diese Registerkarte zuzugreifen."
+          }
+        }
+      }
     },
     "Enable the weather capsule and configure its layout, provider, units, and optional battery/AQI indicators." : {
       "comment" : "A footer for the \"Weather Widget\" section in the Lock Screen Settings view, describing its purpose.",
@@ -35102,131 +33740,6 @@
         }
       }
     },
-    "Enable timer feature in Settings to use this tab" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivieren Sie die Timer-Funktion in den Einstellungen, um diese Registerkarte zu verwenden"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Enable timer feature in Settings to use this tab"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Activer la fonction de minuterie dans les paramètres pour utiliser cet onglet"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktivera timerfunktionen i Inställningar för att använda den här fliken."
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu sekmeyi kullanmak için Ayarlar'da zamanlayıcı özelliğini etkinleştirin"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Enable timer live activity" : {
       "localizations" : {
         "ar" : {
@@ -35352,7 +33865,20 @@
       }
     },
     "Enable when scaling beyond 30x20px so the Atoll opens gracefully." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren Sie diese Option, wenn Sie über 30x20px skalieren, damit Atoll korrekt geöffnet wird."
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktiver når du skalerer utover 30x20px, slik at Atoll åpnes på en elegant måte."
+          }
+        }
+      }
     },
     "Enable window shadow" : {
       "extractionState" : "manual",
@@ -36272,135 +34798,24 @@
       }
     },
     "Expand notch to follow animation width" : {
-
-    },
-    "Expand Notch with Animation" : {
-      "extractionState" : "stale",
       "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erweitern Sie die Notch mit Animation"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Expand Notch with Animation"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Développer l'encoche avec l'animation"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Expandera Notch med animation"
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Animasyonla Çentiği Genişlet"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "value" : "Kerbe erweitern, um der Breite der Animation zu folgen"
           }
         }
       }
     },
     "Expanded drag detection area" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erweiterter Bereich zur Erkennung von Widerstand"
+          }
+        }
+      }
     },
     "Expanded notch width" : {
       "comment" : "A label describing the expanded notch width setting.",
@@ -36546,6 +34961,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "नॉच स्पैन को बढ़ाएँ ताकि क्लिपबोर्ड, कलर पिकर और अन्य ट्रेलिंग आइकन स्केल किए गए डिस्प्ले (जैसे More Space) पर दिखाई दें।"
+          }
+        },
+        "nb" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utvid hakkets spennvidde slik at utklippstavlen, fargevelgeren og andre etterfølgende ikoner forblir synlige på skalerte skjermer (f.eks. Mer plass)."
           }
         },
         "sv" : {
@@ -36848,7 +35269,14 @@
       }
     },
     "Files dropped on the shelf will be shared via this service" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf dem Regal abgelegte Dateien werden über diesen Dienst freigegeben."
+          }
+        }
+      }
     },
     "Fill Notch" : {
       "localizations" : {
@@ -37229,10 +35657,24 @@
       }
     },
     "Floating window panel skip behaviour" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verhalten beim Überspringen von schwebenden Fensterpanels"
+          }
+        }
+      }
     },
     "Focus active: %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fokus aktiv: %@"
+          }
+        }
+      }
     },
     "Focus Status" : {
       "localizations" : {
@@ -37359,7 +35801,14 @@
       }
     },
     "Focus Widget" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fokus-Widget"
+          }
+        }
+      }
     },
     "Free · %@" : {
       "comment" : "A label displaying the amount of free storage on a disk device. The argument is the number of free bytes on the disk.",
@@ -38126,7 +36575,14 @@
       }
     },
     "Gesture skip behavior" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verhalten beim Überspringen von Gesten"
+          }
+        }
+      }
     },
     "Get started" : {
       "localizations" : {
@@ -39021,7 +37477,14 @@
       }
     },
     "Height: %lldpx" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Höhe: %lldpx"
+          }
+        }
+      }
     },
     "Hide" : {
       "localizations" : {
@@ -40549,7 +39012,14 @@
       }
     },
     "HUD Position" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HUD-Position"
+          }
+        }
+      }
     },
     "HUD style" : {
       "localizations" : {
@@ -42333,7 +40803,14 @@
       }
     },
     "Interactive (Drag to Change)" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interaktiv (zum Ändern ziehen)"
+          }
+        }
+      }
     },
     "IPv4 · %@" : {
       "comment" : "A label displaying an IP address for a network interface. The text inside the parentheses is the IP address of the interface.",
@@ -42576,7 +41053,14 @@
       "shouldTranslate" : false
     },
     "Join the meeting" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An der Besprechung teilnehmen"
+          }
+        }
+      }
     },
     "Key" : {
       "extractionState" : "manual",
@@ -42974,6 +41458,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "يتم إجبار التسميات على ضغط/إيقاف تشغيل النص أثناء تمكين وضع التوست القصير."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Labels müssen Text komprimieren, wenn der kurze Toast-Modus aktiviert ist."
           }
         }
       }
@@ -43375,13 +41865,34 @@
       }
     },
     "Layout Preview" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Layout-Vorschau"
+          }
+        }
+      }
     },
     "Left" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Links"
+          }
+        }
+      }
     },
     "Line Width: %lldpx" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Linienbreite: %lldpx"
+          }
+        }
+      }
     },
     "LinkedIn" : {
       "localizations" : {
@@ -45010,10 +43521,24 @@
       }
     },
     "Lock Screen Liquid Glass" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sperrbildschirm Flüssigglas"
+          }
+        }
+      }
     },
     "Lock Screen Media" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sperrbildschirm-Medien"
+          }
+        }
+      }
     },
     "Lock screen panel preview" : {
       "comment" : "A description of the content displayed in the lock screen panel.",
@@ -48492,7 +47017,14 @@
       }
     },
     "Meeting starts at %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Meeting beginnt um %@."
+          }
+        }
+      }
     },
     "Memory Usage" : {
       "localizations" : {
@@ -49663,131 +48195,6 @@
         }
       }
     },
-    "min" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "ar" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "cs" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Minute"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "min"
-          }
-        },
-        "en-GB" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "min"
-          }
-        },
-        "gu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "hu" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "nb" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "ta" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : ""
-          }
-        }
-      }
-    },
     "Minimalistic mode focuses on media controls and system HUDs, hiding all extra features for a clean, focused experience. Automatically enables simpler animations." : {
       "localizations" : {
         "ar" : {
@@ -50310,7 +48717,14 @@
       }
     },
     "Mirror macOS Clock timers" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spiegeln von macOS-Uhr-Timern"
+          }
+        }
+      }
     },
     "Mirror shape" : {
       "localizations" : {
@@ -50739,6 +49153,12 @@
     },
     "Monitor your Downloads folder for Chromium-style downloads (.crdownload files) and show a live activity in the Dynamic Island while downloads are in progress." : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überwachen Sie Ihren Download-Ordner auf Downloads im Chromium-Stil (.crdownload-Dateien) und zeigen Sie eine Live-Aktivität in Dynamic Island an, während Downloads ausgeführt werden."
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -53394,7 +51814,14 @@
       }
     },
     "No copies yet" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Kopien"
+          }
+        }
+      }
     },
     "No custom animation available" : {
       "localizations" : {
@@ -54417,7 +52844,14 @@
       }
     },
     "No notes yet" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Notizen"
+          }
+        }
+      }
     },
     "No presets configured. Add a preset to make it appear in the timer popover." : {
       "comment" : "A message displayed when there are no timer presets configured, encouraging the user to add one.",
@@ -56085,7 +54519,14 @@
       }
     },
     "Notes" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anmerkungen"
+          }
+        }
+      }
     },
     "Notify before" : {
       "comment" : "A label describing the slider that allows the user to set a reminder lead time.",
@@ -56473,10 +54914,24 @@
       }
     },
     "Only applies when Material is set to Frosted Glass." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gilt nur, wenn „Material“ auf „Frosted Glass“ eingestellt ist."
+          }
+        }
+      }
     },
     "Only available when Material is set to Frosted Glass." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nur verfügbar, wenn „Material“ auf „Frosted Glass“ eingestellt ist."
+          }
+        }
+      }
     },
     "Opacity:" : {
       "extractionState" : "manual",
@@ -57932,10 +56387,24 @@
       }
     },
     "Overtime" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überstunden"
+          }
+        }
+      }
     },
     "Panel mode shows clipboard in a floating window near the notch." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Panel-Modus zeigt die Zwischenablage in einem schwebenden Fenster in der Nähe der Kerbe an."
+          }
+        }
+      }
     },
     "Panel mode shows color picker in a floating window. Popover mode shows color picker as a dropdown attached to the color picker button." : {
       "localizations" : {
@@ -59864,7 +58333,14 @@
       }
     },
     "Popover mode shows clipboard as a dropdown attached to the clipboard button." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Popover-Modus zeigt die Zwischenablage als Dropdown-Menü an, das an die Zwischenablage-Schaltfläche angehängt ist."
+          }
+        }
+      }
     },
     "Popover mode shows color picker as a dropdown attached to the color picker button. Panel mode shows color picker in a floating window." : {
       "localizations" : {
@@ -60899,7 +59375,14 @@
       }
     },
     "Preview Zoom" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorschau-Zoom"
+          }
+        }
+      }
     },
     "Privacy Indicators" : {
       "comment" : "A heading for the section that lists privacy indicators.",
@@ -61530,10 +60013,24 @@
       }
     },
     "Quick Share" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schnell teilen"
+          }
+        }
+      }
     },
     "Quick Share Service" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schnellfreigabe-Dienst"
+          }
+        }
+      }
     },
     "Quit" : {
       "localizations" : {
@@ -63300,7 +61797,14 @@
       }
     },
     "Remove from shelf after dragging" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nach dem Ziehen aus dem Regal entfernen"
+          }
+        }
+      }
     },
     "Replaces macOS system HUD with Dynamic Island displays for volume, brightness, and keyboard backlight." : {
       "comment" : "A footer description of the HUDs feature.",
@@ -64007,7 +62511,14 @@
       }
     },
     "Reset to defaults" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf Standardeinstellungen zurücksetzen"
+          }
+        }
+      }
     },
     "Reset Weather" : {
       "extractionState" : "manual",
@@ -64918,7 +63429,14 @@
       }
     },
     "Right" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechts"
+          }
+        }
+      }
     },
     "Running" : {
       "extractionState" : "manual",
@@ -66217,7 +64735,14 @@
       }
     },
     "Screen Padding: %lldpx" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bildschirm-Polsterung: %lldpx"
+          }
+        }
+      }
     },
     "Screen Recording" : {
       "localizations" : {
@@ -66592,7 +65117,14 @@
       }
     },
     "Scroll" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Skrollen"
+          }
+        }
+      }
     },
     "Scroll device name in HUD" : {
       "extractionState" : "manual",
@@ -66884,7 +65416,14 @@
       }
     },
     "Search notes..." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notizen suchen..."
+          }
+        }
+      }
     },
     "Search Settings" : {
       "comment" : "A placeholder text for a search bar in the settings view.",
@@ -68655,7 +67194,14 @@
       }
     },
     "Separate Tab mode integrates Copied Items and Notes into a single view. If both are enabled, Notes appear on the right and Clipboard on the left." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Modus „Separate Registerkarten“ integriert kopierte Elemente und Notizen in einer einzigen Ansicht. Wenn beide aktiviert sind, werden Notizen auf der rechten Seite und die Zwischenablage auf der linken Seite angezeigt."
+          }
+        }
+      }
     },
     "Session · ↓ %@ · ↑ %@" : {
       "comment" : "A row displaying the total downloaded and uploaded bytes for the network session.",
@@ -71501,10 +70047,24 @@
       }
     },
     "Show Percentage" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prozentualen Anteil anzeigen"
+          }
+        }
+      }
     },
     "Show preset list in timer tab" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voreingestellte Liste im Timer-Tab anzeigen"
+          }
+        }
+      }
     },
     "Show progress" : {
       "localizations" : {
@@ -71666,10 +70226,24 @@
       }
     },
     "Show sneak peek on playback changes" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorschau bei Wiedergabeänderungen anzeigen"
+          }
+        }
+      }
     },
     "Show the active Focus name inside the indicator." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeige den Namen des aktiven Fokus innerhalb der Anzeige an."
+          }
+        }
+      }
     },
     "Show timer name" : {
       "localizations" : {
@@ -72203,7 +70777,14 @@
       }
     },
     "Size: %lldpx" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Größe: %lldpx"
+          }
+        }
+      }
     },
     "Skip buttons" : {
       "comment" : "A section header that lists the skip behaviour options.",
@@ -72586,7 +71167,14 @@
       }
     },
     "Smooth transitions blend Green (0–60%), Yellow (60–85%), and Red (85–100%) through the entire fill. Adjust gradient behavior from Controls › Dynamic Island." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Glatte Übergänge mischen Grün (0–60 %), Gelb (60–85 %) und Rot (85–100 %) über die gesamte Füllung. Passen Sie das Verlaufsverhalten unter „Steuerelemente“ › „Dynamic Island“ an."
+          }
+        }
+      }
     },
     "Sneak peek duration" : {
       "comment" : "A label describing the duration of the \"sneak peek\" feature in the calendar settings.",
@@ -74607,7 +73195,14 @@
       }
     },
     "Start typing..." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beginnen Sie mit der Eingabe..."
+          }
+        }
+      }
     },
     "Starts a 5-minute demo timer to test the timer live activity feature. Only works when timer feature is enabled." : {
       "localizations" : {
@@ -76102,10 +74697,24 @@
       }
     },
     "Style" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stil"
+          }
+        }
+      }
     },
     "Sunrise at %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sonnenaufgang um %@"
+          }
+        }
+      }
     },
     "Support Us" : {
       "extractionState" : "manual",
@@ -77731,6 +76340,23 @@
         }
       }
     },
+    "This app requires access to Bluetooth to connect devices." : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diese App benötigt Zugriff auf Bluetooth, um Geräte zu verbinden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "This app requires access to Bluetooth to connect devices."
+          }
+        }
+      }
+    },
     "This duration powers the \"Custom\" option inside the timer popover for quick access." : {
       "comment" : "A footer description for the custom timer settings, explaining their purpose.",
       "localizations" : {
@@ -77880,10 +76506,24 @@
       }
     },
     "This permanently removes every saved note and its attachments." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dadurch werden alle gespeicherten Notizen und deren Anhänge dauerhaft gelöscht."
+          }
+        }
+      }
     },
     "This removes every saved clipboard item from the notch tab." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dadurch werden alle gespeicherten Zwischenablageelemente aus der Notch-Registerkarte entfernt."
+          }
+        }
+      }
     },
     "Time Range" : {
       "extractionState" : "manual",
@@ -78265,7 +76905,14 @@
       }
     },
     "Timer controls appear as" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer-Steuerelemente werden angezeigt als"
+          }
+        }
+      }
     },
     "Timer Disabled" : {
       "localizations" : {
@@ -79138,7 +77785,14 @@
       }
     },
     "Title" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titel"
+          }
+        }
+      }
     },
     "Toggle Notch Open:" : {
       "localizations" : {
@@ -79946,10 +78600,24 @@
       }
     },
     "Turn on customizable controls to rearrange media buttons." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aktivieren Sie anpassbare Steuerelemente, um die Medientasten neu anzuordnen."
+          }
+        }
+      }
     },
     "Turn this off to include all-day entries in the notch calendar and reminder live activity." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deaktivieren Sie diese Option, um ganztägige Einträge in den Notch-Kalender und die Live-Erinnerungsaktivität aufzunehmen."
+          }
+        }
+      }
     },
     "Two-finger swipe up on notch to close, two-finger swipe down on notch to open when **Open notch on hover** option is disabled" : {
       "comment" : "A footer text explaining the gesture control functionality.",
@@ -81393,80 +80061,11 @@
       }
     },
     "Use Accent Color" : {
-
-    },
-    "Use clored gauges" : {
-      "extractionState" : "manual",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verwenden Sie farbige Messgeräte"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utilisez des jauges colorées."
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Użyj kolorowych wskaźników"
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Använd färgade mätare"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Використовуйте кольорові датчики"
-          }
-        }
-      }
-    },
-    "Use MacBook icon when on battery" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verwenden Sie das MacBook-Symbol, wenn Sie im Akkubetrieb arbeiten."
-          }
-        },
-        "fi" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Käytä MacBook-kuvaketta, kun laite toimii akkuvirralla"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Utiliser l'icône MacBook lorsque l'ordinateur fonctionne sur batterie"
-          }
-        },
-        "pl" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Użyj ikony MacBooka, gdy urządzenie jest zasilane z baterii."
-          }
-        },
-        "sv" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Använd MacBook-ikonen när du använder batteriet"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Використовуйте піктограму MacBook, коли працюєте від акумулятора"
+            "value" : "Akzentfarbe verwenden"
           }
         }
       }
@@ -84162,7 +82761,14 @@
       }
     },
     "When enabled, Focus appears briefly (on/off) and then collapses instead of staying visible." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wenn diese Option aktiviert ist, wird „Fokus“ kurz angezeigt (ein/aus) und dann ausgeblendet, anstatt sichtbar zu bleiben."
+          }
+        }
+      }
     },
     "When enabled, stats monitoring stops a few seconds after the notch closes." : {
       "localizations" : {
@@ -84603,7 +83209,14 @@
       }
     },
     "Width: %lldpx" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Breite: %lldpx"
+          }
+        }
+      }
     },
     "With %lld graphs enabled, the Dynamic Island will expand horizontally to accommodate all graphs in a single row." : {
       "localizations" : {
