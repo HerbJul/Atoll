@@ -60,7 +60,11 @@ class CalendarManager: ObservableObject {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.handleEventStoreChanged()
+            if let self = self {
+                Task { @MainActor in
+                    self.handleEventStoreChanged()
+                }
+            }
         }
     }
 
@@ -290,3 +294,4 @@ private actor EventFetchLimiter {
         continuation.resume()
     }
 }
+

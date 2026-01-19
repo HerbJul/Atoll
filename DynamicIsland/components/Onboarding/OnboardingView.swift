@@ -114,7 +114,7 @@ struct OnboardingView: View {
     }
 
     func requestCalendarPermission() async {
-        await calendarService.requestAccess()
+        _ = await calendarService.requestAccess()
     }
 }
 
