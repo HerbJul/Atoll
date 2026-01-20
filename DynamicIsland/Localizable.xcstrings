@@ -15629,7 +15629,7 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Achetez-nous un café"
           }
         },
@@ -47205,6 +47205,12 @@
           "stringUnit" : {
             "state" : "new",
             "value" : ""
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेनूबार आइकन"
           }
         },
         "hu" : {

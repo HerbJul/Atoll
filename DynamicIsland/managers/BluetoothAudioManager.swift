@@ -16,6 +16,7 @@ import IOKit
 import CoreBluetooth
 
 /// Manages detection and monitoring of Bluetooth audio device connections
+@MainActor
 class BluetoothAudioManager: ObservableObject {
     static let shared = BluetoothAudioManager()
     
@@ -57,7 +58,9 @@ class BluetoothAudioManager: ObservableObject {
     }
     
     deinit {
-        cleanup()
+        Task { @MainActor in
+            self.cleanup()
+        }
     }
     
     // MARK: - Setup Methods
@@ -968,7 +971,7 @@ class BluetoothAudioManager: ObservableObject {
         return (addressPercentages, namePercentages)
     }
 
-    private func collectPmsetAccessoryBatteryEntries() -> [PmsetAccessoryBatteryEntry] {
+    private nonisolated func collectPmsetAccessoryBatteryEntries() -> [PmsetAccessoryBatteryEntry] {
         let process = Process()
         process.launchPath = "/usr/bin/pmset"
         process.arguments = ["-g", "accps"]
@@ -1333,7 +1336,7 @@ class BluetoothAudioManager: ObservableObject {
     }
 
     private func cancelHUDBatteryWait(for device: BluetoothAudioDevice) {
-        let cancelBlock = { [weak self] in
+        let cancelBlock: @MainActor @Sendable () -> Void = { [weak self] in
             guard let self else { return }
             self.hudBatteryWaitTasks[device.id]?.cancel()
             self.hudBatteryWaitTasks.removeValue(forKey: device.id)
@@ -1397,7 +1400,7 @@ class BluetoothAudioManager: ObservableObject {
                     await MainActor.run {
                         self.presentDeviceConnectedHUD(device: refreshedDevice, batteryLevel: battery)
                     }
-                    self.cancelHUDBatteryWait(for: device)
+                    await self.cancelHUDBatteryWait(for: device)
                     return
                 }
             }
@@ -1406,7 +1409,7 @@ class BluetoothAudioManager: ObservableObject {
             await MainActor.run {
                 self.presentDeviceConnectedHUD(device: device, batteryLevel: nil)
             }
-            self.cancelHUDBatteryWait(for: device)
+            await self.cancelHUDBatteryWait(for: device)
         }
 
         hudBatteryWaitTasks[device.id] = task
@@ -1803,3 +1806,5 @@ enum BluetoothAudioDeviceType {
 
 private let IOBluetoothDeviceConnectionNotification = "IOBluetoothDeviceConnectionNotification"
 private let IOBluetoothDeviceDisconnectionNotification = "IOBluetoothDeviceDisconnectionNotification"
+
+
