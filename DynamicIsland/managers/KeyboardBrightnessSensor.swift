@@ -74,7 +74,7 @@ final class KeyboardBrightnessSensor {
     }
 
     private static func readStandardRawLevel() throws -> Float {
-        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleHIDKeyboardEventDriverV2"))
+        let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("AppleHIDKeyboardEventDriverV2"))
         guard service != 0 else {
             throw SensorError.Keyboard.notStandard
         }
@@ -122,7 +122,7 @@ final class KeyboardBrightnessSensor {
     }
 
     private static func writeStandard(rawLevel: Float) throws {
-        let service = IOServiceGetMatchingService(kIOMasterPortDefault, IOServiceMatching("AppleHIDKeyboardEventDriverV2"))
+        let service = IOServiceGetMatchingService(kIOMainPortDefault, IOServiceMatching("AppleHIDKeyboardEventDriverV2"))
         guard service != 0 else {
             throw SensorError.Keyboard.notStandard
         }

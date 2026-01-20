@@ -12190,6 +12190,12 @@
     "Atoll needs Bluetooth access to detect when audio devices connect and display their battery status in the HUD." : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يحتاج Atoll إلى اتصال Bluetooth للكشف عن توصيل أجهزة الصوت وعرض حالة البطارية في HUD."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15641,13 +15647,13 @@
         },
         "he" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "קנו לנו קפה"
           }
         },
         "hi" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "हमको कॉफ़ी पिलाएँ"
           }
         },
@@ -27406,6 +27412,12 @@
             "value" : "Passen Sie die Organisation und Erstellung von Notizen an Ihre Bedürfnisse an. Durch Aktivieren der Farbfilterung und Suchfunktion lassen sich umfangreiche Listen besser verwalten."
           }
         },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mukauta muistiinpanojen järjestelyä ja luomista. Värisuodatuksen ja haun käyttöönotto helpottaa suurten luetteloiden hallintaa."
+          }
+        },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29808,6 +29820,12 @@
             "state" : "translated",
             "value" : "Zeigt den aktuellen Fokusstatus über der Wetterkapsel an, wenn die Fokuserkennung aktiviert ist."
           }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Näyttää nykyisen Focus-tilan sääkapselin yläpuolella aina, kun Focus-tunnistus on käytössä."
+          }
         }
       }
     },
@@ -30440,8 +30458,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Vedä esikatselukuvia säätääksesi pystysuuntaista sijaintia. Positiiviset arvot nostavat paneelia, negatiiviset arvot laskevat sitä. Muutokset näkyvät välittömästi, kun widgetit ovat näkyvissä."
           }
         },
         "fr" : {
@@ -30841,8 +30859,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Jokainen kaavio voidaan ottaa käyttöön tai poistaa käytöstä erikseen. Verkkotoiminta näyttää lataus-/lähetysnopeudet ja levyn I/O näyttää luku-/kirjoitusnopeudet."
           }
         },
         "fr" : {
@@ -30994,8 +31012,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Kopioi, tallenna ja hallitse helposti useimmin käyttämääsi sisältöä. Päivitä nyt, niin saat käyttöösi lisäominaisuuksia, kuten useiden kohteiden tallennuksen ja nopean käytön!"
           }
         },
         "fr" : {
@@ -33063,8 +33081,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Ota käyttöön näytön värinvalintatoiminto. Käytä Cmd+Shift+P-näppäinyhdistelmää päästäksesi nopeasti värinvalitsimeen."
           }
         },
         "fr" : {
@@ -33503,8 +33521,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Ota sääkapseli käyttöön ja määritä sen ulkoasu, palveluntarjoaja, yksiköt ja valinnaiset akku-/AQI-ilmaisimet."
           }
         },
         "fr" : {
@@ -34945,10 +34963,22 @@
     "Extend the notch span so the clipboard, colour picker, and other trailing icons remain visible on scaled displays (e.g. More Space)." : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قم بتمديد نطاق الشق بحيث تظل الحافظة ومحدد الألوان والأيقونات الأخرى الظاهرة في الخلف مرئية على الشاشات المقيسة (مثل More Space)."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vergrößern Sie den Abstand zwischen den Symbolen, damit die Zwischenablage, die Farbauswahl und andere nachfolgende Symbole auf skalierten Anzeigen (z. B. „Mehr Platz“) sichtbar bleiben."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laajenna lovi-aluetta, jotta leikepöytä, värivalitsin ja muut perässä olevat kuvakkeet pysyvät näkyvissä skaalatuissa näytöissä (esim. More Space)."
           }
         },
         "fr" : {
@@ -39199,8 +39229,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "HUD-näytöt ovat pois käytöstä, koska mukautettu OSD on käytössä. Poista mukautettu OSD käytöstä Mukautettu OSD -välilehdessä, jotta voit käyttää HUD-näyttöjä."
           }
         },
         "fr" : {
@@ -41464,6 +41494,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Labels müssen Text komprimieren, wenn der kurze Toast-Modus aktiviert ist."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tunnisteet pakotetaan tiivistämään teksti päälle/pois, kun lyhyt ilmoitus-tila on käytössä."
           }
         }
       }
@@ -48247,8 +48283,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Minimalistinen tila keskittyy median hallintaan ja järjestelmän HUD-näyttöihin piilottaen kaikki ylimääräiset ominaisuudet, jotta kokemus olisi selkeä ja keskittynyt. Ottaa automaattisesti käyttöön yksinkertaisemmat animaatiot."
           }
         },
         "fr" : {
@@ -48931,8 +48967,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Toistaa Lukitusnäytön asetuksissa olevan kytkimen, jotta ajastinkohtaiset työnkulut voivat ottaa widgetin käyttöön tai poistaa sen käytöstä vaihtamatta välilehtiä."
           }
         },
         "fr" : {
@@ -49067,8 +49103,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Seuraa leikepöydän muutoksia ja säilytä viimeisimpien kopioiden historia. Käytä Cmd+Shift+V-näppäinyhdistelmää päästäksesi nopeasti leikepöydän historiaan."
           }
         },
         "fr" : {
@@ -49159,6 +49195,12 @@
     },
     "Monitor your Downloads folder for Chromium-style downloads (.crdownload files) and show a live activity in the Dynamic Island while downloads are in progress." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "راقب مجلد التنزيلات الخاص بك بحثًا عن التنزيلات بنمط Chromium (ملفات .crdownload) واعرض نشاطًا مباشرًا في Dynamic Island أثناء إجراء التنزيلات."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -49169,6 +49211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Monitor your Downloads folder for Chromium-style downloads (.crdownload files) and show a live activity in the Dynamic Island while downloads are in progress."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarkkaile Chromium-tyyppisten latausten (.crdownload-tiedostot) latauskansiota ja näytä reaaliaikainen toiminta Dynamic Islandissa latauksen aikana."
           }
         }
       }
@@ -55780,8 +55828,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Avaa AI-avustajapaneelin tiedostojen analysointia ja keskustelua varten. Oletusasetus on Cmd+Shift+A. Toimii vain, kun näytön avustajaominaisuus on käytössä."
           }
         },
         "fr" : {
@@ -55916,8 +55964,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Avaa leikepöydän historian paneelin. Oletusasetus on Cmd+Shift+V (vastaa Windows+V PC:llä). Toimii vain, kun leikepöydän ominaisuus on käytössä."
           }
         },
         "fr" : {
@@ -56052,8 +56100,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Avaa värinvalitsimen paneelin näytön värin kaappaamista varten. Oletusasetus on Cmd+Shift+P. Toimii vain, kun värinvalitsin on käytössä."
           }
         },
         "fr" : {
@@ -56409,6 +56457,12 @@
             "state" : "translated",
             "value" : "Der Panel-Modus zeigt die Zwischenablage in einem schwebenden Fenster in der Nähe der Kerbe an."
           }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paneelitilassa leikepöytä näkyy kelluvassa ikkunassa lovin lähellä."
+          }
         }
       }
     },
@@ -56458,8 +56512,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Paneelitilassa värivalitsin näkyy kelluvassa ikkunassa. Ponnahdusikkunatilassa värivalitsin näkyy pudotusvalikkona, joka on kiinnitetty värivalitsinpainikkeeseen."
           }
         },
         "fr" : {
@@ -56594,8 +56648,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Paneelitilassa avustaja näkyy kelluvassa ikkunassa loven lähellä. Ponnahdusikkunatilassa avustaja näkyy AI-painikkeeseen liitettynä pudotusvalikkona."
           }
         },
         "fr" : {
@@ -58345,6 +58399,12 @@
             "state" : "translated",
             "value" : "Der Popover-Modus zeigt die Zwischenablage als Dropdown-Menü an, das an die Zwischenablage-Schaltfläche angehängt ist."
           }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Popover-tila näyttää leikepöydän pudotusvalikkona, joka on liitetty leikepöydän painikkeeseen."
+          }
         }
       }
     },
@@ -58394,8 +58454,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Popover-tilassa värivalitsin näkyy pudotusvalikkona, joka on kiinnitetty värivalitsimen painikkeeseen. Paneelitilassa värivalitsin näkyy kelluvassa ikkunassa."
           }
         },
         "fr" : {
@@ -58530,8 +58590,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Popover-tilassa avustaja näkyy AI-painikkeeseen liitettynä pudotusvalikkona. Paneelitilassa avustaja näkyy kelluvassa ikkunassa loven lähellä."
           }
         },
         "fr" : {
@@ -59041,8 +59101,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Esiasetukset näkyvät ajastimen ponnahdusikkunassa määritetyllä nimellä, kestolla ja korostusvärillä. Voit muuttaa niiden näyttöjärjestystä järjestämällä ne uudelleen."
           }
         },
         "fr" : {
@@ -61860,8 +61920,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Korvaa macOS-järjestelmän HUD-näytön Dynamic Island -näytöillä, jotka näyttävät äänenvoimakkuuden, kirkkauden ja näppäimistön taustavalon."
           }
         },
         "fr" : {
@@ -63621,8 +63681,8 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "Näytteenotto voi jatkua, kun lovi on suljettu, kun aikakatkaisu on pois käytöstä."
           }
         },
         "fr" : {
@@ -67201,10 +67261,22 @@
     },
     "Separate Tab mode integrates Copied Items and Notes into a single view. If both are enabled, Notes appear on the right and Clipboard on the left." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يدمج وضع علامة التبويب المنفصلة العناصر المنسوخة والملاحظات في عرض واحد. إذا تم تمكين كلاهما، تظهر الملاحظات على اليمين والحافظة على اليسار."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Der Modus „Separate Registerkarten“ integriert kopierte Elemente und Notizen in einer einzigen Ansicht. Wenn beide aktiviert sind, werden Notizen auf der rechten Seite und die Zwischenablage auf der linken Seite angezeigt."
+          }
+        },
+        "fi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erillinen välilehti -tila yhdistää kopioidut kohteet ja muistiinpanot yhteen näkymään. Jos molemmat ovat käytössä, muistiinpanot näkyvät oikealla ja leikepöytä vasemmalla."
           }
         }
       }
@@ -71174,6 +71246,12 @@
     },
     "Smooth transitions blend Green (0–60%), Yellow (60–85%), and Red (85–100%) through the entire fill. Adjust gradient behavior from Controls › Dynamic Island." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تندمج الانتقالات السلسة بين اللون الأخضر (0-60٪) والأصفر (60-85٪) والأحمر (85-100٪) عبر الملء بالكامل. اضبط سلوك التدرج من عناصر التحكم › Dynamic Island."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -78617,6 +78695,12 @@
     },
     "Turn this off to include all-day entries in the notch calendar and reminder live activity." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قم بإيقاف تشغيل هذه الميزة لإدراج جميع الإدخالات اليومية في تقويم الشق والتذكير بالنشاط المباشر."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -82768,6 +82852,12 @@
     },
     "When enabled, Focus appears briefly (on/off) and then collapses instead of staying visible." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "عند التمكين، يظهر التركيز لفترة وجيزة (تشغيل/إيقاف) ثم يختفي بدلاً من البقاء مرئياً."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -83170,6 +83260,12 @@
     "Width adjustments apply only to the standard notch layout. Disable Minimalistic UI to edit this value." : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تنطبق تعديلات العرض فقط على تخطيط الشق القياسي. قم بتعطيل واجهة المستخدم البسيطة لتحرير هذه القيمة."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",

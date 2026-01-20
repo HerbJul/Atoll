@@ -4225,7 +4225,7 @@ struct TimerSettings: View {
     private func removePreset(_ index: Int) {
         guard timerPresets.indices.contains(index) else { return }
         withAnimation(.smooth) {
-            timerPresets.remove(at: index)
+            timerPresets.remove(at: index )
         }
     }
     
