@@ -98,7 +98,7 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showClipboardPopover, arrowEdge: .bottom) {
                             ClipboardPopover()
                         }
-                        .onChange(of: showClipboardPopover) { _, isActive in
+                        .onChange(of: showClipboardPopover) { isActive, _ in
                             vm.isClipboardPopoverActive = isActive
                             
                             // If popover was closed, trigger a hover recheck
@@ -139,7 +139,7 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showColorPickerPopover, arrowEdge: .bottom) {
                             ColorPickerPopover()
                         }
-                        .onChange(of: showColorPickerPopover) { _, isActive in
+                        .onChange(of: showColorPickerPopover) { isActive, _ in
                             vm.isColorPickerPopoverActive = isActive
                             
                             // If popover was closed, trigger a hover recheck
@@ -171,7 +171,7 @@ struct DynamicIslandHeader: View {
                         .popover(isPresented: $showTimerPopover, arrowEdge: .bottom) {
                             TimerPopover()
                         }
-                        .onChange(of: showTimerPopover) { _, isActive in
+                        .onChange(of: showTimerPopover) { isActive, _ in
                             vm.isTimerPopoverActive = isActive
                             if !isActive {
                                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -238,7 +238,7 @@ struct DynamicIslandHeader: View {
         }
         .foregroundColor(.gray)
         .environmentObject(vm)
-        .onChange(of: coordinator.shouldToggleClipboardPopover) { _ in
+        .onChange(of: coordinator.shouldToggleClipboardPopover) {
             // Only toggle if clipboard is enabled
             if Defaults[.enableClipboardManager] {
                 switch clipboardDisplayMode {
@@ -261,13 +261,13 @@ struct DynamicIslandHeader: View {
                 showClipboardPopover.toggle()
             }
         }
-        .onChange(of: enableTimerFeature) { _, newValue in
+        .onChange(of: enableTimerFeature) { newValue, _ in
             if !newValue {
                 showTimerPopover = false
                 vm.isTimerPopoverActive = false
             }
         }
-        .onChange(of: timerDisplayMode) { _, mode in
+        .onChange(of: timerDisplayMode) { mode, _ in
             if mode == .tab {
                 showTimerPopover = false
                 vm.isTimerPopoverActive = false
