@@ -32,17 +32,17 @@ struct AudioOutputDevice: Identifiable, Equatable {
 
         switch transportType {
         case kAudioDeviceTransportTypeBluetooth:
-            if normalizedName.contains("speaker") {
-                return "speaker.wave.2"
-            }
-            return "headphones"
+            return normalizedName.contains("speaker") ? "speaker.wave.2" : "headphones"
         case kAudioDeviceTransportTypeAirPlay:
             return "airplayaudio"
-        case kAudioDeviceTransportTypeDisplayPort, kAudioDeviceTransportTypeHDMI:
+        case kAudioDeviceTransportTypeDisplayPort,
+             kAudioDeviceTransportTypeHDMI:
             return "tv"
-        case kAudioDeviceTransportTypeUSB, kAudioDeviceTransportTypeFireWire:
+        case kAudioDeviceTransportTypeUSB,
+             kAudioDeviceTransportTypeFireWire:
             return "hifispeaker.2"
-        case kAudioDeviceTransportTypePCI, kAudioDeviceTransportTypeVirtual:
+        case kAudioDeviceTransportTypePCI,
+             kAudioDeviceTransportTypeVirtual:
             return "speaker.wave.2"
         case kAudioDeviceTransportTypeBuiltIn:
             return normalizedName.contains("display") ? "tv" : "speaker.wave.2"
@@ -81,13 +81,17 @@ final class AudioRouteManager: ObservableObject {
     func refreshDevices() {
         queue.async { [weak self] in
             guard let self else { return }
+
             let defaultID = self.fetchDefaultOutputDevice()
-            let deviceInfos = self.fetchOutputDeviceIDs().compactMap(self.makeDeviceInfo)
-            let sortedDevices = deviceInfos.sorted { lhs, rhs in
-                if lhs.id == defaultID { return true }
-                if rhs.id == defaultID { return false }
-                return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+            let deviceInfos = self.fetchOutputDeviceIDs()
+                .compactMap(self.makeDeviceInfo)
+
+            let sortedDevices = deviceInfos.sorted {
+                if $0.id == defaultID { return true }
+                if $1.id == defaultID { return false }
+                return $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending
             }
+
             DispatchQueue.main.async {
                 self.activeDeviceID = defaultID
                 self.devices = sortedDevices
@@ -97,16 +101,15 @@ final class AudioRouteManager: ObservableObject {
 
     func select(device: AudioOutputDevice) {
         queue.async { [weak self] in
-            guard let self else { return }
-            self.setDefaultOutputDevice(device.id)
+            self?.setDefaultOutputDevice(device.id)
         }
     }
-
-    // MARK: - Private
 
     @objc private func handleRouteChange() {
         refreshDevices()
     }
+
+    // MARK: - CoreAudio
 
     private func fetchOutputDeviceIDs() -> [AudioDeviceID] {
         var address = AudioObjectPropertyAddress(
@@ -122,23 +125,20 @@ final class AudioRouteManager: ObservableObject {
             0,
             nil,
             &dataSize
-        ) == noErr else {
-            return []
-        }
+        ) == noErr else { return [] }
 
-        let deviceCount = Int(dataSize) / MemoryLayout<AudioDeviceID>.size
-        var deviceIDs = [AudioDeviceID](repeating: 0, count: deviceCount)
-        let status = AudioObjectGetPropertyData(
+        let count = Int(dataSize) / MemoryLayout<AudioDeviceID>.size
+        var deviceIDs = [AudioDeviceID](repeating: 0, count: count)
+
+        guard AudioObjectGetPropertyData(
             AudioObjectID(kAudioObjectSystemObject),
             &address,
             0,
             nil,
             &dataSize,
             &deviceIDs
-        )
-        if status != noErr {
-            return []
-        }
+        ) == noErr else { return [] }
+
         return deviceIDs
     }
 
@@ -161,17 +161,19 @@ final class AudioRouteManager: ObservableObject {
             return false
         }
 
-        let buffer = UnsafeMutableRawPointer.allocate(byteCount: Int(dataSize), alignment: MemoryLayout<AudioBufferList>.alignment)
+        let buffer = UnsafeMutableRawPointer.allocate(
+            byteCount: Int(dataSize),
+            alignment: MemoryLayout<AudioBufferList>.alignment
+        )
         defer { buffer.deallocate() }
 
         guard AudioObjectGetPropertyData(deviceID, &address, 0, nil, &dataSize, buffer) == noErr else {
             return false
         }
 
-        let audioBufferListPointer = buffer.assumingMemoryBound(to: AudioBufferList.self)
-        let audioBuffers = UnsafeMutableAudioBufferListPointer(audioBufferListPointer)
-        let channelCount = audioBuffers.reduce(0) { $0 + Int($1.mNumberChannels) }
-        return channelCount > 0
+        let abl = buffer.assumingMemoryBound(to: AudioBufferList.self)
+        let buffers = UnsafeMutableAudioBufferListPointer(abl)
+        return buffers.reduce(0) { $0 + Int($1.mNumberChannels) } > 0
     }
 
     private func deviceName(for deviceID: AudioDeviceID) -> String? {
@@ -181,11 +183,19 @@ final class AudioRouteManager: ObservableObject {
             mElement: kAudioObjectPropertyElementMain
         )
 
-        var name: CFString = "" as CFString
+        var name: CFString?
         var dataSize = UInt32(MemoryLayout<CFString?>.size)
-        let status = AudioObjectGetPropertyData(deviceID, &address, 0, nil, &dataSize, &name)
-        guard status == noErr else { return nil }
-        return name as String
+
+        guard AudioObjectGetPropertyData(
+            deviceID,
+            &address,
+            0,
+            nil,
+            &dataSize,
+            &name
+        ) == noErr else { return nil }
+
+        return name as String?
     }
 
     private func transportType(for deviceID: AudioDeviceID) -> UInt32 {
@@ -197,49 +207,59 @@ final class AudioRouteManager: ObservableObject {
 
         var type: UInt32 = kAudioDeviceTransportTypeUnknown
         var dataSize = UInt32(MemoryLayout<UInt32>.size)
-        let status = AudioObjectGetPropertyData(deviceID, &address, 0, nil, &dataSize, &type)
-        return status == noErr ? type : kAudioDeviceTransportTypeUnknown
+
+        return AudioObjectGetPropertyData(
+            deviceID,
+            &address,
+            0,
+            nil,
+            &dataSize,
+            &type
+        ) == noErr ? type : kAudioDeviceTransportTypeUnknown
     }
 
     private func fetchDefaultOutputDevice() -> AudioDeviceID {
-        var deviceID = AudioDeviceID()
+        var deviceID = AudioDeviceID(0)
         var dataSize = UInt32(MemoryLayout<AudioDeviceID>.size)
+
         var address = AudioObjectPropertyAddress(
             mSelector: kAudioHardwarePropertyDefaultOutputDevice,
             mScope: kAudioObjectPropertyScopeGlobal,
             mElement: kAudioObjectPropertyElementMain
         )
-        let status = AudioObjectGetPropertyData(
+
+        return AudioObjectGetPropertyData(
             AudioObjectID(kAudioObjectSystemObject),
             &address,
             0,
             nil,
             &dataSize,
             &deviceID
-        )
-        return status == noErr ? deviceID : 0
+        ) == noErr ? deviceID : 0
     }
 
     private func setDefaultOutputDevice(_ deviceID: AudioDeviceID) {
         var target = deviceID
+
         var address = AudioObjectPropertyAddress(
             mSelector: kAudioHardwarePropertyDefaultOutputDevice,
             mScope: kAudioObjectPropertyScopeGlobal,
             mElement: kAudioObjectPropertyElementMain
         )
-        let status = AudioObjectSetPropertyData(
+
+        guard AudioObjectSetPropertyData(
             AudioObjectID(kAudioObjectSystemObject),
             &address,
             0,
             nil,
             UInt32(MemoryLayout<AudioDeviceID>.size),
             &target
-        )
-        if status == noErr {
-            DispatchQueue.main.async { [weak self] in
-                self?.activeDeviceID = deviceID
-            }
-            refreshDevices()
+        ) == noErr else { return }
+
+        DispatchQueue.main.async { [weak self] in
+            self?.activeDeviceID = deviceID
         }
+
+        refreshDevices()
     }
 }
