@@ -83,7 +83,9 @@ struct ExtensionLockScreenWidgetView: View {
 
     @ViewBuilder
     private func backgroundLayer(shape: RoundedRectangle) -> some View {
-        if shouldUseGlassBackdrop {
+        if descriptor.material == .liquid {
+            liquidGlassBackground(shape: shape)
+        } else if shouldUseGlassHighlight {
             if #available(macOS 26.0, *) {
                 ZStack {
                     shape
@@ -108,6 +110,18 @@ struct ExtensionLockScreenWidgetView: View {
                 tintOverlay(shape: shape)
             }
         }
+    }
+
+    @ViewBuilder
+    private func liquidGlassBackground(shape: RoundedRectangle) -> some View {
+        LiquidGlassBackground(variant: requestedLiquidGlassVariant, cornerRadius: descriptor.cornerRadius) {
+            Color.black.opacity(0.08)
+        }
+        .overlay {
+            tintOverlay(shape: shape)
+        }
+        .allowsHitTesting(false)
+        .accessibilityHidden(true)
     }
 
     private var baseMaterialStyle: AnyShapeStyle {
@@ -160,8 +174,15 @@ struct ExtensionLockScreenWidgetView: View {
         }
     }
 
-    private var shouldUseGlassBackdrop: Bool {
-        descriptor.material == .liquid || (appearance?.enableGlassHighlight ?? false)
+    private var shouldUseGlassHighlight: Bool {
+        (appearance?.enableGlassHighlight ?? false) && descriptor.material != .liquid
+    }
+
+    private var requestedLiquidGlassVariant: LiquidGlassVariant {
+        guard let requested = appearance?.liquidGlassVariant?.rawValue else {
+            return LiquidGlassVariant.defaultVariant
+        }
+        return LiquidGlassVariant.clamped(requested)
     }
 
     @ViewBuilder

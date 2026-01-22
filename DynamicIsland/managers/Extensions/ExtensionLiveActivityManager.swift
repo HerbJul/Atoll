@@ -172,7 +172,8 @@ final class ExtensionLiveActivityManager: ObservableObject {
             guard let requestedStyle = config.style else { return nil }
             switch requestedStyle {
             case .inline:
-                return .inline
+                logDiagnostics("Inline sneak peek requested for \(descriptor.id); host will show standard mode instead")
+                return .standard
             case .standard:
                 return .standard
             }

@@ -556,20 +556,6 @@ struct ContentView: View {
                             .frame(width: 76, alignment: .trailing)
                         }
                         .frame(height: vm.effectiveClosedNotchHeight + (isHovering ? 8 : 0), alignment: .center)
-                      } else if coordinator.sneakPeek.show,
-                                case let .extensionLiveActivity(bundleID, activityID) = coordinator.sneakPeek.type,
-                                activeSneakPeekStyle == .inline,
-                                vm.notchState == .closed,
-                                !vm.hideOnClosed {
-                          let inlinePayload = extensionLiveActivityManager.payload(bundleIdentifier: bundleID, activityID: activityID)
-                          ExtensionInlineSneakPeekView(
-                              payload: inlinePayload,
-                              accentColor: coordinator.sneakPeek.accentColor ?? .gray,
-                              notchHeight: vm.effectiveClosedNotchHeight,
-                              closedNotchWidth: vm.closedNotchSize.width,
-                              isHovering: isHovering
-                          )
-                          .transition(AnyTransition.move(edge: .trailing).combined(with: .opacity))
                       } else if coordinator.sneakPeek.show && Defaults[.inlineHUD] && (coordinator.sneakPeek.type != .music) && (coordinator.sneakPeek.type != .battery) && (coordinator.sneakPeek.type != .timer) && (coordinator.sneakPeek.type != .reminder) && (coordinator.sneakPeek.type != .volume || vm.notchState == .closed) {
                           InlineHUD(type: $coordinator.sneakPeek.type, value: $coordinator.sneakPeek.value, icon: $coordinator.sneakPeek.icon, hoverAnimation: $isHovering, gestureProgress: $gestureProgress)
                               .transition(
@@ -1956,7 +1942,10 @@ struct ContentView: View {
     }
 
     private func resolvedSneakPeekStyle() -> SneakPeekStyle {
-        coordinator.sneakPeek.styleOverride ?? Defaults[.sneakPeekStyles]
+        if case .extensionLiveActivity = coordinator.sneakPeek.type {
+            return .standard
+        }
+        return coordinator.sneakPeek.styleOverride ?? Defaults[.sneakPeekStyles]
     }
 }
 
