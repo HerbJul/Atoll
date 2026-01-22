@@ -55,6 +55,15 @@ extension SneakContentType {
     }
 }
 
+extension SneakContentType {
+    var isExtensionPayload: Bool {
+        if case .extensionLiveActivity = self {
+            return true
+        }
+        return false
+    }
+}
+
 struct sneakPeek {
     var show: Bool = false
     var type: SneakContentType = .music
