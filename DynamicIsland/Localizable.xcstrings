@@ -385,7 +385,8 @@
             "value" : ""
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "-%@" : {
       "comment" : "A label displaying the duration of the current song. The argument is the duration of the song in seconds.",
@@ -649,7 +650,8 @@
             "value" : ":"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "'Now Playing' was the only option on previous versions and works with all media apps." : {
       "localizations" : {
@@ -1225,7 +1227,7 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : ""
           }
         },
@@ -1350,7 +1352,7 @@
         },
         "fi" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : ""
           }
         },
@@ -1432,14 +1434,15 @@
             "value" : ""
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "%@ Models" : {
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%@ النماذج"
           }
         },
         "cs" : {
@@ -1456,7 +1459,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%@ Models"
           }
         },
@@ -1569,8 +1572,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%@ الإزاحة"
           }
         },
         "cs" : {
@@ -1587,7 +1590,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%@ Offset"
           }
         },
@@ -2201,8 +2204,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "%lld الرسوم المتحركة"
           }
         },
         "cs" : {
@@ -2219,7 +2222,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld animations"
           }
         },
@@ -2328,6 +2331,12 @@
             "state" : "translated",
             "value" : "%lld chars"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld characters"
+          }
         }
       }
     },
@@ -2353,7 +2362,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld colors"
           }
         },
@@ -2478,7 +2487,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld min"
           }
         },
@@ -2603,7 +2612,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lld px"
           }
         },
@@ -2983,7 +2992,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%lldx"
           }
         },
@@ -3358,8 +3367,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "• زجاج بلوري: تأثير ضبابي شفاف"
           }
         },
         "cs" : {
@@ -3376,7 +3385,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "• Frosted Glass: Translucent blur effect"
           }
         },
@@ -3414,6 +3423,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• ફ્રોસ્ટેડ ગ્લાસ: અર્ધપારદર્શક ધૂંધળું અસર"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• זכוכית חלבית: אפקט טשטוש שקוף"
           }
         },
         "hi" : {
@@ -3637,8 +3652,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "• الزجاج السائل: تأثير الزجاج الحديث (macOS 26+)"
           }
         },
         "cs" : {
@@ -3655,7 +3670,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "• Liquid Glass: Modern glass effect (macOS 26+)"
           }
         },
@@ -3693,6 +3708,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• લિક્વિડ ગ્લાસ: આધુનિક ગ્લાસ અસર (macOS 26+)"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• זכוכית נוזלית: אפקט זכוכית מודרני (macOS 26+)"
           }
         },
         "hi" : {
@@ -3922,8 +3943,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "• صلب داكن/فاتح/تلقائي: خلفيات غير شفافة"
           }
         },
         "cs" : {
@@ -3940,7 +3961,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "• Solid Dark/Light/Auto: Opaque backgrounds"
           }
         },
@@ -3978,6 +3999,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "• સોલિડ ડાર્ક/લાઇટ/ઓટો: અપારદર્શક પૃષ્ઠભૂમિઓ"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• כהה/בהיר/אוטומטי: רקעים אטומים"
           }
         },
         "hi" : {
@@ -4082,7 +4109,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "• Thinking"
           }
         },
@@ -4219,7 +4246,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "• Updated %@"
           }
         },
@@ -4480,7 +4507,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "+%lld more"
           }
         },
@@ -4585,6 +4612,12 @@
     "⚠️  WARNING: System HUD may not be working properly!" : {
       "extractionState" : "manual",
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️  تحذير: قد لا يعمل نظام HUD بشكل صحيح!"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4613,6 +4646,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "⚠️ ચેતવણી: સિસ્ટમ HUD યોગ્ય રીતે કામ કરી રહી નથી!"
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "⚠️  אזהרה: ייתכן שה-HUD של המערכת אינו פועל כראוי!"
           }
         },
         "nl" : {
@@ -4922,7 +4961,8 @@
             "value" : "00"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "00:05:00" : {
       "comment" : "A time displayed in the timer panel on a lock screen.",
@@ -5072,7 +5112,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "3 items"
           }
         },
@@ -5196,7 +5236,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "5 colors"
           }
         },
@@ -5320,7 +5360,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "5 items"
           }
         },
@@ -5444,7 +5484,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "7 items"
           }
         },
@@ -5568,7 +5608,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "10 colors"
           }
         },
@@ -5692,7 +5732,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "10 items"
           }
         },
@@ -5816,7 +5856,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "15 colors"
           }
         },
@@ -5940,7 +5980,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "20 colors"
           }
         },
@@ -6583,7 +6623,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Accent colour"
           }
         },
@@ -6861,7 +6901,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Accessibility"
           }
         },
@@ -6991,7 +7031,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Actions"
           }
         },
@@ -7121,7 +7161,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Active"
           }
         },
@@ -7245,7 +7285,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Active - No Focus"
           }
         },
@@ -7370,7 +7410,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Active - No Recording"
           }
         },
@@ -7631,7 +7671,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Add Animation from URL"
           }
         },
@@ -7755,7 +7795,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Add files"
           }
         },
@@ -7880,7 +7920,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Add from URL..."
           }
         },
@@ -8136,7 +8176,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Add New"
           }
         },
@@ -8391,7 +8431,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Add Preset"
           }
         },
@@ -8625,10 +8665,28 @@
     },
     "Adds a notch HUD when Caps Lock is enabled, with optional label and tint controls." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يضيف شاشة عرض على الزجاج الأمامي (HUD) عند تمكين Caps Lock، مع عناصر تحكم اختيارية في التسمية واللون."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fügt bei aktivierter Feststelltaste ein Notch-HUD hinzu, mit optionalen Steuerelementen für Beschriftung und Farbton."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute un HUD à encoche lorsque la touche Caps Lock est activée, avec des commandes facultatives pour l'étiquette et la teinte."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מוסיף חריץ HUD כאשר Caps Lock מופעל, עם בקרות תווית וצבע אופציונליות."
           }
         },
         "nb" : {
@@ -8647,6 +8705,18 @@
             "value" : "Fügt die AirPlay-/Routenauswahl-Schaltfläche wieder zur anpassbaren Steuerungsleiste hinzu."
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute le bouton AirPlay/sélectionneur d'itinéraire à la palette de commandes personnalisables."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מוסיף את כפתור AirPlay/בוחר המסלול בחזרה לפלטת הפקדים הניתנת להתאמה אישית."
+          }
+        },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8660,8 +8730,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "اضبط الإعدادات أعلاه لرؤية التغييرات في الوقت الفعلي. يظهر OSD الفعلي في أسفل وسط الشاشة."
           }
         },
         "cs" : {
@@ -8678,7 +8748,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Adjust settings above to see changes in real-time. The actual OSD appears at the bottom center of your screen."
           }
         },
@@ -8832,7 +8902,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "AI Assistant"
           }
         },
@@ -8956,7 +9026,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "AI is thinking..."
           }
         },
@@ -9080,7 +9150,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "AI Model Selection"
           }
         },
@@ -9204,7 +9274,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "AI Provider"
           }
         },
@@ -9316,8 +9386,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "مساعد مدعوم بالذكاء الاصطناعي يمكنه تحليل الملفات والصور وتقديم المساعدة في المحادثات. استخدم Cmd+Shift+A للوصول بسرعة إلى المساعد."
           }
         },
         "cs" : {
@@ -9334,7 +9404,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "AI-powered assistant that can analyze files, images, and provide conversational help. Use Cmd+Shift+A to quickly access the assistant."
           }
         },
@@ -9625,7 +9695,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Air quality requires the Open Meteo provider."
           }
         },
@@ -9767,7 +9837,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Air quality scale"
           }
         },
@@ -10183,6 +10253,12 @@
             "state" : "translated",
             "value" : "Alles"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tous"
+          }
         }
       }
     },
@@ -10322,6 +10398,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ganztägige Termine"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Événements toute la journée"
           }
         }
       }
@@ -10883,7 +10965,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Animation Name"
           }
         },
@@ -11013,7 +11095,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "API Configuration"
           }
         },
@@ -11143,7 +11225,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "API Key Required"
           }
         },
@@ -11548,6 +11630,18 @@
             "value" : "Wendet den Notch-Parallax-Effekt auf das Albumcover des Medien-Widgets auf dem Sperrbildschirm an."
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Applique l'effet de parallaxe de type encoche à la pochette d'album du widget multimédia de l'écran de verrouillage."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "מחיל את אפקט הפרלקסה בסגנון חריץ על עטיפת האלבום של יישומון המדיה במסך הנעילה."
+          }
+        },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11583,7 +11677,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Are you sure you want to delete \"%@\"?"
           }
         },
@@ -11719,7 +11813,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Are you sure you want to delete this color from your history?"
           }
         },
@@ -11861,7 +11955,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ask me anything..."
           }
         },
@@ -11991,7 +12085,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Atoll"
           }
         },
@@ -12106,6 +12200,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Atoll a besoin d'un accès pour enregistrer et lire les fichiers de l'assistant IA."
+          }
+        },
+        "he" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atoll זקוק לגישה כדי לשמור ולקרוא קבצי עוזר AI."
           }
         },
         "hi" : {
@@ -12333,7 +12433,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Attached Files"
           }
         },
@@ -12464,7 +12564,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Auto-scroll to next event"
           }
         },
@@ -12914,7 +13014,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Averages"
           }
         },
@@ -13045,7 +13145,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Backlight"
           }
         },
@@ -13312,7 +13412,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Battery at %d percent"
           }
         },
@@ -13443,7 +13543,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Battery charging"
           }
         },
@@ -13574,7 +13674,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Battery charging, %@ remaining"
           }
         },
@@ -13705,7 +13805,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Battery fully charged"
           }
         },
@@ -13819,6 +13919,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Batterieanzeige-Design"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style de l'indicateur de batterie"
           }
         }
       }
@@ -14102,6 +14208,12 @@
             "state" : "translated",
             "value" : "Batterieeinstellungen und -informationen sind nur auf MacBooks verfügbar."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les paramètres et informations relatifs à la batterie ne sont disponibles que sur les MacBook."
+          }
         }
       }
     },
@@ -14248,6 +14360,12 @@
             "state" : "translated",
             "value" : "Batterie-Widget"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget Batterie"
+          }
         }
       }
     },
@@ -14258,12 +14376,24 @@
             "state" : "translated",
             "value" : "Verhalten & Stil"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comportement et style"
+          }
         }
       }
     },
     "BETA" : {
       "localizations" : {
         "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BETA"
+          }
+        },
+        "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BETA"
@@ -14277,6 +14407,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Der blaue Umriss passt zur Kerbe auf der Leinwand."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le contour bleu correspond à la toile à encoche."
           }
         }
       }
@@ -14304,7 +14440,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Bluetooth Audio Devices"
           }
         },
@@ -14702,7 +14838,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Breakdown"
           }
         },
@@ -14827,7 +14963,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Brightness"
           }
         },
@@ -14951,7 +15087,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Brightness HUD"
           }
         },
@@ -15076,7 +15212,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Brightness OSD"
           }
         },
@@ -15201,7 +15337,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Built-in"
           }
         },
@@ -15326,7 +15462,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Built-in System Monitoring"
           }
         },
@@ -15463,7 +15599,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Built-in system monitoring detects volume, brightness, and keyboard backlight changes directly without requiring external apps."
           }
         },
@@ -16021,7 +16157,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Calendar or Reminder access is denied. Please enable it in System Settings."
           }
         },
@@ -16157,7 +16293,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Calendars"
           }
         },
@@ -16282,7 +16418,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Camera"
           }
         },
@@ -16406,7 +16542,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Camera Active"
           }
         },
@@ -16571,7 +16707,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Camera Status"
           }
         },
@@ -16810,6 +16946,12 @@
             "state" : "translated",
             "value" : "Feststelltaste"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verrouillage des majuscules"
+          }
         }
       }
     },
@@ -16820,6 +16962,12 @@
             "state" : "translated",
             "value" : "Farbe der Feststelltaste"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur du verrouillage des majuscules"
+          }
         }
       }
     },
@@ -16829,6 +16977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Feststelltaste-Anzeige"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indicateur de verrouillage des majuscules"
           }
         }
       }
@@ -16855,7 +17009,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Change"
           }
         },
@@ -17371,7 +17525,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Chip color"
           }
         },
@@ -17496,7 +17650,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose a custom sound file that will play when the timer completes. Supported formats: MP3, M4A, WAV, AIFF."
           }
         },
@@ -17768,7 +17922,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose AI model"
           }
         },
@@ -17893,7 +18047,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose animation to display when Atoll is idle. Tap to select, hold to delete custom animations."
           }
         },
@@ -18020,6 +18174,12 @@
             "state" : "translated",
             "value" : "Wählen Sie direkt aus, auf welcher Seite des Bildschirms die vertikale Leiste angezeigt werden soll."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez directement de quel côté de l'écran la barre verticale apparaît."
+          }
         }
       }
     },
@@ -18045,7 +18205,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose File"
           }
         },
@@ -18149,10 +18309,22 @@
     },
     "Choose which service to use when sharing files from the shelf. Drag files onto the shelf or click the shelf button to pick files." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "اختر الخدمة التي تريد استخدامها عند مشاركة الملفات من الرف. اسحب الملفات إلى الرف أو انقر على زر الرف لاختيار الملفات."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wählen Sie aus, welchen Dienst Sie beim Teilen von Dateien aus dem Regal verwenden möchten. Ziehen Sie Dateien auf das Regal oder klicken Sie auf die Regal-Schaltfläche, um Dateien auszuwählen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez le service à utiliser pour partager des fichiers à partir de l'étagère. Faites glisser les fichiers sur l'étagère ou cliquez sur le bouton de l'étagère pour sélectionner les fichiers."
           }
         },
         "nb" : {
@@ -18186,7 +18358,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose which system controls should display custom OSD windows."
           }
         },
@@ -18329,7 +18501,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose which system controls should display HUD notifications."
           }
         },
@@ -18471,7 +18643,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose your preferred AI model and configuration"
           }
         },
@@ -18608,7 +18780,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Choose Your Profile"
           }
         },
@@ -18863,7 +19035,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear"
           }
         },
@@ -18987,7 +19159,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear All Files"
           }
         },
@@ -19111,7 +19283,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear all files removes all attached files and audio recordings. This action is permanent."
           }
         },
@@ -19253,7 +19425,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear Clipboard History"
           }
         },
@@ -19359,8 +19531,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "مسح سجل الحافظة يزيل النسخ الحديثة. مسح العناصر المثبتة يزيل المفضلة. كلا الإجراءين نهائيان."
           }
         },
         "cs" : {
@@ -19377,7 +19549,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear clipboard history removes recent copies. Clear pinned items removes your favorites. Both actions are permanent."
           }
         },
@@ -19504,6 +19676,12 @@
             "state" : "translated",
             "value" : "Zwischenablage-Verlauf löschen?"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer l'historique du presse-papiers ?"
+          }
         }
       }
     },
@@ -19529,7 +19707,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear Color History"
           }
         },
@@ -19635,8 +19813,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "مسح سجل الألوان يزيل جميع الألوان المختارة. بدء اختيار اللون يبدأ وضع التقاط لون الشاشة."
           }
         },
         "cs" : {
@@ -19653,7 +19831,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear color history removes all picked colors. Start color picking begins screen color capture mode."
           }
         },
@@ -19789,7 +19967,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear Data"
           }
         },
@@ -19898,6 +20076,12 @@
             "state" : "translated",
             "value" : "Verlauf löschen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer l'historique"
+          }
         }
       }
     },
@@ -19923,7 +20107,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear Pinned Items"
           }
         },
@@ -20048,7 +20232,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clear search"
           }
         },
@@ -20157,6 +20341,12 @@
             "state" : "translated",
             "value" : "Freier Steckplatz"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Emplacement libre"
+          }
         }
       }
     },
@@ -20182,7 +20372,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Click 'Pick Color' or use Cmd+Shift+P to start picking colors"
           }
         },
@@ -20307,7 +20497,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Click for details"
           }
         },
@@ -20431,7 +20621,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clipboard"
           }
         },
@@ -20555,7 +20745,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clipboard feature is disabled"
           }
         },
@@ -20679,7 +20869,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clipboard History"
           }
         },
@@ -20803,7 +20993,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clipboard History:"
           }
         },
@@ -20927,7 +21117,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Clipboard Manager"
           }
         },
@@ -21181,7 +21371,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Close assistant"
           }
         },
@@ -21323,8 +21513,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "اجمع أحدث تقرير عن الأعطال لمشاركته مع المطور عند الإبلاغ عن مشكلات في شاشة القفل أو التراكب."
           }
         },
         "cs" : {
@@ -21341,7 +21531,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Collect the latest crash report to share with the developer when reporting lock screen or overlay issues."
           }
         },
@@ -21483,7 +21673,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color Details"
           }
         },
@@ -21607,7 +21797,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color Formats"
           }
         },
@@ -21731,7 +21921,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color History"
           }
         },
@@ -21838,8 +22028,8 @@
       "localizations" : {
         "ar" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : ""
+            "state" : "translated",
+            "value" : "تتحكم خيارات الألوان في مظهر الرمز وشريط التقدم. يتكيف تلقائيًا مع سمة النظام."
           }
         },
         "cs" : {
@@ -21856,7 +22046,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color options control the icon and progress bar appearance. Auto adapts to system theme."
           }
         },
@@ -21992,7 +22182,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color Picked!"
           }
         },
@@ -22116,7 +22306,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color Picker"
           }
         },
@@ -22240,7 +22430,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color Picker feature is disabled"
           }
         },
@@ -22364,7 +22554,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color Picker Panel:"
           }
         },
@@ -22518,7 +22708,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Color-coded fills and smooth gradients are unavailable in Segmented mode. Switch to Hierarchical or Gradient to adjust these options."
           }
         },
@@ -22640,10 +22830,22 @@
     },
     "Color-coded fills are unavailable in Segmented mode. Switch to Hierarchical or Gradient inside Controls › Dynamic Island to adjust advanced options." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "التعبئة المرمزة بالألوان غير متوفرة في الوضع المقسم. قم بالتبديل إلى التسلسل الهرمي أو التدرج داخل عناصر التحكم › Dynamic Island لضبط الخيارات المتقدمة."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Farbcodierte Füllungen sind im segmentierten Modus nicht verfügbar. Wechseln Sie in „Steuerelemente“ › „Dynamic Island“ zu „Hierarchisch“ oder „Farbverlauf“, um erweiterte Optionen anzupassen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les remplissages avec code couleur ne sont pas disponibles en mode Segmenté. Passez au mode Hiérarchique ou Dégradé dans Contrôles › Dynamic Island pour régler les options avancées."
           }
         },
         "nb" : {
@@ -22676,7 +22878,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "ColorPicker Disabled"
           }
         },
@@ -22930,7 +23132,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Configuration"
           }
         },
@@ -23061,7 +23263,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Configure countdown style and lock screen widgets in the Calendar tab."
           }
         },
@@ -23197,7 +23399,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Configure how the timer looks inside the closed notch. Progress can render as a ring around the icon or as horizontal bars."
           }
         },
@@ -23340,7 +23542,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Configure presets in Settings"
           }
         },
@@ -23444,10 +23646,22 @@
     },
     "Configure presets in Settings to see them here." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "قم بتكوين الإعدادات المسبقة في \"الإعدادات\" لرؤيتها هنا."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konfigurieren Sie Voreinstellungen in den Einstellungen, um sie hier anzuzeigen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configurez les préréglages dans les paramètres pour les voir ici."
           }
         }
       }
@@ -23475,7 +23689,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Connected"
           }
         },
@@ -23737,6 +23951,12 @@
             "state" : "translated",
             "value" : "Steuerungs-Palette"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Palette de contrôle"
+          }
         }
       }
     },
@@ -23768,7 +23988,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Control timer availability, live activity behaviour, and whether the app mirrors timers started from the macOS Clock app."
           }
         },
@@ -23904,7 +24124,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Controls"
           }
         },
@@ -24034,7 +24254,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Controls how often system metrics refresh while monitoring is active."
           }
         },
@@ -24177,7 +24397,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Controls the optional timer widget that floats above the media panel. Blur adds a frosted finish behind the compact view."
           }
         },
@@ -24319,7 +24539,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Controls whether Dynamic Island mirrors lock/unlock events with its own live activity and audible chimes."
           }
         },
@@ -24456,7 +24676,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Copy event link"
           }
         },
@@ -24565,6 +24785,12 @@
             "state" : "translated",
             "value" : "Elemente beim Ziehen kopieren"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copier les éléments lors du glissement"
+          }
         }
       }
     },
@@ -24590,7 +24816,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Copy Latest Crash Report"
           }
         },
@@ -24714,7 +24940,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Copy something to get started"
           }
         },
@@ -24838,7 +25064,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Copy something to start"
           }
         },
@@ -24947,6 +25173,12 @@
             "state" : "translated",
             "value" : "Kopieren Sie den Text, um ihn hier anzuzeigen."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copiez le texte pour le voir ici"
+          }
         }
       }
     },
@@ -24973,7 +25205,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Core %lld"
           }
         },
@@ -25121,7 +25353,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Countdown style"
           }
         },
@@ -25245,7 +25477,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "CPU Usage"
           }
         },
@@ -25354,6 +25586,12 @@
             "state" : "translated",
             "value" : "Aus Zwischenablage erstellen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer à partir du presse-papiers"
+          }
         }
       }
     },
@@ -25380,7 +25618,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Current custom timer:"
           }
         },
@@ -25505,7 +25743,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Current default:"
           }
         },
@@ -25629,7 +25867,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Current History"
           }
         },
@@ -25753,7 +25991,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Current Items"
           }
         },
@@ -25862,6 +26100,12 @@
             "state" : "translated",
             "value" : "Stromwandler"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transformateur de courant"
+          }
         }
       }
     },
@@ -25888,7 +26132,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Currently active"
           }
         },
@@ -25996,6 +26240,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Derzeit ausgewählt: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actuellement sélectionné : %@"
           }
         }
       }
@@ -26538,7 +26788,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Custom OSD"
           }
         },
@@ -26669,7 +26919,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Custom OSD feature requires macOS 15 or later."
           }
         },
@@ -26799,7 +27049,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Custom Timer"
           }
         },
@@ -26924,7 +27174,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Custom Timer Duration"
           }
         },
@@ -27178,7 +27428,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Custom: %@"
           }
         },
@@ -27302,7 +27552,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Customize Animation"
           }
         },
@@ -27406,6 +27656,12 @@
     },
     "Customize how you organize and create notes. Enabling color filtering and search helps manage large lists." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "تخصيص طريقة تنظيم الملاحظات وإنشائها. يساعد تمكين تصفية الألوان والبحث في إدارة القوائم الكبيرة."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -27416,6 +27672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mukauta muistiinpanojen järjestelyä ja luomista. Värisuodatuksen ja haun käyttöönotto helpottaa suurten luetteloiden hallintaa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personnalisez la manière dont vous organisez et créez vos notes. L'activation du filtrage par couleur et de la recherche facilite la gestion des longues listes."
           }
         },
         "nb" : {
@@ -27562,6 +27824,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Die Umrisse des Strichs entsprechen genau den Kerbgrenzen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le contour du tiret correspond exactement aux limites de l'encoche."
           }
         }
       }
@@ -27719,7 +27987,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Default Custom Timer"
           }
         },
@@ -27843,7 +28111,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Default: dynamic.m4a"
           }
         },
@@ -27967,7 +28235,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Delete"
           }
         },
@@ -28076,6 +28344,12 @@
             "state" : "translated",
             "value" : "Alle Notizen löschen?"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer toutes les notes ?"
+          }
         }
       }
     },
@@ -28102,7 +28376,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Delete Animation"
           }
         },
@@ -28226,7 +28500,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Delete Color"
           }
         },
@@ -28505,7 +28779,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Detection Status"
           }
         },
@@ -28614,6 +28888,12 @@
             "state" : "translated",
             "value" : "Geräte"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appareils"
+          }
         }
       }
     },
@@ -28640,7 +28920,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Diagnostics"
           }
         },
@@ -28748,6 +29028,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abmessungen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimensions"
           }
         }
       }
@@ -29042,7 +29328,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Discrete transitions snap between Green (0–60%), Yellow (60–85%), and Red (85–100%)."
           }
         },
@@ -29184,7 +29470,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Disk Read"
           }
         },
@@ -29308,7 +29594,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Disk Write"
           }
         },
@@ -29432,7 +29718,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Display Mode"
           }
         },
@@ -29563,7 +29849,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Displays a HUD notification when Bluetooth audio devices (headphones, AirPods, speakers) connect, showing device name and battery level."
           }
         },
@@ -29705,7 +29991,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Displays play/pause and skip buttons beside the notch while music is active. Disabled by default."
           }
         },
@@ -29815,6 +30101,12 @@
     },
     "Displays the current Focus state above the weather capsule whenever Focus detection is enabled." : {
       "localizations" : {
+        "ar" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "يعرض حالة التركيز الحالية فوق كبسولة الطقس كلما تم تمكين ميزة اكتشاف التركيز."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29825,6 +30117,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Näyttää nykyisen Focus-tilan sääkapselin yläpuolella aina, kun Focus-tunnistus on käytössä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affiche l'état Focus actuel au-dessus de la capsule météo lorsque la détection Focus est activée."
           }
         }
       }
@@ -29851,7 +30149,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Do Not Disturb"
           }
         },
@@ -29959,6 +30257,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fertig"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Terminé"
           }
         }
       }
@@ -30099,6 +30403,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Download-Erkennung"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détection de téléchargement"
           }
         }
       }
@@ -30388,6 +30698,12 @@
             "value" : "Ziehen Sie ein Steuerelement auf einen Steckplatz oder tippen Sie darauf, um es im ersten leeren Steckplatz zu platzieren."
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites glisser un contrôle sur un emplacement ou appuyez dessus pour le placer dans le premier emplacement vide."
+          }
+        },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
@@ -30402,6 +30718,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ziehen Sie Elemente zwischen den Slots oder legen Sie sie aus der Palette ab, um die Steuerelemente neu zuzuordnen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faites glisser les éléments entre les emplacements ou déposez-les depuis la palette pour remapper les commandes."
           }
         },
         "nb" : {
@@ -30440,7 +30762,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Drag the previews to adjust vertical placement. Positive values lift the panel; negative values lower it. Changes apply instantly while the widgets are visible."
           }
         },
@@ -30685,6 +31007,12 @@
             "state" : "translated",
             "value" : "Dynamische Insel-Fortschrittsbalken"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barres de progression Dynamic Island"
+          }
         }
       }
     },
@@ -30841,7 +31169,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Each graph can be individually enabled or disabled. Network activity shows download/upload speeds, and disk I/O shows read/write speeds."
           }
         },
@@ -30964,7 +31292,8 @@
             "value" : "EAQI"
           }
         }
-      }
+      },
+      "shouldTranslate" : false
     },
     "Easily copy, store, and manage your most-used content. Upgrade now for advanced features like multi-item storage and quick access!" : {
       "localizations" : {
@@ -31130,7 +31459,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Edit Animation"
           }
         },
@@ -31391,7 +31720,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable \"Show cool face animation while inactivity\" to customize animations"
           }
         },
@@ -31528,7 +31857,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable and style the media controls that appear above the system clock when the screen is locked."
           }
         },
@@ -31688,7 +32017,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable Built-in System HUD"
           }
         },
@@ -31819,7 +32148,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable built-in system monitoring to replace macOS HUD notifications with Atoll displays."
           }
         },
@@ -32103,7 +32432,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable ColorPicker in Settings → ColorPicker"
           }
         },
@@ -32212,6 +32541,12 @@
             "state" : "translated",
             "value" : "Anpassbare Steuerelemente aktivieren"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer les commandes personnalisables"
+          }
         }
       }
     },
@@ -32289,7 +32624,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable global keyboard shortcuts above to customize your shortcuts."
           }
         },
@@ -32420,7 +32755,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable graph visibility in Settings → Stats to view performance data."
           }
         },
@@ -33063,7 +33398,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable screen color picking functionality. Use Cmd+Shift+P to quickly access the color picker."
           }
         },
@@ -33216,7 +33551,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable sneak peek"
           }
         },
@@ -33346,7 +33681,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable stats monitoring in Settings to view system performance data."
           }
         },
@@ -33461,6 +33796,12 @@
             "state" : "translated",
             "value" : "Aktivieren Sie die Batteriekapsel und konfigurieren Sie deren Layout."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez la capsule de batterie et configurez sa disposition."
+          }
         }
       }
     },
@@ -33470,6 +33811,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aktivieren Sie die Timer-Funktion in den Einstellungen, um auf diese Registerkarte zuzugreifen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez la fonction minuterie dans les paramètres pour accéder à cet onglet."
           }
         }
       }
@@ -33503,7 +33850,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable the weather capsule and configure its layout, provider, units, and optional battery/AQI indicators."
           }
         },
@@ -33633,7 +33980,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable Thinking Mode"
           }
         },
@@ -33780,7 +34127,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enable timer live activity"
           }
         },
@@ -33890,6 +34237,12 @@
             "value" : "Aktivieren Sie diese Option, wenn Sie über 30x20px skalieren, damit Atoll korrekt geöffnet wird."
           }
         },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activer lorsque la taille dépasse 30x20px afin que l'Atoll s'ouvre correctement."
+          }
+        },
         "nb" : {
           "stringUnit" : {
             "state" : "translated",
@@ -33944,7 +34297,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Engine Utilization"
           }
         },
@@ -34328,7 +34681,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Enter your Gemini API Key"
           }
         },
@@ -34583,7 +34936,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Event List"
           }
         },
@@ -34822,6 +35175,12 @@
             "state" : "translated",
             "value" : "Kerbe erweitern, um der Breite der Animation zu folgen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Étendre l'encoche pour suivre la largeur de l'animation"
+          }
         }
       }
     },
@@ -34831,6 +35190,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erweiterter Bereich zur Erkennung von Widerstand"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zone de détection de traînée élargie"
           }
         }
       }
@@ -34858,7 +35223,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Expanded notch width"
           }
         },
@@ -35167,7 +35532,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "External"
           }
         },
@@ -35305,6 +35670,12 @@
             "state" : "translated",
             "value" : "Auf dem Regal abgelegte Dateien werden über diesen Dienst freigegeben."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les fichiers déposés sur l'étagère seront partagés via ce service."
+          }
         }
       }
     },
@@ -35330,7 +35701,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Fill Notch"
           }
         },
@@ -35584,7 +35955,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Fit to Notch"
           }
         },
@@ -35693,6 +36064,12 @@
             "state" : "translated",
             "value" : "Verhalten beim Überspringen von schwebenden Fensterpanels"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comportement de saut du panneau de fenêtre flottant"
+          }
         }
       }
     },
@@ -35702,6 +36079,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fokus aktiv: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Focus actif : %@"
           }
         }
       }
@@ -35728,7 +36111,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Focus Status"
           }
         },
@@ -35837,6 +36220,12 @@
             "state" : "translated",
             "value" : "Fokus-Widget"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Widget Focus"
+          }
         }
       }
     },
@@ -35863,7 +36252,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Free · %@"
           }
         },
@@ -35988,7 +36377,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Fully charged"
           }
         },
@@ -36112,7 +36501,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Gemini API Key"
           }
         },
@@ -36611,6 +37000,12 @@
             "state" : "translated",
             "value" : "Verhalten beim Überspringen von Gesten"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comportement de saut de geste"
+          }
         }
       }
     },
@@ -36766,7 +37161,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Get your free API key from Google AI Studio"
           }
         },
@@ -37150,7 +37545,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "GPU Usage"
           }
         },
@@ -37404,7 +37799,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Graph Visibility"
           }
         },
@@ -37513,6 +37908,12 @@
             "state" : "translated",
             "value" : "Höhe: %lldpx"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hauteur : %lldpx"
+          }
         }
       }
     },
@@ -37538,7 +37939,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hide"
           }
         },
@@ -37663,7 +38064,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hide all-day events"
           }
         },
@@ -37788,7 +38189,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hide completed reminders"
           }
         },
@@ -37912,7 +38313,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hide DynamicIsland Options"
           }
         },
@@ -38038,7 +38439,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hide from Notch"
           }
         },
@@ -38559,7 +38960,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "High-frequency updates without a timeout can increase battery usage."
           }
         },
@@ -38689,7 +39090,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "History Size"
           }
         },
@@ -39048,6 +39449,12 @@
             "state" : "translated",
             "value" : "HUD-Position"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Position HUD"
+          }
         }
       }
     },
@@ -39211,7 +39618,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "HUDs are disabled because Custom OSD is enabled. Disable Custom OSD in the Custom OSD tab to use HUDs."
           }
         },
@@ -39342,7 +39749,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Icon & Progress Color"
           }
         },
@@ -39467,7 +39874,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Idle"
           }
         },
@@ -39592,7 +39999,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Idle Animation Style"
           }
         },
@@ -39716,7 +40123,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Import"
           }
         },
@@ -39841,7 +40248,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Import Error"
           }
         },
@@ -39966,7 +40373,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Import File..."
           }
         },
@@ -40220,7 +40627,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Inactive"
           }
         },
@@ -40474,7 +40881,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Inline snapshot preview"
           }
         },
@@ -40839,6 +41246,12 @@
             "state" : "translated",
             "value" : "Interaktiv (zum Ändern ziehen)"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Interactif (glisser pour modifier)"
+          }
         }
       }
     },
@@ -41089,6 +41502,12 @@
             "state" : "translated",
             "value" : "An der Besprechung teilnehmen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rejoignez la réunion"
+          }
         }
       }
     },
@@ -41099,6 +41518,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schlüssel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clé"
           }
         },
         "sv" : {
@@ -41131,7 +41556,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Keyboard Backlight HUD"
           }
         },
@@ -41256,7 +41681,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Keyboard Backlight OSD"
           }
         },
@@ -41380,7 +41805,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Keyboard shortcuts are disabled"
           }
         },
@@ -41501,6 +41926,12 @@
             "state" : "translated",
             "value" : "Tunnisteet pakotetaan tiivistämään teksti päälle/pois, kun lyhyt ilmoitus-tila on käytössä."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les étiquettes sont obligées de compacter le texte activé/désactivé lorsque le mode toast bref est activé."
+          }
         }
       }
     },
@@ -41526,7 +41957,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Last Updated"
           }
         },
@@ -41798,7 +42229,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Layout"
           }
         },
@@ -41907,6 +42338,12 @@
             "state" : "translated",
             "value" : "Layout-Vorschau"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu de la mise en page"
+          }
         }
       }
     },
@@ -41917,6 +42354,12 @@
             "state" : "translated",
             "value" : "Links"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gauche"
+          }
         }
       }
     },
@@ -41926,6 +42369,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Linienbreite: %lldpx"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Largeur de ligne : %lldpx"
           }
         }
       }
@@ -42071,7 +42520,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Liquid Glass requires macOS 26 or later."
           }
         },
@@ -42201,7 +42650,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Listens for Focus session changes via distributed notifications"
           }
         },
@@ -42332,7 +42781,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "LIVE"
           }
         },
@@ -42457,7 +42906,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Live Activities"
           }
         },
@@ -42582,7 +43031,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Live Activity & Feedback"
           }
         },
@@ -42707,7 +43156,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Live Monitoring"
           }
         },
@@ -42831,7 +43280,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Live Performance Data"
           }
         },
@@ -42956,7 +43405,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Live Preview"
           }
         },
@@ -43081,7 +43530,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Live stream indicator"
           }
         },
@@ -43206,7 +43655,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Load Average"
           }
         },
@@ -43330,7 +43779,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Lock Screen"
           }
         },
@@ -43454,7 +43903,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Lock Screen Integration"
           }
         },
@@ -43563,6 +44012,12 @@
             "state" : "translated",
             "value" : "Sperrbildschirm Flüssigglas"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verre liquide pour écran verrouillé"
+          }
         }
       }
     },
@@ -43572,6 +44027,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sperrbildschirm-Medien"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Écran de verrouillage Médias"
           }
         }
       }
@@ -43599,7 +44060,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Lock screen panel preview"
           }
         },
@@ -43724,7 +44185,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Lock Screen Positioning"
           }
         },
@@ -43849,7 +44310,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Lock Screen Reminder Widget"
           }
         },
@@ -43977,7 +44438,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Loop Mode"
           }
         },
@@ -44493,7 +44954,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Mac battery at %d percent"
           }
         },
@@ -44618,7 +45079,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "macOS 15 or later required"
           }
         },
@@ -44749,7 +45210,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Made with ❤️ by Ebullioscopic"
           }
         },
@@ -44886,7 +45347,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Manage indicator preferences from Settings → Privacy. No manual microphone toggle is required."
           }
         },
@@ -45017,7 +45478,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Mark as complete"
           }
         },
@@ -45148,7 +45609,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Mark as incomplete"
           }
         },
@@ -45539,7 +46000,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Material"
           }
         },
@@ -45664,7 +46125,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Material Options:"
           }
         },
@@ -46309,7 +46770,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Media Live Activity"
           }
         },
@@ -46434,7 +46895,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Media output"
           }
         },
@@ -46559,7 +47020,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Media Panel"
           }
         },
@@ -47059,6 +47520,12 @@
             "state" : "translated",
             "value" : "Das Meeting beginnt um %@."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La réunion commence à %@"
+          }
         }
       }
     },
@@ -47084,7 +47551,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Memory Usage"
           }
         },
@@ -47477,7 +47944,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Mic muted"
           }
         },
@@ -47602,7 +48069,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Mic unmuted"
           }
         },
@@ -47727,7 +48194,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Microphone"
           }
         },
@@ -47851,7 +48318,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Microphone Active"
           }
         },
@@ -48005,7 +48472,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Microphone privacy indicator runs automatically whenever apps access audio."
           }
         },
@@ -48135,7 +48602,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Microphone Status"
           }
         },
@@ -48265,7 +48732,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Minimalistic mode focuses on media controls and system HUDs, hiding all extra features for a clean, focused experience. Automatically enables simpler animations."
           }
         },
@@ -48526,7 +48993,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Minutes"
           }
         },
@@ -48765,6 +49232,12 @@
             "state" : "translated",
             "value" : "Spiegeln von macOS-Uhr-Timern"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Miroir des minuteries de l'horloge macOS"
+          }
         }
       }
     },
@@ -48949,7 +49422,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Mirrors the toggle found under Lock Screen settings so timer-specific workflows can enable or disable the widget without switching tabs."
           }
         },
@@ -49085,7 +49558,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Monitor clipboard changes and keep a history of recent copies. Use Cmd+Shift+V to quickly access clipboard history."
           }
         },
@@ -49218,6 +49691,12 @@
             "state" : "translated",
             "value" : "Tarkkaile Chromium-tyyppisten latausten (.crdownload-tiedostot) latauskansiota ja näytä reaaliaikainen toiminta Dynamic Islandissa latauksen aikana."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surveillez votre dossier Téléchargements pour les téléchargements de type Chromium (fichiers .crdownload) et affichez une activité en direct dans Dynamic Island pendant que les téléchargements sont en cours."
+          }
         }
       }
     },
@@ -49243,7 +49722,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Monitoring Behavior"
           }
         },
@@ -49367,7 +49846,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Monitoring Status"
           }
         },
@@ -49492,7 +49971,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Monitoring Stopped"
           }
         },
@@ -49747,7 +50226,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Move Down"
           }
         },
@@ -49872,7 +50351,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Move Up"
           }
         },
@@ -50257,7 +50736,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "My Animation"
           }
         },
@@ -50511,7 +50990,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Navigation"
           }
         },
@@ -50765,7 +51244,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Network Download"
           }
         },
@@ -50889,7 +51368,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Network Upload"
           }
         },
@@ -51144,7 +51623,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No active interfaces detected yet."
           }
         },
@@ -51269,7 +51748,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No audio outputs available"
           }
         },
@@ -51393,7 +51872,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No clipboard history"
           }
         },
@@ -51517,7 +51996,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No Colors Found"
           }
         },
@@ -51641,7 +52120,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No colors match '%@'"
           }
         },
@@ -51765,7 +52244,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No Colors Yet"
           }
         },
@@ -51873,6 +52352,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Noch keine Kopien"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore de copies"
           }
         }
       }
@@ -52160,7 +52645,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No events"
           }
         },
@@ -52670,7 +53155,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No favorites"
           }
         },
@@ -52795,7 +53280,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No Graphs Enabled"
           }
         },
@@ -52904,6 +53389,12 @@
             "state" : "translated",
             "value" : "Noch keine Notizen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore de commentaires"
+          }
         }
       }
     },
@@ -52936,7 +53427,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No presets configured. Add a preset to make it appear in the timer popover."
           }
         },
@@ -53073,7 +53564,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No process data yet. Keep stats open for a moment."
           }
         },
@@ -53197,7 +53688,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No results"
           }
         },
@@ -53321,7 +53812,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No results found"
           }
         },
@@ -53446,7 +53937,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "No storage devices detected yet."
           }
         },
@@ -53701,7 +54192,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Not active"
           }
         },
@@ -53955,7 +54446,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Not Set"
           }
         },
@@ -54470,7 +54961,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Notch Width"
           }
         },
@@ -54579,6 +55070,12 @@
             "state" : "translated",
             "value" : "Anmerkungen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remarques"
+          }
         }
       }
     },
@@ -54605,7 +55102,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Notify before"
           }
         },
@@ -54974,6 +55471,12 @@
             "state" : "translated",
             "value" : "Gilt nur, wenn „Material“ auf „Frosted Glass“ eingestellt ist."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'applique uniquement lorsque le matériau est défini sur Verre dépoli."
+          }
         }
       }
     },
@@ -54983,6 +55486,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nur verfügbar, wenn „Material“ auf „Frosted Glass“ eingestellt ist."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disponible uniquement lorsque le matériau est défini sur verre dépoli."
           }
         }
       }
@@ -55010,7 +55519,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Opacity:"
           }
         },
@@ -55134,7 +55643,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Open Google AI Studio"
           }
         },
@@ -55265,7 +55774,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Open in Calendar"
           }
         },
@@ -55389,7 +55898,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Open Model Settings"
           }
         },
@@ -55550,7 +56059,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Open Settings"
           }
         },
@@ -55674,7 +56183,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Open System Settings"
           }
         },
@@ -55810,7 +56319,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Opens the AI assistant panel for file analysis and conversation. Default is Cmd+Shift+A. Only works when screen assistant feature is enabled."
           }
         },
@@ -55946,7 +56455,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Opens the clipboard history panel. Default is Cmd+Shift+V (similar to Windows+V on PC). Only works when clipboard feature is enabled."
           }
         },
@@ -56082,7 +56591,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Opens the color picker panel for screen color capture. Default is Cmd+Shift+P. Only works when color picker feature is enabled."
           }
         },
@@ -56213,7 +56722,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Output devices"
           }
         },
@@ -56338,7 +56847,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Output volume"
           }
         },
@@ -56447,6 +56956,12 @@
             "state" : "translated",
             "value" : "Überstunden"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heures supplémentaires"
+          }
         }
       }
     },
@@ -56462,6 +56977,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Paneelitilassa leikepöytä näkyy kelluvassa ikkunassa lovin lähellä."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le mode Panneau affiche le presse-papiers dans une fenêtre flottante près de l'encoche."
           }
         }
       }
@@ -56494,7 +57015,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Panel mode shows color picker in a floating window. Popover mode shows color picker as a dropdown attached to the color picker button."
           }
         },
@@ -56630,7 +57151,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Panel mode shows the assistant in a floating window near the notch. Popover mode shows the assistant as a dropdown attached to the AI button."
           }
         },
@@ -56760,7 +57281,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pause"
           }
         },
@@ -56885,7 +57406,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Paused"
           }
         },
@@ -57009,7 +57530,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Permissions"
           }
         },
@@ -57133,7 +57654,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pick Color"
           }
         },
@@ -57257,7 +57778,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Picked %@"
           }
         },
@@ -57381,7 +57902,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Picked Color"
           }
         },
@@ -57505,7 +58026,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Picking Status"
           }
         },
@@ -57629,7 +58150,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pin items from history to save them here"
           }
         },
@@ -57753,7 +58274,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pin items to add favorites"
           }
         },
@@ -57877,7 +58398,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pin items to add them to favorites"
           }
         },
@@ -58001,7 +58522,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pinned Items"
           }
         },
@@ -58131,7 +58652,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Please configure your API key for the selected AI provider in model settings."
           }
         },
@@ -58405,6 +58926,12 @@
             "state" : "translated",
             "value" : "Popover-tila näyttää leikepöydän pudotusvalikkona, joka on liitetty leikepöydän painikkeeseen."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le mode Popover affiche le presse-papiers sous forme de menu déroulant associé au bouton du presse-papiers."
+          }
         }
       }
     },
@@ -58436,7 +58963,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Popover mode shows color picker as a dropdown attached to the color picker button. Panel mode shows color picker in a floating window."
           }
         },
@@ -58572,7 +59099,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Popover mode shows the assistant as a dropdown attached to the AI button. Panel mode shows the assistant in a floating window near the notch."
           }
         },
@@ -58702,7 +59229,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Position"
           }
         },
@@ -58827,7 +59354,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Preset name"
           }
         },
@@ -58952,7 +59479,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Presets"
           }
         },
@@ -59083,7 +59610,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Presets show up inside the timer popover with the configured name, duration, and accent colour. Reorder them to change the display order."
           }
         },
@@ -59214,7 +59741,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Pressure"
           }
         },
@@ -59338,7 +59865,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Preview"
           }
         },
@@ -59447,6 +59974,12 @@
             "state" : "translated",
             "value" : "Vorschau-Zoom"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu Zoom"
+          }
         }
       }
     },
@@ -59473,7 +60006,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Privacy Indicators"
           }
         },
@@ -59598,7 +60131,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Privacy Policy"
           }
         },
@@ -59722,7 +60255,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Progress style"
           }
         },
@@ -59976,7 +60509,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Quick Actions"
           }
         },
@@ -60085,6 +60618,12 @@
             "state" : "translated",
             "value" : "Schnell teilen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partage rapide"
+          }
         }
       }
     },
@@ -60094,6 +60633,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Schnellfreigabe-Dienst"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service de partage rapide"
           }
         }
       }
@@ -60506,7 +61051,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Read"
           }
         },
@@ -60630,7 +61175,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ready"
           }
         },
@@ -60754,7 +61299,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reasoning Mode"
           }
         },
@@ -60878,7 +61423,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Recent Colors"
           }
         },
@@ -61002,7 +61547,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Recording"
           }
         },
@@ -61127,7 +61672,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Recording Detected"
           }
         },
@@ -61251,7 +61796,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Recording Status"
           }
         },
@@ -61636,7 +62181,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reminder Live Activity"
           }
         },
@@ -61760,7 +62305,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reminders"
           }
         },
@@ -61869,6 +62414,12 @@
             "state" : "translated",
             "value" : "Nach dem Ziehen aus dem Regal entfernen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer de l'étagère après avoir fait glisser"
+          }
         }
       }
     },
@@ -61902,7 +62453,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Replaces macOS system HUD with Dynamic Island displays for volume, brightness, and keyboard backlight."
           }
         },
@@ -62032,7 +62583,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Request Access"
           }
         },
@@ -62156,7 +62707,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reset"
           }
         },
@@ -62280,7 +62831,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reset All"
           }
         },
@@ -62474,7 +63025,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reset to Default"
           }
         },
@@ -62583,6 +63134,12 @@
             "state" : "translated",
             "value" : "Auf Standardeinstellungen zurücksetzen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réinitialiser les paramètres par défaut"
+          }
         }
       }
     },
@@ -62638,7 +63195,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Reset Width"
           }
         },
@@ -62893,7 +63450,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Restart Atoll"
           }
         },
@@ -63018,7 +63575,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Restore"
           }
         },
@@ -63143,7 +63700,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Restore default timer presets?"
           }
         },
@@ -63268,7 +63825,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Restore Defaults"
           }
         },
@@ -63392,7 +63949,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Resume"
           }
         },
@@ -63500,6 +64057,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechts"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Droite"
           }
         }
       }
@@ -63663,7 +64226,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Sampling can continue while the notch is closed when the timeout is disabled."
           }
         },
@@ -63787,7 +64350,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Save"
           }
         },
@@ -63911,7 +64474,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Save Changes"
           }
         },
@@ -64035,7 +64598,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Save Configuration"
           }
         },
@@ -64159,7 +64722,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Scale Down"
           }
         },
@@ -64283,7 +64846,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Scale Up 2x"
           }
         },
@@ -64407,7 +64970,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Screen Assistant"
           }
         },
@@ -64531,7 +65094,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Screen Assistant feature is disabled"
           }
         },
@@ -64657,7 +65220,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Screen Assistant:"
           }
         },
@@ -64807,6 +65370,12 @@
             "state" : "translated",
             "value" : "Bildschirm-Polsterung: %lldpx"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplissage de l'écran : %lldpx"
+          }
         }
       }
     },
@@ -64832,7 +65401,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Screen Recording"
           }
         },
@@ -64956,7 +65525,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Screenshot options"
           }
         },
@@ -65080,7 +65649,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Screenshot Type"
           }
         },
@@ -65189,6 +65758,12 @@
             "state" : "translated",
             "value" : "Skrollen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Faire défiler"
+          }
         }
       }
     },
@@ -65255,7 +65830,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Search clipboard..."
           }
         },
@@ -65379,7 +65954,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Search colors..."
           }
         },
@@ -65488,6 +66063,12 @@
             "state" : "translated",
             "value" : "Notizen suchen..."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher des notes..."
+          }
         }
       }
     },
@@ -65514,7 +66095,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Search Settings"
           }
         },
@@ -65638,7 +66219,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Search..."
           }
         },
@@ -65889,7 +66470,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Seconds"
           }
         },
@@ -66013,7 +66594,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Segmented"
           }
         },
@@ -66137,7 +66718,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Select a color to view details"
           }
         },
@@ -66268,7 +66849,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Select a custom sound to play when a timer ends. Supported formats include MP3, M4A, WAV, and AIFF."
           }
         },
@@ -66392,7 +66973,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Select Calendars"
           }
         },
@@ -66517,7 +67098,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Select one or more profiles to customize your experience"
           }
         },
@@ -66902,7 +67483,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Selected"
           }
         },
@@ -67157,7 +67738,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Sensitivity"
           }
         },
@@ -67277,6 +67858,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Erillinen välilehti -tila yhdistää kopioidut kohteet ja muistiinpanot yhteen näkymään. Jos molemmat ovat käytössä, muistiinpanot näkyvät oikealla ja leikepöytä vasemmalla."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le mode Onglet séparé intègre les éléments copiés et les notes dans une seule vue. Si les deux sont activés, les notes apparaissent à droite et le presse-papiers à gauche."
           }
         }
       }
@@ -67428,7 +68015,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Set"
           }
         },
@@ -67718,7 +68305,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Settings…"
           }
         },
@@ -68632,7 +69219,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show Color History"
           }
         },
@@ -68756,7 +69343,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show Color Picker Panel"
           }
         },
@@ -69011,7 +69598,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show countdown"
           }
         },
@@ -69260,7 +69847,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show floating pause/stop controls"
           }
         },
@@ -69461,7 +70048,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show full event titles"
           }
         },
@@ -69727,7 +70314,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show media output control in other layouts"
           }
         },
@@ -70131,6 +70718,12 @@
             "state" : "translated",
             "value" : "Prozentualen Anteil anzeigen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher le pourcentage"
+          }
         }
       }
     },
@@ -70140,6 +70733,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Voreingestellte Liste im Timer-Tab anzeigen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher la liste des préréglages dans l'onglet Minuterie"
           }
         }
       }
@@ -70166,7 +70765,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show progress"
           }
         },
@@ -70310,6 +70909,12 @@
             "state" : "translated",
             "value" : "Vorschau bei Wiedergabeänderungen anzeigen"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher un aperçu des modifications lors de la lecture"
+          }
         }
       }
     },
@@ -70319,6 +70924,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zeige den Namen des aktiven Fokus innerhalb der Anzeige an."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher le nom du focus actif dans l'indicateur."
           }
         }
       }
@@ -70345,7 +70956,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Show timer name"
           }
         },
@@ -70469,7 +71080,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Shows green camera icon and yellow microphone icon when in use. Uses event-driven CoreAudio and CoreMediaIO APIs."
           }
         },
@@ -70593,7 +71204,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Shows the model's reasoning process before the final answer"
           }
         },
@@ -70717,7 +71328,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Shows the system Clock timer in the notch when available. Requires Accessibility permission to read the status item."
           }
         },
@@ -70861,6 +71472,12 @@
             "state" : "translated",
             "value" : "Größe: %lldpx"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taille : %lldpx"
+          }
         }
       }
     },
@@ -70887,7 +71504,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Skip buttons"
           }
         },
@@ -71142,7 +71759,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Smooth transitions blend Green (0–60%), Yellow (60–85%), and Red (85–100%) through the entire fill."
           }
         },
@@ -71257,6 +71874,12 @@
             "state" : "translated",
             "value" : "Glatte Übergänge mischen Grün (0–60 %), Gelb (60–85 %) und Rot (85–100 %) über die gesamte Füllung. Passen Sie das Verlaufsverhalten unter „Steuerelemente“ › „Dynamic Island“ an."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les transitions fluides mélangent le vert (0-60 %), le jaune (60-85 %) et le rouge (85-100 %) sur l'ensemble du remplissage. Ajustez le comportement du dégradé dans Contrôles › Dynamic Island."
+          }
         }
       }
     },
@@ -71283,7 +71906,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Sneak peek duration"
           }
         },
@@ -71668,7 +72291,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Sneak peek style is locked to Standard in minimalistic mode"
           }
         },
@@ -71922,7 +72545,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Solid colour"
           }
         },
@@ -72307,7 +72930,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start"
           }
         },
@@ -72431,7 +73054,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start a conversation to see your chat history here"
           }
         },
@@ -72555,7 +73178,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start Color Picking"
           }
         },
@@ -72680,7 +73303,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start Custom Timer"
           }
         },
@@ -72804,7 +73427,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start Demo Timer:"
           }
         },
@@ -72928,7 +73551,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start Monitoring"
           }
         },
@@ -73052,7 +73675,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start picking colors to build your history"
           }
         },
@@ -73176,7 +73799,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Start recording"
           }
         },
@@ -73285,6 +73908,12 @@
             "state" : "translated",
             "value" : "Beginnen Sie mit der Eingabe..."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commencez à taper..."
+          }
         }
       }
     },
@@ -73310,7 +73939,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Starts a 5-minute demo timer to test the timer live activity feature. Only works when timer feature is enabled."
           }
         },
@@ -73434,7 +74063,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stats"
           }
         },
@@ -73558,7 +74187,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stats Disabled"
           }
         },
@@ -73683,7 +74312,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stats feature is disabled"
           }
         },
@@ -73808,7 +74437,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stats panel is disabled"
           }
         },
@@ -73933,7 +74562,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stats Panel:"
           }
         },
@@ -74057,7 +74686,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stats update interval"
           }
         },
@@ -74181,7 +74810,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Status & Actions"
           }
         },
@@ -74297,9 +74926,15 @@
             "value" : ""
           }
         },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stop"
           }
         },
@@ -74399,8 +75034,7 @@
             "value" : ""
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     },
     "Stop Monitoring" : {
       "localizations" : {
@@ -74424,7 +75058,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stop Monitoring"
           }
         },
@@ -74548,7 +75182,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Stop recording"
           }
         },
@@ -74787,6 +75421,12 @@
             "state" : "translated",
             "value" : "Stil"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Style"
+          }
         }
       }
     },
@@ -74796,6 +75436,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sonnenaufgang um %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lever du soleil à %@"
           }
         }
       }
@@ -74953,7 +75599,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Supports reasoning mode"
           }
         },
@@ -75078,7 +75724,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Swap"
           }
         },
@@ -75203,7 +75849,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Swap is disabled on this system."
           }
         },
@@ -75328,7 +75974,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "System"
           }
         },
@@ -75583,7 +76229,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "System Performance Monitor"
           }
         },
@@ -75707,7 +76353,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Take area screenshot"
           }
         },
@@ -75831,7 +76477,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Temperature unit"
           }
         },
@@ -76074,7 +76720,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "These controls mirror the Lock Screen tab so you can tune the media overlay while focusing on playback settings."
           }
         },
@@ -76198,7 +76844,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "These controls sit beside the notch while a timer runs. They require the timer name to stay hidden for spacing."
           }
         },
@@ -76322,7 +76968,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "These indicators appear in the notch when apps are using your camera or microphone, matching macOS's native privacy indicators."
           }
         },
@@ -76438,6 +77084,12 @@
             "state" : "translated",
             "value" : "This app requires access to Bluetooth to connect devices."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette application nécessite l'accès au Bluetooth pour connecter des appareils."
+          }
         }
       }
     },
@@ -76464,7 +77116,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "This duration powers the \"Custom\" option inside the timer popover for quick access."
           }
         },
@@ -76596,6 +77248,12 @@
             "state" : "translated",
             "value" : "Dadurch werden alle gespeicherten Notizen und deren Anhänge dauerhaft gelöscht."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cela supprime définitivement toutes les notes enregistrées et leurs pièces jointes."
+          }
         }
       }
     },
@@ -76605,6 +77263,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dadurch werden alle gespeicherten Zwischenablageelemente aus der Notch-Registerkarte entfernt."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cela supprime tous les éléments enregistrés dans le presse-papiers de l'onglet Encochage."
           }
         }
       }
@@ -76632,7 +77296,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Time Range"
           }
         },
@@ -76886,7 +77550,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer"
           }
         },
@@ -76995,6 +77659,12 @@
             "state" : "translated",
             "value" : "Timer-Steuerelemente werden angezeigt als"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les commandes de minuterie apparaissent sous la forme"
+          }
         }
       }
     },
@@ -77020,7 +77690,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer Disabled"
           }
         },
@@ -77144,7 +77814,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer Feature"
           }
         },
@@ -77268,7 +77938,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer feature is disabled"
           }
         },
@@ -77393,7 +78063,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer Presets"
           }
         },
@@ -77517,7 +78187,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer Sound"
           }
         },
@@ -77641,7 +78311,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer tint"
           }
         },
@@ -77766,7 +78436,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Timer Widget"
           }
         },
@@ -77874,6 +78544,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Titel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titre"
           }
         }
       }
@@ -78161,7 +78837,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Toggle the Dynamic Island open or closed from anywhere."
           }
         },
@@ -78292,7 +78968,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Total · %@"
           }
         },
@@ -78416,7 +79092,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Try adjusting your search terms"
           }
         },
@@ -78540,7 +79216,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Try different search terms"
           }
         },
@@ -78690,6 +79366,12 @@
             "state" : "translated",
             "value" : "Aktivieren Sie anpassbare Steuerelemente, um die Medientasten neu anzuordnen."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez les commandes personnalisables pour réorganiser les boutons multimédias."
+          }
         }
       }
     },
@@ -78705,6 +79387,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Deaktivieren Sie diese Option, um ganztägige Einträge in den Notch-Kalender und die Live-Erinnerungsaktivität aufzunehmen."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivez cette option pour inclure les entrées de la journée entière dans le calendrier Notch et l'activité en direct des rappels."
           }
         }
       }
@@ -78868,7 +79556,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "UI Mode"
           }
         },
@@ -79383,7 +80071,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Update interval"
           }
         },
@@ -79508,7 +80196,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Update Timer"
           }
         },
@@ -79763,7 +80451,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Upload"
           }
         },
@@ -79888,7 +80576,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Usage"
           }
         },
@@ -80013,7 +80701,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Usage Breakdown"
           }
         },
@@ -80156,6 +80844,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Akzentfarbe verwenden"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utiliser une couleur d'accent"
           }
         }
       }
@@ -80430,7 +81124,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Use the Media tab to configure sneak peek, lyrics, and floating media controls."
           }
         },
@@ -80555,7 +81249,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Used"
           }
         },
@@ -80680,7 +81374,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Used · %@"
           }
         },
@@ -80804,7 +81498,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Uses event-driven private API for real-time screen recording detection"
           }
         },
@@ -80929,7 +81623,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Utilization"
           }
         },
@@ -81444,7 +82138,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Volume"
           }
         },
@@ -81568,7 +82262,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Volume HUD"
           }
         },
@@ -81693,7 +82387,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Volume OSD"
           }
         },
@@ -81859,7 +82553,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Weather"
           }
         },
@@ -81983,7 +82677,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Weather data provider"
           }
         },
@@ -82108,7 +82802,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Weather Widget"
           }
         },
@@ -82742,7 +83436,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "When disabled, all keyboard shortcuts will be inactive. You can still use the UI controls."
           }
         },
@@ -82863,6 +83557,12 @@
             "state" : "translated",
             "value" : "Wenn diese Option aktiviert ist, wird „Fokus“ kurz angezeigt (ein/aus) und dann ausgeblendet, anstatt sichtbar zu bleiben."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lorsque cette option est activée, Focus s'affiche brièvement (activé/désactivé), puis disparaît au lieu de rester visible."
+          }
         }
       }
     },
@@ -82888,7 +83588,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "When enabled, stats monitoring stops a few seconds after the notch closes."
           }
         },
@@ -83019,7 +83719,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "When enabled, the Atoll will expand horizontally to match the animation size"
           }
         },
@@ -83149,7 +83849,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "When enabled, the Stats tab will display real-time system performance graphs. This feature requires system permissions and may use additional battery."
           }
         },
@@ -83317,6 +84017,12 @@
             "state" : "translated",
             "value" : "Breite: %lldpx"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Largeur : %lldpx"
+          }
         }
       }
     },
@@ -83473,7 +84179,7 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Write"
           }
         },
@@ -84087,8 +84793,7 @@
             "value" : "YouTube Music 需要安装此第三方应用："
           }
         }
-      },
-      "shouldTranslate" : false
+      }
     }
   },
   "version" : "1.1"
