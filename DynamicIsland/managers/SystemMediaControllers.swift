@@ -419,7 +419,12 @@ final class SystemVolumeController {
             return kAudioHardwareUnknownPropertyError
         }
         var size = UInt32(MemoryLayout<T>.size)
-        return AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, &data)
+        return withUnsafeMutableBytes(of: &data) { rawBuffer in
+            guard let ptr = rawBuffer.baseAddress else {
+                return kAudioHardwareUnspecifiedError
+            }
+            return AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, ptr)
+        }
     }
 
     private func setData<T>(selector: AudioObjectPropertySelector, element: AudioObjectPropertyElement, data: inout T) -> OSStatus {
