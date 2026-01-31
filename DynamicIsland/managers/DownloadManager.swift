@@ -2,6 +2,7 @@ import Foundation
 import SwiftUI
 import Observation
 import Defaults
+import Combine
 
 @Observable
 @MainActor
@@ -19,6 +20,7 @@ class DownloadManager {
     private var initialCrDownloadFiles: Set<String> = []
     private var previousAllFiles: Set<String> = []
     private var ignoredFiles: Set<String> = []
+    private var downloadListenerCancellable: AnyCancellable?
     
     private var downloadsDirectory: URL? {
         FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first
@@ -28,7 +30,7 @@ class DownloadManager {
         requestDownloadsPermissionIfNeeded()
         startMonitoringIfNeeded()
         
-        Defaults.publisher(.enableDownloadListener)
+        downloadListenerCancellable = Defaults.publisher(.enableDownloadListener)
             .sink { [weak self] _ in
                 guard let self else { return }
                 Task { @MainActor in

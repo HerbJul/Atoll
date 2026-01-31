@@ -315,14 +315,16 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
 
     func open() {
         let targetSize = calculateDynamicNotchSize()
-
-        let applyWindowResize: () -> Void = {
-            guard let delegate = AppDelegate.shared else { return }
-            delegate.ensureWindowSize(
-                addShadowPadding(to: targetSize, isMinimalistic: Defaults[.enableMinimalisticUI]),
-                animated: false,
-                force: true
-            )
+        let isMinimalistic = Defaults[.enableMinimalisticUI]
+        let applyWindowResize: @Sendable () -> Void = {
+            Task { @MainActor in
+                guard let delegate = AppDelegate.shared else { return }
+                delegate.ensureWindowSize(
+                    addShadowPadding(to: targetSize, isMinimalistic: isMinimalistic),
+                    animated: false,
+                    force: true
+                )
+            }
         }
 
         if Thread.isMainThread {
@@ -435,3 +437,4 @@ class DynamicIslandViewModel: NSObject, ObservableObject {
         }
     }
 }
+

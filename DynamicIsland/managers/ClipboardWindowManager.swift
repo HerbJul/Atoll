@@ -12,6 +12,7 @@ class ClipboardWindowManager: ObservableObject {
     static let shared = ClipboardWindowManager()
     
     private var clipboardWindow: NSWindow?
+    private var windowDelegate: NSWindowDelegate?
     
     private init() {}
     
@@ -60,10 +61,12 @@ class ClipboardWindowManager: ObservableObject {
         window.contentView = hostingView
         
         // Handle window closing
-        window.delegate = WindowDelegate { [weak self] window in
+        let windowDelegate = WindowDelegate { [weak self] window in
             ScreenCaptureVisibilityManager.shared.unregister(window)
             self?.clipboardWindow = nil
         }
+        window.delegate = windowDelegate
+        self.windowDelegate = windowDelegate
 
         ScreenCaptureVisibilityManager.shared.register(window, scope: .panelsOnly)
         

@@ -690,7 +690,7 @@ private actor LockScreenWeatherProvider {
         let longitude = String(format: "%.4f", location.coordinate.longitude)
 
         let unit = Defaults[.lockScreenWeatherTemperatureUnit]
-        let usesMetric = unit.usesMetricSystem
+        _ = unit.usesMetricSystem
         var weatherComponents = URLComponents(string: "https://api.open-meteo.com/v1/forecast")
         var weatherQueryItems: [URLQueryItem] = [
             URLQueryItem(name: "latitude", value: latitude),
@@ -1071,7 +1071,7 @@ private func symbolAdjustedForDaylight(_ symbol: String, isDaytime: Bool) -> Str
 }
 
 @MainActor
-private final class LockScreenWeatherLocationProvider: NSObject, CLLocationManagerDelegate {
+private final class LockScreenWeatherLocationProvider: NSObject, @MainActor CLLocationManagerDelegate {
     private let manager: CLLocationManager
     private var pendingContinuations: [CheckedContinuation<CLLocation?, Never>] = []
     private var lastLocation: CLLocation?

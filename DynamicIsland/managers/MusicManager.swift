@@ -12,7 +12,7 @@ import SwiftUI
 
 // MARK: - Lyric Data Structures
 struct LyricLine: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let timestamp: TimeInterval
     let text: String
 
@@ -819,9 +819,8 @@ class MusicManager: ObservableObject {
             currentLyrics = "Loading lyrics..."
 
             Task {
-                await fetchLyrics()
+                fetchLyrics()
 
-                // If fetch completed but no lyrics were found, show a friendly message.
                 await MainActor.run {
                     if self.syncedLyrics.isEmpty && self.currentLyrics.isEmpty {
                         self.currentLyrics = "No lyrics found"

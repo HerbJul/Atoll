@@ -141,7 +141,7 @@ final class LockScreenReminderWidgetPanelManager {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.handleScreenGeometryChange(reason: "screen-parameters")
+            Task { @MainActor [weak self] in self?.handleScreenGeometryChange(reason: "screen-parameters") }
         }
 
         let workspaceCenter = NSWorkspace.shared.notificationCenter
@@ -150,7 +150,7 @@ final class LockScreenReminderWidgetPanelManager {
             object: nil,
             queue: .main
         ) { [weak self] _ in
-            self?.handleScreenGeometryChange(reason: "screens-did-wake")
+            Task { @MainActor [weak self] in self?.handleScreenGeometryChange(reason: "screens-did-wake") }
         }
 
         workspaceObservers = [wakeObserver]

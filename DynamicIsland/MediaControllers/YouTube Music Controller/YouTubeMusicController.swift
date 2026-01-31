@@ -10,7 +10,8 @@ import Foundation
 import Combine
 import SwiftUI
 
-final class YouTubeMusicController: MediaControllerProtocol {
+@MainActor
+final class YouTubeMusicController: @MainActor MediaControllerProtocol {
     // MARK: - Published Properties
     @Published var playbackState = PlaybackState(
         bundleIdentifier: YouTubeMusicConfiguration.default.bundleIdentifier

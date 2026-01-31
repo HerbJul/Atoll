@@ -135,7 +135,7 @@ final class AppleHardwareInfo {
 
     private static func fetchClusterFrequencies(cpuName: String) -> CPUClusterFrequencies {
         var iterator = io_iterator_t()
-        guard IOServiceGetMatchingServices(kIOMasterPortDefault, IOServiceMatching("AppleARMIODevice"), &iterator) == KERN_SUCCESS else {
+        guard IOServiceGetMatchingServices(kIOMainPortDefault, IOServiceMatching("AppleARMIODevice"), &iterator) == KERN_SUCCESS else {
             return CPUClusterFrequencies(eCoreFrequencies: [], pCoreFrequencies: [])
         }
         defer { IOObjectRelease(iterator) }

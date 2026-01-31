@@ -382,7 +382,12 @@ final class SystemVolumeController {
             var address = makeAddress(selector: selector, element: element)
             guard propertyExists(deviceID: currentDeviceID, address: &address) else { continue }
             var size = UInt32(MemoryLayout<T>.size)
-            lastStatus = AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, &data)
+            lastStatus = withUnsafeMutableBytes(of: &data) { rawBuffer in
+                guard let ptr = rawBuffer.baseAddress else {
+                    return kAudioHardwareUnspecifiedError
+                }
+                return AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, ptr)
+            }
             if lastStatus == noErr {
                 cache(element: element, for: selector)
                 return lastStatus
@@ -397,7 +402,9 @@ final class SystemVolumeController {
             var address = makeAddress(selector: selector, element: element)
             guard propertyExists(deviceID: currentDeviceID, address: &address) else { continue }
             let size = UInt32(MemoryLayout<T>.size)
-            lastStatus = AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, &data)
+            lastStatus = withUnsafePointer(to: &data) { ptr in
+                AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, ptr)
+            }
             if lastStatus == noErr {
                 cache(element: element, for: selector)
                 return lastStatus
@@ -412,7 +419,12 @@ final class SystemVolumeController {
             return kAudioHardwareUnknownPropertyError
         }
         var size = UInt32(MemoryLayout<T>.size)
-        return AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, &data)
+        return withUnsafeMutableBytes(of: &data) { rawBuffer in
+            guard let ptr = rawBuffer.baseAddress else {
+                return kAudioHardwareUnspecifiedError
+            }
+            return AudioObjectGetPropertyData(currentDeviceID, &address, 0, nil, &size, ptr)
+        }
     }
 
     private func setData<T>(selector: AudioObjectPropertySelector, element: AudioObjectPropertyElement, data: inout T) -> OSStatus {
@@ -421,7 +433,9 @@ final class SystemVolumeController {
             return kAudioHardwareUnknownPropertyError
         }
         let size = UInt32(MemoryLayout<T>.size)
-        return AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, &data)
+        return withUnsafePointer(to: &data) { ptr in
+            AudioObjectSetPropertyData(currentDeviceID, &address, 0, nil, size, ptr)
+        }
     }
 
     private func volumeElements() -> [AudioObjectPropertyElement] {
@@ -664,3 +678,4 @@ final class SystemBrightnessController {
         observers.forEach { DistributedNotificationCenter.default().removeObserver($0) }
     }
 }
+
