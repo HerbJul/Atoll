@@ -180,7 +180,7 @@ struct ContentView: View {
     }
     
     private let zeroHeightHoverPadding: CGFloat = 10
-    private let statsAdditionalRowHeight: CGFloat = 110
+    private let statsAdditionalRowHeight: CGFloat = statsSecondRowContentHeight + statsGridSpacingHeight
     private let musicControlPauseGrace: TimeInterval = 5
     private let musicControlResumeDelay: TimeInterval = 0.24
 
@@ -398,6 +398,8 @@ struct ContentView: View {
             maxHeight: dynamicNotchSize.height + currentShadowPadding,
             alignment: .top
         )
+        .frame(maxHeight: .infinity, alignment: .top)
+        .animation(nil, value: coordinator.currentView)
         .environmentObject(privacyManager)
         .onChange(of: dynamicNotchSize) { oldSize, newSize in
             guard oldSize != newSize else { return }

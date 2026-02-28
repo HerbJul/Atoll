@@ -110,12 +110,10 @@ struct TabSelectionView: View {
                 let isSelected = isSelected(tab)
                 let activeAccent = tab.accentColor ?? .white
                 TabButton(label: tab.label, icon: tab.icon, selected: isSelected) {
-                    withAnimation(.smooth) {
-                        if tab.view == .extensionExperience {
-                            coordinator.selectedExtensionExperienceID = tab.experienceID
-                        }
-                        coordinator.currentView = tab.view
+                    if tab.view == .extensionExperience {
+                        coordinator.selectedExtensionExperienceID = tab.experienceID
                     }
+                    coordinator.currentView = tab.view
                 }
                 .frame(height: 26)
                 .foregroundStyle(isSelected ? activeAccent : .gray)
@@ -134,6 +132,7 @@ struct TabSelectionView: View {
                 }
             }
         }
+        .animation(.smooth, value: coordinator.currentView)
         .clipShape(Capsule())
     }
 
